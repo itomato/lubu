@@ -53,3 +53,68 @@ It is however possible to run LuBu OpenMagic 1.0 without CDE installed, or witho
 
     $ sh /usr/openstep/bin/openstep
     
+----
+LuBu OpenMagic 1.0 for Solaris OpenStep 1.1-sparc
+-------------------------------------------------
+
+Copyrights:
+LuBu OpenMagic 1.0 (C)2006 Luke Th. Bullock.
+Lighthouse OpenStep 1.1: (C)1997 Lighthouse Design
+Solaris OpenStep 1.0: (C)1996 Sun Microsystems, Inc.
+Portions (C)1994 NeXT Computer, Inc.
+
+LuBu OpenMagic 1.0 is an enhanced desktop based on the Lighthouse OpenStep
+1.1 release. No binary files have been altered or reversed, as LuBu OpenMagic
+1.0 consists of optimized configurations, 3rd party software based on either
+free or open software, or original code written by and (C)Luke Th. Bullock.
+All original software code that is used in LuBu OpenMagic 1.0 has been made public in it's original form at ftp://alge.anart.no/pub/openmagic/source.
+The copyright holders to the underlying software Solaris OpenStep 1.1 (Sun, Apple/NeXT & Lighthouse Design) may at any time revoke your right to use this software. 
+
+LuBu OpenMagic 1.0 is (C)2006 Luke Th. Bullock. I do however reserve the 
+right to deny all copyright rights since LuBu OpenMagic 1.0 is: 
+
+a) An enhancement and optimization of existing software within Solaris
+   OpenStep 1.1, where it has been possible to alter software behaviour
+   without violating Sun, Apple/NeXT or Lighthouse copyrights.
+b) Rewrites of freeware and opensource software - included in LuBu
+   OpenMagic 1.0 as additions to the Solaris OpenStep 1.1 release for 
+   either productivity reasons or configuration reasons.
+c) Partial rewrites of code now released to the public from Sun's 
+   former desktop enviroment, XVIEW. Many of these applications are
+   most welcome additions to LuBu OpenMagic 1.0.
+d) LuBu OpenMagic 1.0 specific scripts and applications written from
+   scratch in either shell or C for use with the OpenMagic Desktop.
+   Even though these scripts and apps are written and (C) myself,
+   I wave the wright to maintain this copyright, and grant unlimited
+   and unrestricted permissions to use, modify, alter and in any other
+   way abuse them, under the condition that they 1. are not sold for
+   profit, 2. are not put under restrictions of any kind other than 
+   stated here, 3. are not used in systems that promote, maintain, 
+   encourage or in any other way support war, hatred, voilence, crime
+   or discrimination of race, sex, religion or belief-system.
+   
+LuBu OpenMagic 1.0 is put into the public domain as an attempt to revive 
+and enhance an outstanding API, Interface and desktop enviroment for the 
+SPARC platform, namely the OpenStep API/Desktop. Unfortunatly no compiler
+for NeXT/OpenStep applications is available for the Sparc platform (ie: 
+Solaris OpenStep-sparc), neither do I beleive Sun ever will release one, therefore I was forced to either write additions myself, or use 3rd party solutions and applications based on opensource and freeware and Public
+Domain source code.
+
+Please read the included LICENSE.SunSoft file, which is the original
+Solaris OpenStep 1.0 license from Sun/Sunsoft. Also read the file(s) Copyright.Sun, KNOWN_BUGS, HINTS and READ_ME_FIRST in the Information
+folder included with this release.
+
+Luke Th. Bullock
+Oslo, 10/03/06
+
+-------------------------------------------------------------------
+YOU MUST OBSERVE ANY AUTHORS' CONDITIONS WITH RESPECT TO
+INDIVIDUAL COMPONENTS PROVIDED WITHIN THIS CODE.  SUPPORT
+FOR THE TECHNOLOGIES AND DOCUMENTATION IS NOT PROVIDED
+BY SUN MICROSYSTEMS, INC.
+
+THE TECHNOLOGIES AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT TECHNICAL
+SUPPORT OR WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING,
+BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+
