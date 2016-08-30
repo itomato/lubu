@@ -1,0 +1,52 @@
+NSKitPanelController = {
+    OUTLETS = {
+	panel;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};
+FontPanel = {
+    ACTIONS = {
+	_chooseFace:;
+	_set:;
+	_chooseSize:;
+	performResize:;
+	_custom:;
+	_revert:;
+	_chooseFamily:;
+	_preview:;
+    };
+    OUTLETS = {
+	splitView;
+	current;
+	setButton;
+	preview;
+	sizeTitle;
+	faces;
+	size;
+	currentBox;
+	facesTitle;
+	separator;
+	chooser;
+	families;
+	previewBox;
+	sizes;
+	familyTitle;
+    };
+    SUPERCLASS = Window;
+};
+MyApp = {
+    ACTIONS = {
+	hide:;
+	terminate:;
+    };
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = Object;
+};

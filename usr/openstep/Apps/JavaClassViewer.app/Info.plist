@@ -1,0 +1,5 @@
+{
+    NSExecutable = JavaClassViewer;
+    NSMainNibFile = ClassViewer;
+    NSPrincipalClass = NSApplication;
+}

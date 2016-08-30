@@ -1,0 +1,40 @@
+Preview = {
+    ACTIONS = {
+	showHelp:;
+	showInfo:;
+	doPaste:;
+	doOpen:;
+    };
+    OUTLETS = {
+	infoPanel;
+	helpPanel;
+	displayMenuItem;
+	bitsMenuItem;
+    };
+    SUPERCLASS = Application;
+};
+FirstResponder = {
+    ACTIONS = {
+	zoomIn:;
+	doPrint:;
+	doSaveAs:;
+	drawPage:;
+	doCopyPS:;
+	pageForward:;
+	doPageLayout:;
+	pageBackward:;
+	zoomOut:;
+	cancelPage:;
+	performResize:;
+	changeBitsCaching:;
+    };
+    SUPERCLASS = Object;
+};
+PreviewDoc = {
+    ACTIONS = {
+	pageForward:;
+	drawPage:;
+	pageBackward:;
+    };
+    SUPERCLASS = Window;
+};

@@ -1,0 +1,21 @@
+EKProgressView = {
+    SUPERCLASS = View;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Progressor = {
+    ACTIONS = {
+	cancel:;
+    };
+    OUTLETS = {
+	button;
+	panel;
+	messageField;
+	progressView;
+	titleField;
+    };
+    SUPERCLASS = Object;
+};

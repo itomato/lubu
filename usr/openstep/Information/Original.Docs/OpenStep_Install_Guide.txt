@@ -1,0 +1,124 @@
+OpenStep(TM) Installation Guide
+
+      3 Configuring and Starting the OpenStepTM Environment 
+
+
+
+      This chapter describes how to configure the user's environment to run 
+      OpenStep under OpenWindows or the Common Desktop Environment (CDE). 
+        Setting OpenStep Environment Variables 
+        Configuring for OpenWindows 
+        Configuring for CDE 
+        Starting the OpenStep Desktop 
+        Stopping the OpenStep Desktop 
+      Setting OpenStep Environment Variables 
+      For both OpenWindows and CDE installations, make the following environment 
+      variable changes: 
+        1. Login as the user of the computer. 
+        2. Set the user's search, man pages, and AnswerBook paths.
+
+        Bourne shell:
+        PATH=$PATH:/usr/openstep/bin
+        MANPATH=$MANPATH:/usr/openstep/man
+        AB_CARDCATALOG=$AB_CARDCATALOG:\
+        /opt/SUNWOabos/ab_cardcatalog:\
+        /opt/SUNWOabwo/ab_cardcatalog
+        export PATH
+        export MANPATH
+        export AB_CARDCATALOG
+
+        C shell:
+        setenv PATH ${PATH}:/usr/openstep/bin
+        setenv MANPATH ${MANPATH}:/usr/openstep/man
+        setenv AB_CARDCATALOG ${AB_CARDCATALOG}:\
+        /opt/SUNWOabos/ab_cardcatalog:\
+        /opt/SUNWOabwo/ab_cardcatalog 
+      Note that /opt/SUNWOabwo_cardcatalog is needed only if WorkShop OpenStep 
+      is installed. 
+      Configuring for OpenWindows 
+      Make the following change for to run OpenStep under OpenWindows: 
+        1. Locate the line in the user's .login or .profile file that invokes 
+        OpenWindows. It should look like: 
+          openwin 
+        or 
+          $OPENWINHOME/bin/openwin 
+        Change the line so it looks like one of the following: 
+          openwin -dpi 72 <your options here> 
+        or 
+          $OPENWINHOME/bin/openwin -dpi 72 <your options here> 
+        Replace <your options here> with any OpenWindows switches that your 
+        installation already uses. 
+        2. If you want OpenStep to be automatically invoked on user login, then 
+        replace the line that invokes OpenWindows with the following code: 
+        Bourne shell: 
+        if [-f /usr/openstep/etc/Xinitrc ] 
+        then
+        XINITRC=/usr/openstep/etc/Xinitrc
+        openwin -dpi 72 <your options here>
+        unset XINITRC
+        else 
+        openwin <your options here>
+        fi 
+        C shell: 
+        if (-e /usr/openstep/etc/Xinitrc) then
+        setenv XINITRC /usr/openstep/etc/Xinitrc
+        openwin -dpi 72 <your options here>
+        unsetenv XINITRC
+        else
+        openwin <your options here>
+        endif 
+        OpenStep will now start on user login. 
+        3. logout and login. 
+      If the user has a printer physically attached to the computer, configure 
+      the printer for OpenStep Desktop as described by "Starting the OpenStep 
+      Desktop". 
+      Configuring for CDE 
+      The machine's CDE environment is configured by installing the CDE package 
+      (see "Installing the CDE Package"). To run OpenStep under CDE, select 
+      "OpenStep" from the login menu. 
+      Caution - Please be aware that under CDE your .login/.profile is not read 
+      by default. This means that any application started from the dock may not 
+      have access to the environment variables it needs. You may configure CDE 
+      to read in your shell environment variables by configuring your 
+      $HOME/.dtprofile file. Please see "Solaris CDE Installation and System 
+      Administration Guide" and "CDE Advanced User's and System Administrator's 
+      Guide" for details. 
+      Note - If CDE 1.0 is installed, make sure you select "More Colors to 
+      Applications" in the Style Manager. To avoid colormap problems, startup 
+      OpenStep before starting up any other color rich application (for example, 
+      FrameMaker, Adobe Acrobat). 
+      Starting the OpenStep Desktop 
+      This section is useful if you have chosen to start OpenStep manually, or 
+      you have shut down OpenStep and want to restart it. 
+      The openstep command is used to manually start up and shut down the 
+      OpenStep desktop once the window system is started. The following text 
+      lists several common openstep command forms: 
+        openstep 
+        Starts the basic desktop: daemons (ospd, ospbs), Dock (Workspace.app) 
+        and FileViewer (WM.app). 
+        openstep -ShowDock NO 
+        Starts the basic desktop, but the Dock (Workspace.app) is not visible. 
+        This would be the common mode of operation for running OpenStep under a 
+        CDE environment. 
+        openstep -start program 
+        Startup the basic desktop and also run the executable program. 
+      Stopping the OpenStep Desktop 
+      The openstep command takes the following options for shutdown: 
+        openstep -stop 
+        Shutdown the entire openstep desktop. This will also shutdown the X 
+        server unless the special user default has been set to disable that 
+        behavior as described below. 
+      To stop OpenStep, enter the appropriate command in an xterm window. All 
+      OpenStep applications will terminate, followed by termination of the 
+      windowing environment, returning the user to the native non-windowed 
+      Solaris prompt. 
+      If you want the X server windowing environment left running but want all 
+      OpenStep applications shutdown, enter the following command once in a 
+      terminal window: 
+        % dwrite Workspace TerminateWindowManager NO 
+      Once you have entered this command, you need not enter it again. Future 
+      openstep -stop commands will not terminate the windowing environment. 
+
+Questions or comments regarding this service? webmaster@sun.com
+Copyright 1996 Sun Microsystems, Inc., 2550 Garcia Ave., Mtn. View, CA 
+94043-1100 USA. All rights reserved.

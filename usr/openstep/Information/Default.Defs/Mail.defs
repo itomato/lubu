@@ -1,0 +1,24 @@
+{
+    ActiveMailbox = Active.mbox; 
+    Archive = NO; 
+    AutoCompact = YES; 
+    AutoFetch = NO; 
+    AutoIndent = NO; 
+    CCPollTime = 0.25; 
+    Debug = NO; 
+    Encrypt = NO; 
+    KeyBindings = NO; 
+    MailDir = "~/openstep/Mailboxes"; 
+    MailFilter = "Content-Length:Content-Transfer-Encoding:Content-Type:Errors-To:Message-ID:MIME-Version:Next-Attachment:Next-Reference:Originator:Precedence:Received:Return-Path:Status:X-Face:X-NeXT-DocumentID:References:Resent-Message-ID:Content-Length:Content-Disposition"; 
+    MailMarker = "Subject:From:To:Cc:Attachment:Date:Reply-To:Sender:In-Reply-To"; 
+    Mailer = /usr/lib/sendmail; 
+    NonNext = NO; 
+    OutgoingMailbox = Outgoing.mbox; 
+    PeopleDir = /usr/local/openstep/Library/Images/People; 
+    PollTime = 5; 
+    ReadReceipt = NO; 
+    RemoteFetch = NO; 
+    SpoolDir = /var/mail; 
+    TocFont = Helvetica; 
+    TocFontSize = 12.0; 
+}

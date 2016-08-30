@@ -1,0 +1,43 @@
+"MyBrowserObject" = {ACTIONS = {}; OUTLETS = {browser = "NSBrowser*"; }; SUPERCLASS = NSObject; };
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"MySubmitObject" = {
+    ACTIONS = {
+	"clearfields:" = "clearfields:"; 
+	"printBug:" = "printBug:"; 
+	"sendmail:" = "sendmail:"; 
+	"setdefault:" = "setdefault:"; 
+	"showInfo:" = "showInfo:"; 
+	"showUser:" = "showUser:"; 
+    }; 
+    OUTLETS = {
+	browser = "MyBrowserObject*"; 
+	category = "NSBrowser*"; 
+	cc_list = "NSFormCell*"; 
+	comp = "NSFormCell*"; 
+	descrip = "NSCStringText*"; 
+	infoPanel = id; 
+	myOutlet = id; 
+	printView = "NSCStringText*"; 
+	severity = "NSPopUpButton*"; 
+	submitter = "NSFormCell*"; 
+	sysInfo = "MyInfoObject*"; 
+	userObject = MyUserObject; 
+	userPanel = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"MyInfoObject" = {
+    ACTIONS = {"clearInfo:" = "clearInfo:"; "getInfo:" = "getInfo:"; }; 
+    OUTLETS = {fullDescription = "NSCStringText*"; }; 
+    SUPERCLASS = NSObject; 
+};
+"MyUserObject" = {
+    ACTIONS = {"apply:" = "apply:"; "set:" = "set:"; }; 
+    OUTLETS = {
+	cc_list = NSFormCell; 
+	comp = NSFormCell; 
+	main_submitObject = MySubmitObject; 
+	submitter = NSFormCell; 
+    }; 
+    SUPERCLASS = NSObject; 
+};

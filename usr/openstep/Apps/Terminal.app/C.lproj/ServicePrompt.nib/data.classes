@@ -1,0 +1,25 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+ServiceProvider = {
+    ACTIONS = {
+	cancel:;
+	ok:;
+    };
+    OUTLETS = {
+	addInputText;
+	addInputCommandTitle;
+	bothInputText;
+	addArgsField;
+	addArgsWindow;
+	bothServiceTitle;
+	addInputWindow;
+	bothArgsField;
+	addArgsServiceTitle;
+	bothWindow;
+	addInputServiceTitle;
+    };
+    SUPERCLASS = Object;
+};

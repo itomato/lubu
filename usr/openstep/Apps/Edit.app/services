@@ -1,0 +1,22 @@
+Message: saveMail
+Port: Edit
+Send Type: NeXTmail Message pasteboard type
+Menu Item: Edit/Save Message
+Timeout: 10000000
+Message: openMail
+Port: Edit
+Return Type: NeXTmail Message pasteboard type
+Menu Item: Edit/Open Message
+Timeout: 10000000
+Message: saveSelection
+Port: Edit
+Send Type: NSRTFPboard
+Send Type: NSStringPboardType
+Menu Item: Edit/Save Selection
+Timeout: 10000000
+Message: replaceSelection
+Port: Edit
+Return Type: NSRTFPboardType
+Return Type: NSStringPboardType
+Menu Item: Edit/Replace Selection
+Timeout: 10000000

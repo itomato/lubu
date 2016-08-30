@@ -1,0 +1,21 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+IconApp = {
+    SUPERCLASS = Application;
+};
+NXPanelController = {
+    ACTIONS = {
+	cancel:;
+	ok:;
+    };
+    OUTLETS = {
+	form;
+	okButton;
+	alertPanel;
+	iconButton;
+    };
+    SUPERCLASS = Object;
+};

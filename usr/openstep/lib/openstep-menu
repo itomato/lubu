@@ -1,0 +1,25 @@
+#
+#ident "@(#) openstep-menu, Rev 1.1, 96/08/02"
+#ident "@(#) LuBu OpenMagic 1.0, 06/03/10"; 
+#
+# OpenSteps default root menu file - top level menu
+#
+
+"OpenStep" TITLE
+
+#"X11 Applications"	INCLUDE openstep-menu-x11
+#"CDE Applications"	INCLUDE openstep-menu-cde
+#"Local Applications"	INCLUDE openstep-menu-local
+"Terminal"		exec /usr/openstep/Apps/Terminal.app/Terminal
+"Editor"		exec /usr/openstep/Apps/Edit.app/Edit
+"Mailer"		exec /usr/openstep/Apps/Mail.app/Mail
+"Previewer"		exec /usr/openstep/Apps/Preview.app/Preview
+"AudioEditor"		exec /usr/openstep/Apps/AudioEditor.app/AudioEditor
+"ImagePortfolio"	exec /usr/openstep/Apps/ImagePortfolio.app/ImagePortfolio
+"JavaClassViewer"	exec /usr/openstep/Apps/JavaClassViewer.app/JavaClassViewer
+
+"Utilities" 		INCLUDE openstep-menu-utilities
+"Window Menu"	        WINMENU
+"Workstation"		exec sdtwsinfo
+"Lock Screen"		exec xlock -mode blank
+"Exit..."		EXIT

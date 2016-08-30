@@ -1,0 +1,44 @@
+#
+#  MIME File Type Mapping Table
+#
+#  This file maps MIME content types to UNIX file extensions.  Where
+#  there is multiple file extensions for a particular MIME type, the
+#  first one will be used for incoming messages (and all for outgoing).
+#
+#  An incoming attachment with a MIME type not listed below will receive
+#  a file extension from the MIME subtype with any possible "x-" prefix
+#  removed.  An outgoing attachment with a file extension not listed
+#  below will receive a MIME type of application/octet-stream.
+#
+#  A MIME subtype of "*" can be used to indicate that all incoming
+#  attachments of that type should be mapped to the specified file
+#  extension.  This does not effect outgoing attachments.
+#
+#  Finally, an entry with no file types indicates that the corresponding
+#  MIME attachments should not be given any file type at all.  This only
+#  affects incoming messages.
+#
+#  Note that the MIME type audio/basic is special and will only be
+#  used if the sound file is 8 bit mu-law @ 8 KHz (or the file contains
+#  raw data, which is assumed to be the same).
+#
+
+application/mac-binhex40	hqx
+application/postscript		ps eps
+application/pdf			pdf
+application/rtf			rtf
+application/word		word msword
+application/wordperfect5.1	wp
+application/zip			gz z
+audio/basic			snd vox au
+audio/x-next			snd vox au
+image/gif       		gif
+image/jpeg			jpg jpeg
+image/pbm			pbm pgm ppm
+image/tiff      		tiff tif
+image/x-xwd			xwd
+message/external-body		external-body
+multipart/x-folder
+video/mpeg			mpg mpeg
+
+# text/plain			txt

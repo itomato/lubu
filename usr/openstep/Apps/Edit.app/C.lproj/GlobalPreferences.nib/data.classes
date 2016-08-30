@@ -1,0 +1,34 @@
+Preferences = {
+    ACTIONS = {
+	ok:;
+	performClick:;
+	revert:;
+	changeOptionMode:;
+    };
+    OUTLETS = {
+	revert;
+	win;
+	optionsButton;
+	ok;
+	optionView;
+    };
+    SUPERCLASS = Object;
+};
+GlobalPreferences = {
+    ACTIONS = {
+	newFont:;
+    };
+    OUTLETS = {
+	writeableButton;
+	saveMatrix;
+	keyBindings;
+	sizeForm;
+    };
+    SUPERCLASS = Preferences;
+};
+FirstResponder = {
+    ACTIONS = {
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};

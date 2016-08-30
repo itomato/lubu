@@ -1,0 +1,162 @@
+OpenStep(TM) FAQ (Frequently Asked Questions)
+
+      Questions and Answers  
+
+      OpenStepTM FAQ 
+
+
+      S1: Runtime OpenStep Installation
+        Do I need to install the OpenWin packages in 2.5/2.5.1? 
+        Do I need a license to run OpenStep applications? 
+        What patches do I need to install? 
+        I'd like to use CDE, how can I make it work with OpenStep? 
+      S2: Starting OpenStep
+        I get a 'symbol not found: _ex_keylock' from ld.so. 
+        How do I run OpenStep on my 24 bit display. 
+        These windows still look like olwm/motif!. 
+        The fonts look terrible, how can I fix them? 
+        I get the error: 'FATAL ERROR: datagram init failure' 
+        How can I optimize colors on a 24 bit system that runs CDE? 
+        Where is my mail? I used OpenStep's mail and all the new messages are 
+        gone. 
+        How can I reduce Solaris OpenStep's color usage in the default 8-bit 
+        color map? 
+        Why does increasing the number of grays not improve the dock icon 
+        images? 
+      Installation
+        Do I need to install the OpenWin packages in 2.5? 
+        No, the Solaris 2.5 version of OpenWindows already has the updated 
+        PostScript operators. You will want to install the font patch, though. 
+        Do I need a license to run OpenStep applications? 
+        No, you only need a license to use the Objective C compiler. However, 
+        you will need the OpenStep runtime libraries to use any applications you 
+        develop. 
+        What patches do I need to install? 
+        The following patches are required to be installed before OpenStep can 
+        run: 
+          Solaris 2.4 
+          101242-10 libC patch
+          101923-08 SMCC TCX jumbo patch (24 bit framebuffer) ##
+          !! Only in Solaris 2.4 !!
+          OpenWindows 3.4.1 SUNWxwinc SUNWxwmod SUNWxwplt SUNWxwslb 
+          Solaris 2.5 
+          103073-01 SMCC TCX jumbo patch (24 bit framebuffer) ##
+          103246-03 OpenWindows 3.5 font patch
+          ## - only required when running on sparc 5's 
+        I'd like to use CDE, how can I make it work with OpenStep? 
+        OpenStep now comes with a specific package to enable an OpenStep login 
+        from CDE. You need to add the SUNWOosUy package, which can be found on 
+        the solaris_openstep cd-rom. 
+        After you've installed the OpenStep CDE package, you'll need restart 
+        your computer for the changes to take effect. Once you've logged in to 
+        your OpenStep session, make sure that "More Colors to Applications" is 
+        selected in your CDE style manager. 
+      Starting OpenStep
+        I get a 'symbol not found: _ex_keylock' from ld.so. 
+        You need to install patch #101242-10. 
+        How do I start OpenStep on my 24 bit display. 
+        You need to explicitly tell the X server to start in a 24 bit display 
+        mode. If you don't, it will start in 8 bit, even on a 24 bit display. 
+        Here are some examples: 
+        From a shell:
+        openwin -dpi 72 -dev /dev/fb0 defdepth 24 defclass TrueColor 
+        From your .login:
+        $OPENWINHOME/bin/openwin -dpi 72 -dev /dev/fb0 defdepth 24 defclass 
+        TrueColor 
+        A dual headed SX/GX system:
+        $OPENWINHOME/bin/openwin -dev /dev/fb1 left dpix 72 dpiy 72
+        defdepth 24 defclass TrueColor -dev /dev/fb0 right dpix 72
+        dpiy 72 defdepth 8 defclass PseudoColor >&! /tmp/ow.errors 
+        These windows still look like olwm/motif! 
+        You need to use the oswm window manager.
+        Here's how:
+        In your .cshrc or .login file:
+        setenv OW_WINDOW_MANAGER /usr/openstep/bin/oswm 
+        or if you run Bourne shell: 
+        set OW_WINDOW_MANAGER /usr/openstep/bin/oswm
+        export OW_WINDOW_MANAGER
+        Re-source your .cshrc or .login and restart your openwin. 
+        The fonts look terrible, how can I fix them? 
+        You need the OpenWindows 3.5 font patch. If you're running the 3.4.1 
+        OpenWindow server, its already been patched. 
+        I get the error: 'FATAL ERROR: datagram init failure' 
+        This is probably due to a conflict with NeXT's PDO product. Whats 
+        happening is this; some other process is grabbing port 7656 before ospd 
+        does. Here is a quick way to check. Before starting OpenStep, do the 
+        following: 
+        netstat -a | grep 7656 
+        If you see any output at all, port 7656 is in use. The only fix for this 
+        is to find the offending process and stop it from running. 
+        Unfortunately you can't run both PDO and OpenStep on the same machine at 
+        the same time, the following is the best explanation I've run across:"We 
+        had to change the implementation of the machd that we started with from 
+        PDO2.0 in order to make it work correctly; basically in didn't support 
+        multiply-threaded clients; in doing the implementation we had to change 
+        the protocol between OpenStep client apps and machd(now called ospd); It 
+        is now different than the protocol between a PDO client and its machd. 
+        While we could change the TCP port that is used to by the client the 
+        connect to a local ospd (and in fact I think we may have done that 
+        anticipating this problem); the fact that all netmsgservers and machd 
+        use the same well known UDP port for talking over the wire, means that 
+        we really can't run both an ospd and a machd from PDO on the same host 
+        at the same time. 
+        So, I don't believe there is a way to run NEO OpenStep and PDO on the 
+        same host at the same time; You certainly can on the same network; And 
+        our DO objects will talk to PDO as well as NeXT DO objects in 4.0 will, 
+        because we are in synch with their implementation there." 
+        How can I optimize colors on a 24 bit system that runs CDE? 
+        To workaround the color problems on the 24-bit systems, make a backup 
+        copy of /etc/dt/config/Xservers and change the last line in your 
+        /etc/dt/config/Xservers file to:
+          Local local_uid@console root /usr/openwin/bin/Xsun -nobanner -dpi 72 
+          -dev /dev/fb0 defclass TrueColor defdepth 24 
+        And then reboot your computer. NOTE: This change will not take effect 
+        until you kill and restart your dtlogin program or reboot your CPU. This 
+        change will cause your X server to started up in default 24-bit mode. 
+        This worksaround a problem in the OpenStep appkit where it allocates 
+        entries in the default 8-bit colormap even when you have a 24-bit 
+        server. If this does not work, revert to the backup copy of Xservers. 
+        Where is my mail? I used OpenStep's mail and all the new messages are 
+        gone. 
+        OpenStep's Mail.app removes mail messages from /var/mail and stores them 
+        in ~/openstep/Mailboxes/Active.mbox/mbox, unlike other mail programs 
+        used within Sun. To recover the messages, copy 
+        ~/openstep/Mailboxes/Active.mbox/mbox to /var/mail/$Username. The mail 
+        can then be read with another program. 
+        How can I reduce Solaris OpenStep's color usage in the default 8-bit 
+        color map? 
+        By default, OpenStep uses about 200 colors in the default 8-bit color 
+        map. Change the .Xdefaults file in your home directory to match one of 
+        the following examples. This will reduce OpenStep's color map usage. 
+              DPSColorCube.PseudoColor.8.reds:5
+              DPSColorCube.PseudoColor.8.greens:6
+              DPSColorCube.PseudoColor.8.blues:2
+              DPSColorCube.PseudoColor.8.grays:7
+
+        The above values will yield good OpenStep graphics, while=20 using only 
+        67 of the default 8-bit colormap. The next example provides even further 
+        reductions. 
+              DPSColorCube.PseudoColor.8.reds:3
+              DPSColorCube.PseudoColor.8.greens:4
+              DPSColorCube.PseudoColor.8.blues:2
+              DPSColorCube.PseudoColor.8.grays:7
+
+        The above values will yield fair OpenStep graphics, while using only 35 
+        colors of the default 8-bit colormap. You can increase the number of 
+        grays to 13 to improve gray shadings. 
+        The number of color map entries used can be determined by 
+          colors entries used = (reds * greens * blues) + grays 
+        The above configurations will reduce the number of colors used by 
+        OpenStep when running under OSWM or DTWM (CDE). 
+        The xcolor tool (GUI) can be used to display the default color cube. The 
+        xdpyinfo tool (command line) can be used to view system display 
+        information. 
+        Why does increasing the number of grays not improve the dock icon 
+        images? 
+        The dock icon background is not gray. Rather it is a gradation, or an 
+        off-gray color and is dithered. We are looking into changing the dock 
+        icon background to pure gray in a future release. 
+
+Questions or comments regarding this service? webmaster@sun.com
+Copyright 1996 Sun Microsystems, Inc., 2550 Garcia Ave., Mtn. View, CA 
+94043-1100 USA. All rights reserved.

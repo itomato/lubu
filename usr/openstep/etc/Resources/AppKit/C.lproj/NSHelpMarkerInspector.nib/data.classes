@@ -1,0 +1,30 @@
+MarkerCell = {
+    ACTIONS = {
+	cancel:;
+	ok:;
+    };
+    SUPERCLASS = Cell;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+NSKitPanelController = {
+    OUTLETS = {
+	panel;
+    };
+    SUPERCLASS = Object;
+};
+NXHelpMarkerInspector = {
+    ACTIONS = {
+	cancel:;
+	ok:;
+    };
+    OUTLETS = {
+	okButton;
+	cancelButton;
+	markernameField;
+    };
+    SUPERCLASS = Panel;
+};

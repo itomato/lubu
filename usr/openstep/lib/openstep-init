@@ -1,0 +1,6 @@
+#! /bin/sh
+# openstep-init - Setup OpenStep enviroment and print welcome banner
+#ident "@(#) LuBu OpenMagic 1.0, 06/03/10"; 
+
+$OPENSTEPHOME/bin/os_firstlogin
+

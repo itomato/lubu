@@ -1,0 +1,38 @@
+MyLayout = {
+    ACTIONS = {
+	button1Clicked:;
+	button2Clicked:;
+    };
+    OUTLETS = {
+	window;
+	button2;
+	button1;
+    };
+    SUPERCLASS = Layout;
+};
+Layout = {
+    OUTLETS = {
+	view;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Clock = {
+    ACTIONS = {
+	increaseSecond:;
+	decreaseHour:;
+	decreaseSecond:;
+	increaseDay:;
+	stopClock:;
+	increaseMinute:;
+	decreaseMinute:;
+	decreaseDay:;
+	startClock:;
+	increaseHour:;
+    };
+    SUPERCLASS = View;
+};

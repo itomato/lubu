@@ -1,0 +1,35 @@
+"Date Last Modified" = "Mar 24 06:56";
+"Address Book Shelf" = "Example.addresses\000Dupont, Jeanne";
+"Address Book Height" = 454;
+"Address Book Columns" = 2;
+"Sort Method" = "Groups Last";
+Contents = {
+    "Dupont, Jeanne" = {
+	"Full Name" = "Dr Jeanne Dupont";
+	"Home Phone" = "+33 (1) 12 34 56 03";
+	Info = "{\\rtf0\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\n\\margl40\n\\margr40\n\\pard\\tx960\\tx1920\\tx2880\\tx3840\\tx4800\\tx5760\\tx6720\\tx7680\\tx8640\\tx9600\\f0\\b0\\i0\\ul0\\fs24\\fc0\\cf0 Sent new year's card Jan 1st, 92\\\nHer little daughter is called \n\\b\\i Maryl\334ne\n}\n";
+	Address = "10 rue du pont\n75000 PARIS\nFRANCE\n";
+	FAX = "+33 (1) 12 34 56 01";
+	EMail = "jdupont@foo.com";
+	"Work Phone" = "+33 (1) 12 34 56 02";
+    };
+    "Smith, Jack" = {
+	"Full Name" = "Jack W. Smith";
+	"Home Phone" = "(415) 123 0003";
+	Info = "{\\rtf0\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\n\\margl40\n\\margr40\n\\pard\\tx520\\tx1060\\tx1600\\tx2120\\tx2660\\tx3200\\tx3720\\tx4260\\tx4800\\tx5320\\f0\\b0\\i0\\ul0\\fs24\\fc0\\cf0 Meeting with him \n\\i Friday the 13th\n}\n";
+	Address = "{\\rtf0\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\n\\margl40\n\\margr40\n\\pard\\tx533\\tx1067\\tx1601\\tx2135\\tx2668\\tx3202\\tx3736\\tx4270\\tx4803\\tx5337\\f0\\b0\\i0\\ul0\\fs24\\fc0\\cf0 on the hill, turn \n\\b left\n\\b0  after signal\n}\n";
+	"Work Phone" = "(415) 123 0002";
+	EMail = "";
+	FAX = "(415) 123 0001";
+    };
+    Folks = {
+	Type = Group;
+	EMail = myfriends;
+	"Full Name" = "All my friends";
+	Info = "{\\rtf0\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\n\\margl40\n\\margr40\n\\f0\\b0\\i0\\ul0\\ql\\fs24\\fi0\\li0\\gray0\\fc0\\cf0\\up0\\dn0 Imaginary folks, just for sample purposes\n}\n";
+	Elements = ("Dupont, Jeanne", "Smith, Jack");
+    };
+};
+Type = "Address Book";
+Info = "{\\rtf0\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\n\\margl40\n\\margr40\n\\pard\\tx520\\tx1060\\tx1600\\tx2120\\tx2660\\tx3200\\tx3720\\tx4260\\tx4800\\tx5320\\f0\\b0\\i0\\ul0\\fs24\\fc0\\cf0 Very small address book ...\\\n\n\\i For test purposes.\n}\n";
+"RTF File Template" = "{\\rtf0\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\n\\margl40\n\\margr40\n\\pard\\tx960\\tx1920\\tx2880\\tx3840\\tx4800\\tx5760\\tx6720\\tx7680\\tx8640\\tx9600\\f0\\b\\i0\\ul0\\fs24\\fc0\\cf0 \"Icon\"\"Full Name\":\\\n\n\\b0 \tEMail: \"EMail\"\\\n\tHome: \"Home Phone\";\\\n\tWork: \"Work Phone\"\\\n\tFAX: \"FAX\"\\\n\t\"Info\"\\\n\t\\\n\n}\n";

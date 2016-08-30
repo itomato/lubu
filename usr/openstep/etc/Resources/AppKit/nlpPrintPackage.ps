@@ -1,0 +1,48 @@
+%!
+%
+%	nlpPrintPackage.ps
+%	Application Kit
+%	Copyright (c) 1996, Sun Microsystems, Inc.
+%	portions Copyright (c) 1988, NeXT Computer, Inc.
+%	All rights reserved.
+%
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/_NXLevel2 systemdict /languagelevel known {languagelevel 2 ge}{false}ifelse __NXdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/_NXImageString {/__NXImageString where{pop}{/__NXImageString 4000 string __NXdef}ifelse __NXImageString}__NXbdef
+/_NXDoImageOp{
+	3 dict begin /parr 5 array def 1 index{dup}{1}ifelse /chans exch def
+	chans 2 add 2 roll parr 0 chans getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /totbytes exch def pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{0 1 chans 1 sub{parr exch get exec length totbytes exch sub /totbytes exch def}for totbytes 0 le{exit}if}loop end
+}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+/_NXCalibratedImage{exch{array astore dup length true}{false}ifelse
+	8 -1 roll{NXCalibratedRGBColorSpace setcolorspace}if
+	8 dict dup 9 1 roll begin /ImageType 1 def /MultipleDataSources exch def
+	currentcolorspace 0 get /Indexed eq{pop /Decode[0 2 6 index exp 1 sub]def}
+	{2 mul dup array /Decode exch def 1 sub 0 1 3 -1 roll{Decode exch dup 2 mod put}for}ifelse
+	/DataSource exch def /ImageMatrix exch def 
+	/BitsPerComponent exch def /Height exch def /Width exch def end image}__NXbdef
+/_NXSetCMYKOrRGB where{pop}{
+	mark{systemdict /currentwindow get exec}stopped
+	{{pop pop pop setcmykcolor}}{{nxsetrgbcolor pop pop pop pop}}ifelse /_NXSetCMYKOrRGB exch def cleartomark
+}ifelse

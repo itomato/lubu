@@ -1,0 +1,24 @@
+NXColorPickerList = {
+    ACTIONS = {
+	ignoreCase:;
+	findNextAndClose:;
+	findPrev:;
+	findNext:;
+    };
+    OUTLETS = {
+	prev;
+	findForm;
+	next;
+	findPanel;
+	ignoreCase;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+IconApp = {
+    SUPERCLASS = Application;
+};

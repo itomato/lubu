@@ -1,0 +1,7 @@
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"Browse" = {
+    ACTIONS = {"browserSelectionMade:" = "browserSelectionMade:"; }; 
+    OUTLETS = {browser = "NSBrowser*"; forceDisplay = BOOL; path = "NSMutableArray*"; }; 
+    OUTLET_TYPES = {}; 
+    SUPERCLASS = NSObject; 
+};

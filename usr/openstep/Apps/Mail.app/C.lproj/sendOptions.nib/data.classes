@@ -1,0 +1,54 @@
+Options = {
+    ACTIONS = {
+	changeView:;
+	revert:;
+	ok:;
+    };
+    OUTLETS = {
+	text;
+	textView;
+	optionView;
+	window;
+	form;
+	matrix;
+	ok;
+	popup;
+	menuCell;
+	scroll;
+	cancel;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+SendOptions = {
+    ACTIONS = {
+	checkEncrypt:;
+	doUpdate:;
+	changeView:;
+	revert:;
+    };
+    OUTLETS = {
+	featureList;
+	fieldView;
+	needsUpdate;
+	window;
+	fieldPopUp;
+	archiveButton;
+	fieldType;
+	ok;
+	revert;
+	replyView;
+	curSendWindow;
+    };
+    SUPERCLASS = Object;
+};
+EnvelopeWell = {
+    SUPERCLASS = View;
+};
+EditText = {
+    SUPERCLASS = Text;
+};

@@ -1,0 +1,5 @@
+{
+    NSExecutable = ImagePortfolio;
+    NSMainNibFile = ImagePortfolio.nib;
+    NSPrincipalClass = ImagePortfolio;
+}

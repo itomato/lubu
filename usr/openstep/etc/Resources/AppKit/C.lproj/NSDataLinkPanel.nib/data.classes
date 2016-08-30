@@ -1,0 +1,26 @@
+NSKitPanelController = {OUTLETS = {panel = panel; }; SUPERCLASS = Object; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+NXDataLinkPanel = {
+    ACTIONS = {
+	"pickedBreakAllLinks:" = "pickedBreakAllLinks:"; 
+	"pickedBreakLink:" = "pickedBreakLink:"; 
+	"pickedOpenSource:" = "pickedOpenSource:"; 
+	"pickedShowOutlines:" = "pickedShowOutlines:"; 
+	"pickedUpdateDestination:" = "pickedUpdateDestination:"; 
+	"pickedUpdateMode:" = "pickedUpdateMode:"; 
+    }; 
+    OUTLETS = {
+	_bannerMsg = _bannerMsg; 
+	_breakAllLinks = _breakAllLinks; 
+	_breakLink = _breakLink; 
+	_lastUpdateTitle = _lastUpdateTitle; 
+	_lastUpdateValue = _lastUpdateValue; 
+	_openSource = _openSource; 
+	_showOutlines = _showOutlines; 
+	_sourceTitle = _sourceTitle; 
+	_sourceValue = _sourceValue; 
+	_updateDestination = _updateDestination; 
+	_updateMode = _updateMode; 
+    }; 
+    SUPERCLASS = Panel; 
+};

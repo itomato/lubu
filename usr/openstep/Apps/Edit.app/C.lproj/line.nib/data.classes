@@ -1,0 +1,19 @@
+FirstResponder = {
+    ACTIONS = {
+	getLine:;
+	selectLine:;
+    };
+    SUPERCLASS = Object;
+};
+LinePanel = {
+    ACTIONS = {
+	selectLineReturn:;
+    };
+    OUTLETS = {
+	button;
+	lineWindow;
+	selector;
+	ltext;
+    };
+    SUPERCLASS = Object;
+};

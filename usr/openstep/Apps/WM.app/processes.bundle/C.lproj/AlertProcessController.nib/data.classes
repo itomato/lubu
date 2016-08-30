@@ -1,0 +1,27 @@
+WMAlertProcessController = {
+    ACTIONS = {
+	pause:;
+	abort:;
+	alertButtonClick:;
+    };
+    OUTLETS = {
+	hidingBox;
+	window;
+	header;
+	repeatBox;
+	contents;
+	buttons;
+    };
+    SUPERCLASS = Object;
+};
+PieChart = {
+    SUPERCLASS = View;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+WMPathField = {
+    SUPERCLASS = View;
+};

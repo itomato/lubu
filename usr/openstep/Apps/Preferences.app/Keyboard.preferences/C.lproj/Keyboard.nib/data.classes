@@ -1,0 +1,35 @@
+keyboardOwner = {
+    ACTIONS = {
+	newKeyRepeat:;
+	newInitialKeyRepeat:;
+	orderKeyboardFront:;
+    };
+    OUTLETS = {
+	testField;
+	ikrMatrix;
+	window;
+	commandHelpSwitch;
+	keymapButton;
+	krMatrix;
+	keymapBrowser;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Clock = {
+    ACTIONS = {
+	increaseSecond:;
+	decreaseHour:;
+	decreaseSecond:;
+	increaseDay:;
+	decreaseMinute:;
+	increaseMinute:;
+	decreaseDay:;
+	increaseHour:;
+    };
+    SUPERCLASS = View;
+};

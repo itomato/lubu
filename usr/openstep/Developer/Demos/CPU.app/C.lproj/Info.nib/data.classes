@@ -1,0 +1,7 @@
+"InstallerObject" = {
+    ACTIONS = {"showInfoPanel:" = "showInfoPanel:"; }; 
+    OUTLETS = {iconView = "CPUView*"; infoPanel = id; infoPanelText = id; }; 
+    OUTLET_TYPES = {}; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };

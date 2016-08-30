@@ -1,0 +1,16 @@
+LANGUAGE = English;
+FILESTABLE = {
+    OTHER_SOURCES = (Makefile, Makefile.preamble);
+    IMAGES = (Template.tiff);
+    INTERFACES = (Template.nib);
+    H_FILES = (Template_r.h, Template.h);
+    CLASSES = (Template.m);
+};
+LOCALIZABLE_FILES = {
+    Template.nib;
+};
+PROJECTVERSION = 1.1;
+PROJECTTYPE = Bundle;
+PROJECTNAME = Template;
+GENERATEMAIN = YES;
+DOCICONFILES = ();

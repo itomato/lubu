@@ -1,0 +1,93 @@
+###############################################################################
+#
+#   Xservers
+#
+#   Common Desktop Environment (OpenStep compatibility version)
+#
+#   Configuration file for all Xservers started or managed by the Login Manager
+#
+#   (c) Copyright 1993, 1994, 1995, 1996 Sun Microsystems, Inc.
+#   (c) Copyright 1993, 1994 Hewlett-Packard Company
+#   (c) Copyright 1993, 1994 International Business Machines Corp.
+#   (c) Copyright 1993, 1994 Novell, Inc.
+#
+#   @(#)Xservers	1.4 OpenStep version 96/07/01
+#
+#   Based on:
+#   @(#)/usr/dt/config/Xservers.src 1.16 95/05/02 
+#
+###############################################################################
+#
+#     This file should contain an entry to start the server on the
+#     local display. If you have more than one display (not screen),
+#     add entries to the list (one per line).
+#
+#     If the local display has an associated character device, it should be
+#     specified here also.  This allows Dtlogin to correctly monitor that
+#     device when [No Windows] mode is selected from the login screen.  If
+#     no character device is available, then "none" should be specified.
+#
+#     By default, the ":0" display is associated with the "/dev/console"
+#     character device.  If the true console on the system is not the same
+#     as the ":0" graphics display, then the appropriate device or "none"
+#     should be specified for the ":0" display.
+#
+#     If you want multiple-displays running dtlogin then make sure the 
+#     connection number matches the display name, for example.
+#
+# <HostName>:1 local@none /usr/openwin/bin/X :1 <options>
+#
+#     This means the X-server is started on connection number "1" and the 
+#     display is connecting to the X-server on "1" through display name 
+#     "LocalHost:1".
+#
+#     If you have some X terminals connected which do not support XDMCP,
+#     you can add them here as well. Using XDMCP is recommended over
+#     entries in this file and should be used whenever possible.
+#
+#     Example Syntax, the items between "< >" are optional: 
+#
+# <HostName>:0 <class> local@console           /usr/openwin/bin/X :0 <options>
+# <HostName>:1 <class> local@none              /usr/openwin/bin/X :1 <options>
+# <HostName>:0 <class> local_uid@console <uid> /usr/openwin/bin/X :0 <options>
+#  XTermName:0 <class> foreign
+#
+#     A "*" in the first field of the entry for a local server 
+#     will be expanded to "<hostname>:0" by Dtlogin. This
+#     syntax is valid only within this file.
+#
+# * Local local@console /usr/openwin/bin/Xsun :0 
+#
+#     If the display type of "local_uid" is used, a user name such as "root" 
+#     must follow in next field.  In this example, by placing "root" here, 
+#     Login will start a local Xserver under the user id of "root".  On Sun 
+#     system's this will give Xserver the ability to raise interactive 
+#     scheduling priority of a client with mouse/keyboard focus to increase 
+#     performance of the application. 
+#
+# :0 Local local_uid@console root /usr/openwin/bin/Xsun :0 
+#
+#     In limited situations, the Xserver should not be run under a "root" id 
+#     for security reasons.  Examples are usually specific to Xserver extensions.
+#     On Sun Xservers one example involves the Display Postscript extension.  
+#     If the DPS extension is granted access (via Xserver option line) to read
+#     and write Unix files via the "-dpsfileops" option (see Xsun man page) it
+#     should not be run under a "root" user id.  For increaseced security, 
+#     could instead run it as the "nobody" user.
+#
+# :0 Local local_uid@console nobody /usr/openwin/bin/Xsun :0 -dpsfileops 
+#
+#     Another options of interest here for Sun's Xserver is how to start on 
+#     two or more screens.  A two screen example follows.
+#
+# :0 Local local_uid@console root /usr/openwin/bin/X -dev /dev/fb0 -dev /dev/fb1
+#
+#     See the Xsun.1 and Xserver.1 man pages for additional options of 
+#     interest.
+#
+################################################################################
+
+#
+# Set Display Postscript dot per inch to 72 for OpenStep compatibility.
+#
+:0 Local local_uid@console root /usr/openwin/bin/Xsun :0 -nobanner -dpi 72

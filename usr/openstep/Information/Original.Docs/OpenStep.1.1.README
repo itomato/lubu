@@ -1,0 +1,34 @@
+The OpenStep 1.1. release is, hm, somehow "unofficial". I don't know
+where this release exactly "emerged" in the first place.
+
+To unpack it, please use GNU's tar implementation!! Otherwise the
+you'll experience directory checksum errors.
+
+The attached usenet-posting states, that this OpenStep release was
+probably enhanced by ex-Lighthouse members. It features a few bug-fixes
+over the official 1.0 release.
+
+
+========================================================================
+
+Newsgroups: de.comp.sys.next
+Subject: Re: OpenStep Solaris
+
+Unter Ultra macht es wirklich keine Probleme.
+Wir haben es gar in einem Projekt auf einer 1000E eingesetzt mit
+Intel/Solaris als X-Clients, was bis auf ein Fontproblem sehr sauber
+laeuft.
+
+Besser ist aber die aktuelle Version durch ftp.lighthouse.com zu holen
+Der Nachteil ist, das man das komplette JavaPlan mitziehen muû.
+
+Scheinbar hat Lighthouse ein bischen an dem Zeux rumgefummelt, da es mit
+epssen keine Probleme mehr gibt und auch ein paar andere Bugs weg sind.
+
+Falls es einige Leute interessiert:
+
+ftp://inis-1.inis.de
+unter /pub/Platforms/Solaris/Developer/Javaplan_Runtime.tar.gz
+
+Das ist Openstep!
+

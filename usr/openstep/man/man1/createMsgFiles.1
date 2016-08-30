@@ -1,0 +1,52 @@
+.TH CREATEMSGFILES 1 "17/12/96" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+createMsgFiles \- creates .po message files for all messages in source files
+.SH SYNOPSIS
+.LP
+.B createMsgFiles
+[
+.B \-v
+]
+[
+.B \-r
+]
+{
+.BI \-o " output-dir"
+]
+[
+.BI \-x " excluded-file..."
+]
+[
+.BI \-i " extra-file..." 
+]
+[
+.BI "file-name..."
+]
+.SH DESCRIPTION
+.B createMsgFiles 
+runs genstrings and xgettext on all source files (files with the extension .m, .M, .c, .cc, .C, .h., or .H), or specified source files, in a project to create .po message files for all messages in the source files. 
+.SH OPTIONS
+.TP
+.B \-v 
+Verbose. Normally createMsgFiles lists each directory in which it looks at source files. This option causes createMsgFiles to also echo each genstrings and xgettext command it executes.
+.TP
+.B \-r 
+specifies that you want createMsgFiles to remove the output directory if it already exists. The default is to not remove the output file and to display an error message asking you to remove the file before running createMsgFiles. (The output directory must not already exist because genstrings will append messages to the existing .po files, creating duplicate messages.)
+.TP
+.BI \-o " output-dir"
+specifies the directory in which the .po files are to be created. The default directory is ./msgFiles.
+.TP
+.BI \-x " excluded-file"
+specifies a source file for which you do not want createMsgFiles to create .po files.
+.TP
+.BI \-i " extra-file"
+specifies a file with an extension other than .m, .M, .c, .cc, .C, .h., or .H that you want to add to the source files for which .po files are created.
+.TP
+.BI " file-name"
+specifies a source file for which you want to create .po files. If you specify any file names, createMsgFiles runs genstrings and xgettext on those files  only rather than all of the source files in the project.
+.TP
+.SH
+After createMsgFiles has been run, createLocale can be run
+to merge the directory created by createMsgFiles and the .lproj
+directories inside the .app wrapper to create a directory that contains
+all the files that have to be localized.

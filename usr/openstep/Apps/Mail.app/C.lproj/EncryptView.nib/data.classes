@@ -1,0 +1,17 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+EncryptController = {
+    ACTIONS = {
+	enterText:;
+    };
+    OUTLETS = {
+	entryField;
+	displayField;
+	lockButton;
+	boundView;
+    };
+    SUPERCLASS = Object;
+};

@@ -1,0 +1,33 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+NSKitPanelController = {
+    OUTLETS = {
+	panel;
+    };
+    SUPERCLASS = Object;
+};
+NXColorPanel = {
+    ACTIONS = {
+	_colorWellAcceptedColor:;
+	_magnify:;
+	_switchView:;
+	_resetOpacity:;
+    };
+    OUTLETS = {
+	colorSwatchBox;
+	opacityView;
+	pickerView;
+	colorSwatch;
+	paletteMatrix;
+	opacityText;
+	magnifyButton;
+	colorWellView;
+	opacitySlider;
+	colorWell;
+	middleView;
+    };
+    SUPERCLASS = Window;
+};

@@ -1,0 +1,26 @@
+"X11 Applications"	TITLE
+"AxxessX"		exec accessx
+"Bitmap Editor"		exec bitmap
+"Calculator"		exec xcalc
+"Clipboard"		exec xclipboard
+"Clock"			exec xclock
+"Cut Buffer"		exec xcutsel
+"DVI Viewer"		exec xditview
+"Edit Resources"	exec editres
+"Font Displayer" 	exec xfd
+"Font Select" 		exec xfontsel
+"Kill Application"	exec xkill
+"Lock Screen"		exec xlock
+"Magnifier"		exec xmag
+"Manuals"		exec xman
+"O-Clock"		exec oclock
+"Refresh Screen"	exec xrefresh
+"System Load"		exec xload
+"Unix Terminal"		exec xterm
+"View Resources"	exec viewres
+"X Auth Editor"		exec xterm -e xauth
+"X Biff"		exec xbiff
+"X Console"		exec xconsole
+"X11 Logo"		exec xlogo
+"XEdit"			exec xedit
+"XMH Mailer"		exec xmh

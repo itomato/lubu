@@ -1,0 +1,41 @@
+FilledBox = {SUPERCLASS = Box; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+FilledView = {SUPERCLASS = View; };
+systemOwner = {
+    ACTIONS = {
+    	"newLargeFileSystem:" = "newLargeFileSystem:"; 
+	"newPublicServer:" = "newPublicServer:"; 
+	"newPublicSoundServer:" = "newPublicSoundServer:"; 
+	"newSecureEPS:" = "newSecureEPS:"; 
+	"newUMask:" = "newUMask:"; 
+	"newUnixExpert:" = "newUnixExpert:"; 
+    }; 
+    OUTLETS = {
+    	alertBox = alertBox; 
+	alertText = alertText; 
+	expertStrings = expertStrings; 
+	expertSwitch = expertSwitch; 
+	largeFileSwitch = largeFileSwitch; 
+	publicSoundSwitch = publicSoundSwitch; 
+	publicSwitch = publicSwitch; 
+	secureEPSSwitch = secureEPSSwitch; 
+	umaskMatrix = umaskMatrix; 
+	window = window; 
+    }; 
+    SUPERCLASS = Application; 
+};
+Clock = {
+    ACTIONS = {
+    	"decreaseDay:" = "decreaseDay:"; 
+	"decreaseHour:" = "decreaseHour:"; 
+	"decreaseMinute:" = "decreaseMinute:"; 
+	"decreaseSecond:" = "decreaseSecond:"; 
+	"increaseDay:" = "increaseDay:"; 
+	"increaseHour:" = "increaseHour:"; 
+	"increaseMinute:" = "increaseMinute:"; 
+	"increaseSecond:" = "increaseSecond:"; 
+	"startClock:" = "startClock:"; 
+	"stopClock:" = "stopClock:"; 
+    }; 
+    SUPERCLASS = View; 
+};

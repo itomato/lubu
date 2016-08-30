@@ -1,0 +1,32 @@
+AppInspector = {
+    ACTIONS = {
+    };
+    OUTLETS = {
+	scrollView;
+	docIconMatrix;
+	architecturesField;
+	docNameField;
+	extSelectedField;
+    };
+    SUPERCLASS = Inspector;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Inspector = {
+    ACTIONS = {
+	deactivateInspector:;
+	ok:;
+	performClick:;
+	activateInspector:;
+	revert:;
+    };
+    OUTLETS = {
+	window;
+	okButton;
+	revertButton;
+    };
+    SUPERCLASS = Object;
+};

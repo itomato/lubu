@@ -1,0 +1,33 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+DirContentsInspector = {
+    ACTIONS = {
+	touch:;
+    };
+    OUTLETS = {
+	sortByMatrix;
+	warning;
+    };
+    SUPERCLASS = Inspector;
+};
+WMPathField = {
+    SUPERCLASS = View;
+};
+Inspector = {
+    ACTIONS = {
+	deactivateInspector:;
+	ok:;
+	activateInspector:;
+	performClick:;
+	revert:;
+    };
+    OUTLETS = {
+	window;
+	okButton;
+	revertButton;
+    };
+    SUPERCLASS = Object;
+};

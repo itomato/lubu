@@ -1,0 +1,31 @@
+"AppMaster" = {
+    ACTIONS = {
+	"readDefaults:" = "readDefaults:"; 
+	"readPrefPanel:" = "readPrefPanel:"; 
+	"showInfoPanel:" = "showInfoPanel:"; 
+	"showPrefPanel:" = "showPrefPanel:"; 
+	"showWhatsNewPanel:" = "showWhatsNewPanel:"; 
+	"writeDefaults:" = "writeDefaults:"; 
+    }; 
+    OUTLET_TYPES = {}; 
+    OUTLETS = {
+	appDefaults = "NSUserDefaults*"; 
+	infoPanel = "NSPanel*"; 
+	infoPanelText = id; 
+	prefPanel = NSPanel; 
+	whatsNewPanel = "NSPanel*"; 
+	whatsNewPanelText = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"PrefManager" = {
+    ACTIONS = {"selectPrefNamed:" = "selectPrefNamed:"; }; 
+    OUTLETS = {
+	owner = AppMaster; 
+	prefButton = NSButton; 
+	prefView = NSView; 
+	window = NSPanel; 
+    }; 
+    SUPERCLASS = NSObject; 
+};

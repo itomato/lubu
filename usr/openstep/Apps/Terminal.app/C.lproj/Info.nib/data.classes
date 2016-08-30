@@ -1,0 +1,21 @@
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"InfoAnimator" = {
+    ACTIONS = {"startAnimating:" = "startAnimating:"; "stopAnimating:" = "stopAnimating:"; }; 
+    OUTLETS = {scrollBits = id; }; 
+    SUPERCLASS = NSView; 
+};
+"Info" = {
+    ACTIONS = {
+	"info:" = "(id)(id)"; 
+	"windowDidBecomeKey:" = "(id)(id)"; 
+	"windowDidResignKey:" = "(id)(id)"; 
+    }; 
+    OUTLETS = {
+	animationView = id; 
+	copyright = NSTextField; 
+	panel = id; 
+	release = NSTextField; 
+	version = NSTextField; 
+    }; 
+    SUPERCLASS = NSObject; 
+};

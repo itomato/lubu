@@ -1,0 +1,33 @@
+{
+    AutoFindApps = Yes; 
+    BrowserCount = 1; 
+    BrowserView1 = Icon; 
+    BrowserIsMiniaturized1 = NO;
+    BrowserShelfRows1 = 1;
+    DebugType = No; 
+    DefaultOpenApp = Edit; 
+    DefaultTerminalApp = Terminal; 
+    FindFileContentsByKeywordCommand = "/bin/find $files -follow -exec egrep -l -i $pattern {} "; 
+    FindFileContentsByPhraseCommand = "search -c $pattern $files"; 
+    FindFileNameCommand = "search -f $pattern $files"; 
+    FindFileNameWithWildCardsCommand = "/bin/find $files -follow -name $pattern -print="; 
+    FinderAfter = 0; 
+    FinderVisible = NO;
+    FolderUnsortedAbove = "-1"; 
+    IconViewStyle = 0; 
+    LaunchApplets = Yes; 
+    LargeFileSystem = No;
+    MainFileViewer = Yes; 
+    NSCaseSensitiveBrowser = Yes;
+    NSFixedPitchFont = "LucidaSans-Typewriter";
+    NSFixedPitchFontSize = 12;
+    NSHideOnAutoLaunch = No; 
+    NSUnixExpert = No;
+    "NSWindow Frame WMMainBrowser" = "209 152 604 565 0 0 956 768 ";
+    PublicWindowServer = No;
+    ShelfSizable = Yes; 
+    ShowNeighbors = Yes; 
+    StripAfterLoading = Yes; 
+    Umask = 18;
+    ViewerShelf1 = ("~", "~/openstep/Mailboxes", "/usr/openstep/Apps", "/usr/openstep/LocalApps", "~/openstep/UserApps/", "/usr/openstep"); 
+}

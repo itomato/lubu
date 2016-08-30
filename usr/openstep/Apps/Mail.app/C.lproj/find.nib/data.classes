@@ -1,0 +1,34 @@
+FirstResponder = {
+    ACTIONS = {
+	backwardFind:;
+	replaceFind:;
+	orderFrontNXColorPanel:;
+	regExpr:;
+	replace:;
+	ignoreCase:;
+	find:;
+	all:;
+    };
+    SUPERCLASS = Object;
+};
+FindPanel = {
+    ACTIONS = {
+	findReturn:;
+    };
+    OUTLETS = {
+	findButton;
+	allMatrix;
+	ignoreCase;
+	ftext;
+	allButton;
+	findReplaceButton;
+	allBox;
+	replaceButton;
+	replaceWithField;
+	backFindButton;
+	regExpr;
+	findWindow;
+	errmsg;
+    };
+    SUPERCLASS = Object;
+};

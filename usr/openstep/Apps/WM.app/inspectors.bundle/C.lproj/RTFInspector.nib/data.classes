@@ -1,0 +1,23 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+RTFInspector = {
+    ACTIONS = {
+	deactivate:;
+	edit:;
+	play:;
+	activate:;
+    };
+    OUTLETS = {
+	fullPathField;
+	tool;
+	window;
+	scrollText;
+    };
+    SUPERCLASS = Object;
+};
+WMPathField = {
+    SUPERCLASS = View;
+};

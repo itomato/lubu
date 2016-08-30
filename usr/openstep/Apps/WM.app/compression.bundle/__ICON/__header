@@ -1,0 +1,17 @@
+{type=extension; name=Z;icon=compressedZ}
+{type=extension; name=compressed;icon=compressedfolder}
+{type=extension; name=tar;icon=tar}
+{type=extension; name=gz;icon=gz}
+
+{type=InspectorCommand;
+	extension=Z; mode=contents; class=CompressedInspector;
+	selp=selectionOneOrMore; nodep=isLocalFile }
+{type=InspectorCommand;
+	extension=compressed; mode=contents; class=CompressedInspector;
+	selp=selectionOneOrMore; nodep=isLocalFile }
+{type=InspectorCommand;
+	extension=tar; mode=contents; class=ArchiveInspector;
+	selp=selectionOneOrMore; nodep=isLocalFile }
+{type=InspectorCommand;
+        extension=gz; mode=contents; class=ArchiveInspector;
+        selp=selectionOneOrMore; nodep=isLocalFile }

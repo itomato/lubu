@@ -1,0 +1,28 @@
+Preferences = {
+    ACTIONS = {
+	revert:;
+	changeOptionMode:;
+	ok:;
+    };
+    OUTLETS = {
+	revert;
+	win;
+	optionsButton;
+	ok;
+	optionView;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};
+TemporaryPreferences = {
+    OUTLETS = {
+	wrapMatrix;
+	rtfMatrix;
+    };
+    SUPERCLASS = Preferences;
+};

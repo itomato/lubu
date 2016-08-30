@@ -1,0 +1,22 @@
+NXColorPickerWheelView = {
+    OUTLETS = {
+	controllingPicker;
+    };
+    SUPERCLASS = View;
+};
+NXColorPickerWheel = {
+    ACTIONS = {
+	brightnessSlider:;
+    };
+    OUTLETS = {
+	brightnessSlider;
+	wheelView;
+	boxWheelView;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};

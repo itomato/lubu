@@ -1,0 +1,15 @@
+"Portfolio" = {
+    ACTIONS = {}; 
+    OUTLETS = {
+	iconBoxId = id; 
+	iconButtonId = id; 
+	iconPathId = id; 
+	iconSizeId = id; 
+	infoMessage = id; 
+	paletteScroll = id; 
+	paletteWindow = id; 
+	windowHeader = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };

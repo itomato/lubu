@@ -1,0 +1,28 @@
+#
+#  Mappings from Sun attachment types to NeXT file types
+#
+#  A file type prefixed with an asterisk means that the file should be
+#  saved with the executable bits turned on.  An empty file type means no
+#  file type.
+#
+audio-file		snd
+cshell-script		*
+default-app		*
+framemaker-document	frame
+gif-file		gif
+jpeg-file		jpg jpeg
+pbm-file		pbm
+pgm-file		pgm
+pict-file		pict
+postscript		ps
+postscript-file		ps
+ppm-file		ppm
+shell-script		*
+sun-executable		*
+sun-icon-image		icon
+sun-raster		ras rf
+tiff-file		tiff tif
+X-prog			*
+xbm-file		xbm
+xwd-file		xwd
+"Rich Text File"	rtf

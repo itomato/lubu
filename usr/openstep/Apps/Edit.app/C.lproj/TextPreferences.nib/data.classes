@@ -1,0 +1,32 @@
+TextPreferences = {
+    OUTLETS = {
+	blankStructMatrix;
+	alignForm;
+	structForm;
+	autoIndentMatrix;
+	modesText;
+    };
+    SUPERCLASS = Preferences;
+};
+FirstResponder = {
+    ACTIONS = {
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};
+Preferences = {
+    ACTIONS = {
+	ok:;
+	performClick:;
+	revert:;
+	changeOptionMode:;
+    };
+    OUTLETS = {
+	revert;
+	win;
+	optionsButton;
+	ok;
+	optionView;
+    };
+    SUPERCLASS = Object;
+};

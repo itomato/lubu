@@ -1,0 +1,10 @@
+{
+LocalFileNode_slots = (
+    { title = Name; },
+    { title = Size; key = size; filler = 444444444; },    
+    { title = "Last Changed"; key = date; filler = "MMM 44 44:44"; },    
+    { title = Permissions; key = protections; filler = wwwwwwwwww; },    
+    { title = Owner; key = owner; filler = MmmmMmmm; },    
+    { title = Group; key = group; filler = MmmmMmmm; }
+);
+}

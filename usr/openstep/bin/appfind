@@ -1,0 +1,30 @@
+#! /bin/sh
+# appfind.sh - shell wrapper for OpenStep Wrapper wrapper
+# ident "@(#) LuBu OpenMagic 1.0, 06/03/10"; 
+#
+if [ "$APP" = "" ]; then
+    APP="NONE"
+    MSG="This is a shell wrapper for the OpenStep Wrapper and should not be\
+run directly. It is called from the <AppName>.app/<AppName> script." 
+    export MSG
+fi
+#
+f_alert() {
+    ALERT="/usr/openstep/bin/osalert"
+    AICON="/usr/openstep/Apps/WM.app/__ICON/app"
+    TITLE=' OpenMagic Alert System '
+if [ "$MSG" = "" ]; then
+    MSG="The app <$APP> was not found in your PATH"
+fi
+    $ALERT -i $AICON -t "$TITLE" "$MSG" Close
+}
+#
+f_search() {
+    which $APP | awk '{print $1}'
+}
+#
+if [ `f_search` = "no" ]; then
+    f_alert
+  else
+    $APP $*
+fi

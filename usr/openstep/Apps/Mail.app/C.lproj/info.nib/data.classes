@@ -1,0 +1,14 @@
+Info = {
+    ACTIONS = {
+    	"clickedOnPicture:" = "clickedOnPicture:"; 
+	"clickedOnTitle:" = "clickedOnTitle:"; 
+    }; 
+    OUTLETS = {
+    	copyright = copyright; 
+	infoPanel = infoPanel; 
+	releaseField = releaseField; 
+	versionField = versionField; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };

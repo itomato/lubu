@@ -1,0 +1,156 @@
+{\rtf0\ansi{\fonttbl\f0\fnil LucidaSans;\f1\fnil LucidaSans-Typewriter;}
+\paperw11800
+\paperh12000
+\margl120
+\margr120
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+\grayb1000\cb1\pard\tx600\tx1200\tx1820\tx2420\tx3020\tx3640\tx4240\tx4840\tx5460\tx6060\f0\b0\i0\ulnone\fs24\gray0\fc2\cf2 \
+
+\b\ul Changes to OpenMagic 1.0 from Lighthouse OpenStep 1.1-sparc:\
+
+\b0\ulnone \
+
+\ul Icons:\
+
+\ulnone Changed many of the standard icons in an attempt to beautify the desktop.\
+Some have been kept as they were, some have been changed or even replaced.\
+Icons in the LocalApps directory are mainly the default icons that actually belong\
+to the representative application. Others were created with Gimp or downloaded\
+from the internet. A main source of NeXT-like icons was the kiwi-icons packages.\
+(A Google search will reveal it's locations)\
+\
+Icons replaced: \
+
+\pard\gray0\fc2\cf2 Replaced the WM app icon\
+Replaced the Workspace app icon\
+Replaced Solaris.tiff icon in Workspace.app (Shows up at the top of the dock)\
+Replaced Workspace.tiff in Workspace.app\
+Replaced the Preferences app icon\
+Replaced Workspace.tiff in WM.app\
+Replaced root.tiff in WM.app (shows up as HOSTNAME icon)\
+Replaced badFolder.tiff in WM.app (shows up as a locked folder)\
+Replaced the infoTitle_color.tiff icon in WM.app (shows up in Info Panel)\
+Replaced the nextbordered.tiff icon in WM.app (shows up in Info Panel)\
+Replaced icons in various C.lproj locations, too many to remember.\
+
+\pard\tx600\tx1200\tx1820\tx2420\tx3020\tx3640\tx4240\tx4840\tx5460\tx6060\gray0\fc2\cf2 \
+Changed and added icons to many default apps\
+\
+Added .dir.tiff icons to the directories \
+/cdrom \
+/floppy\
+/usr/openstep\
+/usr/openstep/Information\
+\
+
+\ul Apps:\
+
+\ulnone Moved AudioEditor .app, ImagePortfolio.app and JavaClassviewer.app from Demos \
+to Apps as I wanted to integrate them into the mainstream OpenStep Apps catalog.\
+The JavaClassviewer is a good addition to the Java enviroment on Solaris IMNSHO.\
+\
+Added osxpm(1) to the OpenMagic 1.0 distribution. It is a small hack of xpmroot from\
+fvwm-2.0.46 rewritten to run without the fvwm enviroment installed. OSXPM is a small\
+utility to add an xpm image as your desktop background image. Source and README\
+can be found in /usr/openstep/Developer/Source. The osxpm(1) manpage is located\
+in /usr/openstep/man/man1.\
+\
+Created Wrappers for most common X11 apps, CDE apps, XVIEW apps and several\
+Open Source and Freeware apps. These are located in $OPENSTEPHOME/Wrappers.\
+Please read KNOWN_BUGS before making changes to the Wrappers.\
+\
+
+\ul Configs defs:\
+
+\ulnone Changed practically all .defs for every app! The reason for this was to add features\
+and set a default configuration that satisfies todays standards. Changing a defs \
+also changes an applications behaviour. Major changes were made to AppKit.defs,\
+WM.defs, Workspace.defs and Mail.defs. Since WM.defs handles the browser view,\
+major changes were made to make the browser more appealing and user-friendly.\
+\
+It would be a good idea if these are left as the are, and that the values are changed\
+per user basis, as changing the Workspace.defs and WM.defs could recall bugs that\
+have been cought by editing these files!\
+\
+Important definition files include:\
+1. Appkit.defs - Global definition file\
+2. WM.defs - Workspace Manager and Browser definition file\
+3. Workspace.defs - Dock definition file\
+4. Preferences.defs - Desktop definitions file\
+\
+* Read the KNOWN_BUGS document before changing the defaults! *\
+\
+
+\ul File Assosiations:\
+
+\ulnone File assosiations are generated automagically upon login. The default directories for\
+scanning for assosiations are /usr/openstep/Apps, /usr/openstep/Wrappers (linked\
+to /usr/openstep/sparc/Apps), /usr/local/openstep/Apps, ~/openstep/Apps. \
+\
+
+\ul File ownership and permissions:
+\ulnone  \
+All files under /usr/openstep are set to bin:bin - this is not considered a security risk,\
+as no files are suid/guid or owned by root. The default installation should be considered\
+safe and secure.\
+\
+
+\ul OpenStep wrappers:\
+
+\ulnone The wrappers have been wrapped! Even though the Wrapper utility is a great and most\
+welcome addition to OpenStep, the way it failed to handle errors and PATHs made it not\
+at all satisfactory. The Wrapper gave out absolutly no error messages or warnings on \
+failure, which made it nearly impossible to detect and correct errors! So I took it upon \
+myself to rewrite the entire way the wrapping is handled. The shell wrapper template \
+from the Lighthouse distribution was used as the base template for each single application\
+in <AppName>.app, but the calls are then sent to the Wrapper wrapper wrapper(!) which is\
+located in /usr/openstep/bin/appfind. The <AppName>.app/<AppName> script is for most\
+apps a combination of the Lighthouse wrapper template with added specific values for the selected application. If special args are required, they are found in this script, and they are\
+then sent to the appfind wrapper. The wrapper searches the users PATH for the application,\
+and if it is not found, it returns an error dialog with the osalert utility. The great thing about \
+this way of handling error messages is first of all that all values are sent to a single wrapper,\
+so it does not require massive scripting, next is the fact that application specific values can\
+be added to the application script, and then passed on to the wrapper, allowing for both application based varargs and global varargs. With the application script it is possible to\
+override the global varargs! An example is the return of the error messages. You can add MSG varargs to your application script, export it, and so override the default error message in the appfind script. The best way to understand the error handling is to look at the application \
+scripts and the appfind utility. None of them will run without the other! :-)\
+\
+The directory /usr/openstep/LocalApps (linked to /usr/openstep/sparc/Apps/) contains\
+shell  wrappers for many applications frequently found on a unix users workstations. If an application is not found, an error dialog returns an error message, or if required runtime\
+libraries are missing, among other error detection features. Some applications required more complicated scripting in order to do error detection. This is done either by sending the\
+values through the OpenMagic Alert System, or by creating an entire set of rules for the\
+application in question. Not ALL errors are trapped, leaving some messages to the OpenStep\
+error dialog. These are not always understandable or clear, but do provide at least a pop-up.\
+\
+
+\ul Documentation:\
+
+\ulnone Added an Information directory under /usr/openstep/Information which contains various \
+information documents such as copyright notices, license information, changes, openstep\
+specs, user guides and various other useful documents. This is meant to be part of the\
+default distribution.\
+\
+
+\ul Final words:
+\ulnone \
+LuBu OpenMagic 1.0 has been used, tested and developed over many years, and there was\
+no initial plan to release it to the public. This only became clear as I over the years found \
+OpenStep Sparc to be the best desktop enviroment I have ever used, of course after adding\
+all my own changes to the system, and wanted to share this expirience with others. Since\
+OpenMagic 1.0 is based on commercial software such as Sun Solaris and Lighthouse Open-\
+Step 1.1, it can-not, shall-not and must-not be sold for profit, but be shared for free among\
+the remaining users of the Solaris-Sparc platform. Yes, OpenMagic is FREE as in: You are free\
+to USE, COPY, MODIFY, REDISTRIBUTE, GIVE-AWAY as many copies you possibly can under the\
+condition that the ORIGINAL LICENSES are kept INTACT and that OpenMagic is NOT INCLUDED\
+in ANY COMMERSIAL version of Solaris (This goes for Sun Microsystems as well!). LuBu Open-\
+Magic is FREE FOR ALL and should not be sold, rented or in any other way abused for profit.\
+LuBu OpenMagic 1.0 includes ICONS from various locations, from the KIWI Iconpackage to\
+grabs of XVIEW, X11, GNOME and CDE application icons.\
+\
+
+\ul This file last updated:
+\ulnone \
+Sat 25 Mar 2006 by Luke Th. Bullock\
+\
+\
+
+}

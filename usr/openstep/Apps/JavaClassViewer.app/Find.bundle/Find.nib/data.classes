@@ -1,0 +1,70 @@
+"OptionManager" = {
+    ACTIONS = {
+	"optionsChanged:" = "optionsChanged:"; 
+	"showOptionsPanel:" = "showOptionsPanel:"; 
+    }; 
+    OUTLETS = {
+	caseSensitiveSwitch = id; 
+	constructorSwitch = id; 
+	defaultFieldSwitch = id; 
+	defaultMethodSwitch = id; 
+	isCaseSensitive = BOOL; 
+	isConstructor = BOOL; 
+	isDefaultField = BOOL; 
+	isDefaultMethod = BOOL; 
+	isPrivateField = BOOL; 
+	isPrivateMethod = BOOL; 
+	isProtectedField = BOOL; 
+	isProtectedMethod = BOOL; 
+	isPublicField = BOOL; 
+	isPublicMethod = BOOL; 
+	optionsPanel = "NSPanel*"; 
+	privateFieldSwitch = id; 
+	privateMethodSwitch = id; 
+	protectedFieldSwitch = id; 
+	protectedMethodSwitch = id; 
+	publicFieldSwitch = id; 
+	publicMethodSwitch = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"Find" = {
+    ACTIONS = {}; 
+    OUTLETS = {findGroup = id; searcher = DataSearcher; timer = "NSTimer*"; }; 
+    OUTLET_TYPES = {}; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"DataSearcher" = {
+    ACTIONS = {
+	"browserSelectionMade:" = "browserSelectionMade:"; 
+	"find:" = "find:"; 
+	"selectNextMatch:" = "selectNextMatch:"; 
+	"selectPrevMatch:" = "selectPrevMatch:"; 
+	"threadedSearchStartPoint:" = "threadedSearchStartPoint:"; 
+    }; 
+    OUTLETS = {
+	browser = id; 
+	findButton = id; 
+	findText = id; 
+	forceDisplay = BOOL; 
+	isCaseSensitive = BOOL; 
+	isConstructor = BOOL; 
+	isDefaultField = BOOL; 
+	isDefaultMethod = BOOL; 
+	isPrivateField = BOOL; 
+	isPrivateMethod = BOOL; 
+	isProtectedField = BOOL; 
+	isProtectedMethod = BOOL; 
+	isPublicField = BOOL; 
+	isPublicMethod = BOOL; 
+	keyWord = "NSString*"; 
+	matchArray = "NSMutableArray*"; 
+	matchArrayAccess = mutex_t; 
+	optionManager = OptionManager; 
+	owner = id; 
+	searchInProgress = BOOL; 
+	timer = "NSTimer*"; 
+    }; 
+    SUPERCLASS = NSObject; 
+};

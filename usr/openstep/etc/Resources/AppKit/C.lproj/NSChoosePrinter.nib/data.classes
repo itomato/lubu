@@ -1,0 +1,36 @@
+ChoosePrinter = {
+    ACTIONS = {
+	pickedButton:;
+    };
+    OUTLETS = {
+	appIcon;
+	cancel;
+	note;
+	border;
+	type;
+	ok;
+	name;
+    };
+    SUPERCLASS = Window;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+NSKitPanelController = {
+    OUTLETS = {
+	panel;
+    };
+    SUPERCLASS = Object;
+};
+MyApp = {
+    ACTIONS = {
+	hide:;
+	terminate:;
+    };
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = Object;
+};

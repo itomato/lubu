@@ -1,0 +1,32 @@
+NXSpellChecker = {
+    ACTIONS = {
+	"_changeDictionaries:" = "_changeDictionaries:"; 
+	"_changeLanguage:" = "_changeLanguage:"; 
+	"_chooseGuess:" = "_chooseGuess:"; 
+	"_correct:" = "_correct:"; 
+	"_deleteDictionaries:" = "_deleteDictionaries:"; 
+	"_findNext:" = "_findNext:"; 
+	"_forget:" = "_forget:"; 
+	"_guess:" = "_guess:"; 
+	"_ignore:" = "_ignore:"; 
+	"_learn:" = "_learn:"; 
+	"_newDictionary:" = "_newDictionary:"; 
+	"_openDictionaries:" = "_openDictionaries:"; 
+	"_useDictionary:" = "_useDictionary:"; 
+    }; 
+    OUTLETS = {
+	_correctButton = _correctButton; 
+	_deleteButton = _deleteButton; 
+	_dictionaryBrowser = _dictionaryBrowser; 
+	_forgetButton = _forgetButton; 
+	_guessButton = _guessButton; 
+	_guessesBrowser = _guessesBrowser; 
+	_ignoreButton = _ignoreButton; 
+	_languagePopUp = _languagePopUp; 
+	_learnButton = _learnButton; 
+	_openButton = _openButton; 
+	_wordField = _wordField; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };

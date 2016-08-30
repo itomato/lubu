@@ -1,0 +1,11 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+FakeOwner = {
+    OUTLETS = {
+	helpPanel;
+    };
+    SUPERCLASS = Object;
+};

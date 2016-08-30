@@ -1,0 +1,19 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+EncryptPanel = {
+    ACTIONS = {
+	cancel:;
+	ok:;
+    };
+    OUTLETS = {
+	entryField;
+	okButton;
+	window;
+	displayField;
+	lockButton;
+    };
+    SUPERCLASS = Object;
+};

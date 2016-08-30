@@ -1,0 +1,8 @@
+Info = {
+    OUTLETS = {copyright = copyright; release = id; version = id; window = id; }; 
+    SUPERCLASS = NSObject; 
+};
+FirstResponder = {
+    ACTIONS = {"orderFrontNXColorPanel:" = "orderFrontNXColorPanel:"; }; 
+    SUPERCLASS = NSObject; 
+};

@@ -1,0 +1,62 @@
+.\" "@(#) oscopy.1, Rev 1.2, 97/03/17"
+.\"
+.\"	Copyright (c) 1995-1996, Sun Microsystems, Inc.
+.\"     portions (c) Copyright 1994, NeXT Computer, Inc.
+.\"     All rights reserved.
+.\"
+.TH COPY 1 "22 Jul 1996" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+copy, paste \- provide copying and pasting from command line
+.SH SYNOPSIS
+.B /usr/bin/copy
+.PP
+.B /usr/bin/paste
+[
+.B \-Prefer {ascii | rtf | ps}
+]
+.SH DESCRIPTION
+.B copy
+takes the standard input and places it in the OpenStep(tm)
+pasteboard.
+The input is placed in the pasteboard as
+ASCII data unless it begins with the 
+Adobe Systems Encapsulated PostScript 
+file header or the Microsoft Rich Text Format
+file header, in which case it is placed
+in the pasteboard as one of those data types.
+.PP
+.B paste
+removes the data from the pasteboard and writes it to
+the standard output.  It normally looks first for ASCII
+data in the pasteboard and writes that to the standard output;
+if no ASCII data is in the pasteboard it looks for 
+Encapsulated PostScript; if no EPS if present it looks
+for Rich Text.  If none of those types is present in the
+pasteboard, \fBpaste\fR produces no output.
+.SH OPTIONS
+.TP
+.B \-Prefer {ascii | rtf | ps}
+tells
+.B paste
+what type of data to look for in the pasteboard first.
+As stated above, 
+.B paste
+normally looks first for ASCII data; however, by 
+specifying
+.B -Prefer ps
+you can tell 
+.B paste 
+to look first for Encapsulated
+PostScript.  If you specify
+\fB-Prefer rtf\fR,
+.B paste 
+looks first for Rich Text format.  In any case,
+.B paste
+looks for the other formats if the preferred one is not
+found.
+.SH BUGS
+There is no way to tell
+.B paste
+to get 
+.I only
+a specified data type.

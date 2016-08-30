@@ -1,0 +1,37 @@
+WMPathField = {SUPERCLASS = View; };
+Inspector = {
+    ACTIONS = {
+	"activate:" = "activate:"; 
+	"deactivate:" = "deactivate:"; 
+	"performClick:" = "performClick:"; 
+    }; 
+    OUTLETS = {okButton = okButton; revertButton = revertButton; window = window; }; 
+    SUPERCLASS = Object; 
+};
+WMClock = {SUPERCLASS = View; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+FileAttributesInspector = {
+    ACTIONS = {
+	"computeSize:" = "computeSize:"; 
+	"ok:" = "ok:"; 
+	"revert:" = "revert:"; 
+	"touch:" = "touch:"; 
+	"touchMatrix:" = "touchMatrix:"; 
+    }; 
+    OUTLETS = {
+	accessMatrix = accessMatrix; 
+	clock = clock; 
+	dateField = dateField; 
+	dirNameField = dirNameField; 
+	fileIconButton = fileIconButton; 
+	fileNameField = fileNameField; 
+	groupField = groupField; 
+	groupPopUpButton = groupPopUpButton; 
+	linkTitleField = linkTitleField; 
+	linkValueField = linkValueField; 
+	ownerField = ownerField; 
+	sizeButton = sizeButton; 
+	sizeField = sizeField; 
+    }; 
+    SUPERCLASS = Inspector; 
+};

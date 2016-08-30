@@ -1,0 +1,48 @@
+#!/bin/sh
+
+##BEGIN TEMPLATE WRAPPER SHELL SCRIPT
+
+# A variable to hold arguments after we strip OpenStep specific information
+args=
+
+# If you are debugging this script you might uncomment the following
+# two lines.
+#set -x
+#echo input=$*
+
+# Loop until argv ($#) is zero, each iteration will decrement (shift)
+# argv/argc.
+while [ $# != 0 ] ; do
+  case $1 in
+    # -NSOpen is an OpenStep standard command line flag which
+    # lets the NSApplication know what file to open.
+    -NSOpen)
+        args="$args $2"
+        shift             
+        ;;
+    # -NSOpenTemp is an OpenStep standard command line flag which
+    # lets the NSApplication know what file to open and that it is
+	# a temporary file and should be resaved somewhere else if edited.
+    -NSOpenTemp)
+        args="$args $2"
+        shift
+        ;;
+    # -_NSMachLaunch is an undocumented additional flag to NSApplication.
+    # We just ignore it here.
+    -_NSMachLaunch)
+        shift
+        ;;
+    *)
+        args="$args $1"
+        ;;
+  esac
+  shift
+done
+
+##END OF TEMPLATE WRAPPER SHELL SCRIPT
+
+## Call apps through appfind wrapper (wrap the wrapper ;0)
+APP=wterm; export APP
+WRAP=/usr/openstep/bin/appfind
+args="-ls -sb -title GNUterm"
+exec $WRAP $args & # background it for multiple instances.

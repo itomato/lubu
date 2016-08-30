@@ -1,0 +1,40 @@
+mouseOwner = {
+    ACTIONS = {
+    	"newHandedness:" = "newHandedness:"; 
+	"newMenuButton:" = "newMenuButton:"; 
+	"newMouseClick:" = "newMouseClick:"; 
+	"newMouseSpeed:" = "newMouseSpeed:"; 
+    }; 
+    OUTLETS = {
+    	doubleClickBox = doubleClickBox; 
+	hMatrix = hMatrix; 
+	handednessIcon = handednessIcon; 
+	mbSwitch = mbSwitch; 
+	mcMatrix = mcMatrix; 
+	menuButtonBox = menuButtonBox; 
+	mouseSpeedBox = mouseSpeedBox; 
+	mouseStrings = mouseStrings; 
+	msMatrix = msMatrix; 
+	testField = testField; 
+	titleField = titleField; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {
+    ACTIONS = {"orderFrontNXColorPanel:" = "orderFrontNXColorPanel:"; }; 
+    SUPERCLASS = Object; 
+};
+Clock = {
+    ACTIONS = {
+    	"decreaseDay:" = "decreaseDay:"; 
+	"decreaseHour:" = "decreaseHour:"; 
+	"decreaseMinute:" = "decreaseMinute:"; 
+	"decreaseSecond:" = "decreaseSecond:"; 
+	"increaseDay:" = "increaseDay:"; 
+	"increaseHour:" = "increaseHour:"; 
+	"increaseMinute:" = "increaseMinute:"; 
+	"increaseSecond:" = "increaseSecond:"; 
+    }; 
+    SUPERCLASS = View; 
+};

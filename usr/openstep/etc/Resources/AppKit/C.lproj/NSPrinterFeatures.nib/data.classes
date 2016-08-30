@@ -1,0 +1,17 @@
+NXPrinterFeatures = {
+    ACTIONS = {
+	cancel:;
+	ok:;
+    };
+    OUTLETS = {
+	appIcon;
+	buttonsView;
+	featuresPanel;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};

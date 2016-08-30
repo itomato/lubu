@@ -1,0 +1,18 @@
+#! /bin/sh 
+## Blanker.app - Screen Blanker and Locker utility
+## ident "@(#) LuBu OpenMagic 1.0, 06/03/10"; 
+
+## Ask the user to blank or lock the display
+$OSLOC/bin/osalert -t "OpenMagic Screen Blanker" \
+-i $OSLOC/Wrappers/X11/Blanker.app/__ICON/app \
+"Do you wish to LOCK or BLANK the display?" Lock Blank Cancel
+
+## Retrieve the exit code and respond to it
+EXITVAL="$?" 
+if [ "$EXITVAL" = 0 ];then
+  xlock -mode blank -bg black -fg white 
+elif [ "$EXITVAL" = 1 ];then
+  xlock -mode blank -nolock # "$BLANKER_ARGS -nolock"
+else
+ exit
+fi

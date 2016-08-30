@@ -1,0 +1,22 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Pref = {
+    OUTLETS = {
+	window;
+	contentView;
+    };
+    SUPERCLASS = Object;
+};
+FinderPref = {
+    ACTIONS = {
+	revert:;
+	ok:;
+    };
+    OUTLETS = {
+	indexSwitch;
+    };
+    SUPERCLASS = Pref;
+};

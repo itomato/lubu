@@ -1,0 +1,6 @@
+Message: openDocument
+Port: WM
+Send Type: NSStringPboardType
+Send Type: NSFilenamesPboardType
+Menu Item: Open in Workspace
+Activate Provider: NO

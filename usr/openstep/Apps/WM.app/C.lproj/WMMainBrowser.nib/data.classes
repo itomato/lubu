@@ -1,0 +1,74 @@
+WMShelfView = {
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = View;
+};
+BrowserView = {
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = WMView;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+WMWindow = {
+    SUPERCLASS = Window;
+};
+FileNodeViewer = {
+    ACTIONS = {
+	sortIcons:;
+	doit:;
+	windowWillResize:;
+	doUpdate:;
+	updateX:;
+	destroySelectedFiles:;
+	changeToExpertView:;
+	openDirectoryFrom:;
+	changeToBrowser:;
+	duplicateFile:;
+	selectAll:;
+	changeToIconView:;
+	windowDidResize:;
+	show:;
+	openSelection:;
+	makeNewDirectory:;
+    };
+    OUTLETS = {
+	iconView;
+	animatedFile;
+	browser;
+	bottomView;
+	infoRight;
+	iconScrollView;
+	bottomContextView;
+	iconPath;
+	window;
+	shelf;
+	expertScrollView;
+	shelfSizer;
+	infoLeft;
+	fieldEditor;
+	dragger;
+	expertView;
+    };
+    SUPERCLASS = Object;
+};
+WMIconPath = {
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = WMView;
+};
+ShelfSizer = {
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = View;
+};
+WMView = {
+    SUPERCLASS = View;
+};

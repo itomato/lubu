@@ -1,0 +1,233 @@
+This is a description of some hidden Mail.app preferences.
+
+To use these, you typically have to enter the dwrite commands in a
+Terminal shell window (or use a defaults editor).  You also have to quit
+and restart Mail for these changes to take effect.
+
+Some of the more useful of these may make it into a new Preferences
+panel in EnhanceMail someday...
+
+I've included the original (slightly edited) news articles for now.
+
+Enjoy!
+
+--Tom.
+
+
+--------
+From: cedman@princeton.edu (Carl Edman)
+Subject: Secrets of Mail.app 3.3 uncovered !
+Message-ID: <CEDMAN.95Feb26163654@freedom.princeton.edu>
+Originator: news@hedgehog.Princeton.EDU
+Sender: news@Princeton.EDU (USENET News System)
+Nntp-Posting-Host: cedman.remote.princeton.edu
+Organization: Princeton University
+Date: Sun, 26 Feb 1995 21:36:53 GMT
+Lines: 126
+
+Here are a few undocumented features of Mail.app 3.3 which I
+discovered with gdb.  Some may already exist in older versions of
+Mail.app, but for most I doubt it.  This is the list of the dwrites,
+their meaning and some typical values.
+
+dwrite Mail BigPieChart YES
+dwrite Mail BigPieChartColor Green
+
+In combination these two dwrites grow the mail receipt progress
+indicator in the Mail.app icon from stamp size to full size.  They
+also allow you to set the color.
+
+dwrite Mail DisplayFilter "/tmp/snoop"
+
+This one is neat.  If it is set to the full path of an executable,
+every time a mail message is displayed, it is first piped through this
+executable.  In principle you can use this hook to allow Mail.app to
+display absolutely any message type.
+
+dwrite Mail DoubleClickRestores YES
+dwrite Mail RestrictedRestore NO
+
+If these are set double clicking on a message calls up a Compose
+window with that message in it, just like "Restore Draft" does.  The
+second dwrite allows you to do this in any mailbox, not you the drafts
+mailbox.
+
+dwrite Mail LoadNetInfoAddresses NO
+
+This adds the users and aliases from netinfo into the addresses window.
+
+dwrite Mail SpacePages YES
+
+Simple, but useful.  With this dwrite hitting space in a mailbox
+window advances the message one screen, jumping from message to
+message as needed.
+
+dwrite Mail StatusLine YES
+
+Don't like the new 3.3 mailbox status line ?  This dwrite kills it.
+
+dwrite Mail ComposeStatusLine YES
+dwrite Mail DelayedComposeUpdateSize NO
+dwrite Mail ComposeSizeDelay 0
+
+These dwrites give every compose window a status line as well which
+contains the size of the current message.
+
+dwrite Mail NXCommandKeys "Page Layout...,.,Encryption Keys...,E,Sort by
+Date,D,Sort by Name,N,Sort by Number,.,Sort by
+Subject,S,Deliver,.,Reply,.,Reply All,.,Forward,.,Get New
+Mail,G,Search,.,Restore Draft,r,Sort by Size,Z,Show All Headers,t,Font
+Panel...,."
+
+This is not really a Mail.app specific dwrite, but I find it useful in
+particular with Mail.app.  It modifies the command key equivalents.
+
+dwrite Mail SendSizeLimit 1000000000
+
+If you try to send a message longer than this number (in kBytes), you
+will be querried by Mail.app.
+
+dwrite Mail TocFont Helvetica
+dwrite Mail TocFontSize 12
+
+Font and size for the table of contents.
+
+dwrite Mail Debug YES
+
+Enables some additional information about Mail.app in the console.
+
+dwrite Mail Encrypt YES
+
+Causes messages to be set to be encrypted by default.
+
+dwrite Mail ReadReceipt NO
+
+Does the same for ReadReceipts.
+
+dwrite Mail 24HourClock NO
+
+This selects whether the clock in the mailbox window is a 12 hour or a
+24 hour clock.
+
+dwrite Mail ActiveMailbox "Active.mbox"
+dwrite Mail DraftsMailbox "Drafts.mbox"
+dwrite Mail OutgoingMailbox "Outgoing.mbox"
+
+These dwrites change the names of the standard mailboxes which
+Mail.app refers to.
+
+dwrite Mail PeopleDir "/LocalLibrary/Images/People"
+
+This is the directory where Mail.app looks for images to be displayed.
+
+dwrite Mail CompressCommand ""
+dwrite Mail TarCommand ""
+
+I believe these two dwrites allow you to alter the tar and compress
+commands used by NeXTmail.
+
+dwrite Mail IconFont ""
+dwrite Mail IconFontSize ""
+dwrite Mail ShowIconCount "YES"
+
+These three dwrites allow you to change the font and size of the
+number of unread messages displayed in the Mail.app window.  Or to
+disable this feature completely.
+
+dwrite Mail LoadBundles YES
+dwrite Mail PriorityValues ""
+dwrite Mail PriorityHeader ""
+dwrite Mail MailFilter1 ""
+dwrite Mail AutoCompact ""
+dwrite Mail IncAllMailboxes ""
+dwrite Mail AutoSelectFont ""
+dwrite Mail CCPollTime 0.1
+dwrite Mail MailMarker "Subject:From:To:Cc:Attachment:Date:Reply-To:Sender:In-Reply-To"
+dwrite Mail RemoteFetch ""
+dwrite Mail Send8BitMime ""
+dwrite Mail SendRtfEnrichedMime ""
+dwrite DatabaseKit DBKitBundlePath ""
+
+These dwrites intrigue me, and seem to have some effect, but I have
+not yet figured out what exactly they do.  If you can explain some of
+them, please let me know.  But if you find any of these features
+publicly documented anywhere, please keep it to yourself.
+
+        Carl Edman
+
+--------
+From: yoda@cis.uni-muenchen.de (Marc Guenther)
+Newsgroups: comp.sys.next.software
+Subject: Re: Secrets of Mail.app 3.3 uncovered !
+Date: 1 Mar 1995 16:45:55 GMT
+Organization: Institut fuer Informatik der Universitaet Muenchen
+Lines: 71
+Message-ID: <3j28c3$511@arcadia.informatik.uni-muenchen.de>
+References: <CEDMAN.95Feb26163654@freedom.princeton.edu>
+Reply-To: yoda@cis.uni-muenchen.de (Marc Guenther)
+NNTP-Posting-Host: optoflop.cis.uni-muenchen.de
+
+In article <CEDMAN.95Feb26163654@freedom.princeton.edu>
+cedman@princeton.edu (Carl Edman) writes:
+[see above --TRH]
+>
+
+dwrite Mail AutoCompact YES
+this seems to automatically compact the mailbox (nice for users,
+who don't know, that delete doesn't delete) But I didnt test it.
+
+dwrite Mail RemoteFetch "somehostname"
+
+this is nice !! If you set this to a hostname, Mail fetches the mail fro
+that host !! I don't know how it does that, but I have the host I tried
+it with in my /Net directory. Don't know if that's needed.
+I tried to make it a list of hostnames, but it didnt accept it.
+
+Some others I found:
+
+dwrite Mail ReadReceiptOption Ask (or "Always" or "Never")
+
+Pops up a confirmationpanel, whenever you read a message.
+(or just sends the receipt, or doesn't)
+
+
+dwrite Mail Uuencoder /usr/bin/uuencode
+...        TarCommand
+dwrite Mail CompressCommand /usr/ucb/compress
+...        UncompressCommand
+
+all the utilities Mail uses (TarCommand is probably safetar ?)
+It would be nice, if we could use gzip instead of compress, but
+then nobody else could read our email. At least, everybody should
+use gzip for uncompressing.
+
+In addition to Active, Outgoing and Drafts, there is a Templates.mbox
+(whatever it is)
+
+dwrite Mail TemplatesMailbox Templates.mbox
+
+
+dwrite Mail DeleteAlwaysSelects NO
+
+when you delete a mesage, and there is no undeleted below it, nothing is
+selected (instead of slecting the next or previous available message)
+
+
+I don't know what these two are:
+IncludePrefix
+FoundDisplayDelay
+
+I just noticed, that Shift-Tab inside the Compose Text moves the cursor
+back to the Cc: Field !!
+
+
+What else did NeXT hide in there ???
+
+have fun,
+--
+Marc Guenther
+-------------------------------------------------------------------------
+Centrum fuer Informations | Wagmuellerstr. 23  | Phone: +49 89 211 0670
+und Sprachverarbeitung    | 80538 M"unchen     | Fax:   +49 89 211 0674
+University of Munich      | Germany            | yoda@cis.uni-muenchen.de
+-------------------------------------------------------------------------

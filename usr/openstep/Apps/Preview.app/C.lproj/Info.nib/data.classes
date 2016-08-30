@@ -1,0 +1,10 @@
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"FakeOwner" = {
+    OUTLETS = {
+	copyright = NSTextField; 
+	infoPanel = id; 
+	infoPanelRelease = NSTextField; 
+	infoPanelVersion = NSTextField; 
+    }; 
+    SUPERCLASS = NSObject; 
+};

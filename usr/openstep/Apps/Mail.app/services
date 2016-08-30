@@ -1,0 +1,12 @@
+Message: mailSelection
+Port: Mail
+Send Type: NeXT RTFD pasteboard type
+Send Type: NSRTFPboardType
+Send Type: NSTIFFPboardType
+Send Type: NSPostScriptPboardType
+Send Type: NSStringPboardType
+Menu Item: Mail/Selection
+Message: mailDocument
+Port: Mail
+Send Type: NSFilenamesPboardType
+Menu Item: Mail/Document

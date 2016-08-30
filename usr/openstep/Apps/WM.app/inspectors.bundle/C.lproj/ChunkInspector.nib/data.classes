@@ -1,0 +1,24 @@
+SoundInspector = {
+    ACTIONS = {
+	deactivate:;
+	edit:;
+	play:;
+	activate:;
+    };
+    OUTLETS = {
+	tool;
+	fullPathField;
+	window;
+	infoText;
+	infoForm;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+WMPathField = {
+    SUPERCLASS = View;
+};

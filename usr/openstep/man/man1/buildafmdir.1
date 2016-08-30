@@ -1,0 +1,33 @@
+.\" "@(#) buildafmdir.1, Rev 1.3, 97/03/17"
+.\"
+.\"	Copyright (c) 1995-1996, Sun Microsystems, Inc.
+.\"     portions (c) Copyright 1994, NeXT Computer, Inc.
+.\"     All rights reserved.
+.\"
+.TH BUILDAFMDIR 1 "22 Jul 1996" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+buildafmdir \- builds font index information
+.SH SYNOPSIS
+\fBbuildafmdir\fR [-c] \fIdirectory\fR
+.SH DESCRIPTION
+Information about what fonts are available in a given Fonts directory is
+condensed into an index by \fBbuildafmdir\fR.  This index is used by the
+FontManager in the Application Kit to do intelligent font conversion.  The
+\fIdirectory\fR argument should be one of \fB/usr/openwin/lib/X11/fonts/F3\fR,
+\fB/usr/openwin/lib/X11/fonts/Type1\fR, or \fB~/usr/openwin/lib/X11/fonts/Type3\fR
+(the three directories searched by the
+Application Kit and the Window Server to find fonts).  \fBbuildafmdir\fR
+creates a file named \fB.fontdirectory\fR in the specified directory.
+.PP
+Until a font installation application is available,
+this command should be run after any afm file is installed in a Fonts
+directory.
+.SH OPTIONS
+.TP 9
+.B \-c         
+current directory. Creates the cache files (.fontdirectory, .fontlist, .afmcache) in the current directory. This is the default if more than one directory is provided.
+.SH BUGS
+\fBbuildafmdir\fR is only as accurate as the information in the afm files
+(which has been known to be relatively unreliable).
+
+

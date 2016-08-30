@@ -1,0 +1,14 @@
+#! /bin/sh 
+## Poweroff.app - Poweroff or Suspend unix system
+#ident "@(#) LuBu OpenMagic 1.0, 06/03/10"; 
+
+## Ask the user to suspend or poweriff the system
+$OSLOC/bin/osalert -t "OpenMagic System Shutdown" \
+-i $OSLOC/Apps/Poweroff.app/__ICON/app \
+"POWEROFF the unix system?" Poweroff Cancel
+
+## Retrieve the exit code and respond to it
+EXITVAL="$?" 
+if [ "$EXITVAL" = 0 ];then
+  /usr/sbin/poweroff
+fi

@@ -1,0 +1,24 @@
+FirstResponder = {
+    ACTIONS = {
+	backwardFind:;
+	replaceFind:;
+	regExpr:;
+	replace:;
+	ignoreCase:;
+	find:;
+	all:;
+    };
+    SUPERCLASS = Object;
+};
+FindPanel = {
+    ACTIONS = {
+	enterSelection:;
+	findPanel:;
+	findNext:;
+	findPrevious:;
+    };
+    OUTLETS = {
+	findPanel;
+    };
+    SUPERCLASS = Object;
+};

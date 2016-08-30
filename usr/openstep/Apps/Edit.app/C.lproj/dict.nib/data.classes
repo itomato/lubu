@@ -1,0 +1,12 @@
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+Expand = {
+    ACTIONS = {"add:" = "add:"; "load:" = "load:"; "remove:" = "remove:"; }; 
+    OUTLETS = {
+	browser = browser; 
+	form = form; 
+	scroll = scroll; 
+	split = split; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};

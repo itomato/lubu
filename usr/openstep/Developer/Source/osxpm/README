@@ -1,0 +1,16 @@
+OSXPM - LuBu OpenStep 1.1.1
+-----------------------------
+
+OSXPM is a modified version of xpmroot, rewritten
+to run without FVWM and the FVWM libs installed.
+It is in fact a pretty quick and "dirty" hack, but
+it does what it was made to do. The name was changed
+from xpmroot to osxpm in order to further integrate
+it into the OpenStep enviroment naming conventions.
+
+OSXPM Requires only X11 and XPM installed.
+Source is from the fvwm-2.0.46-beta release.
+Binary is installed as /usr/openstep/bin/osxpm, and
+the manpage as /usr/openstep/man/man1/osxpm.1
+
+/Luke Th. Bullock - 01MAY2005

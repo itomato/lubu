@@ -1,0 +1,29 @@
+PaperView = {SUPERCLASS = View; };
+MyApp = {
+    ACTIONS = {"hide:" = "hide:"; "terminate:" = "terminate:"; }; 
+    OUTLETS = {delegate = delegate; }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+NSKitPanelController = {OUTLETS = {panel = panel; }; SUPERCLASS = Object; };
+PageLayout = {
+    ACTIONS = {
+	"pickedButton:" = "pickedButton:"; 
+	"pickedOrientation:" = "pickedOrientation:"; 
+	"pickedPaperSize:" = "pickedPaperSize:"; 
+	"pickedUnits:" = "pickedUnits:"; 
+    }; 
+    OUTLETS = {
+	_appIcon = _appIcon; 
+	_cancel = _cancel; 
+	_height = _height; 
+	_ok = _ok; 
+	_orientation = _orientation; 
+	_paperNamePopUp = _paperNamePopUp; 
+	_paperView = _paperView; 
+	_paperViewShadow = _paperViewShadow; 
+	_unitsPopUp = _unitsPopUp; 
+	_width = _width; 
+    }; 
+    SUPERCLASS = Window; 
+};

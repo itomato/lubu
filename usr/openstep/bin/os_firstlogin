@@ -1,0 +1,29 @@
+#! /bin/sh
+# os_firstlogin - OpenMagic 1.0 Welcome Banner
+# ident "@(#) LuBu OpenMagic 1.0, 06/03/10"
+
+if [ ! -f $HOME/.OWdefaults ]; then
+   cp $OSLOC/etc/OWdefaults $HOME/.OWdefaults
+fi
+
+_first_login="$HOME/.openstep/.first_openstep_login"
+if [ -f "$_first_login" ]; then
+   $OPENWINHOME/bin/xsetroot -solid "#43445e"
+   $OSLOC/bin/osalert -t \
+   "Welcome $LOGNAME to OpenMagic 1.0" \
+   -i /usr/openstep/Apps/Workspace.app/__ICON/app \
+"Your OpenMagic 1.0 Desktop has now been prepared \
+and is ready for use. Select 'Customizing' to read \
+how to customize your OpenMagic Desktop or close to continue." \
+Close  Customizing
+  else
+    exit
+fi
+#
+EXITVAL="$?"
+if [ "$EXITVAL" = 1 ]; then
+   $OSLOC/bin/open $HOME/openstep/Apps/Customizing_your_desktop.rtf
+   rm $_first_login
+ else
+   rm $_first_login
+fi

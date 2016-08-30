@@ -1,0 +1,32 @@
+NXColorPickerList = {
+    ACTIONS = {
+    	"cellSelected:" = "cellSelected:"; 
+	"find:" = "find:"; 
+	"newColor:" = "newColor:"; 
+	"newList:" = "newList:"; 
+	"openList:" = "openList:"; 
+	"removeColor:" = "removeColor:"; 
+	"removeList:" = "removeList:"; 
+	"renameColor:" = "renameColor:"; 
+	"renameList:" = "renameList:"; 
+    }; 
+    OUTLETS = {
+    	colorBrowser = colorBrowser; 
+	copyright = copyright; 
+	copyrightSymbol = copyrightSymbol; 
+	find = find; 
+	listPickerView = listPickerView; 
+	listPopUp = listPopUp; 
+	listPopUpButton = listPopUpButton; 
+	newColor = newColor; 
+	newList = newList; 
+	openList = openList; 
+	removeColor = removeColor; 
+	removeList = removeList; 
+	renameColor = renameColor; 
+	renameList = renameList; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+NXAcceptsColorBrowser = {SUPERCLASS = NXBrowser; };

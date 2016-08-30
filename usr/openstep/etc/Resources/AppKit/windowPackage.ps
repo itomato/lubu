@@ -1,0 +1,1960 @@
+currentshared true setshared
+nextdict begin
+/_NXDebug false def
+/packageSize 140 def
+/WindowDictSize 14 def
+/windowPackage1.0 //packageSize dict def
+/windowPackage windowPackage1.0 def
+/Winredraw 0 def
+/AppAct 1 def
+/AppDeact 2 def
+/Winresized 3 def
+/Winmoved 4 def
+/AppUnhide 7 def
+/AppActDeferred 9 def
+/AppHide 10 def
+/Windragged 0 def
+/Cursorrect 17 def
+/Cursorrectmask 1 Cursorrect bitshift def
+/Journalevent 18 def
+/Journaleventmask 1 Journalevent bitshift def
+/Journalflag 31 def
+/Journalflagmask 1 Journalflag bitshift def
+/keyMask //Keydownmask //Keyupmask or def
+/MouseEvent //Lmousedownmask //Lmouseupmask or
+//Lmousedraggedmask or
+//Rmousedownmask or
+//Rmouseupmask or
+//Rmousedraggedmask or
+//Mousemovedmask or def
+/MenuEvent //Rmousedownmask //Rmouseupmask or
+//Rmousedraggedmask or def
+/defaultClientMask //Lmousedownmask //Lmouseupmask or
+//Keydownmask or
+//Keyupmask or
+//Kitdefinedmask or
+//Sysdefinedmask or
+//Appdefinedmask or def
+/Helpmask 1 22 bitshift def
+/buckyBitMask //Commandmask //Shiftmask or
+//Controlmask or //Helpmask or
+//Alternatemask or def
+/contextArraySize 3 def
+/CDPid 0 def
+/CDToken 1 def
+/CDKitVersion 2 def
+/mainMenuLevel 20 def
+/subMenuLevel 10 def
+/dockLevel 5 def
+/normalLevel 0 def
+/wbutSize 15 def
+/_NXCurrentEventFlags 0 def
+/_NXCheckAndDef {
+2 index 2 index known
+{
+pop pop pop
+} {
+put
+} ifelse
+} bind executeonly def
+/winexec {
+windowPackage1.0 exch get exec
+} bind executeonly def
+/pkget {
+windowPackage1.0 exch get
+} bind executeonly def
+/pkput {
+windowPackage1.0 3 1 roll put
+} bind executeonly def
+/sharedIcons {
+nextdict /_NXSharedGray known {_NXSharedGray} {workspaceWindow} ifelse
+} executeonly def
+/sharedCursors {
+nextdict /_NXSharedGrayAlpha known {_NXSharedGrayAlpha} {workspaceWindow} ifelse
+} executeonly def
+_NXDebug {
+/_NXStartProc {
+userdict /_NXCallStack known not {
+userdict /_NXCallStack 100 array put
+userdict /_NXCallStackTop 0 put
+} if
+_NXCallStack exch _NXCallStackTop exch put
+/_NXCallStackTop _NXCallStackTop 1 add store
+} def
+/_NXEndProc {
+_NXCallStackTop 0 gt {
+/_NXCallStackTop _NXCallStackTop 1 sub store
+} if
+} def
+/_NXDefProc {
+dup length 3 add array cvx
+dup 2
+4 -1 roll
+putinterval
+dup 0 3 index put
+dup 1 /_NXStartProc cvx put
+dup dup length 1 sub /_NXEndProc cvx put
+bind def
+} bind executeonly def
+/_NXSimpleDefProc {
+dup length 3 add array cvx
+dup 2
+4 -1 roll
+putinterval
+dup 0 3 index put
+dup 1 /_NXStartProc cvx put
+dup dup length 1 sub /_NXEndProc cvx put
+def
+} bind executeonly def
+}{
+/_NXDefProc {
+bind executeonly def
+} bind executeonly def
+/_NXSimpleDefProc {
+executeonly def
+} bind executeonly def
+} ifelse
+end
+nextdict /activeApp 0 _NXCheckAndDef
+nextdict /appLock lock _NXCheckAndDef
+nextdict /curActivation 0 _NXCheckAndDef
+nextdict /debugging false _NXCheckAndDef
+nextdict /_journalRecording false _NXCheckAndDef
+nextdict /_jrnMDownEvtNum 0 _NXCheckAndDef
+windowPackage1.0 /contextDataLock lock _NXCheckAndDef
+nextdict /_NXSnapIconsToGrid false _NXCheckAndDef
+windowPackage1.0 /lastCompletedActivation 0 _NXCheckAndDef
+windowPackage1.0 begin
+/version 2 def
+/stackSwap {
+1 add exch 1 index 2 add
+1 roll
+-1 roll
+} bind executeonly def
+/revForall {
+exch aload length
+dup 2 add -1 roll
+repeat
+} bind executeonly def
+end
+setshared
+currentshared true setshared
+windowPackage1.0 begin
+/_hideMenus {
+true exch /getWindows winexec {
+mark exch
+dup currentwindowdict
+dup null ne {
+/hideOnDeact get {
+{
+Out exch 0 exch orderwindow
+} stopped
+} if
+} if
+cleartomark
+} forall
+/returnWindows winexec
+} _NXDefProc
+/_showMenus {
+false exch /getWindows winexec {
+mark exch
+dup currentwindowdict
+dup null ne {
+dup /hideOnDeact get exch
+/kitVisible get and {
+{
+dup currentwindowlevel 0 ne
+4 index 0 eq or {
+Above exch 0 exch orderwindow
+}{
+Below exch
+4 index exch
+orderwindow
+} ifelse
+} stopped
+} if
+} if
+cleartomark
+} forall
+/returnWindows winexec pop
+} _NXDefProc
+/_lockedDoDeactivate {
+activeApp 0 eq not {
+activeApp //_hideMenus exec
+//Kitdefined 0 0 0 0 0 //AppDeact curActivation 0
+activeApp false /postByContext winexec
+nextdict /activeApp 0 put
+0 setactiveapp
+} if
+} _NXDefProc
+/_lockedDoActivate {
+2 copy exch //_showMenus exec
+dup 0 ne {
+currentwindowdict dup null ne {
+/localNum get
+}{
+pop 0
+} ifelse
+} if
+1 index setactiveapp
+//Kitdefined 0 0
+6 -1 roll 0 0
+//AppAct
+curActivation 1 add
+dup nextdict /curActivation 3 -1 roll put
+dup /lastCompletedActivation exch pkput
+9 -1 roll
+9 index false /postByContext winexec
+nextdict /activeApp
+3 -1 roll
+put
+} _NXDefProc
+/doShellActivate {
+appLock {
+0 3 1 roll /_lockedDoActivate winexec
+} monitor
+} _NXDefProc
+/doShellDeactivate {
+appLock {
+/_lockedDoDeactivate winexec
+dup setactiveapp
+nextdict /activeApp 3 -1 roll put
+} monitor
+} _NXDefProc
+/activateByWindow {
+appLock {
+{
+//_lockedDoDeactivate exec
+0 exch dup currentowner exch
+//_lockedDoActivate exec
+} stopped
+{handleerror} if
+} monitor
+} _NXDefProc
+/_lockedActivateContext {
+dup activeApp ne {
+{
+//_lockedDoDeactivate exec
+0 //_lockedDoActivate exec
+} stopped
+{handleerror} if
+}{
+pop pop
+} ifelse
+} _NXDefProc
+/activateContext {
+appLock {
+0 exch //_lockedActivateContext exec
+} monitor
+} _NXDefProc
+/pseudoActivateWindow {
+mark
+appLock {
+2 index 0 eq
+3 index /lastCompletedActivation pkget gt or {
+{
+1 index currentowner dup activeApp ne {
+{
+//_lockedDoDeactivate exec
+dup 3 index exch
+//_showMenus exec
+dup setactiveapp
+nextdict /activeApp
+3 -1 roll put
+/lastCompletedActivation
+3 index pkput
+true
+} stopped {
+handleerror stop
+} if
+}{
+true
+} ifelse
+} stopped {
+false
+} if
+}{
+false
+} ifelse
+{
+cleartomark pop pop
+}{
+cleartomark
+//Kitdefined 0 0 0 0 0 //AppDeact
+9 -1 roll 0
+10 -1 roll currentowner false
+/postByContext winexec
+} ifelse
+} monitor
+} _NXDefProc
+/sendDeferredAct {
+appLock {
+//Kitdefined 0 0 0 0 0
+//AppActDeferred
+curActivation 1 add
+nextdict /curActivation 2 index put 0
+10 -1 roll false /postByContext winexec
+curActivation
+} monitor
+} _NXDefProc
+/activateSelf {
+appLock {
+0 ne
+activeApp 0 eq or {
+0 currentcontext //_lockedActivateContext exec
+} if
+} monitor
+} _NXDefProc
+/deactivateCurrContext {
+appLock {
+//_lockedDoDeactivate exec
+/setArrowCursor winexec
+} monitor
+} _NXDefProc
+/deactivateSelf {
+appLock {
+activeApp currentcontext eq {
+//_lockedDoDeactivate exec
+/setArrowCursor winexec
+} if
+} monitor
+} _NXDefProc
+/activateNextApp {
+appLock {
+dup activeApp eq activeApp 0 eq or {
+true 0 /getWindows winexec
+false exch {
+dup currentwindowlevel
+dup //mainMenuLevel gt exch
+dup //dockLevel lt exch
+//normalLevel ge and or {
+dup currentwindowdict
+dup null ne {
+dup /icon get 1 ne
+exch /hideOnDeact get not
+and {
+dup currentowner
+4 index ne {
+true exit
+} if
+} if
+}{
+pop
+} ifelse
+} if
+pop
+} forall
+{
+4 index exch currentowner //_lockedActivateContext exec
+pop
+}{
+1 index activeApp eq {
+//_lockedDoDeactivate exec
+} if
+} ifelse
+/returnWindows winexec
+} if
+pop pop
+} monitor
+} _NXDefProc
+/orderPanelIfActive {
+appLock {
+activeApp currentcontext eq {
+3 copy orderwindow
+} if
+currentwindowdict /kitVisible
+4 2 roll pop
+Out ne put
+} monitor
+} _NXDefProc
+/orderWinsAndPanels {
+appLock {
+dup currentwindowdict
+dup /hideOnDeact get not
+exch /kitVisible get
+2 index currentowner activeApp eq
+and or {
+orderwindow
+}{
+pop pop pop
+} ifelse
+} monitor
+} _NXDefProc
+/setHideOnDeact {
+mark 4 1 roll
+appLock {
+dup currentwindowdict
+dup /hideOnDeact get
+3 index ne {
+dup /hideOnDeact 4 index put
+3 -1 roll {
+/kitVisible 4 -1 roll put
+activeApp currentcontext ne {
+Out exch 0 exch orderwindow
+} if
+} if
+} if
+} monitor
+cleartomark
+} _NXDefProc
+/reorderWindows {
+appLock {
+dup activeApp eq exch
+true exch /getWindows winexec
+0 exch {
+dup currentwindowlevel 0 eq
+1 index currentwindowdict
+/hideOnDeact get not
+5 index or and {
+exch dup 0 eq {
+Above
+}{
+Below
+} ifelse
+exch 2 index orderwindow
+}{
+pop
+} ifelse
+} forall
+pop /returnWindows winexec pop
+} monitor
+} _NXDefProc
+/hideOtherApps {
+dup 0 ne {
+dup /activateContext winexec
+} if
+true 0 /getWindows winexec {
+mark exch
+dup currentowner
+dup 0 ne
+1 index 6 index ne and {
+dup //CDToken /currentContextData winexec
+3 -1 roll ne {
+//Kitdefined 0 0 0 0 0
+//AppHide 0 0
+10 -1 roll false
+/postByContext winexec
+} if
+} if
+cleartomark
+} forall
+/returnWindows winexec pop
+} _NXDefProc
+end
+setshared
+currentshared true setshared
+nextdict /Beepfile (SystemBeep) _NXCheckAndDef
+nextdict /Beepwindow 0 _NXCheckAndDef
+nextdict /_beepContext null _NXCheckAndDef
+nextdict /_beepCondition condition _NXCheckAndDef
+nextdict /_beepLock lock _NXCheckAndDef
+nextdict /_mustBeep false _NXCheckAndDef
+windowPackage1.0 begin
+/_doBeep {
+mark
+{
+Beepfile null eq
+{
+Beepwindow 0 ne
+{
+gsave
+true setinstance
+Beepwindow windowdeviceround
+Beepwindow currentwindowbounds
+4 -2 roll pop pop 0 0 4 2 roll
+1 setgray .333 setalpha
+Sover compositerect
+500 {yield} repeat
+newinstance
+grestore
+} if
+}{
+Beepfile 0 playsound
+} ifelse
+} stopped
+cleartomark
+} bind executeonly def
+/_waitToBeep {
+_beepLock
+{
+{
+_mustBeep
+{
+exit
+} if
+yield
+_beepLock _beepCondition wait
+} loop
+} monitor
+} bind executeonly def
+/_beepThreadProc {
+{
+/_waitToBeep winexec
+yield
+/_doBeep winexec
+yield
+nextdict /_mustBeep false put
+} loop
+} bind executeonly def
+/beep {
+_mustBeep not
+{
+_beepLock {
+nextdict /_mustBeep true put
+_beepCondition notify
+} monitor
+} if
+} _NXDefProc
+/beepPrepareToRestoreNextdict {
+_NXPackagesInfo /_beepContext nextdict /_beepContext get put
+_NXPackagesInfo /_beepCondition nextdict /_beepCondition get put
+_NXPackagesInfo /_beepLock nextdict /_beepLock get put
+} _NXDefProc
+/beepPrepareToReloadPackages {
+nextdict /_beepContext _NXPackagesInfo /_beepContext get put
+nextdict /_beepCondition _NXPackagesInfo /_beepCondition get put
+nextdict /_beepLock _NXPackagesInfo /_beepLock get put
+} _NXDefProc
+end
+nextdict /_beepContext get null eq
+{
+nextdict /_beepContext
+mark /_beepThreadProc pkget fork
+put
+_beepContext detach
+} if
+setshared
+currentshared true setshared
+windowPackage1.0 /_contextData 5 dict _NXCheckAndDef
+windowPackage1.0 begin
+/_intialContextData {
+//contextArraySize array
+dup //CDPid 0 put
+dup //CDKitVersion 1 put
+} _NXDefProc
+/_getOrInitContextData {
+/_contextData pkget
+exch 2 copy
+known not {
+currentshared true setshared
+2 index dup maxlength
+exch length eq {
+3 -1 roll
+dup maxlength 5 add
+dict copy
+dup /_contextData exch //pkput exec
+3 1 roll
+} if
+2 index 2 index
+//_intialContextData exec put
+setshared
+} if
+get
+} _NXDefProc
+/currentContextData {
+exch //_getOrInitContextData exec
+exch get
+} _NXDefProc
+/setContextData {
+3 -1 roll //_getOrInitContextData exec
+3 1 roll put
+} _NXDefProc
+/freeContextData {
+/_contextData pkget
+exch 2 copy
+known {
+undef
+}{
+pop pop
+} ifelse
+} _NXDefProc
+end
+setshared
+currentshared true setshared
+nextdict /_NXNullGState null _NXCheckAndDef
+windowPackage1.0 begin
+/setNullGState {
+_NXNullGState null eq {
+currentshared true setshared
+gsave
+initgraphics
+0 0 0 0 Nonretained window windowdeviceround
+gstate
+grestore
+nextdict /_NXNullGState 3 -1 roll put
+setshared
+} if
+_NXNullGState setgstate
+} _NXDefProc
+/Window {
+{
+window
+dup
+currentshared true setshared //WindowDictSize dict exch setshared
+dup 3 -1 roll setwindowdict
+begin
+/num exch def
+/level 0 def
+/icon null def
+/otherWindows null def
+/localNum null def
+/rightMargin 0 def
+/leftMargin 0 def
+/topMargin 0 def
+/title null def
+/clientEventMask //defaultClientMask def
+/hideOnDeact false def
+/kitVisible false def
+/otherOwner null def
+/avoidsActivation false def
+//defaultClientMask num /setEventMask winexec
+/eventHandlers pkget num seteventprocedures
+} stopped {handleerror} if
+num
+end
+} _NXDefProc
+/moveWindow {
+movewindow
+} _NXDefProc
+/placeWindow {
+gsave
+5 index setgstate
+placewindow
+initmatrix initclip
+currentgstate pop
+grestore
+} _NXDefProc
+/currentWindowBounds
+/currentwindowbounds load
+def
+/setTitle {
+currentwindowdict begin
+dup length
+currentshared true setshared exch string exch setshared
+copy
+/title exch def
+end
+} _NXDefProc
+/currentTitle {
+currentwindowdict /title get
+} _NXDefProc
+/setPid {
+/contextDataLock pkget {
+//CDPid exch /setContextData winexec
+} monitor
+} _NXDefProc
+/setKitVersion {
+/contextDataLock pkget {
+currentcontext exch //CDKitVersion exch /setContextData winexec
+} monitor
+} _NXDefProc
+/setOtherOwner {
+dup currentwindowdict /otherOwner currentcontext put
+/contextDataLock pkget {
+currentcontext exch
+//CDToken exch /setContextData winexec
+} monitor
+} _NXDefProc
+/setWSOtherOwner {
+currentwindowdict /otherOwner -1 put
+} _NXDefProc
+end
+setshared
+currentshared true setshared
+windowPackage1.0 begin
+/printCallStack {
+/userdict load /_NXCallStack known {
+(Call Stack:\n) print
+_NXCallStack _NXCallStackTop
+1 sub -1 0 {
+1 index exch
+get
+( ) print =
+} for
+pop flush
+} if
+} bind executeonly def
+/newhandleerror {
+$error begin
+currentwriteblock mark false setwriteblock
+{
+newerror {
+/newerror false def
+(%%[ Error: ) print
+errorname
+{
+dup type /stringtype ne {
+=string cvs
+} if
+print
+} exec
+(; OffendingCommand: ) print
+/command load
+{
+dup type /stringtype ne {
+{ =string cvs } stopped {
+pop pop (<long object>)
+} if
+} if
+print
+} exec
+(; Context: ) print
+currentcontext systemdict /= get exec
+(OpStack:) print
+ostack length 0 gt {
+(\n) print
+} if
+ostack
+aload length
+{
+( ) print systemdict /== get exec
+} repeat
+//printCallStack exec
+/_NXCallStackTop 0 store
+(]%%\n) print
+flush
+} if
+} stopped pop
+cleartomark setwriteblock
+end
+} bind executeonly def
+_NXDebug {
+/debugmsg {
+currentwindowdict begin
+nextdict /debugging get
+{
+nextdict /errfile known not
+{
+currentshared true setshared
+nextdict /errfile (/tmp/pserr) (w) file put
+setshared
+} if
+errfile exch writestring
+errfile flushfile
+}{
+pop
+}
+ifelse
+end
+} _NXDefProc
+}if
+nextdict begin
+/_NXInstallDebugErrorHandler {
+$error /recordstacks true put
+errordict /handleerror /newhandleerror //pkget exec put
+userdict /_NXInstallDebugErrorHandler {} put
+} _NXDefProc
+_NXDebug {
+/_NXTrace {
+(--------- ) print
+print
+( ---------\n) print
+(Context: ) print
+currentcontext =
+(OpStack:\n) print
+0 1 count 3 sub {
+( ) print index ==
+} for
+//printCallStack exec
+} bind executeonly def
+} if
+end
+end
+setshared
+currentshared true setshared
+windowPackage1.0 /_NXOldMask 0 _NXCheckAndDef
+windowPackage1.0 /_WSsentMouseDown false _NXCheckAndDef
+windowPackage1.0 /_WSMouseDown 9 array _NXCheckAndDef
+windowPackage1.0 /_sentMouseDown true _NXCheckAndDef
+windowPackage1.0 /_dragNetWin known not {
+0 0 0 0 Nonretained window
+dup windowPackage1.0 /_dragNetWin 4 -1 roll put
+dup -1 -1 bitshift exch setwindowlevel
+dup 0 exch setowner
+Lmousedraggedmask Lmouseupmask or exch seteventmask
+} if
+windowPackage1.0 /_dragInitX 0.0 _NXCheckAndDef
+windowPackage1.0 /_draginitY 0.0 _NXCheckAndDef
+windowPackage1.0 /_dragWinXOffset 0.0 _NXCheckAndDef
+windowPackage1.0 /_dragWinYOffset 0.0 _NXCheckAndDef
+windowPackage1.0 /_dragWinNum 0 _NXCheckAndDef
+windowPackage1.0 /_dragWCEnabled true _NXCheckAndDef
+windowPackage1.0 /_lmupLock lock _NXCheckAndDef
+windowPackage1.0 /_lmdownTime 0 _NXCheckAndDef
+windowPackage1.0 /_lmupCount -1 _NXCheckAndDef
+windowPackage1.0 /_frontWin -1 _NXCheckAndDef
+windowPackage1.0 /_frontWinEventTime -1 -1 bitshift -1 xor _NXCheckAndDef
+windowPackage1.0 /_lastOpenFileEventTime 0 _NXCheckAndDef
+windowPackage1.0 /_hitAvoidingWindow false _NXCheckAndDef
+windowPackage1.0 /_pkgsDoDeferredOrdering false _NXCheckAndDef
+windowPackage1.0 /_pkgsDoDeferredAct false _NXCheckAndDef
+windowPackage1.0 /_pendingActCount 0 _NXCheckAndDef
+windowPackage1.0 begin
+/setEventMask {
+dup currentwindowdict
+/clientEventMask 3 index put exch
+//keyMask //Sysdefinedmask //Flagschangedmask //Rmousedownmask or or or
+or exch seteventmask
+} _NXDefProc
+/currentEventMask {
+currentwindowdict /clientEventMask get
+} _NXDefProc
+/_compareTimes {
+pop dup 0 eq exch
+/_frontWinEventTime pkget ge
+or
+} _NXDefProc
+/_compareTimesAndApps {
+/_frontWin pkget currentowner activeApp eq
+1 index currentowner activeApp ne
+and {
+pop pop false
+}{
+//_compareTimes exec
+} ifelse
+} _NXDefProc
+/_safeTestAndOrder {
+dup currentwindowlevel 0 ne {
+Above 0 3 -1 roll
+/orderWinsAndPanels winexec pop pop
+}{
+mark 4 -1 roll
+{
+3 index exch
+3 index exch exec not {
+Below /_frontWin pkget 3 index
+/orderWinsAndPanels winexec
+pop pop pop
+}{
+stop
+} ifelse
+} stopped {
+cleartomark
+Above 0 2 index
+/orderWinsAndPanels winexec
+/_frontWin exch pkput
+/_frontWinEventTime exch pkput
+} if
+} ifelse
+} _NXDefProc
+/safeOrderFront {
+//_compareTimesAndApps 3 1 roll
+//_safeTestAndOrder exec
+} _NXDefProc
+/safeOrderFrontDuringOpenFile {
+/_lastOpenFileEventTime pkget exch //safeOrderFront exec
+} _NXDefProc
+/setLastOpenFileTime {
+pop /_lastOpenFileEventTime 0 //pkput exec
+} _NXDefProc
+/_sendWinMoved {
+//Kitdefined 4 1 roll
+0 0 3 -1 roll
+//Winmoved 0 0
+3 index currentwindowdict begin
+/checkAndTransmit winexec
+end
+} _NXDefProc
+/_frontWithClick {
+Above 0 2 index orderwindow
+dup currentwindowlevel 0 eq {
+/_frontWin exch //pkput exec
+/_frontWinEventTime exch //pkput exec
+}{
+pop pop
+} ifelse
+} _NXDefProc
+/_safeFrontWithClick {
+//_compareTimes 3 1 roll
+//_safeTestAndOrder exec
+} _NXDefProc
+/_pkgsDeferredOrdering {
+mark 3 1 roll
+/_pkgsDoDeferredOrdering pkget {
+{
+exch 1 index
+//_safeFrontWithClick exec
+/_pkgsDoDeferredAct pkget {
+/_pendingActCount pkget exch
+/pseudoActivateWindow winexec
+} if
+} stopped
+} if
+cleartomark
+/_pkgsDoDeferredOrdering false pkput
+/_pkgsDoDeferredAct false pkput
+} _NXDefProc
+/_doKitDeferredOrdering {
+mark 7 1 roll
+3 -1 roll
+/_lmupCount pkget gt {
+/_pkgsDoDeferredOrdering false pkput
+/_pkgsDoDeferredAct false pkput
+} if
+{
+5 -1 roll {
+exch 1 index
+//_safeFrontWithClick exec
+}{
+exch pop
+} ifelse
+3 -1 roll {
+/pseudoActivateWindow winexec
+} if
+} stopped pop
+cleartomark
+} _NXDefProc
+/kitDeferredOrdering {
+//_lmupLock {
+2 index /_lmupCount pkget gt
+7 index or
+8 -1 roll
+7 -1 roll
+5 index /_lmupCount pkget gt
+or or
+7 -1 roll and
+6 2 roll
+//_doKitDeferredOrdering exec
+} monitor
+} _NXDefProc
+/blockWindowOrdering {
+//_lmupLock {
+/_lmupCount pkget gt {
+/_pkgsDoDeferredOrdering false pkput
+/_pkgsDoDeferredAct false pkput
+true
+}{
+false
+} ifelse
+} monitor
+} _NXDefProc
+/_prepareToDrag {
+//Above 0 //_dragNetWin orderwindow
+false setflushexposures
+//Lmousedragged //Firstwindow sethowpost
+//Lmouseup //Firstwindow sethowpost
+dup /_dragWinNum exch //pkput exec
+currentwindowbounds pop pop
+/_dragInitY exch //pkput exec
+/_dragInitX exch //pkput exec
+/_dragWinYOffset exch //pkput exec
+/_dragWinXOffset exch //pkput exec
+/_dragWCEnabled 0 currentwaitcursorenabled //pkput exec
+false 0 setwaitcursorenabled
+} _NXDefProc
+/doDragWindow {
+//_lmupLock {
+exch /_lmupCount pkget gt {
+//_prepareToDrag exec
+}{
+dup currentwindowbounds pop pop
+3 -1 roll //_sendWinMoved exec
+pop pop
+} ifelse
+} monitor
+} _NXDefProc
+/_reapContext {
+mark exch
+dup //CDToken /currentContextData winexec
+exch /freeContextData winexec
+dup null ne {
+{
+currentwindowdict
+/otherOwner null put
+} stopped
+} if
+cleartomark
+} _NXDefProc
+/_doPostEvent {
+nextdict /_journalRecording get {
+7 -1 roll Journalflagmask or 7 1 roll
+} if
+stopped {
+10 {pop} repeat
+false
+}{
+not {
+(event not posted\n) print
+(Frog) 1 playsound
+} if
+true
+} ifelse
+}
+_NXDebug {
+dup length 1 add array cvx
+dup 1
+4 -1 roll
+putinterval
+dup 0 /_NXInstallDebugErrorHandler cvx put
+} if
+_NXDefProc
+true {
+/postByContext {
+11 1 roll
+dup 0 eq {
+10 {pop} repeat
+{
+/beep winexec
+} if
+}{
+dup 12 1 roll
+/posteventbycontext cvx
+//_doPostEvent exec {
+pop pop
+}{
+{
+/beep winexec
+} if
+//_reapContext exec
+} ifelse
+} ifelse
+} _NXDefProc
+}{
+/postByContext {
+11 1 roll
+dup 0 eq {
+10 {pop} repeat
+{
+/beep winexec
+} if
+}{
+dup 12 1 roll
+5 -1 roll pop 4 1 roll
+Bypscontext
+//_doPostEvent exec not {
+{
+/beep winexec
+} if
+//_reapContext exec
+}{
+pop pop
+} ifelse
+} ifelse
+} _NXDefProc
+} ifelse
+/checkAndTransmit {
+8 index 1 exch bitshift clientEventMask and 0 ne
+{
+/transmitEvent winexec
+}{
+9 {pop} repeat
+}
+ifelse
+} _NXDefProc
+/_postToNilWindow {
+8 index
+8 index
+6 index currentwindowbounds pop pop
+3 -1 roll add
+3 1 roll add
+11 -1 roll pop 10 1 roll
+9 -1 roll pop 8 1 roll
+5 -1 roll pop 0 5 1 roll
+activeApp exch /postByContext winexec
+} _NXDefProc
+/_handleCommand {
+mark 10 1 roll
+1 index -16 bitshift
+2 index 65535 and
+dup 46 eq
+2 index 0 eq and
+1 index 173 eq
+2 index 175 eq or
+4 -1 roll 1 eq and
+7 index //Numericpadmask and 0 ne and
+or {
+3 index 65535 and 0 eq {
+dup 173 eq {
+true 0 /getWindows winexec
+mark exch {
+mark exch
+dup currentwindowlevel 0 eq {
+dup currentwindowdict
+dup null ne {
+/icon get 1 ne {
+Above exch 0 exch orderwindow
+cleartomark
+exit
+} if
+} if
+} if
+cleartomark
+} /revForall winexec
+cleartomark
+/returnWindows winexec
+}{
+dup 175 eq {
+true 0 /getWindows winexec
+mark exch {
+dup currentwindowlevel 0 eq {
+dup currentwindowdict
+dup null ne {
+/icon get 1 ne {
+Below exch 0 exch
+systemdict /orderwindow get exec
+exit
+} if
+} if
+} if
+} forall
+cleartomark
+/returnWindows winexec
+}{
+pop
+activeApp true /postByContext winexec
+activeApp //CDPid /currentContextData winexec
+dup 0 ne
+{
+2 unixsignal
+}{
+pop
+} ifelse
+} ifelse
+} ifelse
+}{
+pop
+} ifelse
+}{
+pop
+activeApp true /postByContext winexec
+} ifelse
+cleartomark
+} _NXDefProc
+/_ptInRect {
+false mark 8 2 roll
+6 -1 roll 5 -1 roll sub
+5 -2 roll sub
+dup 0 ge {
+exch dup 0 ge {
+4 -1 roll lt {
+gt {
+exch pop true exch
+} if
+} if
+} if
+} if
+cleartomark
+} _NXDefProc
+/_testTitleBar {
+currentwindowbounds 4 2 roll pop pop
+topMargin sub 3 -1 roll exch sub 1 sub exch
+1 index 0 ge {
+topMargin //wbutSize sub 2 div
+3 index leftMargin lt {
+exch pop
+leftMargin //wbutSize sub
+exch
+//wbutSize //wbutSize
+//_ptInRect exec
+}{
+1 index rightMargin sub 4 index le {
+exch rightMargin sub
+exch
+//wbutSize //wbutSize
+//_ptInRect exec
+}{
+pop pop pop pop false
+} ifelse
+} ifelse
+true
+}{
+pop pop pop false false
+} ifelse
+} _NXDefProc
+/transmitEvent {
+3 index 0 ne {
+3 index currentwindowdict
+/localNum get 3 //stackSwap exec
+currentowner true
+/postByContext winexec
+}{
+9 {pop} repeat
+/beep winexec
+(transmitEvent can't post to a nil window\n) print
+} ifelse
+} _NXDefProc
+/_lmdownInTitle {
+dup 3 index 1 gt or {
+not icon 1 eq and 2 index 2 eq and {
+3 index currentowner activeApp ne {
+num currentowner //CDKitVersion
+/currentContextData winexec
+2 ge {
+num /activateByWindow winexec
+}{
+num currentowner /activateContext winexec
+} ifelse
+} if
+} if
+/transmitEvent winexec
+}{
+pop
+4 index //buckyBitMask and //Commandmask eq {
+num currentwindowlevel 0 eq {
+Below 0 num
+systemdict /orderwindow get exec
+} if
+9 {pop} repeat
+/_sentMouseDown false //pkput exec
+}{
+5 index num //_frontWithClick exec
+7 index 7 index 6 index
+12 3 roll
+4 index //buckyBitMask and
+//Alternatemask eq
+icon 1 eq or {
+9 {pop} repeat
+/_sentMouseDown false //pkput exec
+}{
+3 index currentowner activeApp ne {
+avoidsActivation {
+/_hitAvoidingWindow true //pkput exec
+}{
+num /activateByWindow winexec
+} ifelse
+} if
+/transmitEvent winexec
+} ifelse
+Journalflagmask and 0 eq {
+num //_prepareToDrag exec
+}{
+pop pop
+} ifelse
+} ifelse
+} ifelse
+} _NXDefProc
+/_lmdownInBody {
+pop
+num currentowner //CDKitVersion
+/currentContextData winexec
+2 ge {
+1 index 1 eq {
+/_pkgsDoDeferredOrdering true pkput
+num currentowner activeApp ne {
+avoidsActivation not {
+/_pkgsDoDeferredAct true pkput
+} if
+num currentowner
+/sendDeferredAct winexec
+/_pendingActCount exch pkput
+} if
+} if
+}{
+5 index num //_frontWithClick exec
+num currentowner activeApp ne {
+num /activateByWindow winexec
+} if
+} ifelse
+/transmitEvent winexec
+} _NXDefProc
+/_lmdownWithHelp {
+pop pop
+1 index 1 eq
+num currentowner activeApp ne and {
+num currentowner /activateContext winexec
+} if
+/transmitEvent winexec
+} _NXDefProc
+/lmdownEvProc {
+/_lmdownTime 6 index //pkput exec
+/_sentMouseDown true //pkput exec
+/_hitAvoidingWindow false //pkput exec
+/_pkgsDoDeferredOrdering false //pkput exec
+/_pkgsDoDeferredAct false //pkput exec
+3 index currentwindowdict begin
+{
+7 index 7 index 5 index //_testTitleBar exec
+6 index //buckyBitMask and
+dup //Helpmask eq
+exch //Controlmask //Alternatemask or eq or {
+//_lmdownWithHelp exec
+}{
+{
+//_lmdownInTitle exec
+}{
+//_lmdownInBody exec
+} ifelse
+} ifelse
+} stopped {
+end handleerror
+}{
+end
+} ifelse
+} _NXDefProc
+/_transmitLmup {
+1 index 4 index 11 2 roll
+/transmitEvent winexec
+/_hitAvoidingWindow pkget
+1 index currentowner activeApp ne
+4 -1 roll 1 eq and and {
+currentowner /activateContext winexec
+}{
+pop
+} ifelse
+} _NXDefProc
+/lmupEvProc {
+//_lmupLock {
+/_lmupCount 3 index //pkput exec
+/_dragWinNum pkget 0 eq {
+/_lmdownTime //pkget exec
+4 index //_pkgsDeferredOrdering exec
+/_sentMouseDown pkget {
+//_transmitLmup exec
+}{
+9 {pop} repeat
+} ifelse
+}{
+/lmupWinDragEvProc winexec
+} ifelse
+} monitor
+} _NXDefProc
+/_postRightEvent {
+4 index currentowner activeApp eq
+{
+pop /transmitEvent winexec
+}{
+//_postToNilWindow exec
+} ifelse
+} _NXDefProc
+/rmdownEvProc {
+3 index currenteventmask
+/_NXOldMask 1 index //pkput exec
+//MenuEvent or 4 index seteventmask
+true //_postRightEvent exec
+} _NXDefProc
+/rmupEvProc {
+/_NXOldMask pkget 4 index seteventmask
+false //_postRightEvent exec
+} _NXDefProc
+/rmdragEvProc {
+false //_postRightEvent exec
+} _NXDefProc
+/mEnterEvProc {
+dup -1 eq {
+//Cursorrect 8 //stackSwap exec pop
+Mouseentered 4 //stackSwap exec pop
+} if
+/transmitEvent winexec
+} _NXDefProc
+/mExitEvProc {
+dup -1 eq
+{
+//Cursorrect 8 //stackSwap exec pop
+Mouseexited 4 //stackSwap exec pop
+} if
+/transmitEvent winexec
+} _NXDefProc
+/keyDownEvProc {
+4 index //Commandmask and 0 ne
+{
+2 index 65535 and 0 eq
+10 1 roll
+/_handleCommand winexec
+activeApp 0 eq
+and
+{
+/beep winexec
+} if
+}{
+activeApp 0 eq {
+/beep winexec
+}{
+activeApp true /postByContext winexec
+} ifelse
+} ifelse
+} _NXDefProc
+/flagsChEvProc {
+nextdict /currentEventFlags 6 index put
+nextdict /_NXCurrentEventFlags 6 index put
+activeApp false /postByContext winexec
+} _NXDefProc
+/keyUpEvProc
+/flagsChEvProc load _NXDefProc
+/sysDefEvProc {
+2 index 1 eq {
+4 -1 roll pop 0 4 1 roll
+//Broadcast /postevent cvx //_doPostEvent exec not {
+handleerror
+} if
+}{
+2 index 0 eq {
+1 index activeApp eq {
+appLock
+{
+nextdict /activeApp 0 put
+/setArrowCursor winexec
+} monitor
+} if
+5 index 2 index /activateNextApp winexec
+1 index //_reapContext exec
+} if
+9 {pop} repeat
+} ifelse
+} _NXDefProc
+/lmdownWSEvProc {
+3 index currentwindowdict /otherOwner get
+dup null eq {
+activeApp ne 2 index 2 eq and {
+/deactivateCurrContext winexec
+4 index //buckyBitMask and
+//Commandmask eq {
+0 /hideOtherApps winexec
+} if
+} if
+/_WSsentMouseDown true //pkput exec
+/transmitEvent winexec
+}{
+dup -1 eq {
+pop
+/_WSsentMouseDown true //pkput exec
+/transmitEvent winexec
+}{
+2 index 1 eq {
+pop Above 0 5 index orderwindow
+/_WSMouseDown pkget astore
+}{
+2 index 2 eq {
+//Kitdefined 0 0 0 0 0
+//AppUnhide 0 0
+9 index
+/posteventbycontext cvx
+//_doPostEvent exec {
+5 index //buckyBitMask and
+//Commandmask eq {
+/hideOtherApps winexec
+}{
+/activateContext winexec
+} ifelse
+9 {pop} repeat
+}{
+//_reapContext exec
+/_WSsentMouseDown true //pkput exec
+/transmitEvent winexec
+} ifelse
+}{
+10 {pop} repeat
+} ifelse
+} ifelse
+} ifelse
+} ifelse
+} _NXDefProc
+/lmdragWSEvProc {
+3 index currentwindowdict /otherOwner get
+null ne {
+/_WSsentMouseDown pkget not {
+/_WSMouseDown pkget
+dup aload pop
+15 index 6 index sub 18 gt
+18 index 9 index sub abs 5 gt
+18 index 9 index sub abs 5 gt
+or or {
+/transmitEvent winexec pop
+/_WSsentMouseDown true //pkput exec
+/transmitEvent winexec
+}{
+19 {pop} repeat
+} ifelse
+}{
+/transmitEvent winexec
+} ifelse
+}{
+/transmitEvent winexec
+} ifelse
+} _NXDefProc
+/lmupWSEvProc {
+/_WSsentMouseDown pkget
+{
+/transmitEvent winexec
+}{
+9 {pop} repeat
+} ifelse
+/_WSsentMouseDown false //pkput exec
+} _NXDefProc
+/gridWindow {
+dup currentwindowdict /icon get 1 eq
+nextdict /_NXSnapIconsToGrid get
+4 -1 roll //Alternatemask and 0 eq
+and and {
+0 currentwindowbounds
+4 index currentwindowbounds pop pop
+2 {
+64 div round 64 mul exch
+} repeat
+2 {
+dup 3 index 6 index add 1 sub gt {
+64 sub
+} if
+dup 5 index lt {
+64 add
+} if
+6 1 roll
+} repeat
+pop pop pop pop
+3 -1 roll movewindow
+}{
+pop
+} ifelse
+} _NXDefProc
+/lmdragWinDragEvProc {
+6 {pop} repeat
+/_dragWinYOffset pkget sub exch
+/_dragWinXOffset pkget sub exch
+/_dragWinNum pkget
+nextdict /_journalRecording get {
+3 1 roll
+2 index currentwindowbounds pop pop
+2 index
+exch
+sub
+exch
+3 index
+exch
+sub
+exch
+Journalevent 3 1 roll 0 0 7 index //Windragged 0 0
+/transmitEvent winexec
+3 -1 roll
+} if
+dup currentwindowdict /otherWindows get
+dup null eq {
+pop movewindow pop
+}{
+1 index currentwindowbounds pop pop
+4 index exch sub exch
+5 index exch sub exch
+6 3 roll movewindow
+3 -1 roll
+dup length 1 sub 1 exch getinterval {
+mark exch {
+dup currentwindowbounds pop pop
+4 index add exch
+5 index add exch
+3 -1 roll movewindow
+} stopped pop
+cleartomark
+} forall pop pop pop
+} ifelse
+} _NXDefProc
+/lmupWinDragEvProc {
+9 copy
+//lmdragWinDragEvProc exec
+//Out 0 //_dragNetWin orderwindow
+true setflushexposures
+//Lmousedragged //Lastleft sethowpost
+//Lmouseup //Lastleft sethowpost
+4 index 10 1 roll
+/_sentMouseDown pkget {
+/_dragWinNum pkget 3 //stackSwap exec pop
+/_dragWinYOffset pkget 6 //stackSwap exec pop
+/_dragWinXOffset pkget 7 //stackSwap exec pop
+//_transmitLmup exec
+}{
+9 {pop} repeat
+} ifelse
+/_dragWinNum pkget exch 1 index
+//gridWindow exec
+dup currentwindowbounds pop pop 2 copy
+/_dragInitY pkget ne exch
+/_dragInitX pkget ne exch
+or {
+3 -1 roll //_sendWinMoved exec
+}{
+pop pop pop
+} ifelse
+/_dragWCEnabled //pkget exec 0 setwaitcursorenabled
+/_dragWinNum 0 //pkput exec
+} _NXDefProc
+/eventsPrepareToRestoreNextdict {
+/_dragNetWin pkget termwindow
+} _NXDefProc
+windowPackage1.0 /eventHandlers [
+/transmitEvent load
+/lmdownEvProc load
+/lmupEvProc load
+/rmdownEvProc load
+/rmupEvProc load
+/transmitEvent load
+/transmitEvent load
+/rmdragEvProc load
+/mEnterEvProc load
+/mExitEvProc load
+/keyDownEvProc load
+/keyUpEvProc load
+/flagsChEvProc load
+/transmitEvent load
+/sysDefEvProc load
+/transmitEvent load
+] _NXCheckAndDef
+windowPackage1.0 /deskWinHandler [
+null
+null
+null
+/rmdownEvProc load
+/rmupEvProc load
+null
+null
+/rmdragEvProc load
+null
+null
+null
+null
+null
+null
+/sysDefEvProc load
+null
+] _NXCheckAndDef
+windowPackage1.0 /workspaceHandler [
+null
+/lmdownWSEvProc load
+/lmupWSEvProc load
+/rmdownEvProc load
+/rmupEvProc load
+null
+/lmdragWSEvProc load
+/rmdragEvProc load
+null
+null
+/keyDownEvProc load
+/keyUpEvProc load
+/flagsChEvProc load
+null
+/sysDefEvProc load
+null
+] _NXCheckAndDef
+windowPackage1.0 /_dragWindowHandler [
+null
+null
+/lmupWinDragEvProc load
+null
+null
+null
+/lmdragWinDragEvProc load
+null
+null
+null
+null
+null
+null
+null
+/sysDefEvProc load
+null
+] _NXCheckAndDef
+windowPackage1.0 /specialTileHandler [
+null
+/transmitEvent load
+/transmitEvent load
+/rmdownEvProc load
+/rmupEvProc load
+null
+/transmitEvent load
+/rmdragEvProc load
+null
+null
+/keyDownEvProc load
+/keyUpEvProc load
+/flagsChEvProc load
+null
+/sysDefEvProc load
+null
+] _NXCheckAndDef
+//Rmousedownmask //Sysdefinedmask or deskWin seteventmask
+deskWinHandler deskWin seteventprocedures
+_dragWindowHandler _dragNetWin seteventprocedures
+end
+setshared
+currentshared true setshared
+nextdict /_windowCoverLock lock _NXCheckAndDef
+nextdict /_coverWin 0 _NXCheckAndDef
+nextdict /_edgeWindows 0 _NXCheckAndDef
+windowPackage1.0 begin
+/ensureEdgeWindows {
+_windowCoverLock
+{
+_edgeWindows 0 eq
+{
+currentshared true setshared
+gsave
+0.1 setgray
+1 1 4 {
+pop
+0 0 0 0 Nonretained window
+dup currentcontext exch setowner
+dup 25 exch setwindowlevel
+dup windowdeviceround
+setexposurecolor
+} for
+4 array astore
+grestore
+exch setshared
+}{
+_edgeWindows
+dup {currentcontext exch setowner} forall
+nextdict /_edgeWindows 0 put
+} ifelse
+/userdict load /_NXedgeWindows 3 -1 roll put
+}
+monitor
+} _NXDefProc
+/placeEdgeWindows {
+aload pop /userdict load /_NXedgeWindows get {placewindow} forall
+} _NXDefProc
+/showEdgeWindows {
+/userdict load /_NXedgeWindows get {Above 0 3 -1 roll orderwindow} forall
+} _NXDefProc
+/hideEdgeWindows {
+/userdict load /_NXedgeWindows get {Out 0 3 -1 roll orderwindow} forall
+_windowCoverLock
+{
+/userdict load /_NXedgeWindows get
+_edgeWindows 0 eq
+{
+dup {0 exch setowner} forall
+nextdict /_edgeWindows 3 -1 roll put
+}{
+{termwindow} forall
+} ifelse
+/userdict load /_NXedgeWindows 0 put
+}
+monitor
+} _NXDefProc
+/_checkOutCoverWin {
+_windowCoverLock
+{
+_coverWin 0 eq
+{
+currentshared true setshared
+0 0 0 0 Nonretained window
+dup currentcontext exch setowner
+dup false exch setautofill
+exch setshared
+}{
+_coverWin
+dup currentcontext exch setowner
+nextdict /_coverWin 0 put
+} ifelse
+/userdict load /_NXcoverWindow 3 -1 roll put
+}
+monitor
+} _NXDefProc
+/_checkInCoverWin {
+_windowCoverLock
+{
+/userdict load /_NXcoverWindow get
+_coverWin 0 eq
+{
+dup 0 exch setowner
+nextdict /_coverWin 3 -1 roll put
+}{
+termwindow
+} ifelse
+/userdict load /_NXcoverWindow 0 put
+}
+monitor
+} _NXDefProc
+/coverWindow {
+mark exch
+//_checkOutCoverWin exec
+/userdict load /_NXcoverWindow get
+{
+1 index currentwindowlevel
+1 index setwindowlevel
+1 index currentwindowbounds
+4 index placewindow
+Above 2 index 3 -1 roll orderwindow
+Out 0 3 -1 roll orderwindow
+} stopped {
+//_checkInCoverWin exec
+}
+cleartomark
+} _NXDefProc
+/uncoverWindow {
+/userdict load /_NXcoverWindow get
+dup 0 ne {
+appLock {
+1 index currentwindowdict
+dup /hideOnDeact get not
+exch /kitVisible get
+activeApp currentcontext eq
+and or {
+{
+Above 1 index 4 -1 roll
+orderwindow
+} stopped {
+pop pop pop
+} if
+}{
+exch pop
+} ifelse
+} monitor
+Out 0 3 -1 roll orderwindow
+//_checkInCoverWin exec
+}{
+pop pop
+} ifelse
+} _NXDefProc
+/resizePrepareToRestoreNextdict {
+_NXPackagesInfo /_windowCoverLock nextdict /_windowCoverLock get put
+_NXPackagesInfo /_coverWin nextdict /_coverWin get put
+_NXPackagesInfo /_edgeWindows nextdict /_edgeWindows get put
+} _NXDefProc
+/resizePrepareToReloadPackages {
+nextdict /_windowCoverLock _NXPackagesInfo /_windowCoverLock get put
+nextdict /_coverWin _NXPackagesInfo /_coverWin get put
+nextdict /_edgeWindows _NXPackagesInfo /_edgeWindows get put
+} _NXDefProc
+end
+setshared
+currentshared true setshared
+windowPackage1.0 begin
+/setCursor {
+appLock
+{
+{
+/lastCompletedActivation pkget eq {
+setcursor
+}{
+pop pop pop pop
+} ifelse
+} stopped
+{handleerror} if
+} monitor
+} _NXSimpleDefProc
+/setArrowCursor {
+gsave
+{
+sharedCursors windowdeviceround
+0 48 1 -1 setcursor
+} stopped
+{handleerror} if
+grestore
+} _NXSimpleDefProc
+end
+setshared
+currentshared true setshared
+windowPackage1.0 /_winList null _NXCheckAndDef
+nextdict /_winListLock lock _NXCheckAndDef
+windowPackage1.0 begin
+/setWindowLevel /setwindowlevel load def
+/localScreenList {
+currentcontext screenlist
+0 1 2 index length 1 sub {
+1 index exch
+2 copy get
+currentwindowdict dup null ne {
+/localNum get
+}{
+pop -1
+} ifelse
+put
+} for
+} _NXDefProc
+/getWindows {
+//_winListLock {
+dup 2 index {
+countscreenlist
+}{
+countwindowlist
+} ifelse
+5 add
+/_winList //pkget exec
+/_winList null //pkput exec
+} monitor
+dup null eq {
+true
+}{
+dup length 2 index lt
+} ifelse
+{
+pop currentshared true setshared
+exch array
+exch setshared
+}{
+exch pop
+} ifelse
+dup 4 2 roll exch {
+screenlist
+}{
+windowlist
+} ifelse
+} _NXDefProc
+/returnWindows {
+//_winListLock {
+/_winList pkget
+dup null eq {
+pop
+}{
+1 index length
+1 index length
+lt {
+exch
+} if pop
+} ifelse
+/_winList exch //pkput exec
+} monitor
+} _NXDefProc
+end
+setshared
+currentshared true setshared
+0 =string framebuffer pop
+8 2 roll 6 {pop} repeat exch
+64 idiv 1 sub 64 mul
+windowPackage1.0 /_zeroScreenLimit
+2 index _NXCheckAndDef
+64 idiv
+exch 64 idiv mul dup
+string windowPackage1.0 exch
+/_miniMap exch _NXCheckAndDef
+string windowPackage1.0 exch
+/_zeroMiniMap exch _NXCheckAndDef
+windowPackage1.0 begin
+/_isIcon {
+mark exch
+{
+currentwindowdict /icon get 1 eq
+exch pop
+} stopped {
+cleartomark false
+} if
+} _NXDefProc
+/calcIconPosition {
+/contextDataLock pkget {
+//_miniMap 0 //_zeroMiniMap putinterval
+false 0 /getWindows winexec {
+dup //_isIcon exec {
+dup currentwindowbounds pop pop
+1 index -32 ge
+2 index 64 add //_zeroScreenLimit le and {
+2 {
+64 div round 64 mul exch
+} repeat
+2 {
+1 index 64 div
+} repeat
+//_zeroScreenLimit 64 idiv
+mul add cvi
+dup //_miniMap length lt
+1 index 0 ge and {
+//_miniMap exch 1 put
+}{
+pop
+} ifelse
+pop pop pop
+}{
+pop pop pop
+} ifelse
+}{
+pop
+} ifelse
+} forall
+/returnWindows winexec
+0 0 1 //_miniMap length 1 sub {
+//_miniMap exch get 0 eq {
+exit
+}{
+1 add
+} ifelse
+} for
+} monitor
+} _NXDefProc
+end
+setshared

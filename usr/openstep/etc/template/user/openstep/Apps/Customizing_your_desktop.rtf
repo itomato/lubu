@@ -1,0 +1,195 @@
+{\rtf0\ansi{\fonttbl\f0\fnil LucidaSans;\f1\fnil LucidaSans-Typewriter;}
+\paperw11820
+\paperh13700
+\margl120
+\margr120
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+\grayb1000\cb1\pard\tx600\tx1200\tx1820\tx2420\tx3020\tx3640\tx4240\tx4840\tx5460\tx6060\f0\b0\i0\ulnone\fs24\gray0\fc2\cf2 \
+
+\b\ul Customizing your Desktop\
+
+\b0\ulnone \
+There is no "easy" way to customize your desktop, since it is fully\
+integrated with the underlying Solaris Operating Enviroment. The\
+good news is that you can use whatever resources are available in\
+Solaris to make your changes. Below I will make a brief comment\
+on each file that is customizable, and how to do this.\
+\
+1. 
+\i Changing your OpenStep Preferences\
+
+\i0 \
+There are several ways of doing this. The easiest way is by using the\
+supplied 
+\i Preferences.app
+\i0 . The drawback of this method is that it does\
+not include all configurable options. A second way is by using the 
+\i dwrite\
+
+\i0 utility which can be found in the 
+\i /usr/openstep/bin
+\i0  directory. Use this \
+utility only AFTER you have found the settings you wish to change, and \
+the correct  syntax for doing so. The third way, my personal favorite, is \
+using the 
+\i vi 
+\i0  editor to edit the  
+\i $HOME/.openstep/User.defs
+\i0  file. This option\
+gives room for more flexible changes, and allows you to add undocumented\
+features to you apps.\
+\
+2. 
+\i Setting a permament background image\
+
+\i0 \
+If you want to set a default background image to your OpenStep Desktop, you\
+can use the osxpm(1) utility. Add a line similar to the following line to your\
+
+\i .openstep-init 
+\i0 file:\
+\
+
+\i exec /usr/openstep/bin/osxpm $HOME/Backgrounds/Image.xpm\
+
+\i0 \
+(osxpm(1) is an xpm utility for OpenStep to change your background pixmap)\
+\
+To create an 
+\i .openstep-init 
+\i0 file do the following\
+\
+$ vi ~/.openstep-init\
+\
+add the line as described above. If you wish to use a different format than XPM,\
+you can take advantage of several other programs if they are installed.\
+Here are three examples. Use only one.\
+\
+
+\i exec /usr/openstep/bin/osxpm $HOME/Backgrounds/Image.xpm\
+exec xv -root -quit <path to image>\
+exec wmsetbg -t <path to image> (wmsetbg(1) is included with WindowMaker)\
+exec xsetroot -solid slategray4\
+
+\i0 \
+save the file.. \
+
+\i :wq!\
+
+\i0 \
+Remember to 
+\i chmod +x ~/.openstep-init 
+\i0 else it will not be parsed.\
+\
+Log out of OpenStep, and log in again, and your image should appear,\
+or just type\
+$ 
+\i sh .openstep-init\
+
+\i0 \
+It is also possible to set a default background color (no image) using the\
+OpenStep 
+\i Preferences.app
+\i0  utility.\
+\
+3. 
+\i Creating Apps for UserApps\
+
+\i0 \
+I have included a template in UserApps that can be used as a base for your\
+apps. Remember though, that if your app is not in your path, you MUST \
+comment out the wrapper functions, or even delete them.  Then add to\
+the 
+\i MyApp.app/MyApp
+\i0  (the name is just an example) file:\
+
+\i exec <path to my app>\
+
+\i0 Then you must update the file 
+\i MyApp.app/__ICONS/__header
+\i0  to reflect the\
+new name of your app. You MUST also add an image to your app, it MUST\
+be in 
+\i tiff 
+\i0 format, and it MUST have the name 
+\i app
+\i0 . Put this image in your\
+
+\i MyApp.app/__ICON
+\i0  directory (again, it MUST be called 
+\i app
+\i0 ).\
+\
+Select  
+\i View -> Update Viewers
+\i0   from the 
+\i Workspace
+\i0  menu on your left \
+(if it is hidden, doubleclock on the OpenStep logo at the top of the dock), \
+and your new app should appear in your 
+\i UserApps
+\i0  folder. If your app has \
+no icon, go back and try again, as you surely missed out on something.\
+\
+You may also drag and attach your new app to the Icon Dock to your right. \
+If there is no room, you can remove an icon by dragging it away from the dock.\
+\
+
+\b NOTE: 
+\b0\i The wrapper is only useful for files in your PATH, if it is not, the wrapper will\
+fail. This is not a bug, but a feature.\
+
+\i0 \
+4.  
+\i Customizing your Browser\
+
+\i0 \
+The initial view if the 
+\i Browser
+\i0  has been set to Icon. You can change the default\
+behaviour by either changing your 
+\i View
+\i0  in the 
+\i Workspace
+\i0  menu, or using the\
+
+\i Preferences
+\i0  option from the 
+\i Info
+\i0  menu. From the 
+\i Preferences
+\i0  menu you can also\
+change the layout of the 
+\i Browser
+\i0  to a certain degree. Here you can set the size\
+of the view, spacing between icons, and even disable the resize bar below the\
+shelf. \
+\
+5. 
+\i Changing default tool\
+
+\i0 \
+It is also possible to change the default tool for any registered application. Just\
+rightclick on the file, select  
+\i Tools -> Inspector
+\i0 , then select 
+\i Tools
+\i0  again from the\
+
+\i pulldown
+\i0  menu, and select an app from the list. If you do not want a permanent\
+change, just 
+\i doubleclick 
+\i0 on the prefered icon. You can add any tools by adding \
+more applications to you system, and adding the filetype to the apps 
+\i __header.\
+
+\i0 \
+\
+-- \
+Luke Th. Bullock\
+Oslo, 10/03/06\
+\
+\
+
+}

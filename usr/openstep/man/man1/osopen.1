@@ -1,0 +1,85 @@
+.\" "@(#) osopen.1, Rev 1.0, 97/02/13"
+.\"
+.\"     Copyright (c) 1996-1997, Sun Microsystems, Inc.
+.\"     All rights reserved.
+.\"
+.TH osopen 1 "13 Feb 1997" "" "OpenStep Commands"
+.if n .tr \--
+.SH NAME
+osopen \- provides a standard OpenStep open panel
+.SH SYNOPSIS
+\fBosopen\fR \fB-f\fR \fIfile\fR \fB-d\fR \fIdirectory\fR \fB-e\fR \fItypes\fR \fB-p\fR \fIprompt\fR \fB-t\fR \fItitle\fR \fB-i\fR \fIicon\fR \fB-m\fR \fB-c\fR \fB-V\fR \fB-H\fR 
+.br
+.ft R
+.PP
+.ft L
+.SH DESCRIPTION
+The 
+.B osopen 
+command provides access to a standard OpenStep
+open panel as implemented by the NSOpenPanel class in
+the Application Kit.  The arguments to 
+.B osopen 
+can change all of the standard attributes of the open panel.  The
+file or files chosen are written to stdout separated by a newline.
+.SH OPTIONS
+The following options are supported.
+.TP
+.BI \-f " file"
+Specify the name of the file in initial directory to
+select.
+.TP
+.BI \-d " directory"
+Specify a path to a directory that will be the initial location
+of the open panel.  If this is not specified, it defaults to the
+user's home directory.
+.TP
+.BI \-e " types"
+Specify each file type (e.g., tiff, eps, or c) that is an allowable
+selection.  The open panel will only display names which have the
+types specified.  If no type is specified, all files are displayed.
+.TP
+.BI \-p " prompt"
+Specify the title for the form where the user types the file name.
+.TP
+.BI \-t " title"
+Specify the title of the open panel window.  By default it is Open.
+.TP
+.BI \-i  " icon"
+Specify a path to a TIFF image file to be displayed in the upper
+left corner of the window.
+.TP
+.B \-m
+Allow the selection of multiple files.
+.TP
+.B \-c
+Allow directories to be chosen rather than files.
+.TP
+.B \-V
+Output version information.
+.TP
+.B \-H
+Output verbose help to stdout.
+
+.SH "EXIT STATUS"
+The following exit statuses are returned:
+.TP 8
+.B 0
+The
+.B osopen
+command executed without error and the files selected
+have been written to stdout.
+.TP
+.B -1
+An error occurred, or the usage was incorrect.
+
+.SH BUGS
+If the TIFF image is not specified, the default application
+icon should be substituted automatically but currently is not.
+
+.TE
+.SH "SEE ALSO"
+.BR ossave (1),
+.BR osalert (1)
+
+.if n .tr \-\-

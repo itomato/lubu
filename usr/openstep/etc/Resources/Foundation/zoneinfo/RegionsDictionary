@@ -1,0 +1,121 @@
+{
+AbbreviationMap = {
+	/* Australia/NSW = (EDT, EST);  */
+	/* Australia/North = (CST);  */
+	/* Australia/Queensland = (EST);  */
+	/* Australia/South = (CDT, CST);  */
+	/* Australia/Tasmania = (EDT, EST);  */
+	/* Australia/Victoria = (EDT, EST);  */
+	/* Australia/West = (WST); */
+	/* CET = ("MET DST", MET);  */
+	/* CST6CDT = (CDT, CST, CWT); */ 
+	/* Canada/Atlantic = (ADT, AST);  */
+	/* Canada/Central = (CDT, CST);  */
+	/* "Canada/East-Saskatchewan" = (CST);  */
+	/* Canada/Eastern = (EDT, EST);  */
+	/* Canada/Mountain = (MDT, MST); */
+	/* Canada/Newfoundland = (NDT, NST);  */
+	/* Canada/Pacific = (PDT, PST);  */
+	/* Canada/Yukon = (YDT, YST);  */
+	/* EET = ("EET DST", EET);  */
+	/* EST = (EDT, EST, EWT);  */
+	/* EST5EDT = (EDT, EST, EWT); */ 
+	/* "GB-Eire" = (BST, GMT);  */
+	GMT = (GMT);
+	"GMT+1" = ("GMT+0100"); 
+	"GMT+10" = ("GMT+1000"); 
+	"GMT+11" = ("GMT+1100"); 
+	"GMT+12" = ("GMT+1200"); 
+	"GMT+13" = ("GMT+1300"); 
+	"GMT+2" = ("GMT+0200"); 
+	"GMT+3" = ("GMT+0300"); 
+	"GMT+4" = ("GMT+0400"); 
+	"GMT+5" = ("GMT+0500"); 
+	"GMT+6" = ("GMT+0600"); 
+	"GMT+7" = ("GMT+0700"); 
+	"GMT+8" = ("GMT+0800"); 
+	"GMT+9" = ("GMT+0900"); 
+	"GMT-1" = ("GMT-0100"); 
+	"GMT-10" = ("GMT-1000"); 
+	"GMT-11" = ("GMT-1100"); 
+	"GMT-12" = ("GMT-1200"); 
+	"GMT-2" = ("GMT-0200"); 
+	"GMT-3" = ("GMT-0300"); 
+	"GMT-4" = ("GMT-0400"); 
+	"GMT-5" = ("GMT-0500"); 
+	"GMT-6" = ("GMT-0600"); 
+	"GMT-7" = ("GMT-0700"); 
+	"GMT-8" = ("GMT-0800"); 
+	"GMT-9" = ("GMT-0900"); 
+	/* Greenwich = (GMT);  */
+	/* HST = (HDT, HWT, HST, HST);  */
+	/* Iceland = (WET);  */
+	Japan = (JST); 
+	/* MET = ("MET DST", MET);  */
+	/* MST = (MDT, MST, MWT);  */
+	/* MST7MDT = (MDT, MST, MWT);  */
+	NZ = (NZDT, NZST); 
+	/* PST8PDT = (PDT, PST, PWT);  */
+	Poland = ("MET DST", MET); 
+	Singapore = (SST); 
+	/* SystemV/AST4 = (AST);  */
+	/* SystemV/AST4ADT = (ADT, AST);  */
+	/* SystemV/CST6 = (CST);  */
+	/* SystemV/CST6CDT = (CDT, CST);  */
+	/* SystemV/EST5 = (EST);  */
+	/* SystemV/EST5EDT = (EDT, EST);  */
+	/* SystemV/HST10 = (HST);  */
+	/* SystemV/MST7 = (MST);  */
+	/* SystemV/MST7MDT = (MDT, MST);  */
+	/* SystemV/PST8 = (PST);  */
+	/* SystemV/PST8PDT = (PDT, PST);  */
+	/* SystemV/YST9 = (YST);  */
+	/* SystemV/YST9YDT = (YDT, YST); */ 
+	Turkey = ("EET DST", EET); 
+	/* UCT = (GMT);  */
+	/* US/Arizona = (MDT, MST, MWT);  */
+	US/Central = (CDT, CST, CWT); 
+	/* "US/East-Indiana" = (EDT, EST, EWT);  */
+	US/Eastern = (EDT, EST, EWT); 
+	US/Hawaii = (HDT, HWT, HST, HST); 
+	US/Mountain = (MDT, MST, MWT); 
+	US/Pacific = (PDT, PST, PWT); 
+	/* "US/Pacific-New" = (PDT, PWT, PPET, PST);  */
+	US/Yukon = (YDT, YST, YWT); 
+	/* UTC = (GMT);  */
+	/* Universal = (GMT);  */
+	/* "W-SU" = ("????", "????"); */ 
+	/* WET = ("WET DST", WET); */ 
+	/* localtime = (PDT, PST, PWT); */
+  };
+Regions = (
+    ("GMT-10","US/Hawaii"),
+    ("GMT-9","US/Yukon"),
+    ("GMT-8","US/Pacific","US/Pacific-New","Canada/Pacific"),
+    ("GMT-7","US/Mountain","US/Arizona","Canada/Mountain"),
+    ("GMT-6","US/Central","Canada/Central","Canada/East-Saskatchewan"),
+    ("GMT-5","US/Eastern","US/East-Indiana","Canada/Eastern"),
+    ("GMT-4","Canada/Atlantic"),
+    ("GMT-3","Canada/Newfoundland"),
+    ("GMT-2"),
+    ("GMT-1"),
+    ("Greenwich","GB-Eire","Iceland","WET"),
+    ("GMT+1","Poland","MET","CET"),
+    ("GMT+2","EET"),
+    ("GMT+3","Turkey","W-SU"),
+    (),
+    ("GMT+4"),
+    ("GMT+5"),
+    (),
+    ("GMT+6"),
+    ("GMT+7"),
+    ("GMT+8","Singapore","Australia/West"),
+    ("GMT+9","Japan"),
+    ("Australia/North","Australia/South"),
+    ("GMT+10","Australia/Tasmania","Australia/Queensland","Australia/Victoria","Australia/NSW"),
+    ("GMT+11"),
+    ("GMT+12","NZ"),
+    ("GMT+13"),
+  );
+}
+

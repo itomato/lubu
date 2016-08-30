@@ -1,0 +1,51 @@
+"DeclPrefs" = {
+    ACTIONS = {
+	"readDefaults:" = "readDefaults:"; 
+	"readPanel:" = "readPanel:"; 
+	"updateColors:" = "updateColors:"; 
+	"writeDefaults:" = "writeDefaults:"; 
+	"writePanel:" = "writePanel:"; 
+    }; 
+    OUTLETS = {
+	backgroundColor = "NSColor*"; 
+	backgroundColorWell = "NSColorWell*"; 
+	commentColor = "NSColor*"; 
+	commentColorWell = "NSColorWell*"; 
+	declarationColor = "NSColor*"; 
+	declarationColorWell = "NSColorWell*"; 
+	fieldModifierColor = "NSColor*"; 
+	fieldModifierColorWell = NSColorWell; 
+	fieldNameColor = "NSColor*"; 
+	fieldNameColorWell = NSColorWell; 
+	fieldTypeColor = "NSColor*"; 
+	fieldTypeColorWell = NSColorWell; 
+	methodArgsColor = "NSColor*"; 
+	methodArgsColorWell = "NSColorWell*"; 
+	methodModifierColor = "NSColor*"; 
+	methodModifierColorWell = "NSColorWell*"; 
+	methodNameColor = "NSColor*"; 
+	methodNameColorWell = "NSColorWell*"; 
+	methodTypeColor = "NSColor*"; 
+	methodTypeColorWell = "NSColorWell*"; 
+	owner = id; 
+	packageColor = "NSColor*"; 
+	packageColorWell = "NSColorWell*"; 
+	prefView = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"DeclView" = {
+    ACTIONS = {}; 
+    OUTLETS = {
+	colorArray = "NSMutableArray*"; 
+	output = id; 
+	page = "NSMutableString*"; 
+	prefs = DeclPrefs; 
+	scrollView = id; 
+	selectedData = "JavaClassData*"; 
+	timer = "NSTimer*"; 
+    }; 
+    OUTLET_TYPES = {}; 
+    SUPERCLASS = NSObject; 
+};

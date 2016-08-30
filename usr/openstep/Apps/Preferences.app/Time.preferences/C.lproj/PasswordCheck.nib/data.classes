@@ -1,0 +1,12 @@
+Time = {
+    ACTIONS = {"passwordCancel:" = "passwordCancel:"; "passwordOk:" = "passwordOk:"; }; 
+    OUTLETS = {
+	iconButton = iconButton; 
+	passwordField = passwordField; 
+	passwordPanel = passwordPanel; 
+	usernameField = usernameField; 
+    }; 
+    SUPERCLASS = Layout; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+Layout = {SUPERCLASS = NSObject; };

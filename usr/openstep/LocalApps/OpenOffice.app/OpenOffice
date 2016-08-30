@@ -1,0 +1,79 @@
+#!/bin/ksh
+
+##BEGIN TEMPLATE WRAPPER SHELL SCRIPT
+
+# A variable to hold arguments after we strip OpenStep specific information
+args=
+
+# If you are debugging this script you might uncomment the following
+# two lines.
+#set -x
+#echo input=$*
+
+# Loop until argv ($#) is zero, each iteration will decrement (shift)
+# argv/argc.
+while [ $# != 0 ] ; do
+  case $1 in
+    # -NSOpen is an OpenStep standard command line flag which
+    # lets the NSApplication know what file to open.
+    -NSOpen)
+        args="$args $2"
+        shift             
+        ;;
+    # -NSOpenTemp is an OpenStep standard command line flag which
+    # lets the NSApplication know what file to open and that it is
+	# a temporary file and should be resaved somewhere else if edited.
+    -NSOpenTemp)
+        args="$args $2"
+        shift
+        ;;
+    # -_NSMachLaunch is an undocumented additional flag to NSApplication.
+    # We just ignore it here.
+    -_NSMachLaunch)
+        shift
+        ;;
+    *)
+        args="$args $1"
+        ;;
+  esac
+  shift
+done
+
+##END OF TEMPLATE WRAPPER SHELL SCRIPT
+
+## Begin OpenOffice.org shell wrapper for the Wrapper wrapper...
+## OpenOffice.org requires additional paths, parameters and variables!
+## This is quite some wrapper :-O /Luke
+
+# Find it..
+if [ -d "/opt/OpenOffice.org" ]; then
+ OO="/opt/OpenOffice.org"
+ APP="$OO/program/soffice"
+elif [ -d "/usr/OpenOffice.org" ]; then
+ OO="/usr/OpenOffice.org"
+ APP="$OO/program/soffice"
+elif [ -d "/usr/local/OpenOffice.org" ]; then
+ OO="/usr/local/OpenOffice.org"
+ APP="$OO/program/soffice"
+else
+ OO=""
+ APP="BAD_DIR"
+fi
+export APP
+
+## Trap errors
+if [ "$OO" = "" ]; then
+ MSG="OpenOffice.org directory not found!"; export MSG
+fi
+
+## Check for args
+if [ "$args" = "" ]; then
+ args=-writer
+fi
+
+## Call apps through appfind wrapper (wrap the wrapper ;0)
+WRAP=/usr/openstep/bin/appfind
+args=$args
+exec $WRAP $args
+
+## End OpenOffice.org wrapper

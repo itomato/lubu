@@ -1,0 +1,8 @@
+#!/bin/sh
+# @(#)binarytype.sh	1.4 30 Mar 1995
+# Copyright (C) 1994 Sun Microsystems Inc.  All Rights Reserved.
+
+HWARCH=`[ -f /bin/mach ] && /bin/mach || uname -p`
+SWARCH=`uname -r | grep '^5' >/dev/null && echo solaris2 || echo solaris1`
+
+echo $HWARCH_$SWARCH

@@ -1,0 +1,46 @@
+Clock = {SUPERCLASS = Control; };
+TimeSetting = {SUPERCLASS = Control; };
+ClickField = {SUPERCLASS = Control; };
+Calendar = {SUPERCLASS = Control; };
+NewClock = {SUPERCLASS = Control; };
+Preferences = {
+    ACTIONS = {
+    	"hour24Changed:" = "hour24Changed:"; 
+	"minusSetting:" = "minusSetting:"; 
+	"monthMinus:" = "monthMinus:"; 
+	"monthPlus:" = "monthPlus:"; 
+	"newDate:" = "newDate:"; 
+	"newTime:" = "newTime:"; 
+	"plusSetting:" = "plusSetting:"; 
+	"synchronize:" = "synchronize:"; 
+	"yearMinus:" = "yearMinus:"; 
+	"yearPlus:" = "yearPlus:"; 
+    }; 
+    OUTLETS = {
+    	calendar = calendar; 
+	layout_clock = layout_clock; 
+	minusButton = minusButton; 
+	monthField = monthField; 
+	monthMinus = monthMinus; 
+	monthPlus = monthPlus; 
+	ntpdTextField = ntpdTextField; 
+	plusButton = plusButton; 
+	setButton = setButton; 
+	switch24Hour = switch24Hour; 
+	synchButton = synchButton; 
+	timeSetter = timeSetter; 
+	timeStrings = timeStrings; 
+	tzButton = tzButton; 
+	tzScroller = tzScroller; 
+	window = window; 
+	yearField = yearField; 
+	yearMinus = yearMinus; 
+	yearPlus = yearPlus; 
+    }; 
+    SUPERCLASS = Object; 
+};
+ClickButton = {SUPERCLASS = Control; };
+FirstResponder = {
+    ACTIONS = {"orderFrontNXColorPanel:" = "orderFrontNXColorPanel:"; }; 
+    SUPERCLASS = Object; 
+};

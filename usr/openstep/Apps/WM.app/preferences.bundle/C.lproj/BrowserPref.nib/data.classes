@@ -1,0 +1,38 @@
+BrowserPref = {
+    ACTIONS = {
+	default:;
+	revert:;
+	ok:;
+    };
+    OUTLETS = {
+	defaultButton;
+	columnSizer;
+	revertButton;
+    };
+    SUPERCLASS = Pref;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+ColumnSizer = {
+    OUTLETS = {
+	delegate;
+	refView;
+    };
+    SUPERCLASS = View;
+};
+Pref = {
+    OUTLETS = {
+	window;
+	contentView;
+    };
+    SUPERCLASS = Object;
+};
+TitleSizer = {
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = View;
+};

@@ -1,0 +1,110 @@
+{\rtf0\ansi{\fonttbl\f0\fnil LucidaSans;}
+\paperw10120
+\paperh9540
+\margl120
+\margr120
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+\grayb1000\cb1\pard\tx1140\tx2300\tx3440\tx4600\tx5760\tx6900\tx8060\tx9200\tx10360\tx11520\f0\b\i\ulnone\fs36\gray0\fc2\cf2 ImagePortfolio
+\i0 \
+
+\b0\fs24 written by Martin D. Flynn  (mflynn@eng.sun.com, mflynn@best.com)
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\gray0\fc2\cf2 \
+
+\b \
+Overview\
+\
+
+\b0\i ImagePortfolio
+\i0  is designed to provide visual management of your TIFF and EPS files.  Multiple TIFF and EPS files may be dragged into a portfolio window for easy viewing.  Each image will maintain the same aspect ratio, but will be scaled down to fit the confines of the image cell so that many images can be viewed simultaneously.  The displayed images may then be selected and cut, pasted, or dragged into other applications accepting TIFF and/or EPS files.  Additionally, the list of file 
+\b paths
+\b0  which comprise the contents of a portfolio may also be saved to a file for later retrieval.\
+\
+The 
+\i ImagePortfolio
+\i0  application comes with no warranty of any kind, and the user assumes all responsibility for its use.\
+\
+
+\b Operation\
+
+\b0 \
+Creating a new portfolio window:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 A new portfolio window may be created by selecting the 'New Portfolio...' option on the 'Files' submenu.\
+\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\gray0\fc2\cf2 Opening TIFF and EPS files:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 There are several ways to display TIFF or EPS files in a portfolio window.\
+
+\pard\tx1440\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\fi-140\li500\gray0\fc2\cf2 - First, multiple TIFF and EPS files, or directories containing TIFF and EPS files, may be selected and dragged from the Workspace Manager and dropped into a portfolio window.  Directories will be searched recursively to find all image files.  If the list of files dragged into the window include a previously saved 
+\i ImagePortfolio
+\i0  file (with extension '.portfolio'), then the list of images specified in the file will also be added to portfolio window (the 
+\i ImagePortfolio
+\i0  file must be one of the actual selected files in order for its contents to be added.  If it is found within a selected directory, its contents will not be added).  This method of adding images to a portfolio window specifically looks for files with extension that NSImage knows about, and ignores all others.\
+- Second, TIFF images can be cut/copied from other applications and pasted into a portfolio window.  When doing so, a save panel window will be displayed which will allow you to save the image to a file on disk.  When saved, the TIFF file will be added to the portfolio window.  This can be useful for such things as making a file copy of an image in an Interface Builder nib file by copying the image to the pasteboard, then pasting it to a portfolio window. \
+- Third, a previously saved 
+\i ImagePortfolio
+\i0  file (with extension '.portfolio') can be opened from the File submenu and a new portfolio window with the images specified in the file will be created.  Only images which still exist and are readable will be added to the window, all others will be ignored.\
+\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 If multiple images are being opened, the process may be stopped at any time by pressing the 'Stop' button.  The portfolio window will then contain only the images which were added up to that point in time.\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\gray0\fc2\cf2 \
+Cutting/Copying/Dragging images for export to other applications:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 Again there are several ways to copy images from a portfolio window into other applications.  All methods include selecting the images you wish to copy by clicking and dragging across images with the mouse.  Multiple images may also be selected by holding down the shift-key while making your selection.\
+
+\pard\tx1440\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\fi-140\li500\gray0\fc2\cf2 - First, the icon in the upper left corner of the window can be grabbed with the mouse and dragged into any application, including the Workspace Manager, that accepts image files.\
+- Second, holding the alternate-shift key down and grabbing an image from within one of the image cells will allow you to drag that image into another application that accepts image files.\
+- Third, the selected images can be copied to the pasteboard with the Command-'c' key (copy), or Command-'v' key (cut), and pasted to another portfolio window, or into any application accepting TIFF images.  If copying into another application accepting TIFF images, then only the first selected image will be available to be pasted into the application. [note: Command-"C' ("Copy tiff data") is similar to Command-'c' ("Copy"), except that only the tiff image data is copied to the pasteboard, not the image file path list.  As with "Copy", "Copy tiff data" will only copy the first selected image to the pasteboard.]\
+\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\gray0\fc2\cf2 Showing the non-scaled image:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 The images shown in a portfolio window have been scaled down to fit the bounds of the image cell.  To see what the image looks like at its regular size, just double click on the desired image in the portfolio window.  The selected image will appear at its normal size in its own window.   To display the various representations, select the desired representation from the popup menu.  A popup menu title of "device" indicates that the representation is device independent.  If the image has more than one representation, the popup menu option 'animate' can be selected to cycle though all representations found in the image.  The delay between each representation frame is 1/10 of a second.\
+You may also select whether to draw the image with, or without, the alpha component.  Small images may be dragged off of the panel for easier viewing of the image transparency.\
+\
+
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\gray0\fc2\cf2 Resizing the reduced scale images: \
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 Grabbing and dragging the resize bar with the mouse will change the number of images displayed in a window.  To change the size of the scaled images without changing the number of images displayed in the window, grab and drag the resize bar with the 'Alternate' and 'Command' (Meta) keys simultaneously pressed.  When the mouse is released, the images will be rescaled to fit inside the new size window.  Note that the image cells cannot be re-scaled while images are being loaded into the window.\
+\
+
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\gray0\fc2\cf2 Changing the image title font:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 The image title font can be changed by using the 'Font' submenu.\
+\
+
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\gray0\fc2\cf2 Saving the displayed list of TIFF/EPS images:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 The list of file paths which comprise the contents of a portfolio may also be saved to a file for later retrieval.   To do so, either select the 'Save' (command-s) or 'Save As...' (command-S) option on the File menu.  The list of image file paths, displayed image cell size, and current number of viewed rows and columns, will be saved to the file.\
+\
+
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\gray0\fc2\cf2 Sorting the displayed images by name:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 The images shown in a portfolio window can be sorted by name by selecting the 'Sort by Name' option on the Edit menu.  Additional images added to the portfolio window will be appended to the end of the list and not automatically resorted.  To resort after additional images have been added, reselect the 'Sort by Name' menu option.  A Shellsort method is used to sort the images.  Also, with Command-Shift dragging you can move individual images around in the portfolio window and drop them between other images in the window.\
+\
+
+\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\gray0\fc2\cf2 Saving preference defaults:\
+
+\pard\tx660\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li360\gray0\fc2\cf2 The image cell size, current number of viewed rows and columns, and the current font for a selected portfolio window can be saved to the defaults table by displaying the 'Preferences...' panel and selecting 'Set Default'.  Subsequent new portfolio windows created will have the last saved default attributes.\
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\gray0\fc2\cf2 \
+
+\b Adding support for additional image formats\
+
+\b0 \
+
+\pard\tx600\tx1200\tx1820\tx2420\tx3020\tx3640\tx4240\tx4840\tx5460\tx6060\gray0\fc2\cf2 On startup, 
+\i ImagePortfolio
+\i0  will scan through all paths listed in the user defaults variable "CustomImageRepSearchPaths" (separated by ":"), loading all bundles it finds.  All NSImageRep subclasses contained in the bundles will be registered as additional image format support for NSImage.  After searching for bundles in these directories (if any), 
+\i ImagePortfolio
+\i0  will also search it's own app wrapper (mainBundle) and load any bundled custom NSImageRep subclasses it finds.\
+\
+These added custom NSImageRep subclasses can also be made available to other applications running within OpenStep by enabling the image filtering service within 
+\i ImagePortfolio
+\i0 .  To enable 
+\i ImagePortfolio's
+\i0  image filtering service, display the 'Preferences' panel and select the "Enable Image Filtering Service" checkbox.  This creates the file "~/.openstep/Services/ImagePortfolio" which contains information on the custom image format conversions it supports.  Once image filtering services have been enabled, it may be necessary to restart some applications in order for them to take advantage of the new service.  Other applications now wishing to display any of these image formats can now do so through the Pasteboard filtering services facility, which is performed automatically by NSImage.\
+
+}

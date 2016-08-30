@@ -1,0 +1,14 @@
+WMView = {OUTLETS = {delegate = delegate; }; SUPERCLASS = View; };
+WMTrashView = {SUPERCLASS = WMListView; };
+RecyclerUI = {
+    OUTLETS = {
+	scrollView = scrollView; 
+	trashButton = trashButton; 
+	trashView = trashView; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};
+WMTrashButton = {SUPERCLASS = View; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+WMListView = {SUPERCLASS = WMView; };

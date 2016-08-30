@@ -1,0 +1,38 @@
+Pref = {
+    OUTLETS = {
+	window;
+	contentView;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+ColumnSizer = {
+    OUTLETS = {
+	delegate;
+	refView;
+    };
+    SUPERCLASS = View;
+};
+IconPref = {
+    ACTIONS = {
+	default:;
+	revert:;
+	ok:;
+    };
+    OUTLETS = {
+	defaultButton;
+	titleSizer;
+	fileIcon;
+    };
+    SUPERCLASS = Pref;
+};
+TitleSizer = {
+    OUTLETS = {
+	delegate;
+    };
+    SUPERCLASS = View;
+};

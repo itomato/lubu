@@ -1,0 +1,32 @@
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+MenuLocation = {SUPERCLASS = Control; };
+Command = {
+    ACTIONS = {
+    	"addCommand:" = "addCommand:"; 
+	"loadForm:" = "loadForm:"; 
+	"removeCommand:" = "removeCommand:"; 
+    }; 
+    OUTLETS = {
+    	button = button; 
+	form = form; 
+	menuLoc = menuLoc; 
+	menuStrings = menuStrings; 
+	scroll = scroll; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};
+Clock = {
+    ACTIONS = {
+    	"decreaseDay:" = "decreaseDay:"; 
+	"decreaseHour:" = "decreaseHour:"; 
+	"decreaseMinute:" = "decreaseMinute:"; 
+	"decreaseSecond:" = "decreaseSecond:"; 
+	"increaseDay:" = "increaseDay:"; 
+	"increaseHour:" = "increaseHour:"; 
+	"increaseMinute:" = "increaseMinute:"; 
+	"increaseSecond:" = "increaseSecond:"; 
+    }; 
+    SUPERCLASS = View; 
+};
+NXBrowser = {OUTLETS = {delegate = delegate; }; SUPERCLASS = Control; };

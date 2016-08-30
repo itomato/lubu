@@ -1,0 +1,35 @@
+.\" "@(#) openfile.1, Rev 1.3, 97/03/17"
+.\"
+.\"	Copyright (c) 1995-1996, Sun Microsystems, Inc.
+.\"     portions (c) Copyright 1994, NeXT Computer, Inc.
+.\"     All rights reserved.
+.\"
+.TH openfile 1 "22 Jul 1996" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+openfile \- open files in Edit
+.SH SYNOPSIS
+\fBopenfile\fR \fIfilename\fR ...
+.SH DESCRIPTION
+The \fBopenfile\fR command opens files in Edit, with
+each file opened in its own Edit window.  The \fBopenfile\fR command
+can only be used if Edit is already running.
+.PP
+You can specify one or more
+file names (or pathnames), which are interpreted relative to the Terminal
+or Shell window's current working directory.  For example, the following
+command would open all the files in the current working directory that end
+with a ".c" extension, plus all the files in a subdirectory called
+headers that end with a ".h" extension:
+.nf
+
+	openfile *.c headers/*.h
+
+.fi
+If no file name is specified, \fBopenfile\fR reads stdin
+and opens a /tmp file in Edit.
+This allows you to use commands such as the following:
+.nf
+
+	diff file1 file2 | openfile
+	grep foo *.[mch] | openfile
+.fi

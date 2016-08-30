@@ -1,0 +1,33 @@
+"IconView" = {SUPERCLASS = NSView; };
+"FirstResponder" = {
+    ACTIONS = {
+	"orderFrontNXColorPanel:" = "orderFrontNXColorPanel:"; 
+	"performResize:" = "performResize:"; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"TransferPanel" = {
+    ACTIONS = {
+	"delete:" = "delete:"; 
+	"doit:" = "doit:"; 
+	"loadForm:" = "loadForm:"; 
+	"newFolder:" = "newFolder:"; 
+	"newMbox:" = "newMbox:"; 
+	"open:" = "open:"; 
+	"transfer:" = "transfer:"; 
+    }; 
+    OUTLETS = {
+	appIcon = id; 
+	browser = id; 
+	delete = id; 
+	form = id; 
+	new = id; 
+	newFolder = NSButton; 
+	open = id; 
+	transfer = id; 
+	win = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"Browser" = {SUPERCLASS = NSControl; };
+"NSBrowser" = {OUTLETS = {delegate = id; }; SUPERCLASS = NSControl; };

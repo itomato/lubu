@@ -1,0 +1,56 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0 0 22 20
+%%Creator: xgrabsc
+%%Title: screen8
+%%File: screen8.eps
+%%CreationDate: Tue May 14 16:48:07 1996
+%%EndComments
+%
+%
+%%BeginPreview: 22 20 1 2
+%ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+%ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+%%EndPreview
+%%EndProlog
+%%Page: 1 1
+/inch {72 mul} def
+/rlebuffer 2 string def
+/samples 256 string def
+/plotimage
+{22 20 8 [22 0 0 -20 0 20]
+% run-length decoding block
+  { currentfile rlebuffer readhexstring pop pop
+    rlebuffer 0 get 1 add       %% number of copies of the sample
+    /nsamples exch store        %% save it away
+    /lum rlebuffer 1 get store  %% the sample itself
+    0 1 nsamples 1 sub { samples exch lum put } for
+    samples 0 nsamples getinterval %% leave the pixels on the stack
+  }
+  image
+} def
+gsave
+22 20 scale
+plotimage
+1593160001ff00d700de02d700de02d700de007707ff000001ff00d70077
+0082027700820277000007ff000001ff00d7008201770182017701820000
+07ff000001ff00d701770082027700820177000007ff000001ff00d70277
+008209d0007d02ff000001ff00d700770182007700d000d700de02d700de
+02d7000002ff000001ff00d70082027700d002d700de02d700de00d70000
+02ff000001ff00d700770082017700d008d7000002ff000001ff00d70082
+0177008200d002d700de02d700de00d7000002ff000001ff00d701770082
+007700d000d700de02d700de02d7000002ff000001ff00d70277008200d0
+08d7000002ff000001ff0077030000d000d700de02d700de02d7000002ff
+000006ff00d002d700de02d700de00d7000002ff000006ff00d008d70000
+02ff000006ff00d002d700de02d700de00d7000002ff000006ff009c0900
+02ff000014d0000014d0
+
+%
+% Run-length encoding savings =  22.7%
+%
+
+
+
+grestore
+showpage
+
+%%Trailer

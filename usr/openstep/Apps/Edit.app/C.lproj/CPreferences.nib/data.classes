@@ -1,0 +1,31 @@
+CPreferences = {
+    OUTLETS = {
+	tagsPath;
+	levelMatrix1;
+	scroll;
+	levelMatrix2;
+	includePath;
+    };
+    SUPERCLASS = Preferences;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Preferences = {
+    ACTIONS = {
+	ok:;
+	performClick:;
+	revert:;
+	changeOptionMode:;
+    };
+    OUTLETS = {
+	revert;
+	win;
+	optionsButton;
+	ok;
+	optionView;
+    };
+    SUPERCLASS = Object;
+};

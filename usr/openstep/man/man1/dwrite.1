@@ -1,0 +1,91 @@
+.\" "@(#) dwrite.1, Rev 1.4, 97/03/17"
+.\"
+.\"	Copyright (c) 1995-1996, Sun Microsystems, Inc.
+.\"     portions (c) Copyright 1994, NeXT Computer, Inc.
+.\"     All rights reserved.
+.\"
+.TH DWRITE 1 "22 Jul 1996" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+dwrite \- write to the defaults database
+.SH SYNOPSIS
+.ft L
+\fBdwrite\fR
+.br
+\fBdwrite\fR \fIowner\fR \fIname\fR \fIvalue\fR
+.br
+\fBdwrite\fR \fB-g\fR \fIname\fR \fIvalue\fR
+.br
+.ft R
+.PP
+.ft L
+.SH DESCRIPTION
+.I dwrite
+writes a variable and its value into the user's defaults database.  
+If no command-line arguments are given, the standard input
+(see csh(1)) is read.
+.PP
+.I owner
+is the application associated with the variable
+.I name.
+.I value
+becomes the value of the variable
+.I name.
+If -g is
+specified, the value of the variable holds for all applications that
+access the variable.  It is a global backdrop
+variable.
+.PP
+There are two ways a default value for a variable can be set, and one way
+a default value can be overridden.  From lowest precedence to highest
+precedence, these are:
+.PP
+.nf
+	The default value may be set with the -g flag.
+	The default value may be set for a particular application.
+	The default value may be overridden by a command line option.
+.fi
+.PP
+For example,
+the following command would make Courier the default value of the NSFont
+variable in all applications that
+don't have their own application-specific default value:
+.PP
+.nf
+	dwrite -g NSFont Courier
+.fi
+.PP
+If an application-specific default value is not found in the database, this
+global default value is used (assuming, of course, that the
+application checks for the value of this variable).  So Edit, as well
+as other applications, would start to use Courier font by default.
+The following command would cause
+Edit to override the global value for the Font variable and use
+Helvetica instead:
+.PP
+.nf
+	dwrite Edit NSFont Helvetica
+.fi
+.PP
+Other applications that access
+the NXFont variable would continue to use Courier.
+.PP
+To override either the
+global or application-specific default value for a single session,
+specify a value for the appropriate command-line option when launching the application.
+For example:
+.PP
+.nf
+	Edit -NSFont Courier
+.fi
+.PP
+The \fIowner\fR, \fIname\fR, and \fIvalue\fR fields output by dread are
+separated by spaces, so that those values can be used as
+input to \fIdwrite\fR.
+For example:
+.PP
+.RS
+dread -l | sed s/LucidaSans/Helvetica/ | dwrite
+.RE
+.PP
+.SH "SEE ALSO"
+dread(1), dremove(1), csh(1)

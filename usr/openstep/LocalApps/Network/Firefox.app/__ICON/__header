@@ -1,0 +1,5 @@
+F	Firefox.app	Firefox	app
+F	Firefox	Firefox	app
+S       htm     Firefox        html
+S       html    Firefox        html
+S       url     Firefox        url

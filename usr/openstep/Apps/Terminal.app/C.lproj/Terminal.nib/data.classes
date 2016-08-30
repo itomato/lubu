@@ -1,0 +1,118 @@
+FontTrap = {
+    ACTIONS = {"changeFont:" = "changeFont:"; }; 
+    OUTLETS = {fontTarget = fontTarget; }; 
+    SUPERCLASS = View; 
+};
+StuartApp = {
+    ACTIONS = {
+	"appDidInit:" = "appDidInit:"; 
+	"appWillTerminate:" = "appWillTerminate:"; 
+	"info:" = "info:"; 
+	"monStart:" = "monStart:"; 
+	"monStop:" = "monStop:"; 
+	"new:" = "new:"; 
+	"newCommand:" = "newCommand:"; 
+	"newCommandOK:" = "newCommandOK:"; 
+	"open:" = "open:"; 
+	"openLibraryTerm:" = "openLibraryTerm:"; 
+	"preferences:" = "preferences:"; 
+	"printPSCode:" = "printPSCode:"; 
+	"quickTitle:" = "quickTitle:"; 
+	"quickTitleCancel:" = "quickTitleCancel:"; 
+	"quickTitleOK:" = "quickTitleOK:"; 
+	"save:" = "save:"; 
+	"saveAllAs:" = "saveAllAs:"; 
+	"saveAs:" = "saveAs:"; 
+	"showServiceManager:" = "showServiceManager:"; 
+    }; 
+    OUTLETS = {
+	autoOpenBox = autoOpenBox; 
+	dirtMonitor = dirtMonitor; 
+	document = document; 
+	libraryMenu = libraryMenu; 
+	newCommandForm = newCommandForm; 
+	newCommandWindow = newCommandWindow; 
+	prefManager = prefManager; 
+	quickTitleForm = quickTitleForm; 
+	quickTitlePanel = quickTitlePanel; 
+	saveAccessory = saveAccessory; 
+	serviceCache = serviceCache; 
+	serviceManager = serviceManager; 
+    }; 
+    SUPERCLASS = Application; 
+};
+Preferences = {
+    ACTIONS = {"preferences:" = "preferences:"; }; 
+    OUTLETS = {
+	altRadio = altRadio; 
+	columnForm = columnForm; 
+	emulationSwitches = emulationSwitches; 
+	fontName = fontName; 
+	fontSize = fontSize; 
+	noteBox = noteBox; 
+	rowForm = rowForm; 
+	shellName = shellName; 
+	sourceDotLogin = sourceDotLogin; 
+	winSwitches = winSwitches; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {
+    ACTIONS = {
+	"barfage:" = "barfage:"; 
+	"clearScrollback:" = "clearScrollback:"; 
+	"debugToggle:" = "debugToggle:"; 
+	"jumpToSelection:" = "jumpToSelection:"; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FindPanel = {
+    ACTIONS = {
+	"enterSelection:" = "enterSelection:"; 
+	"findNext:" = "findNext:"; 
+	"findPanel:" = "findPanel:"; 
+	"findPrevious:" = "findPrevious:"; 
+    }; 
+    OUTLETS = {findPanel = findPanel; }; 
+    SUPERCLASS = Object; 
+};
+TerminalApp = {
+    ACTIONS = {
+	"appDidInit:" = "appDidInit:"; 
+	"appWillTerminate:" = "appWillTerminate:"; 
+	"info:" = "info:"; 
+	"monStart:" = "monStart:"; 
+	"monStop:" = "monStop:"; 
+	"new:" = "new:"; 
+	"newCommand:" = "newCommand:"; 
+	"newCommandOK:" = "newCommandOK:"; 
+	"open:" = "open:"; 
+	"openLibraryTerm:" = "openLibraryTerm:"; 
+	"preferences:" = "preferences:"; 
+	"print:" = "print:"; 
+	"quickTitle:" = "quickTitle:"; 
+	"quickTitleCancel:" = "quickTitleCancel:"; 
+	"quickTitleOK:" = "quickTitleOK:"; 
+	"save:" = "save:"; 
+	"saveAllAs:" = "saveAllAs:"; 
+	"saveAs:" = "saveAs:"; 
+	"showServiceManager:" = "showServiceManager:"; 
+    }; 
+    OUTLETS = {
+	autoOpenBox = autoOpenBox; 
+	dirtMonitor = dirtMonitor; 
+	document = document; 
+	libraryMenu = libraryMenu; 
+	newCommandForm = newCommandForm; 
+	newCommandWindow = newCommandWindow; 
+	prefManager = prefManager; 
+	quickTitleForm = quickTitleForm; 
+	quickTitlePanel = quickTitlePanel; 
+	saveAccessory = saveAccessory; 
+	saveHowMany = saveHowMany; 
+	serviceCache = serviceCache; 
+	serviceManager = serviceManager; 
+	serviceProvider = serviceProvider; 
+    }; 
+    SUPERCLASS = Application; 
+};

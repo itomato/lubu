@@ -1,0 +1,62 @@
+FirstResponder = {
+    ACTIONS = {
+	"changeToBrowser:" = "changeToBrowser:"; 
+	"changeToExpertView:" = "changeToExpertView:"; 
+	"changeToIconView:" = "changeToIconView:"; 
+	"cleanupIcons:" = "cleanupIcons:"; 
+	"compressSelection:" = "compressSelection:"; 
+	"decompressSelection:" = "decompressSelection:"; 
+	"destroySelection:" = "destroySelection:"; 
+	"diskInitialize:" = "diskInitialize:"; 
+	"diskUnmountAndEject:" = "diskUnmountAndEject:"; 
+	"duplicateSelection:" = "duplicateSelection:"; 
+	"emptyRecycler:" = "emptyRecycler:"; 
+	"encryptSelection:" = "encryptSelection:"; 
+	"inspectAccess:" = "inspectAccess:"; 
+	"inspectAttributes:" = "inspectAttributes:"; 
+	"inspectContents:" = "inspectContents:"; 
+	"inspectTools:" = "inspectTools:"; 
+	"makeBold:" = "makeBold:"; 
+	"makeItalics:" = "makeItalics:"; 
+	"makeNewFolder:" = "makeNewFolder:"; 
+	"openAsFolder:" = "openAsFolder:"; 
+	"openSelection:" = "openSelection:"; 
+	"showDebugPanel:" = "showDebugPanel:"; 
+	"sortIcons:" = "sortIcons:"; 
+    }; 
+    SUPERCLASS = Object; 
+};
+Workspace = {
+    ACTIONS = {
+	"diskEject:" = "diskEject:"; 
+	"diskInitialize:" = "diskInitialize:"; 
+	"diskUnmountAndEject:" = "diskUnmountAndEject:"; 
+	"emptyRecycler:" = "emptyRecycler:"; 
+	"flushAll:" = "flushAll:"; 
+	"inspectAttributes:" = "inspectAttributes:"; 
+	"inspectContents:" = "inspectContents:"; 
+	"inspectSelection:" = "inspectSelection:"; 
+	"inspectTools:" = "inspectTools:"; 
+	"makeNewBrowser:" = "makeNewBrowser:"; 
+	"newUnixShell:" = "newUnixShell:"; 
+	"showConsole:" = "showConsole:"; 
+	"showFindPanel:" = "showFindPanel:"; 
+	"showInfoPanel:" = "showInfoPanel:"; 
+	"showLegalPanel:" = "showLegalPanel:"; 
+	"showPreferencesPanel:" = "showPreferencesPanel:"; 
+	"showProcesses:" = "showProcesses:"; 
+	"showTrash:" = "showTrash:"; 
+	"updateEverything:" = "updateEverything:"; 
+    }; 
+    OUTLETS = {
+	currentBrowser = currentBrowser; 
+	diskMenu = diskMenu; 
+	fileMenu = fileMenu; 
+	lastMountedDevice = lastMountedDevice; 
+	servicesMenu2 = servicesMenu2; 
+	toolsMenu = toolsMenu; 
+	viewMenu = viewMenu; 
+	windowsMenu2 = windowsMenu2; 
+    }; 
+    SUPERCLASS = Application; 
+};

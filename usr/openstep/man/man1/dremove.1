@@ -1,0 +1,40 @@
+.\" "@(#) dremove.1, Rev 1.4, 97/03/17"
+.\"
+.\"	Copyright (c) 1995-1996, Sun Microsystems, Inc.
+.\"     portions (c) Copyright 1994, NeXT Computer, Inc.
+.\"     All rights reserved.
+.\"
+.TH DREMOVE 1 "22 Jul 1996" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+dremove \- remove a variable from the defaults database
+.SH SYNOPSIS
+.ft L
+\fBdremove\fR
+.br
+\fBdremove\fR \fIowner\fR \fIname\fR
+.br
+\fBdremove\fR \fB-g\fR \fIname\fR
+.br
+.ft R
+.PP
+.ft L
+.SH DESCRIPTION
+.I dremove
+removes a variable and its associated value from
+the user's defaults database.  
+.I owner
+is the application associated with the variable
+.I name.
+If \fB-g\fR is
+specified, the database is searched for a system-wide value for the variable.
+
+If no arguments are provided, the standard input (see csh(1)) is read.
+.SH "SEE ALSO"
+dwrite(1), dread(1)
+
+
+
+
+
+
+

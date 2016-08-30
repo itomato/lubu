@@ -1,0 +1,33 @@
+MyObject = {
+    ACTIONS = {
+	attributesPicked:;
+	rangePicked:;
+    };
+    OUTLETS = {
+	attrButton;
+	rangeMatrix;
+	attributeMatrix;
+	accessoryView;
+	rangeButton;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+FieldPrint = {
+    ACTIONS = {
+	attributesPicked:;
+	rangePicked:;
+    };
+    OUTLETS = {
+	attrButton;
+	rangeMatrix;
+	attributeMatrix;
+	accessoryView;
+	rangeButton;
+    };
+    SUPERCLASS = View;
+};

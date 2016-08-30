@@ -1,0 +1,57 @@
+.TH DREAD 1 "13/06/96" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+dread \- read from the defaults database
+.SH SYNOPSIS
+.ft L
+.nf
+\fBdread\fR \fB-l\fR
+\fBdread\fR [ \fIowner\fR ] \fIname\fR
+\fBdread\fR \fB-g\fR \fIname\fR
+\fBdread\fR \fB-n\fR \fIname\fR
+\fBdread\fR \fB-o\fR \fIowner\fR
+.fi
+.br
+.ft R
+.PP
+.ft L
+.SH DESCRIPTION
+.I dread
+looks through the user's defaults database
+for a variable and its associated value, and
+outputs this information to the standard output.
+.I owner
+is the application associated with the variable
+\fIname\fR
+(\fIowner\fR may instead have the value ``GLOBAL'' or ``System'').
+.PP
+The \fB-l\fR option displays all the variables and default values in the
+database.  To display a subset of the database, other options can be
+used instead:
+.TP
+\fBdread\fR [ \fIowner\fR ] \fIname\fR
+Searches for \fIowner\fR's value for the variable.
+If no owner application is
+specified, the owner GLOBAL is searched.
+.TP
+\fBdread\fR \fB-g\fR \fIname\fR
+Searches the owner GLOBAL for a value of the variable.
+This is the same as using
+the previous option with no owner specified.
+.TP
+\fBdread\fR \fB-n\fR \fIname\fR
+Searches all possible owners for a value of the variable.
+.TP
+\fBdread\fR \fB-o\fR \fIowner\fR
+Searches the specifed owner application for the values of all its variables.
+.PP
+The \fIowner\fR, \fIname\fR, and \fIvalue\fR fields output by dread are
+separated by spaces, so that those values can be used as
+input to \fIdwrite\fR.
+For example:
+.PP
+.RS
+dread -l | sed s/LucidaSans/Helvetica/ | dwrite
+.RE
+.PP
+.SH "SEE ALSO"
+dwrite(1), dremove(1)

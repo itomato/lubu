@@ -1,0 +1,64 @@
+"AppMaster" = {
+    ACTIONS = {
+	"showInfoPanel:" = "showInfoPanel:"; 
+	"showPrefPanel:" = "showPrefPanel:"; 
+	"showWhatsNewPanel:" = "showWhatsNewPanel:"; 
+    }; 
+    OUTLET_TYPES = {}; 
+    OUTLETS = {
+	appDefaults = "NSUserDefaults*"; 
+	bottomView = "NSView*"; 
+	dataManager = id; 
+	displayBundleArray = "NSMutableArray*"; 
+	infoPanel = "NSPanel*"; 
+	infoPanelText = id; 
+	lastDisplayedObject = "JavaClassData*"; 
+	mainWindow = "NSWindow*"; 
+	prefPanel = "NSPanel*"; 
+	prefView = NSBox; 
+	splitView = "NSSplitView*"; 
+	topView = "NSView*"; 
+	whatsNewPanel = "NSPanel*"; 
+	whatsNewPanelText = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"PathController" = {
+    ACTIONS = {
+	"browserSelectionMade:" = "browserSelectionMade:"; 
+	"editSelectionMade:" = "editSelectionMade:"; 
+    }; 
+    OUTLETS = {
+	appMaster = id; 
+	browser = id; 
+	browserShouldUpdate = BOOL; 
+	classPathArray = "NSMutableArray*"; 
+	dataSink = DataManager; 
+	editField = NSFormCell; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"PathBrowser" = {ACTIONS = {}; OUTLET_TYPES = {}; OUTLETS = {}; SUPERCLASS = NSBrowser; };
+"DataDisplayer" = {
+    ACTIONS = {}; 
+    OUTLET_TYPES = {}; 
+    OUTLETS = {output = id; }; 
+    SUPERCLASS = NSObject; 
+};
+"ClassPathCell" = {SUPERCLASS = NSBrowserCell; };
+"PathSearcher" = {
+    OUTLETS = {dataSink = id; path = id; pathController = id; }; 
+    SUPERCLASS = NSObject; 
+};
+"DataManager" = {
+    ACTIONS = {"recacheData:" = "recacheData:"; }; 
+    OUTLETS = {
+	data = "NSMutableArray*"; 
+	isDataAdded = BOOL; 
+	isDataChanged = BOOL; 
+	writerLock = mutex_t; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"HackWindow" = {SUPERCLASS = NSWindow; };

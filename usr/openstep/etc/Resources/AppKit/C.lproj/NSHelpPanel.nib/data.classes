@@ -1,0 +1,31 @@
+MyNXHelpPanel = {
+    SUPERCLASS = NXHelpPanel;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+NSKitPanelController = {
+    OUTLETS = {
+	panel;
+    };
+    SUPERCLASS = Object;
+};
+NXHelpPanel = {
+    ACTIONS = {
+	_clonePanel:;
+	_goToIndex:;
+	_backtrack:;
+	_find:;
+    };
+    OUTLETS = {
+	indexButton;
+	findField;
+	tocScrollView;
+	textScrollView;
+	findButton;
+	backtrackButton;
+    };
+    SUPERCLASS = Panel;
+};

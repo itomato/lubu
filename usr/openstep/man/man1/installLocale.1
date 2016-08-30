@@ -1,0 +1,24 @@
+.TH INSTALLLOCALE 1 "17/12/96" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+installLocale \- puts a locale into a wrapper directory.
+.SH SYNOPSIS
+.LP
+.B installLocale
+[
+.B \-v
+]
+[
+.BI \-i " input-dir"
+]
+.B \-w " wrapper-dir"
+.SH DESCRIPTION
+.B installLocale puts a locale (created by createLocale) into a wrapper directory.
+.SH OPTIONS
+.TP
+.B \-v
+Verbose. Normally installLocale does its work silently. This option causes installLocale to list the locale directories as it installs them in the wrapper directory.
+.BI \-i " input-dir"
+specifies the locale directory you are installing. The default directory is ./locales/C.
+.BI \-w " wrapper-dir"
+specifies the wrapper directory into which the locale is to be installed. The wrapper directory must be specified.
+

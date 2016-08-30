@@ -1,0 +1,27 @@
+CompressorProcess = {
+    ACTIONS = {
+	abort:;
+	pause:;
+    };
+    OUTLETS = {
+	opField;
+	compWindow;
+	buttons;
+    };
+    SUPERCLASS = BGProcess;
+};
+BGProcess = {
+    ACTIONS = {
+	activateProcess:;
+	deactivateProcess:;
+    };
+    OUTLETS = {
+	window;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};

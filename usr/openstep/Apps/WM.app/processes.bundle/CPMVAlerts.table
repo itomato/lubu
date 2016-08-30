@@ -1,0 +1,88 @@
+{
+    already_exists_1 = {
+	header = "%@ already exists";
+	contents = "You can stop the operation or replace the existing file.";
+	buttons = (Stop, Replace);
+    };
+    
+    already_exists_many = {
+	header = "%@ already exists";
+	contents = "You can skip this file, stop the entire operation, or replace the existing file.";
+	repeat = "";
+	buttons = (Skip, Stop, Replace);
+    };
+    
+    exists_can_merge_1 = {
+	header = "%@ already exists";
+	contents = "You can merge with the existing folder, stop the operation, or replace the existing version.";
+	buttons = (Merge, Stop, Replace);
+    };
+    
+    exists_can_merge_many = {
+	header = "%@ already exists";
+	contents = "You can merge both folders, skip this file, stop the entire operation, or replace the existing version.";
+	repeat = "";
+	buttons = (Merge, Skip, Stop, Replace);
+    };
+    
+    some_dir_exist_many = {
+	header = "One or several folders already exist at destination";
+	contents = "You can merge them, replace them, stop the entire operation, or decide for each folder.";
+	buttons = (Merge, Replace, Stop, Proceed);
+    };
+    
+    non_writable = {
+	header = "%@ is not writable";
+	contents = "You can skip this file, stop the entire operation, or proceed anyway.";
+	repeat = "";
+	buttons = (Skip, Stop, Proceed);
+    };
+    
+    link = {
+	header = "%@ is a link";
+	contents = "You can create a new link, skip this link, stop the entire operation, or copy the original.";
+	repeat = "";
+	buttons = ("New Link", Skip, Stop, Copy);
+    };
+    
+    no_room = {
+	header = "There is no room on disk for %@";
+	contents = "You can either stop the entire operation or empty the recycler and proceed";
+	buttons = (Stop, Empty);
+    };
+    
+    really_no_room = {
+	header = "There is no room on disk for %@";
+	contents = "You can either stop the entire operation or proceed after making room on the disk";
+	buttons = (Stop, Proceed);
+    };
+    
+    no_room_chunks = {
+	header = "There is no room on disk for %@";
+	contents = "Do you want to create a compressed, multi-volume file?";
+	buttons = (No, Yes);
+    };
+    
+    swap_disks = {
+	header = "Multi Volume Operation";
+	contents = "Insert next disk and proceed";
+	buttons = (Stop, Proceed);
+    };
+    
+    continuable_error = {
+	contents = "You can stop the entire operation or proceed anyway.";
+	buttons = (Stop, Proceed);
+    };
+    
+    fatal_error = {
+	contents = "Fatal error during operation";
+	buttons = (OK);
+    };
+
+    dos_filename_limit = {
+	header = "One or more files exceeds the DOS 8.3 filename limit.";
+	contents = "You can stop the entire operation, or proceed to copy the valid files.";
+	buttons = (Stop, Proceed);
+    };
+    
+}

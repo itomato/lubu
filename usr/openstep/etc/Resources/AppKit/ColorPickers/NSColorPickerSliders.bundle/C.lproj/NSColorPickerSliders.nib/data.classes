@@ -1,0 +1,82 @@
+NXColorPickerSliders = {
+    ACTIONS = {
+	"showCMYKView:" = "showCMYKView:"; 
+	"showGreyScaleView:" = "showGreyScaleView:"; 
+	"showHSBView:" = "showHSBView:"; 
+	"showRGBView:" = "showRGBView:"; 
+    }; 
+    OUTLETS = {
+	buttonMatrix = buttonMatrix; 
+	cmykSliders = cmykSliders; 
+	currViewObject = currViewObject; 
+	greySliders = greySliders; 
+	hsbSliders = hsbSliders; 
+	rgbSliders = rgbSliders; 
+	sliderContainer = sliderContainer; 
+	slidersView = slidersView; 
+    }; 
+    SUPERCLASS = Object; 
+};
+NXRGBSliders = {
+    ACTIONS = {"adjustControls:" = "adjustControls:"; }; 
+    OUTLETS = {
+	blueSlider = blueSlider; 
+	blueText = blueText; 
+	colorPanel = colorPanel; 
+	controllingPicker = controllingPicker; 
+	greenSlider = greenSlider; 
+	greenText = greenText; 
+	redSlider = redSlider; 
+	redText = redText; 
+	rgbView = rgbView; 
+    }; 
+    SUPERCLASS = Object; 
+};
+NXGreySliders = {
+    ACTIONS = {"adjustControls:" = "adjustControls:"; "jumpSlider:" = "jumpSlider:"; }; 
+    OUTLETS = {
+	colorPanel = colorPanel; 
+	controllingPicker = controllingPicker; 
+	greyButtons = greyButtons; 
+	greySlider = greySlider; 
+	greyText = greyText; 
+	greyView = greyView; 
+	greyViewInside = greyViewInside; 
+	opacityButtons = opacityButtons; 
+    }; 
+    SUPERCLASS = Object; 
+};
+NXCMYKSliders = {
+    ACTIONS = {"adjustControls:" = "adjustControls:"; }; 
+    OUTLETS = {
+	blackSlider = blackSlider; 
+	blackText = blackText; 
+	cmykView = cmykView; 
+	colorPanel = colorPanel; 
+	controllingPicker = controllingPicker; 
+	cyanSlider = cyanSlider; 
+	cyanText = cyanText; 
+	magentaSlider = magentaSlider; 
+	magentaText = magentaText; 
+	yellowSlider = yellowSlider; 
+	yellowText = yellowText; 
+    }; 
+    SUPERCLASS = Object; 
+};
+NXHSBSliders = {
+    ACTIONS = {"adjustControls:" = "adjustControls:"; }; 
+    OUTLETS = {
+	brightnessSlider = brightnessSlider; 
+	brightnessText = brightnessText; 
+	colorPanel = colorPanel; 
+	controllingPicker = controllingPicker; 
+	hsbView = hsbView; 
+	hueSlider = hueSlider; 
+	hueText = hueText; 
+	saturationSlider = saturationSlider; 
+	saturationText = saturationText; 
+	sliderMatrix = sliderMatrix; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };

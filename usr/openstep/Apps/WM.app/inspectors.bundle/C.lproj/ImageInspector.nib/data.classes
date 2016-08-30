@@ -1,0 +1,16 @@
+ImageInspector = {
+    OUTLETS = {
+	box;
+	wField;
+	scaleField;
+	hField;
+	window;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+	orderFrontNXColorPanel:;
+    };
+    SUPERCLASS = Object;
+};

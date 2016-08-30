@@ -1,0 +1,28 @@
+"WorkspaceInfo" = {
+    ACTIONS = {
+	"animate:" = "animate:"; 
+	"setBertrand:" = "setBertrand:"; 
+	"setJmh:" = "setJmh:"; 
+	"setKeith:" = "setKeith:"; 
+	"setLee:" = "setLee:"; 
+	"setNext:" = "setNext:"; 
+    }; 
+    OUTLETS = {
+	copyright = NSTextField; 
+	disk = id; 
+	machine = id; 
+	memory = id; 
+	os = NSTextField; 
+	picture = id; 
+	psVersion = id; 
+	swap = NSTextField; 
+	systemVersion = NSTextField; 
+	window = id; 
+	workspaceVersion = NSTextField; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {
+    ACTIONS = {"orderFrontNXColorPanel:" = "orderFrontNXColorPanel:"; }; 
+    SUPERCLASS = NSObject; 
+};

@@ -1,0 +1,5 @@
+AutoLaunchCell = {SUPERCLASS = Cell; };
+DockPref = {ACTIONS = {"setDockSelection:" = "setDockSelection:"; "toggleAutoLaunch:" = "toggleAutoLaunch:"; }; OUTLETS = {iconView = iconView; launchMatrix = launchMatrix; launchSwitch = launchSwitch; pathField = pathField; scrollView = scrollView; shortName = shortName; }; SUPERCLASS = Pref; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+Pref = {OUTLETS = {contentView = contentView; window = window; }; SUPERCLASS = Object; };
+WMPathField = {SUPERCLASS = View; };

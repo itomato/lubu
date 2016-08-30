@@ -1,0 +1,28 @@
+FirstResponder = {
+    ACTIONS = {
+	orderFrontNXColorPanel:;
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};
+ScrollingSound = {
+    SUPERCLASS = View;
+};
+SoundEdit = {
+    ACTIONS = {
+	record:;
+	play:;
+	ok:;
+	stop:;
+	load:;
+    };
+    OUTLETS = {
+	win;
+	record;
+	play;
+	view;
+	stop;
+	appIcon;
+    };
+    SUPERCLASS = Object;
+};

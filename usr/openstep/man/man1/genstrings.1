@@ -1,0 +1,60 @@
+.\" "%Z% %M%, Rev %I%, %D%"
+.\"
+.\"	Copyright (c) 1995-1996, Sun Microsystems, Inc.
+.\"     portions (c) Copyright 1994, NeXT Computer, Inc.
+.\"     All rights reserved.
+.\"
+.TH GENSTRINGS 1 "%G%" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+genstrings \- generate string table from source code
+.SH SYNOPSIS
+.B /usr/bin/genstrings
+[
+.BI \-s " routine"
+] [
+.BI \-o " outputDir"
+] 
+.IR file " ..."
+.SH DESCRIPTION
+The 
+.I genstrings 
+utility generates a 
+.B .strings 
+file(s) from the C or Objective C
+(.c or .m) source code file(s) given as the 
+argument(s).  A
+.B .strings 
+file is used for
+localizing an application for different 
+languages.
+.PP
+Source lines containing text of the form
+LocalString("\fIkey\fR", "\fIvalue\fR", \fIcomment\fR) will
+generate an appropriate string table entry on 
+.IR stdout .
+Normally, 
+.I stdout
+should be directed to a file named
+.IR Localizable.strings ,
+since this is where the NSLocalizedString
+function looks by default for its
+string table.
+.PP
+Source lines containing 
+LocalStringFromTable(\fITable\fR, "\fIkey\fR", "\fIvalue\fR", \fIcomment\fR)
+will generate an appropriate string table entry 
+in a file named
+.IR Table .strings.
+.SH OPTIONS
+.TP 
+.BI  \-s " routine"
+Substitutes 
+.I routine
+for LocalString.
+For example, 
+.B \-s MyLocalString 
+will catch calls 
+to MyLocalString and MyLocalStringFromTable.
+.TP
+.BI \-o " outputDir"
+Specifies what directory the tables should be created in.

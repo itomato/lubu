@@ -1,0 +1,37 @@
+{
+    ActiveMailbox = Incoming.mbox; 
+    OutgoingMailbox = Outgoing.mbox; 
+    TemplatesMailbox = Templates.mbox;
+    DraftsMailbox = Drafts.mbox;
+    Archive = YES; 
+    AutoCompact = YES; 
+    AutoFetch = NO; 
+    AutoIndent = YES; 
+    CCPollTime = 0.25; 
+    Debug = NO; 
+    Encrypt = NO; 
+    KeyBindings = NO; 
+    MailDir = "~/openstep/Mailboxes"; 
+    MailFilter = "Content-Length:Content-Transfer-Encoding:Content-Type:Errors-To:Message-ID:MIME-Version:Next-Attachment:Next-Reference:Originator:Precedence:Received:Return-Path:Status:X-Face:X-NeXT-DocumentID:References:Resent-Message-ID:Content-Length:Content-Disposition"; 
+    MailMarker = "Subject:From:To:Cc:Attachment:Date:Reply-To:Sender:In-Reply-To:X-Mailer:User-Agent"; 
+    Mailer = /usr/lib/sendmail; 
+    MailSound = /usr/openstep/Library/Sounds/Mail.snd;
+    NonNext = NO; 
+    PeopleDir = /usr/local/openstep/Library/Images/People; 
+    PollTime = 5; 
+    ReadReceipt = NO; 
+    RemoteFetch = NO; 
+    SpoolDir = /var/mail; 
+    TocFont = Helvetica; 
+    TocFontSize = 12.0; 
+    UserKey1 = "X-Mailer";
+    UserValue1 = "NeXT.Mailer (LuBu OpenMagic 1.0 - Solaris OpenStep 1.1)";
+    24HourClock = YES;
+    BigPieChart = YES;
+    BigPieChartColor = Green;
+    DoubleClickRestores = YES;
+    SpacePages = YES;
+    StatusLine = YES;
+    ComposeStatusLine = YES;
+    SendSizeLimit = 1000000;
+}

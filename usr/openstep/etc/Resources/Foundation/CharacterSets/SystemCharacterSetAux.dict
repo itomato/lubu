@@ -1,0 +1,40 @@
+/*
+ * SystemCharacterSetAux.dict - auxilliary (non-bitmap) system character sets.
+ */
+{
+    controlCharacterSet = {
+	nsingles = 0;
+	nranges = 2;
+	singmin = 131071;
+	singmax = 0;
+	singles = ();
+	ranges = (0, 31, 128, 159);
+    };
+
+    whitespaceCharacterSet = {
+	nsingles = 4;
+	nranges = 1;
+	singmin = 9;
+	singmax = 12288;
+	singles = (9, 32, 160, 12288);
+	ranges = (8192, 8203);
+    };
+
+    whitespaceAndNewlineCharacterSet = {
+	nsingles = 5;
+	nranges = 1;
+	singmin = 9;
+	singmax = 12288;
+	singles = (9, 10, 32, 160, 12288);
+	ranges = (8192, 8203);
+    };
+
+    viramaCharacterSet = {
+	characters = (0x094D, 0x09CD, 0x0A4D, 0x0ACD, 0x0B4D, 0x0BCD, 0x0C4D, 0x0CCD, 0x0D4D);
+    };
+
+    joinerAndNonJoinerCharacterSet = {
+	characters = (0x200C, 0x200D);
+    };
+
+}

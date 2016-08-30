@@ -1,0 +1,401 @@
+#! /bin/sh
+#ident "@(#) openstep, Rev 1.50, 97/03/17"
+#ident "@(#) LuBu OpenMagic 1.0, 06/03/10";
+#
+#      Copyright (c) 1995-1996, Sun Microsystems, Inc.
+#      All rights reserved.
+#      Copyright (c) 2006, Luke Th. Bullock
+#
+#  startup/takedown script.
+#
+
+verifyUserOKToShutdown() {
+	# if we running as root then we can shutdown openstep in any case
+	if [ "${user}" = "root" ]
+	then
+		return 0
+	fi
+
+	sessionuser=`/usr/bin/ps -ef | \
+	/bin/egrep "ospbs" | \
+	/bin/egrep -v "egrep" | \
+	/bin/awk '{ print $1 }' `
+
+	# if we running as the same user that started openstep then we can shutdown 
+	if [ "${sessionuser}" = "${user}" ]
+	then
+		return 0
+	fi
+
+	sessionuser=`/usr/bin/ps -ef | \
+	/bin/egrep "Workspace" | \
+	/bin/egrep -v "egrep" | \
+	/bin/awk '{ print $1 }' `
+
+	# if we running as the same user that started openstep then we can shutdown 
+	if [ "${sessionuser}" = "${user}" ]
+	then
+		return 0
+	fi
+
+	sessionuser=`/usr/bin/ps -ef | \
+	/bin/egrep "WM.app" | \
+	/bin/egrep -v "egrep" | \
+	/bin/awk '{ print $1 }' `
+
+	# if we running as the same user that started openstep then we can shutdown 
+	if [ "${sessionuser}" = "${user}" ]
+	then
+		return 0
+	fi
+	# This user is not allowed to shutdown openstep
+	return 1
+}
+
+verifyEnvFiles() {
+        savecwd=`pwd`
+	if [ ! -d $HOME/.openstep ]
+	then
+	    cd $PRODUCTROOT"/etc/template/user"
+	    if [ $LOGNAME-L = root-L ]
+	    then
+		/bin/find .openstep -print | /bin/cpio -pud -R root $HOME
+	    else
+	      	/bin/find .openstep -print | /bin/cpio -pud $HOME
+	    fi
+	    cd $savecwd
+	fi
+	if [ ! -d $HOME/openstep ]
+	then
+	    cd $PRODUCTROOT"/etc/template/user"
+	    if [ $LOGNAME-L = root-L ]
+	    then
+	        /bin/find openstep -print | /bin/cpio -pud -R root $HOME
+		ln -s $HOME/openstep/Apps $HOME/openstep/UserApps
+	    else
+	        /bin/find openstep -print | /bin/cpio -pud $HOME
+		ln -s $HOME/openstep/Apps $HOME/openstep/UserApps
+	    fi
+	    /usr/bin/chmod -R og-rx $HOME/openstep/Mailboxes
+ 	    cd $savecwd
+        fi
+}
+
+reallyStartPrograms() {
+	
+	/bin/echo "Starting the environment\c"
+	
+	$PRODUCTROOT"/bin/dwrite" -NSLang $lang
+
+	if [ "$TO_CONSOLE" -ne 0 ]
+	then
+		$PRODUCTROOT"/etc/ospd"  >/dev/console 2>&1
+	else
+		$PRODUCTROOT"/etc/ospd"
+	fi
+
+	$PRODUCTROOT"/etc/setprop"
+	/bin/echo ".\c"
+	if [ "$TO_CONSOLE" -ne 0 ]
+	then
+		$PRODUCTROOT"/etc/ospbs"  >/dev/console 2>&1
+	else
+		$PRODUCTROOT"/etc/ospbs"
+	fi
+	/bin/echo ".\c"
+
+	if [ "$TO_CONSOLE" -ne 0 ]
+	then
+		$PRODUCTROOT"/Apps/Workspace.app/Workspace" $dockarg1 $dockarg2 >/dev/console 2>&1 & 
+	else
+		$PRODUCTROOT"/Apps/Workspace.app/Workspace" $dockarg1 $dockarg2 & 
+	fi
+	/bin/echo ".\c"
+
+}
+
+startPrograms() {
+	$PRODUCTROOT"/etc/checkIfRunning"
+	opt=$?
+	if [ "$opt" = "2" ]
+	then
+	  /bin/echo "\nSome part of the environment is already running."
+	  /bin/echo "You need to perform an 'openstep -stop' command first."
+	  exit 1
+
+	elif [ "$opt" = "1" ]
+	then
+	  /bin/echo "\nSome part of the environment is already running."
+	  /bin/echo "Trying to restart this portion..."
+
+	  # Try killing off the pasteboard server; everything else should start OK after this
+	  pid=`/usr/bin/ps -ef | /bin/egrep "ospbs" |  /bin/egrep -v "egrep" | /bin/awk '{ print $2 }' `
+	  if [ "${pid}" = "" ]
+	  then
+		 /bin/echo "\nUnable to gracefully shutdown the environment."
+		 /bin/echo "Try an 'openstep -stop' command first."
+		return
+	  fi
+           /bin/kill -9  $pid
+	fi
+
+	reallyStartPrograms
+}
+
+Check() {
+	dpsstate=`/bin/echo "systemdict /composite known ==" | \
+		$PRODUCTROOT"/bin/dpsexec" -root -noexec -nulldev`
+	if [ "$dpsstate" != "true" ] 
+	then
+        	/bin/echo "The X-server is not running or the DPS compositing operators are not present" 1>&2
+        	exit 1
+	fi
+	/usr/openwin/bin/xdpyinfo | /usr/bin/awk '/resolution/ { if ( $2 == "72x72" ) exit 0; else exit 1; }'
+	if [ $? -ne 0 ]
+	then
+        	/bin/echo "The X-server resolution is not set to 72x72" 1>&2
+        	exit 1
+	fi
+}
+
+start(){
+	if [ -f /tmp/_openstep_start.$$ ]
+	then
+		waitmax=45
+		waitcnt=0
+		while [ $waitcnt != $waitmax ]
+		do
+			sleep 1
+			waitcnt=`expr $waitcnt + 1`
+			if [ ! -f /tmp/_openstep_start.$$ ]
+			then
+			#	Someone else removed the lock file so we should be started
+				return
+			fi
+		done
+	fi
+	# create a lock file
+	echo "" > /tmp/_openstep_start.$$ 
+	Check
+	verifyEnvFiles
+	startPrograms
+
+	# Wait for Openstep to start up completely
+	#
+	waitmax=45
+	waitcnt=0
+	while [ $waitcnt != $waitmax ]
+	do
+	    sleep 1
+	    waitcnt=`expr $waitcnt + 1`
+
+	    $PRODUCTROOT/etc/checkIfRunning
+	    if [ $? -eq 2 ]
+	    then
+		/bin/echo " environment started.\n\n"
+
+		# remove our lock file
+		rm -f /tmp/_openstep_start.$$ 
+
+		# no other programs to start, return
+		if [ "$*" = "" ]
+		then
+			return
+		fi
+
+		for i in $*
+		do
+			/bin/echo "Starting:$i"
+			$PRODUCTROOT/bin/open $i
+		done
+		return
+	    fi
+	done
+
+	# remove our lock file
+	rm -f /tmp/_openstep_start.$$ 
+
+	/bin/echo "The environment has not started after $waitmax seconds..giving up"
+	exit 1
+}
+
+stop(){
+	pid=`/usr/bin/ps -ef | \
+	/bin/egrep $programs | \
+	/bin/egrep -v "egrep" | \
+	/bin/egrep $user | \
+	/bin/awk '{ print $2 }' `
+
+	if [ "$pid" = "" ]
+	then
+		exit 0
+	fi
+
+	# Signal Viewer to start logout procedure
+	verifyEnvFiles
+	/bin/echo "Shutting down the environment";
+	$PRODUCTROOT/Apps/WM.app/Logout
+
+	# Wait for Openstep to stop completely
+	#
+	waitmax=15
+	waitcnt=0
+	while [ $waitcnt != $waitmax ]
+	do
+	    sleep 1
+	    waitcnt=`expr $waitcnt + 1`
+
+		pids=`/usr/bin/ps -ef | \
+		/bin/egrep $programs | \
+		/bin/egrep -v "egrep" | \
+		/bin/egrep $user | \
+		/bin/awk '{ print $2 }' `
+
+		if [ "$pids" = "" ]
+		then
+			return
+		fi
+		/bin/echo ".\c"
+	done
+
+	# Brute force shutdown
+	/bin/echo "Some processes did not respond to shutdown message."
+	/bin/echo "Attempting forceful shutdown."
+	clobberOpenStep
+}
+
+setNoKillX11AndStop() {
+	verifyEnvFiles
+	trap "" 2
+	$PRODUCTROOT/bin/dwrite Workspace OverrideTerminate YES
+	stop
+	$PRODUCTROOT/bin/dremove Workspace OverrideTerminate
+	trap 2
+}
+
+
+clobberOpenStep(){
+
+	pid=`/usr/bin/ps -ef | \
+	/bin/egrep $programs | \
+	/bin/egrep -v "egrep" | \
+	/bin/awk '{ print $2 }' `
+
+	if [ "${pid}" = "" ]
+	then
+		return
+	fi
+
+	for p in $pid
+    	do
+            /bin/kill -9  $p
+    	done
+
+	$PRODUCTROOT/etc/ospdterminate
+}
+
+
+usage(){
+
+	/bin/echo "Usage: openstep [-start|-stop] [-ShowDock NO] [program_name]"
+}
+
+if [ -z "$OPENSTEPHOME" ]
+then
+	PRODUCTROOT="/usr/openstep"
+else
+        PRODUCTROOT=$OPENSTEPHOME
+        if [ -z "$LD_LIBRARY_PATH" ]
+        then
+              export LD_LIBRARY_PATH
+              LD_LIBRARY_PATH=$OPENSTEPHOME/lib
+        else
+              if [ `/bin/echo $LD_LIBRARY_PATH | /bin/fgrep $OPENSTEPHOME/lib`-L = -L ]
+              then
+                      export LD_LIBRARY_PATH
+                      LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OPENSTEPHOME/lib
+              fi
+        fi
+fi
+
+sigCatch() {
+	rm -f /tmp/_openstep_start.$$
+	exit 1
+}
+
+#
+#	Logic for this script starts executing here
+#
+CURRENTVERSION="1.50"
+programs="Edit.app|Preferences.app|Mail.app|Terminal.app|Preview.app|WM.app|ProjectBuilder.app|IconBuilder.app|InterfaceBuilder.app|HeaderViewer.app|Workspace.app|ospbs|osspell|osdts|MailFetch"
+dockarg1=
+dockarg2=
+TO_CONSOLE=1
+trap "sigCatch" 2
+
+# determine current user name
+user=`/usr/bin/who am i | /usr/bin/awk '{print $1}'`
+
+# pick up lang environment var if set
+lang=$LANG
+
+# Unset for CDE execution.
+unset NLSPATH
+
+# test if we can write to /dev/console; if we can we will redirect stdout/stderr of
+# everything we start to it; There are times where can't as in when we are remote displaying and in that case
+# stdout/stderr are not changed.
+if [ ! -w "/dev/console" ]
+then
+	# don't redirect output
+	TO_CONSOLE=0
+fi
+
+if [ $# -eq 0 ]
+then
+	start
+else
+	case "$1" in
+	"-start")
+		shift
+		start $*;;
+
+	"")
+		usage;;
+
+	"-clobber")
+		clobberOpenStep;;
+
+	"-stop")
+		verifyUserOKToShutdown;
+		if [ $? -eq 0 ]
+		then
+			setNoKillX11AndStop;
+			/bin/echo "Complete."
+		else
+			echo "You are not the user that started this session".
+		fi;;
+
+	"-ShowDock")
+		dockarg1=$1
+		shift
+		dockarg2=$1
+		shift
+		start $*;;
+	-*)
+		usage;;
+	*)
+		$PRODUCTROOT"/etc/checkIfRunning" 
+		opt=$?
+		if [ "$opt" = "2" ]
+		then
+			/bin/echo "Starting: $*"
+			$PRODUCTROOT/bin/open $*
+		else
+			start $*
+		fi;;
+	esac
+fi
+
+trap 2
+

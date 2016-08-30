@@ -1,0 +1,70 @@
+"Layout" = {
+    ACTIONS = {
+	"didHide:" = "(id)(id)"; 
+	"didSelect:" = "(id)(id)"; 
+	"didUnhide:" = "(id)(id)"; 
+	"didUnselect:" = "(id)(id)"; 
+	"willSelect:" = "(id)(id)"; 
+	"willUnselect:" = "(id)(id)"; 
+    }; 
+    OUTLETS = {view = id; }; 
+    SUPERCLASS = NSObject; 
+};
+"keyboardOwner" = {
+    ACTIONS = {
+	"choiceSelected:" = "choiceSelected:"; 
+	"newUnit:" = "newUnit:"; 
+	"orderKeyboardFront:" = "orderKeyboardFront:"; 
+    }; 
+    OUTLETS = {
+	choiceMatrix = id; 
+	keymapBrowser = id; 
+	keymapButton = id; 
+	languageBrowser = id; 
+	languageScrollView = id; 
+	mUnits = id; 
+	window = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"Clock" = {
+    ACTIONS = {
+	"decreaseDay:" = "decreaseDay:"; 
+	"decreaseHour:" = "decreaseHour:"; 
+	"decreaseMinute:" = "decreaseMinute:"; 
+	"decreaseSecond:" = "decreaseSecond:"; 
+	"increaseDay:" = "increaseDay:"; 
+	"increaseHour:" = "increaseHour:"; 
+	"increaseMinute:" = "increaseMinute:"; 
+	"increaseSecond:" = "increaseSecond:"; 
+    }; 
+    SUPERCLASS = NSView; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"MeasurementView" = {SUPERCLASS = NSView; };
+"Localization" = {
+    ACTIONS = {
+	"changePaperSize:" = "(id)(id)"; 
+	"keymapSelected:" = "(id)(id)"; 
+	"languageSelected:" = "(id)(id)"; 
+	"newUnit:" = "(id)(id)"; 
+	"orderKeyboardFront:" = "(id)(id)"; 
+    }; 
+    OUTLETS = {
+	choiceMatrix = id; 
+	currentKeymap = id; 
+	fPanel = id; 
+	keyControl = id; 
+	keyText = id; 
+	keymapBrowser = id; 
+	keymapWindow = id; 
+	languageBrowser = id; 
+	languageMatrix = id; 
+	languageScrollView = id; 
+	localizationStrings = id; 
+	mUnits = id; 
+	paperSizePopup = id; 
+	window = id; 
+    }; 
+    SUPERCLASS = Layout; 
+};

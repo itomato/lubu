@@ -1,0 +1,20 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Preferences = {
+    ACTIONS = {
+	revert:;
+	changeOptionMode:;
+	ok:;
+    };
+    OUTLETS = {
+	optionsButton;
+	revert;
+	ok;
+	win;
+	optionView;
+    };
+    SUPERCLASS = Object;
+};

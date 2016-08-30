@@ -1,0 +1,33 @@
+KeyView = {
+    OUTLETS = {
+	keyInfo;
+    };
+    SUPERCLASS = View;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Encrypt = {
+    ACTIONS = {
+	changeView:;
+	performClose:;
+	removeKeysAndShow:;
+	setPrivateKey:;
+	addPublicKeyAndShow:;
+    };
+    OUTLETS = {
+	publicView;
+	window;
+	keyText;
+	well;
+	privateView;
+	addressView;
+	keyField;
+	instruct;
+	chooser;
+	address;
+    };
+    SUPERCLASS = Object;
+};

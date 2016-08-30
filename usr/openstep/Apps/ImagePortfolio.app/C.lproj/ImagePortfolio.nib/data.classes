@@ -1,0 +1,44 @@
+"AppUtils" = {SUPERCLASS = NSApplication; };
+"FirstResponder" = {
+    ACTIONS = {
+	"copyTiffData:" = "copyTiffData:"; 
+	"printKeyWindow:" = "printKeyWindow:"; 
+	"save:" = "save:"; 
+	"saveAs:" = "saveAs:"; 
+	"showPreferences:" = "showPreferences:"; 
+	"sortByCellTitle:" = "sortByCellTitle:"; 
+	"undelete:" = "undelete:"; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"ImagePortfolio" = {
+    ACTIONS = {
+	"arrangeInFront:" = "arrangeInFront:"; 
+	"cancelPreferences:" = "cancelPreferences:"; 
+	"newImagePalette:" = "newImagePalette:"; 
+	"open:" = "open:"; 
+	"printKeyWindow:" = "printKeyWindow:"; 
+	"saveDefaults:" = "saveDefaults:"; 
+	"setEnableFilters:" = "setEnableFilters:"; 
+	"showHelp:" = "showHelp:"; 
+	"showInfo:" = "showInfo:"; 
+	"showPreferences:" = "showPreferences:"; 
+    }; 
+    OUTLETS = {
+	enableFiltersSw = NSButton; 
+	fontName = id; 
+	fontSize = id; 
+	helpPanel = id; 
+	helpScroller = id; 
+	infoPanel = id; 
+	prefCellColumns = id; 
+	prefCellHeight = id; 
+	prefCellRows = id; 
+	prefCellWidth = id; 
+	prefPanel = id; 
+	registeredImageTypes = NSTextField; 
+	setDefaultBtn = NSButton; 
+	versionNum = id; 
+    }; 
+    SUPERCLASS = AppUtils; 
+};

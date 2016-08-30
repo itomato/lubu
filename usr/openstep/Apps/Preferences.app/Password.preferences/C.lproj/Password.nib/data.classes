@@ -1,0 +1,28 @@
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+passwordOwner = {
+    ACTIONS = {"cancelPassword:" = "cancelPassword:"; "newPassword:" = "newPassword:"; }; 
+    OUTLETS = {
+    	background = background; 
+	cancelButton = cancelButton; 
+	okButton = okButton; 
+	passwordForm = passwordForm; 
+	passwordMessage = passwordMessage; 
+	passwordStrings = passwordStrings; 
+	userNameField = userNameField; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};
+Clock = {
+    ACTIONS = {
+    	"decreaseDay:" = "decreaseDay:"; 
+	"decreaseHour:" = "decreaseHour:"; 
+	"decreaseMinute:" = "decreaseMinute:"; 
+	"decreaseSecond:" = "decreaseSecond:"; 
+	"increaseDay:" = "increaseDay:"; 
+	"increaseHour:" = "increaseHour:"; 
+	"increaseMinute:" = "increaseMinute:"; 
+	"increaseSecond:" = "increaseSecond:"; 
+    }; 
+    SUPERCLASS = View; 
+};

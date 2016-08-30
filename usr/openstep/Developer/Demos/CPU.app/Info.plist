@@ -1,0 +1,5 @@
+{
+    NSExecutable = CPU;
+    NSMainNibFile = CPU;
+    NSPrincipalClass = NSApplication;
+}

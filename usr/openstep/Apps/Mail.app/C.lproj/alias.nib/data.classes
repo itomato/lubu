@@ -1,0 +1,48 @@
+Browser = {
+    SUPERCLASS = Control;
+};
+IconView = {
+    SUPERCLASS = View;
+};
+FirstResponder = {
+    ACTIONS = {
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};
+AliasBrowser = {
+    ACTIONS = {
+	edit:;
+	remove:;
+	returnHit:;
+	rename:;
+	find:;
+	add:;
+	doit:;
+	appendCc:;
+	append:;
+    };
+    OUTLETS = {
+	win;
+	box;
+	add;
+	form;
+	browser;
+	status;
+	well;
+	to;
+	cc;
+	append;
+	rename;
+	remove;
+	appIcon;
+    };
+    SUPERCLASS = Object;
+};
+NXBrowser = {
+    OUTLETS = {
+	delegate;
+	target;
+    };
+    SUPERCLASS = Control;
+};

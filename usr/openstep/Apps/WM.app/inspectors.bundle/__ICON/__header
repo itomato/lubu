@@ -1,0 +1,39 @@
+{type=InspectorCommand; mode=attributes; class=FileAttributesInspector;
+	selp=selectionOneOrMore; nodep=isLocalFile; priority=1}
+
+{type=InspectorCommand; mode=contents; class=DirContentsInspector;
+	selp=selectionOneOnly; nodep=isUnixDirectory; priority="-1"}
+{type=InspectorCommand; extension=app; mode=contents; class=AppInspector;
+	selp=selectionOneOnly; nodep=isUnixDirectory}
+{type=InspectorCommand; extension=tiff; mode=contents; class=ImageInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=tif; mode=contents; class=ImageInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=gif; mode=contents; class=ImageInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=eps; mode=contents; class=ImageInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=snd; mode=contents; class=SoundInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=au; mode=contents; class=SoundInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=h; mode=contents; class=CInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=c; mode=contents; class=CInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+{type=InspectorCommand; extension=m; mode=contents; class=CInspector;
+	selp=selectionOneOnly; nodep=isNotUnixDirectory}
+
+{type=InspectorCommand; extension=rtf; mode=contents; class=RTFInspector;
+	selp=selectionOneOnly}
+
+{type=InspectorCommand; extension=rtfd; mode=contents; class=RTFInspector;
+	selp=selectionOneOnly; nodep=isUnixDirectory}
+
+{type=InspectorCommand; extension=chunk; mode=contents; class=ChunkInspector;
+	selp=selectionOneOnly; nodep=isUnixDirectory}
+
+{type=InspectorCommand; mode=tools; class=FileToolsInspector;
+	selp=selectionOneOrMore; nodep=hasToolsInspector}
+{type=InspectorCommand; mode=access; class=FileAccessInspector;
+	selp=selectionOneOrMore; nodep=isLocalFile; priority="-1"}

@@ -1,0 +1,1204 @@
+.\" Copyright (c) 1997 - Sun Microsystems, Inc. 
+.TH oswm 1 "06 Feb 1997"
+.IX "oswm" "" "\f3oswm\f1(1) \(em OpenStep window manager" "" PAGE START
+.IX "Solaris OpenStep" "Open" "WorkShop OpenStep" "OpenStep window manager \(em \f3oswm\f1(1)" PAGE START
+.IX "OpenStep" "Open" "OpenStep" "OpenStep window manager \(em \f3oswm\f1(1)" PAGE START
+.SH NAME
+oswm \- OpenStep window manager for Solaris OpenStep
+.SH SYNOPSIS
+.B oswm
+[
+.I options
+]
+.SH DESCRIPTION
+.LP
+.B Oswm
+is a window manager that implements
+parts of the Solaris OpenStep graphical user interface.  Oswm is based on the OPEN LOOK window manager and supports Sun's Solaris OpenStep and WorkShop OpenStep products.
+.SH OPTIONS
+.LP
+Most command-line options have counterparts in the resource database.  A 
+command-line option will override any setting from the resource database.
+.TP
+\fB\-bg\fP\ \fIcolor,\fP\ \ \fB\-background\fP\ \fIcolor 
+Specifies the color of the title bars of inactive windows.
+.TP
+.BR \-c ",\ \ " \-click
+Use click-to-focus mode.  This is the default focus mode.
+.TP
+.BI "\-depth " depth
+Specifies the depth of the visual in which
+.B oswm
+is to run.  See the discussion in the Screen Resources section for further
+information about depths.
+.TP
+.BI "\-display " display-string
+Specify the name of the display to manage.  Overrides the DISPLAY
+environment variable, if any.  In addition, the display string is exported
+to
+.BR oswm 's
+environment, so processes forked from
+.B oswm
+will inherit this value.
+.TP
+.B \-dsdm
+Specify that
+.B oswm
+should provide the Drop Site Database Management (DSDM) service.  This is
+the default.
+.TP
+.BR \-f ",\ \ " \-follow
+Use focus-follows-mouse mode.  Default mode is click-to-focus.
+.TP
+\fB\-fn\fP\ \fIfont-name,\fP\ \ \fB\-font\fP\ \ \fIfont-name\fP
+Set the font for window titles.
+.TP
+\fB\-fg\fP\ \fIcolor,\fP\ \ \fB\-foreground\fP\ \fIcolor 
+Specifies the foreground color.  See the description of the
+.B ForegroundColor
+resource.
+.TP
+\fB\-kbg\fP\ \fIcolor,\fP\ \ \fB\-keybackground\fP\ \fIcolor 
+Specifies the background color of the title bar of the key window.
+.TP
+\fB\-kfg\fP\ \fIcolor,\fP\ \ \fB\-keyforeground\fP\ \fIcolor 
+Specifies the foreground color of the title bar of the key window.
+.TP
+.BI "\-multi"
+Manage windows on all screens that a display supports.
+This is the default.
+.TP
+.BI "\-name " resource-name
+Use
+.I resource-name
+to look up resources in the resource database.
+.TP
+.B \-nodsdm
+Specify that
+.B oswm
+should not provide the Drop Site Database Management service.  The default
+is to provide the service.
+.TP
+.BI "\-single"
+Manage windows for a single screen only, using the default screen
+for the specified display.  Overrides the
+.B \-multi
+option.
+.TP
+.BI "\-syncpid " process-id
+When
+.B oswm
+has completed its initialization, it will send a signal (SIGALRM by default)
+to
+.I process-id.
+The signal will be sent only if this option is present.
+This is useful for running
+.B oswm
+from shell scripts (such as
+.BR .xinitrc )
+in such a way that the script waits for
+.B oswm
+to finish its initialization, while leaving
+.B oswm
+as a child process of the shell script.
+This can be done using the following
+.BR sh (1)
+construct:
+.nf
+.sp
+	sleep 15 & pid=$!
+	oswm \-syncpid $pid &
+	wait $pid
+.sp
+.fi
+.TP
+.BI "\-syncsignal " signal
+Specifies the signal to send instead of SIGALRM.  The signal is specified as
+a number, not symbolically.
+.TP
+.BI "\-visual " visual-class
+Specifies the class of the visual in which
+.B oswm
+is to run.  See the discussion in the Screen Resources section for further
+information about visuals.
+.TP
+.BI "\-xrm " resource-string
+Specify resources on the command-line.  Resources specified here will override
+resources found in resource files.
+.\" ========================================================================
+.SH DEBUGGING OPTIONS
+.LP
+The following options are strictly for debugging.  They are not recommended
+for general use.  Don't use them
+unless you know what you are doing.
+.TP
+.B \-all
+Print a message for every event received.
+.TP
+.B \-debug
+Equivalent to turning on all debugging options.
+.TP
+.B \-orphans
+Print orphaned events.  Orphaned events are 
+events that are associated with a window or frame that has no entry in
+the frame hash table, or events that are not handled by the various
+event handlers.
+.TP
+.B \-warnings
+Print warnings from X protocol errors
+.TP
+.B \-synchronize
+Run the window manager in synchronous mode.
+.SH INTERNATIONALIZATION OPTIONS
+.TP
+.BI "\-basiclocale " locale-name
+Specifies the basic X/Open locale category setting.
+This category will be the base for other locale categories.
+.TP
+.BI "\-displaylang " locale-name
+Specifies the display language X/Open locale category.
+This category affects the contents of workspace menu,
+window menu and notice messages.
+.TP
+.BI "\-numeric " locale-name
+Specifies the numeric format X/Open locale category.
+This category affects the numeric format displayed in
+any message that contains numerics.
+.SH LOCALE HANDLING
+.PP
+The 
+.I locale
+is the set of language and cultural conventions used by a program.
+The locale controls the language-dependent part of
+.BR oswm 's
+behavior.
+The OPEN LOOK international extensions have defined
+several locale categories as follows:
+.TP
+.B "Basic Locale"
+This is the basic setting for the entire locale mechanism.
+This category specifies internal character handling behavior.
+.TP
+.B "Display Language"
+This category specifies the language used for displaying menus,
+notice messages, and error messages.
+.TP
+.B "Input Language"
+This category specifies the language used for text input.
+This category has no effect on
+.BR oswm ,
+because it does not accept text input from the keyboard.
+.TP
+.B "Date Format"
+This category specifies the format of date and time.
+This category has no effect on
+.BR oswm ,
+because it does not display any date and time information.
+.TP
+.B "Numeric Format"
+This category specifies the format of displayed numeric data.
+.PP
+The Basic Locale setting determines the character set used by
+.BR oswm .
+The other locale categories can differ from the basic setting, but they
+cannot require a different character set from the
+Basic Locale.  The following restrictions thus apply:
+.IP 1. 3
+If basic locale setting is the "C" locale, then
+all other locale categories must be in the "C" locale.
+.IP 2.
+If the Basic Locale is set to a locale other than the "C" locale, then all
+other locale categories must be set either to a locale that uses the same
+character set as the basic setting, or to the "C" locale.
+.PP
+The following methods are available to inform 
+.B oswm
+of the locale settings, listed in order of priority:
+.IP 1. 3
+Command line options (such as \fB\-basiclocale\fP);
+.IP 2.
+by resource database; and
+.IP 3.
+.BR setlocale (3C)
+function defaults (e.g. LANG environment variable).
+.SH INPUT FOCUS
+The
+.I
+input focus
+is the window that will receive keystrokes.
+.B oswm
+has two different input focus modes,
+which are different ways of transferring the input focus from one
+window to another.  By default,
+.B oswm
+uses "click-to-focus" (also known as "click-to-type") mode.  This means that
+you must click on the window in order to get the focus to it.  While a
+window has the input focus, the pointer can be anywhere on the screen; the
+keyboard events will still go to that window.  You can set the input focus
+to a window and simultaneously raise it to the top by clicking the left
+mouse button in the window's title bar or border.
+.LP
+.B oswm
+has another focus mode called "focus-follows-mouse".  In this mode, whatever
+window the mouse is pointing to will receive the input focus.  To switch the
+input focus from one window to another, you simply move the pointer to the
+other window; you don't have to click at all.  Note, however, that to
+transfer the focus amongst subwindows of a single top-level window, you must
+click in the subwindow, or you must use focus transfer function keys (if
+available from the application).
+.LP
+The input focus mode can be controlled with command-line options or by
+entries in the resource database.  Neither focus mode has inherent
+advantages.  Which one you choose is a matter of personal preference.
+.SH MOUSE BUTTONS
+OpenStep defines two mouse button functions: SELECT and MENU.
+On systems with three mouse buttons, these functions are mapped to buttons
+1 and 3 (left and right) respectively.  On systems with two
+mouse buttons, SELECT is on button 1 (left) and MENU is on button 2 (right).
+On systems with a single mouse button, that button is SELECT.  
+.SH MANIPULATING WINDOWS AND ICONS
+.I
+Window Title Bar and Borders.
+.PP
+Clicking SELECT selects the window, raises it above other windows, and
+deselects any other objects.  In click-focus mode, the focus is also
+transferred to this window.  Pressing and holding SELECT and then dragging
+the mouse will move windows without raising them or setting the focus.  If
+this window is selected, it and all other selected windows are moved
+simultaneously.  Otherwise, just this window is moved, and it is not
+selected.  If you hold down the Control key while you are moving a window,
+motion in both the vertical and horizontal directions is slower. 
+.LP
+When you move a window or an icon, it will pause when it touches the edge of
+the screen.  This is to allow you to easily position windows right up
+against the edge of the screen.  If you move farther, the window or icon
+will continue to move past the edge. For more information, see the
+EdgeMoveThreshold resource.
+.LP
+Command-clicking SELECT on the title bar lowers the window.
+.LP
+Alt-clicking SELECT on the title bar raises the window without transferring
+the focus to it.
+.LP
+Double-clicking SELECT on the window is the same as selecting the Full Size
+(or Restore Size) menu item. 
+.LP
+.I
+Resize Bar.
+.PP
+The resize bar is the narrow gray border along the bottom of most windows.
+The resize bar is divided into three regions (two end regions and a middle
+region).
+You can resize a window by pressing and holding SELECT over any of the
+resize regions and then dragging the mouse to the new location.
+Releasing the mouse button will set the new size of the window.  Dragging
+horizontally from an end region changes the width.  Dragging diagonally from
+an end region changes the width and height.  Dragging vertically from the
+middle region changes the height.
+.LP
+.I
+Miniaturize Button.
+.PP
+The miniaturize Button is the small button with a miniature window
+icon at the left side of the title bar.  If you want to put a window aside
+without actually closing it, you can miniaturize it.  When you miniaturize
+a window, the window shrinks into a miniwindow icon at the bottom of the
+screen.  Clicking SELECT over the miniaturize Button will miniaturize the
+window.
+.LP
+Close Button.
+.PP
+The close Button is the small button with a X icon at the right side of the
+title bar.  When you are finished with a window, you can close it to get rid
+of the window completely.  Clicking SELECT over the close Button will close
+the window.  On OpenStep windows, a partially drawn close button usually
+means that the window contains unsaved work.  When you save, the button
+returns to normal.
+.LP
+.I
+Miniwindows.
+.PP
+An miniwindow represents a closed window.  You can still do most of the same
+operations as with an open window.  Moving and selecting miniwindows with SELECT is exactly the same as for open windows. Double-clicking
+SELECT will open the miniwindow.  Miniwindows cannot be resized.
+..\" ========================================================================
+.SH MENU OPERATION
+.LP
+Each OpenStep application has a main menu that is displayed when you are working in the application. OpenStep menus are operated using the SELECT button. Some commands perform an action on something you have selected, such as text, an icon, or a window. Other commands open a panel--a small window that may ask for more instructions--or another menu called a submenu. 
+
+If the command opens a submenu, the submenu is displayed next to the main menu. A submenu normally closes when you choose another command from the menu that opens it. If you do not want the submenu to close, you can detach it by dragging it by its title bar. The submenu is then displayed until you close it yourself. If you press on the command that opened a detached submenu, another copy of the submenu is displayed next to the main menu. You can drag into this copy to choose a command, but when you release the mouse button it will close.
+
+Oswm pop-up menus are operated using the MENU mouse button.  There
+are two methods of operating with the menus: the "click-move-click"
+method and the "press-drag-release" method.  You choose the method either by
+clicking the MENU button (pressing and releasing it quickly) or by pressing
+it down and holding it.  If you click the MENU button, the menu will pop up
+and will stay up indefinitely.  To continue operating the menu, click the
+MENU button over a menu item.  To dismiss the menu, click the MENU button on
+an area of the screen outside the menu.  To operate menus in
+press-drag-release mode, press the MENU button and hold it down while you
+move the mouse.  The menu will remain on the screen as long as you hold down
+the MENU button.  To execute an action, move the pointer over a menu item
+and release the mouse button.  To dismiss the menu, move the pointer outside
+the menu and release the MENU button.
+.LP
+Some oswm menu items have a submenus.  This is indicated by a right-pointing
+triangle at the right edge of the item.  To activate a submenu, click on the
+item (in click-move-click mode) or move the pointer to the item and then move
+toward the right edge of the menu (in press-drag-release mode).
+.\" ========================================================================
+.SH DESKTOP MENU
+.LP
+Pressing MENU over the workspace brings up the Desktop Menu.  This menu is
+customizable, but it typically contains at least the following items.
+(The items may appear in a different language depending on the current
+locale setting.)
+.TP
+.B Programs
+This item has a sub-menu that allows you to invoke applications.  The
+default Programs sub-menu contains all of the programs in the OpenWindows
+DeskSet.  However, users typically customize this menu to contain many more
+programs and to contain nested sub-menus.  See the section on Menu
+Customization for further information.
+.TP
+.B Utilities
+This item has a sub-menu that contains several utility functions for the
+workspace, including "Toggle Drag Style" (toggles between dragging window
+content and outline), Refresh (redisplay all windows on the screen), and Lock
+Screen.
+.TP
+.B Window List
+This item brings up a menu containing the names of every window on the
+current screen (if oswm is managing multiple screens, only windows on
+the current screen will be shown).  Windows which are iconified are
+preceded with a graphic symbol.
+.TP
+.B OpenWindows Props...
+This item brings up the OpenWindows Workspace Properties window, which 
+allows you to view and customize settings of the OpenWindows environment.
+.TP
+.B Workstation Info...
+This item displays information about your workstation's environment.
+.TP
+.B Exit
+Shuts down all applications and exits the window system.  A confirmation
+notice will appear first to give you a chance to cancel the operation.
+.\" ========================================================================
+.SH WINDOW MENU
+.LP
+The window menu of most windows has the following items.
+(The items may appear in a different language depending on
+the current locale setting.)
+.TP
+.B Miniaturize 
+Turns the window to an miniwindow.  Any Panels that were open are unmapped.
+Panels will reappear when the miniwindow is opened.  This item is "Restored"
+if you bring up this menu over an miniwindow.
+.TP
+.B Full Size
+Expands the window to the full height of the screen.  If this has already
+done, the button is Normal Size instead of Full Size.  Normal Size restores
+the window to the size it was before you did the Full Size operation.  If
+the application has specified a maximum size for the window, this size is
+used for Full Size instead of the full screen height.
+.TP
+.B Move
+Starts the keyboard-based form of moving the window.  Appears only if OPEN
+LOOK Mouseless Mode is enabled.
+.TP
+.B Resize
+Starts the keyboard-based form of resizing the window.  Appears only if OPEN
+LOOK Mouseless Mode is enabled.
+.TP
+.B Send to Back
+Moves the window behind all other windows.
+.TP
+.B Refresh
+Clears and redisplays the window.
+.TP
+.B Close
+Kills the program running in the window and removes the window.  If the
+application has elected to participate in the WM_DELETE_WINDOW protocol,
+.B oswm
+sends a WM_DELETE_WINDOW ClientMessage instead of killing that window.
+.LP
+Panels windows (as opposed to primary windows) have a smaller window
+menu.  It lacks the Close, Full Size, and Quit items, but it has two new
+items:
+.TP
+.B Close
+Causes the window to be closed.  This button has a sub-menu with two
+items: This Panel, which closes just this window, and All Panels, which
+closes all panel windows owned by this application.
+.TP
+.B Owner?
+Raises and flashes the title bar of the window that "owns" this panel
+window.
+.\" ========================================================================
+.SH MENU CUSTOMIZATION FILES
+.LP
+You can customize
+.BR oswm 's
+Desktop Menu by putting a menu description into a file that
+.B oswm
+will read.  When it starts up,
+.B oswm
+will first look for a file named by the OSWMMENU environment variable.  If
+this variable does not exist, or if the file is not readable,
+.B oswm
+will then look for a custom OpenStep menu file in your home
+directory.  If this file is not present or is unreadable
+.B oswm 
+will look for a custom menu file in your home
+directory.  
+Oswm will search for the following files to be used as the oswm Desktop Menu:
+.nf
+.sp
+	$HOME/.openstep-menu
+	$HOME/.openwin-menu
+	$OPENSTEPHOME/lib/openstep-menu
+	$OPENWINHOME/lib/openwin-menu
+.sp
+.fi
+If, for some reason, these menu files cannot be found,
+.B oswm
+will use a minimal, built-in menu.  The menu file that is read can also be
+modified by the display language locale setting.  The locale name is used as
+a suffix for the filename.  If a localized menu file is found, it is used in
+preference to the non-localized menu file.  For example, if the display
+language locale is "japanese", the file 
+.B .openstep\-menu.japanese
+will take precedence over the file
+.BR .openstep\-menu .
+If
+.B oswm
+encounters a syntax error during the reading of any menu file, a message is
+printed to the standard error file and the reading of this menu file is
+considered to have failed.
+.B Oswm
+will then attempt to read the next file in the sequence as described above.
+.\" ========================================================================
+.SH MENU SPECIFICATION SYNTAX
+The menu specification language has a number of keywords, all of which are
+in all upper case letters.  The keywords are
+.I not
+translated into the language specified by the the locale category settings.
+Keywords are always in English.
+.LP
+Each line typically specifies one menu button.  There are two fields on
+each line: a label and a command.  The
+label is either a single word or a string enclosed in double quotes.  This
+is the label that appears in the menu button. The rest of the line (excluding leading whitespace) is considered to
+be a command.  It is executed by sending it to
+.BR sh (1).
+Any shell metacharacters will be passed through to the shell unchanged.
+The command field can be extended onto the next line by placing a backslash
+`\\' at the end of the line.  The newline will not be embedded in the command.
+.LP
+An sub-menu is specified using the special keyword MENU in place of a
+command.  A button is added to the current menu, and clicking or pulling
+right on this button will bring up the sub-menu.  Subsequent lines in the
+menu file define buttons for the sub-menu, until a line that has the special
+keyword END in the command field is encountered.  The label of the MENU
+line must match the label on the END line, otherwise an error is signaled.
+Sub-menus can be nested arbitrarily, bracketed by MENU and END lines with
+matching labels.
+.LP
+Sub-menus can be defined in a different file using either the MENU or the
+INCLUDE keyword.  To include a sub-menu from another file, use a line with a
+label, either the MENU or the INCLUDE keyword, and then the filename.  The
+file so named is assumed to contain lines that specify menu buttons.  The
+sub-menu file need not have any MENU or END lines (unless it has sub-menus
+itself).  The current file need not have a matching END line if the sub-menu
+is read from another file.  Sub-menu files included with the MENU keyword
+are considered to be an integral part of the menu tree, and any error
+encountered during reading of the file will cause the entire menu to be
+considered invalid.  A sub-menu file included with the INCLUDE keyword is
+considered optional, and any error encountered during reading of the file is
+not considered fatal.  If an error occurs during INCLUDE processing, a
+disabled (grayed-out) item is inserted in place of the sub-menu and
+processing of the current menu file continues.
+.LP
+By default, the label in a menu button is used as the title of the sub-menu.
+This can be overridden by specifying a line that has the special keyword
+TITLE in the command field.  The label from this line will be used as the
+sub-menu's title.  This line can appear anywhere in the sub-menu definition.
+It does not add an item to the menu.  
+.LP
+The following keywords can be used in the command field of a menu item.
+They specify functions that are internal to
+.B oswm,
+that are not invoked by running a shell.
+.TP
+BACK_SELN
+Move the selected windows and icons behind other windows.
+.TP
+EXIT
+.br
+Kills all applications and exits the window manager after getting
+confirmation from the user.  
+This is useful for exiting the entire window system.
+.TP
+EXIT_NO_CONFIRM
+Like EXIT but skips the confirmation notice.
+.TP
+FLIPDRAG
+Toggle the state of the 
+.B DragWindow
+resource.
+.TP
+FLIPFOCUS
+Toggle the state of the 
+.B SetInput
+resource.
+.TP
+FULL_RESTORE_SIZE_SELN
+Toggle the full-sized/normal-sized states of the selected windows and icons.
+.TP
+NOP
+.br
+No operation; don't do anything.
+.TP
+OPEN_CLOSE_SELN
+Toggle the opened/closed states of the selected windows and icons.
+.TP
+QUIT_SELN
+Quit the selected windows and icons.
+.TP
+PROPERTIES
+Bring up OpenWindows Props.
+.TP
+REFRESH
+Refresh causes all windows on the screen to be repainted.
+.TP
+REREAD_MENU_FILE
+Force an immediate rereading of the workspace menu customization file.  
+.B Oswm 
+will start a complete search for a menu file (as described in the
+.I Menu Customization
+section) and use the first valid file it finds.
+.TP
+RESTART
+Restart the window manager by issuing an
+.BR exec (2)
+on
+.B argv.
+This shouldn't affect any running applications, nor should it cause the
+server to shut down.
+.TP
+START_DSDM
+Start providing the DSDM service.  See the section on Drag and Drop for
+further information.
+.TP
+STOP_DSDM
+Stop providing the DSDM service.  See the section on Drag and Drop for
+further information.
+.TP
+WINMENU
+Lists all windows on the screen.
+.TP
+WMEXIT
+Exit the window manager without killing any applications.
+.LP
+Here is an example root menu specification.
+.LP
+.nf
+"My Custom Menu" TITLE
+.sp
+Programs		 MENU
+	"Command Tool"		DEFAULT cmdtool
+	"Text Editor"		textedit
+	Mail			mailtool
+	"File Manager"		filemgr
+	Other			MENU
+		"Other Tools"		TITLE
+		"Shell Tool"		shelltool
+		"Icon Editor"		iconedit
+		Clock			clock
+		"Perf Meter"		DEFAULT perfmeter
+	Other			END
+Programs		END
+.sp
+"Repaint Screen"	REFRESH
+.sp
+Logout		EXIT
+.fi
+.\" ========================================================================
+.SH GLOBAL RESOURCES
+.LP
+Global resources in
+.B oswm
+consist of two resource components.
+The first component in the resource name is taken from the trailing
+pathname component of
+.BR argv[0] .
+This value is typically `oswm'.  This name can be altered by using the
+.B \-name
+command-line argument.  The second resource component names the global
+attribute being set.  It should be one of the names from the following list.
+Thus, to set the
+.B DragWindow
+attribute, one would use
+"oswm.DragWindow" as the resource specification.
+.LP
+.B Oswm
+will automatically pick up changes to many of these resources if the
+resource database changes at run-time.  One can thus modify \fBoswm\fP's
+behavior by changing the resource database with
+.BR xrdb (1)
+or with Workspace Properties.
+If a resource value is specified on \fBoswm\fP's command line, it will
+override the value in the resource database, and thus changing the resource's
+value in the database will have no effect on this resource setting.
+.LP
+Colors can be specified using the formats parsed by the Xlib XParseColor()
+function.  Common formats are color names (see
+.BR showrgb (1))
+and explicit red, green, and blue values in hexadecimal, preceded by a `#'.
+For example, a cyan (full green and blue) would be specified with "#00ffff".
+.LP
+Boolean values can be specified with the words
+"true", "false", "on", "off", "yes", "no", "1", "0", "t", and "nil".
+.TP
+.BI AutoRaise " (boolean)"
+Raise windows automatically when they receive the focus.  This is useful in
+click-to-focus if you always like to type into the topmost window.  This is
+useful in focus-follow-mouse when the
+.B AutoRaiseDelay
+resource is set to a reasonable value.
+.I
+Default value: false.
+.TP
+.BI AutoRaiseDelay " (integer)"
+Amount of time to delay, in microseconds, between a window receiving the
+focus and raising it above other windows.  Effective only when the value of the
+.B AutoRaise
+resource is true.
+.I
+Default value: 0.
+..TP
+.BI Background " (color)"
+Specifies the background color of the title bars of inactive windows.  This is used for the background of miniwindows.
+.TP
+.BI BasicLocale " (locale name)"
+Specifies the basic OPEN LOOK locale category setting.
+See the section on Locale Handling for more details.
+.TP
+.BI DefaultIconImage " (filename)"
+Specifies a file containing a bitmap to be used as the default icon image.
+.TP
+.BI DefaultIconMask " (filename)"
+Specifies a file containing a bitmap to be used as the default icon mask.
+.TP
+.BI DefaultTitle " (string)"
+Specifies the string to be used in the title bar of windows that have not
+provided a string in the WM_NAME property.
+.I
+Default value: No Name.
+.TP
+.BI DisplayLang " (locale name)"
+Specifies the display language OPEN LOOK locale category.
+See the section on Locale Handling for more details.
+.TP
+.BI DragThreshold " (integer) " *
+This is the number of pixels the mouse must move while a mouse button is down
+in order to have the action be considered a drag.  If the mouse moves fewer
+than this number of pixels while the button is down, it is considered to be
+click instead of a drag.
+.I
+Default value: 5.
+.TP
+.BI DragWindow " (boolean)"
+If true, drags the entire image of the window when you move it.  Otherwise,
+just drags the window outline.
+.I
+Default value: true.
+.TP
+.BI EdgeMoveThreshold " (integer)"
+Specifies the amount of "hysteresis" provided when moving windows past the
+edge of the screen.  When you move a window or an icon, it will pause when
+it touches the edge of the screen.  This is to allow you to easily position
+windows right up against the edge of the screen.  If you move farther, the
+window or icon will continue to move past the edge.  You can prevent windows
+from ever lapping off the screen by setting an extremely large value (say,
+10000) for
+this resource, and you can disable this feature entirely by specifying a
+value of zero.
+.I
+Default value: 10.
+.TP
+.BI FocusLenience " (boolean)"
+If this is set to true, 
+.B oswm
+will not enforce the ICCCM requirement that windows must have the input hint
+set in order to receive the input focus.  This option is useful if you run
+clients that aren't ICCCM-compliant, like many X11R3-based clients.
+.I
+Default value: true.
+.TP
+.BI Foreground " (color)"
+Specifies the foreground color.  This color is used mainly for the text of
+window and icon titles and in menus.
+.I
+Default value: black.
+.TP
+.BI IconFont " (font name)"
+Font used for icon names.
+.I
+Default: lucidasans-10.
+.TP
+.BI IconLocation " (enumeration) " *
+One of the words "top-lr", "top-rl", "bottom-lr", "bottom-rl", "left-tb",
+"left-bt", "right-tb", or "right-bt".  These specify that icons should be
+arranged along a particular edge of the screen, ordered from left to right
+or top to bottom as appropriate.  The words "top", "bottom", "left", and
+"right" are synonyms for "top-lr", "bottom-lr", "left-tb", and "right-tb",
+respectively.
+.I
+Default value: bottom.
+.TP
+.BI KeepTransientsAbove " (boolean)"
+Specifies whether
+.B oswm
+should attempt to keep transient windows above their owner window.
+.I
+Default value: false.
+.TP
+.BI KeyBackground " (color)"
+Specifies the background color for key windows. This color is used mainly
+for the background of window title bars and icons.
+.TP
+.BI KeyForeground " (color)"
+Specifies the foreground color for key windows. This color is used mainly
+for the text of window title bars and icon titles.
+.TP
+.BI MenuFont " (font name)"
+Font to be used for buttons in menus and OSWM attention panels.
+.I
+Default value: lucidasans-12.
+.TP
+.BI MinimalDecor " (list of strings)"
+Specifies a list of windows that are to be decorated minimally.  Decoration
+on such windows includes only a thin border and resize corners, with no
+title bar or window button.  The value should be a whitespace-separated list
+of strings.  Each string should specify an application's class or instance
+name, as passed in the WM_CLASS property.  Most applications set this
+property based on the name of the executable (i.e. argv[0]).  For example,
+to specify that the clock and the calculator should be decorated minimally,
+you would use the following resource:
+.nf
+.sp
+	oswm.MinimalDecor: calctool clock
+.sp
+.fi
+Many applications will allow you to override the value of the WM_CLASS
+property using the
+.B \-name
+option on the command line.
+.I
+Default value: (null).
+.TP
+.BI MultiClickTimeout " (integer) " *
+The time, in tenths of a second, that differentiates a double-click
+from two single clicks.  This value is also used to distinguish the
+click-move-click and press-drag-release modes of pop-up menus.  If the MENU
+button is held down longer than this amount of time, the menu is considered
+to be in press-drag-release mode, otherwise it is considered to be in
+click-move-click mode.
+.I
+Default value: 5.
+.TP
+.BI Numeric " (locale name)"
+Specifies the numeric format OPEN LOOK locale category.
+See the section on Locale Handling for more details.
+.TP
+.BI PaintWorkspace " (boolean)"
+If true,
+.B oswm
+will use the
+.B WorkspaceColor
+resource to set the workspace (root window) background color.  If false,
+.B oswm
+will not change the root window background.  This is useful
+If you prefer to set your own workspace color using
+.BR xsetroot (1)
+or a similar program.
+.I
+Default value: true.
+.TP
+.BI PPositionCompat " (boolean)"
+Turns on backward compatibility for older applications that have a habit of
+always setting the PPosition flag in the WM_NORMAL_HINTS property, even when
+they haven't set a position.  This most often occurs with X11R3-based
+clients.  Without backward compatibility, these windows will always appear
+in the upper-left corner of the screen.  With backward compatibility, these
+windows will be positioned according to the default OPEN LOOK window
+placement policy, along the diagonal of the screen.  This option will not
+affect windows that have a geometry specified on the command line.
+.I
+Default value: true.
+.TP
+.BI PopupJumpCursor " (boolean) " *
+Specifies whether to warp the cursor to pop-up windows. Works only for OpenWindows applications, not for OpenStep applications.
+.I
+Default value: false.
+.TP
+.BI PrintWarnings " (boolean)"
+Determines whether 
+.B oswm
+will issue non-fatal warning messages (such as X protocol errors)
+to its standard error file.
+.I
+Default value: false.
+.TP
+.BI RubberBandThickness " (integer)"
+Specifies the thickness of the "rubber-band" line that is drawn when a
+window is resized, when a group of windows is selected by dragging a
+rectangle on the root, and when a window is moved and the value of the
+.B DragWindow
+resource is false.
+.I
+Default value: 2.
+.TP
+.BI SetInput " (enumeration) " *
+Controls the input focus mode.  If the value is "select", it
+means click-to-focus.  If the value is "followmouse", it means
+focus-follows-mouse.
+.I
+Default value: select.
+.TP
+.BI ShowMoveGeometry " (boolean)"
+Indicates whether the geometry box should be shown while moving windows and
+icons.
+.I
+Default value: false.
+.TP
+.BI ShowResizeGeometry " (boolean)"
+Indicates whether the geometry box should be shown while resizing windows.
+.I
+Default value: false.
+.TP
+.BI StartDSDM " (boolean)"
+Determines whether
+.B oswm
+will provide the DSDM service for OpenWindows applications. 
+.I
+Default value: true.
+.TP
+.BI TextFont " (font name)"
+Font used in the text of OSWM attention panels.
+.I
+Default: lucidasans-12.
+.if 0 \{
+.TP
+.BI timeFormat " (locale name)"
+Specify the time format OPEN LOOK locale category.
+See the section on Locale Handling for more details.
+\}
+.TP
+.BI TitleFont " (font name)"
+Font used in title bars atop windows and menus.
+.I
+Default: lucidasans-12 Bold.
+.TP
+.BI TransientsSaveUnder " (boolean)"
+Specifies whether the save-under attribute of frames of transient windows is
+to be forced on.
+.I
+Default value: false.
+.TP
+.BI WindowCacheSize " (integer)"
+.B oswm
+keeps a cache of windows in order to minimize unnecessary window creation
+and destruction.  The value of this resource specifies the size of this
+cache.  Setting this resource to zero disables the window cache.
+.I
+Default value: 500.
+.TP
+.BI WindowMenu " (boolean)"
+Specifies whether a pop-up window menu appears when when pressing the MENU
+moust button over a window's title bar or resize handle.
+.I
+Default value: False.
+.TP
+.BI WorkspaceBitmapBg " (color specification)"
+Specifies the background color used for the workspace bitmap when the
+.B WorkspaceStyle
+resource is "tilebitmap".
+.I
+Default value: black.
+.TP
+.BI WorkspaceBitmapFg " (color specification)"
+Specifies the foreground color used for the workspace bitmap when the
+.B WorkspaceStyle
+resource is "tilebitmap".
+.I
+Default value: white.
+.TP
+.BI WorkspaceBitmapFile " (filename)"
+Specifies a X bitmap file that will be used for the workspace background
+when WorkspaceStyle is "tilebitmap".
+If the filename is not a full path name, the following directories
+are searched:
+.nf
+.sp
+	$OPENWINHOME/etc/workspace/patterns
+	$OPENWINHOME/include/X11/include/bitmaps
+	/usr/X11/include/X11/include/bitmaps
+.sp
+.fi
+.I
+Default value: gray.
+.TP
+.BI WorkspaceColor " (color) " *
+Specifies the color for the workspace (root window).  On startup,
+.B oswm
+will set the root window's background color to the color specified by this
+resource, and it will restore the default background on shutdown.  To turn
+off this behavior, see the description of the
+.B PaintWorkspace
+resource.
+.TP
+.BI WorkspaceStyle " (enumeration)"
+This controls how the workspace is painted.
+If the value is "paintcolor", the solid color
+specified by the
+.B WorkspaceColor
+resource is used.
+If the value is "tilebitmap", the workspace is tiled with a bitmap
+using the
+.B
+WorkspaceBitmapFile, WorkspaceBitmapBg,
+and
+.B WorkspaceBitmapFg
+resources.
+If the value is "default", the server default root-weave pattern is used.
+If the value of the
+.B PaintWorkspace
+resource is false, then all of these resources are ignored and the workspace
+color or pattern is left unchanged.
+.I
+Default value: paintcolor
+.\" ========================================================================
+.SH SCREEN RESOURCES
+.LP
+In addition to the global resources described above,
+.B
+oswm
+also uses screen-specific resources.  
+The first component of the resource specification is the trailing pathname
+component of
+.BR argv[0] .
+The second component is the screen number appended to the string `screen'.
+The screens are numbered sequentially starting from zero.
+The third component of the resource name is the name of the resource itself.
+For example,
+.nf
+.sp
+	oswm.screen1.WorkspaceColor:	gray
+.sp
+.fi
+set the workspace color on screen number 1 to gray.  Generally, users should
+use the OpenStep Preferences.app to set the WorkspaceColor.
+To affect all screens, you can use resource wildcarding.  For example,
+`oswm*KeyBackground: MidnightBlue' will set KeyBackground for all screens
+.B oswm
+manages.
+.LP
+Unlike many of the global resources, the screen-specific resources
+are only applied at oswm startup.
+.LP
+The following resources are available both globally and on a per-screen
+basis.  A screen-specific resource overrides the corresponding global
+setting for that screen.  Note that screen specific settings for
+WorkspaceColor and WindowColor will only affect \fBoswm\fP;
+this may cause clashes with XView clients which only use the global setting.
+.nf
+.sp
+	Background
+	Foreground
+	KeyBackground
+	KeyForeground
+	WorkspaceColor
+.sp
+.fi
+.LP
+The following resources allow the selection of visuals other
+than the screen's default.  Available visuals may be listed with
+the
+.BR xdpyinfo (1)
+command.
+.TP
+.BI Depth " (integer)"
+Specify the visual depth to be used when searching for visuals.
+.I
+Default value: none.
+.TP
+.BI Visual " (enumeration)"
+Specify the visual class to be used when searching for visuals.
+Valid visual classes are
+.BR StaticGray ,
+.BR GrayScale ,
+.BR StaticColor ,
+.BR PseudoColor ,
+.BR TrueColor ,
+and
+.BR DirectColor .
+Names are case-sensitive.
+.I
+Default value: none.
+.TP
+.BI VisualID " (id)"
+Specify the visual ID to be used.
+Note: specifying a visual by its ID is not portable, as IDs may vary from
+server to server and even from one invocation of a server to the next.
+.I
+Default value: none.
+.\" ========================================================================
+.SH ENVIRONMENT
+.TP
+DISPLAY
+Specifies the X11 server to which to connect.
+.TP
+LANG, LC_CTYPE, LC_MESSAGE, LC_TIME
+These variables specify which locale to use when other methods of locale
+announcement are not available.  (See the section on Locale Handling for
+more details.)
+.TP
+OSWMMENU, OLWMMENU
+Specifies a file to use for the Desktop Menu.
+.TP
+OPENSTEPHOME
+Specifies the location of the OpenStep software.
+.\" ========================================================================
+.SH FILES
+.TP
+$HOME/.openstep/.oswmdefaults
+Contains oswm resources set by OpenStep apps (e.g. Preferences.app)
+.TP
+$HOME/.openstep\-menu\fI.localename\fP
+.TP
+$HOME/.openstep\-menu
+Contains the user-customized Desktop Menu specification.
+.TP
+$HOME/.openwin\-menu
+Contains the user-customized Desktop Menu specification.
+.TP
+$OPENSTEPHOME/lib/openstep\-menu.\fIlocale-name\fP
+.TP
+$OPENSTEPHOME/lib/openstep\-menu
+Contains the default Desktop Menu specification.
+.TP
+$OPENWINHOME/lib/openstep\-menu
+Contains the default Desktop Menu specification.
+.TP
+$OPENSTEPHOME/lib/app\-defaults/Oswm
+.TP
+$OPENSTEPHOME/lib/locale/\fIlocale-name\fP/app\-defaults/Olwm
+Specifies system-wide default resource values.
+.\" ========================================================================
+.SH TRADEMARKS
+.LP
+OPEN LOOK is a registered trademark of Novell, Inc.
+.br
+The X Window system is a trademark of the Massachusetts Institute of
+Technology.
+.br
+OpenWindows is a trademark of Sun Microsystems, Inc.
+.br
+OpenStep is a trademark of NeXT Software, Inc.
+.br
+.\" ========================================================================
+.SH REFERENCES
+.LP
+Rosenthal, David S.H.
+.I Inter-Client Communication Conventions Manual for X11.
+Copyright 1989 by the Massachusetts
+Institute of Technology.  This document is commonly known as the ICCCM.  It
+is an X Consortium Standard that specifies conventions to which all X11
+clients must adhere.
+.LP
+OPEN LOOK Graphical User Interface Functional Specification.  Copyright 1989
+by Sun Microsystems, Inc.  Addison-Wesley Publishing Company, Inc.  ISBN
+0\-201\-52365\-5.
+.LP
+OPEN LOOK Graphical User Interface
+International Extensions Functional Specification.
+Draft 1.1 (May 10, 1990).
+Copyright 1990 by Unix International.
+.SH SEE ALSO
+.LP
+.BR dsdm (1),
+.BR olwmslave (1),
+.BR openstep (1),
+.BR openwin (1),
+.BR owplaces (1),
+.BR props (1),
+.BR setlocale (3C),
+.BR xinit (1),
+.BR Xsun (1)
+.\" ========================================================================
+.SH NOTES
+.LP
+The resource names do not follow any classing structure.  There is no
+general way to specify resources on a per-client basis.
+.LP
+The Exit menu item on the Desktop Menu doesn't really shut down the
+server.  It kills off all clients being managed by the window manager, and
+then it exits the window manager itself.  This works properly
+if some outside agent such as
+.BR xinit (1)
+or
+.BR xdm (1)
+is waiting for the window manager or a client to exit.  The outside agent
+will take care of shutting down the server or reinitializing it.  If you've
+started up the server a different way, this option may not work.  Instead,
+the server will be left running with no clients and no window manager
+running, and you will have to login from elsewhere to kill the server.  A
+common cause of this problem is an \fB.xinitrc\fP script that inadvertently
+leaves a non-windowed application (such as a daemon) running in the
+background.  If the \fB.xinitrc\fP script ends with the \fBwait\fP shell
+command, it will never terminate.  The fix is to change the script to either
+wait for a particular process-id, or to run the daemon in a subshell:
+.nf
+.sp
+	(daemon &)
+.sp
+.fi
+.LP
+.B Oswm
+cannot manage multiple locales at one time,
+therefore all clients should be running in the same locale.
+The "C" locale is the exception.  Applications using the "C" locale (such as
+non-internationalized applications) can be mixed with applications using one
+other locale.
+.LP
+.B Oswm
+does not handle different sizes of the glyph fonts well.
+Each locale can define a different size for the default font
+(for example, the default glyph font size is 12 for the
+"C" locale and is 14 for the "japanese" locale).
+.B Oswm
+does not re-position the window decorations after switching locale,
+therefore the window decorations may appear
+to be wrong.
+To remedy this problem partially,
+.B oswm
+will not change the font when locale is switching from
+non-"C" locale to the "C" locale.
+.LP
+There is no input focus feedback for non-rectangular windows.  The title
+string of non-rectangular windows cannot be displayed.  Non-rectangular icon
+windows are not supported.
+.LP
+.B Oswm
+will not dynamically track screen-specific and client-specific resources.
+Changes to global resources, key binding resources, and modifier resources
+are applied dynamically.
+.LP
+Resources that specify time values use inconsistent units.  Some resources
+are in tenths of a second, some are in milliseconds, and some are in
+microseconds.
+.IX "oswm" "" "\f3oswm\f1(1) \(em OpenStep window manager" "" PAGE END
+.IX "Solaris OpenStep" "Open" "WorkShop OpenStep" "OpenStep window manager \(em \f3oswm\f1(1)" PAGE END
+.IX "OpenStep" "Open" "OpenStep" "OpenStep window manager \(em \f3oswm\f1(1)" PAGE END

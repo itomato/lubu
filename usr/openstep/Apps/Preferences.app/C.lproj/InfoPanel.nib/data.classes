@@ -1,0 +1,12 @@
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+MySubclass = {
+    OUTLETS = {
+    	copyright = copyright; 
+	infoBox = infoBox; 
+	infoButton = infoButton; 
+	infoPanel = infoPanel; 
+	release = release; 
+	version = version; 
+    }; 
+    SUPERCLASS = Application; 
+};

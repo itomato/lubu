@@ -1,0 +1,37 @@
+MenuLocation = {
+    SUPERCLASS = View;
+};
+PseudoMenu = {
+    SUPERCLASS = View;
+};
+systemOwner = {
+    ACTIONS = {
+	beepSwitched:;
+	fontTypeSelected:;
+	font:;
+	beepSelected:;
+	newAlert:;
+    };
+    OUTLETS = {
+	window;
+	fontBox;
+	alertSwitch;
+	beepBrowser;
+	titleBarView;
+	fontType;
+	fontText;
+	fixedPitchText;
+	pseudoMenuView;
+	applicationText;
+	beepMatrix;
+    };
+    SUPERCLASS = Application;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+TitleBarView = {
+    SUPERCLASS = View;
+};

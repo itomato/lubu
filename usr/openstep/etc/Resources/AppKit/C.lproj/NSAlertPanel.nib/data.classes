@@ -1,0 +1,21 @@
+FirstResponder = {
+    ACTIONS = {
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};
+Alert = {
+    ACTIONS = {
+	buttonPressed:;
+    };
+    OUTLETS = {
+	iconButton;
+	panel;
+	second;
+	third;
+	first;
+	title;
+	msg;
+    };
+    SUPERCLASS = Object;
+};

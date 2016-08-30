@@ -1,0 +1,10 @@
+#!/bin/ksh
+#ident "@(#) LuBu OpenMagic 1.0, 06/03/10"; 
+# CDE Wrapper - CDE apps require a bit more attention for some
+# very odd reason. cde_check.sh checks for /usr/dt then runs the app
+# or prints an error message. The export APP is needed to override
+# the APP already exported.
+
+APP=sdtdial
+export APP
+/usr/openstep/bin/cde_check.sh

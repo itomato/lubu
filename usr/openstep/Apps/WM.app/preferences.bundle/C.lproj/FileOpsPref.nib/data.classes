@@ -1,0 +1,22 @@
+FileOpsPref = {
+    ACTIONS = {
+	revert:;
+	ok:;
+    };
+    OUTLETS = {
+	choiceMatrix;
+    };
+    SUPERCLASS = Pref;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+Pref = {
+    OUTLETS = {
+	window;
+	contentView;
+    };
+    SUPERCLASS = Object;
+};

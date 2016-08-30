@@ -1,0 +1,16 @@
+PieChart = {SUPERCLASS = View; };
+WMPathField = {SUPERCLASS = View; };
+BGProcess = {
+    ACTIONS = {
+	"activateProcess:" = "activateProcess:"; 
+	"deactivateProcess:" = "deactivateProcess:"; 
+    }; 
+    OUTLETS = {window = window; }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+SimpleBGProcess = {
+    ACTIONS = {"abort:" = "abort:"; }; 
+    OUTLETS = {button = button; currentField = currentField; simpleWindow = simpleWindow; }; 
+    SUPERCLASS = BGProcess; 
+};

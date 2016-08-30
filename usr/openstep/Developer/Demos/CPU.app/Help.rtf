@@ -1,0 +1,56 @@
+{\rtf0\ansi{\fonttbl\f0\fswiss Helvetica;\f1\fnil LucidaSans-Typewriter;}
+\smartcopy0
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+\grayb1000\cb1\pard\tx520\tx1060\tx1600\tx2120\tx2660\tx3200\tx3720\tx4260\tx4800\tx5320\f0\b\i0\ulnone\fs24\gray0\fc2\cf2 Quick Overview:\
+
+\b0 \
+	CPU monitors the usage of your machine's cpu(s). You can view a single cpu, or view\
+an average of all cpu(s) activity. CPU uses the kernel VM library to gather data, so it does not\
+need to be setuid/setgid.\
+\
+	CPU shows three separate rings as a history mechanism. The innermost ring responds\
+very quickly to changes in system usage. As you move out from the innermost ring, CPU provides\
+a configurable step mechanism to show longer term utilization.\
+\
+	Each ring displays four colors. The defaults are:\
+	\
+		Red:				Kernel time\
+		Yellow:			Wait time\
+		Blue:			User time\
+		White:			Idle time\
+		\
+	You can change these colors to your taste with the color wells in the Preferences panel.\
+	\
+	CPU  takes a sample of system activity every second by default  This period can be increased\
+or decreased in Preferences as well.\
+\
+
+\b Preferences:\
+\
+	
+\b0 Update period:		This is the amount of time, in seconds, between samples. You may\
+						use any value that is greater than zero. Very small values may use\
+						a significant amount of cpu time just to update CPU's display.\
+	\
+	Smoothing factor:		This is the number of samples averaged together to 'smooth out'\
+						the inner rings display. The minimum value is 1, the maximum is\
+						4096. Note that it is possible to make the inner ring update less\
+						frequently than the outer rings by setting an unusual value.\
+						\
+	Layering factor:		The number of samples averaged per ring 'step'.  The default value\
+						of 16 means the middle ring will be an average of 16 samples, and the\
+						outermost ring will be an average of 256 samples. The minimum value\
+						is 1, and the maximum is 64. Note that with a layering factor of 64 and\
+						an update period of 1.0, the outer ring will show a history of  over an\
+						hour.\
+						\
+	Monitor (Popup):		This popup will have one entry for each cpu in your machine, plus an\
+						entry for 'All'. If you select an individual cpu, the display will reflect\
+						that cpu's load only. If you select 'All', the display will be an average\
+						of all the cpu(s) in your machine.
+\b \
+
+\b0 	\
+	Color Wells:			Drag and drop any color swatch into these to change the displayed\
+						color for that attribute.
+}

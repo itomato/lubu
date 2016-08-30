@@ -1,0 +1,28 @@
+WMPathField = {SUPERCLASS = View; };
+FirstResponder = {ACTIONS = {"performResize:" = "performResize:"; }; SUPERCLASS = Object; };
+InspectDriver = {
+    ACTIONS = {
+	"activateInspector:" = "activateInspector:"; 
+	"deactivateInspector:" = "deactivateInspector:"; 
+	"inspectAttributes:" = "inspectAttributes:"; 
+	"inspectContents:" = "inspectContents:"; 
+	"inspectTools:" = "inspectTools:"; 
+	"ok:" = "ok:"; 
+	"revert:" = "revert:"; 
+	"show:" = "show:"; 
+    }; 
+    OUTLETS = {
+	container = container; 
+	dirNameField = dirNameField; 
+	dirTitleField = dirTitleField; 
+	fileIconButton = fileIconButton; 
+	fileNameField = fileNameField; 
+	inspectorWindow = inspectorWindow; 
+	modeButton = modeButton; 
+	modeMatrix = modeMatrix; 
+	okButton = okButton; 
+	revertButton = revertButton; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};

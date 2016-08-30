@@ -1,0 +1,21 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+MimeFetcher = {
+    ACTIONS = {
+	okOrCancel:;
+    };
+    OUTLETS = {
+	waitPanel;
+	loginUserField;
+	waitTitle;
+	loginHostField;
+	waitSizeField;
+	waitMessage;
+	loginPanel;
+	loginPassField;
+    };
+    SUPERCLASS = Application;
+};

@@ -1,0 +1,13 @@
+Oswm*WorkspaceColor:	#43445e
+Oswm*ShapeStyle:    Rectangle
+Oswm*Command.ShapeStyle:    Rectangle
+Oswm*Toggle.ShapeStyle:     Rectangle
+Oswm*ShadowWidth:   2
+Oswm*Form*Text*Background:  white
+Oswm*Form*Text*Scrollbar*Background: gray
+Oswm*Text*Background:       white
+Oswm*Text*Foreground:       black
+Oswm*Text*ThreeD*Background:        gray
+Oswm*Text*Scrollbar*Background:     gray
+Oswm*Viewport.background:   gray
+Oswm*BeNiceToColormap: 0

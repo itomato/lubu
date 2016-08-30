@@ -1,0 +1,85 @@
+*Document Audience:*	PUBLIC
+*Document ID:*	106569-01
+*Title:*	SunOS 5.6: libauth.a & libauth.so.1 patch
+*Update Date:*	Wed Sep 16 14:49:54 MDT 1998
+See Patch Revision History <#rev-history>
+
+------------------------------------------------------------------------
+
+*Status:* RELEASED
+
+*Patch Id:* 106569-01
+
+*Keywords:* security libauth buffer overflow stack
+
+*Summary:* SunOS 5.6: libauth.a & libauth.so.1 patch
+
+*Date:*  Sep/16/98
+
+*Installation Requirements:*
+
+*Solaris Release:* 2.6
+
+*Sun OS Release:* 5.6
+
+*Unbundled Product:* 
+
+*Unbundled Release:* 
+
+*Xref:* This patch available for x86 as patch 106570
+
+*Topic:* 
+
+SunOS 5.6: libauth.a & libauth.so.1 patch
+
+*Relevant Architecture:* sparc
+
+*BugId's fixed with this patch:*
+
+4157655
+
+*Changes incorporated in this version:*
+
+*Patches accumulated and obsoleted by this patch:*
+
+*Patches which conflict with this patch:* 
+
+*Required Patches:*
+
+*Obsoleted by:*
+
+ 
+
+*Files Included in this Patch:* 
+
+/usr/lib/libauth.a
+/usr/lib/libauth.so.1
+
+*Problem Description:* 
+
+4157655 two buffer overflows exist in libauth
+
+*Revision History:* 
+
+*Patch Installation Instructions:* 
+
+-------------------------------- 
+Refer to the Install.info file within the patch for instructions on
+using the generic 'installpatch' and 'backoutpatch' scripts provided
+with each patch.  Any other special or non-generic installation
+instructions should be described below.
+
+*Special Install Instructions:* 
+
+----------------------------- 
+None.
+
+
+SunSolve Feedback </pub-cgi/feedback.pl>   |   Company Info
+<http://www.sun.com/company/>   |   Contact
+<http://www.sun.com/contact/>   |   Terms of Use
+<http://www.sun.com/share/text/termsofuse.html>   |   Privacy
+<http://www.sun.com/privacy/>   |   Version 5.12.0    Copyright
+<javascript:popPage('/copyright.html',500,300)> © 2005 Sun Microsystems,
+Inc. All rights reserved.
+ 

@@ -1,0 +1,52 @@
+#!/bin/sh
+# Xinitrc for LuBu OpenMagic 1.0 - based on OpenStep 1.1 Xinitrc
+#@(#)LuBu OpenMagic 1.0, 06/03/10
+#@(#)Solaris OpenStep-1.1-sparc-17 Mar 1997
+
+if [ "$OPENSTEPHOME" ]; then		# Alternate OpenStep Home
+	OSLOC=$OPENSTEPHOME
+else
+	OSLOC=/usr/openstep
+fi
+export OSLOC
+
+xrdb $OPENWINHOME/lib/Xdefaults		 # Load Default X11 resource database
+xrdb -merge $OSLOC/lib/app-defaults/Oswm # Load OpenStep Default database
+
+if [ -f $HOME/.Xdefaults ]; then
+    xrdb -merge $HOME/.Xdefaults	 # Load Users X11 resource database
+fi
+
+OW_WINDOW_MANAGER=$OSLOC/bin/oswm ; export OW_WINDOW_MANAGER
+
+WmNotThere=0
+if [ ! -f "$OW_WINDOW_MANAGER" ]; then
+	echo "Window manager $OW_WINDOW_MANAGER does not exist." >/dev/console
+	WMNotThere=1
+	OW_WINDOW_MANAGER="$OPENWINHOME/bin/olwm"
+	echo "Using $OW_WINDOW_MANAGER" >/dev/console
+fi
+
+xsetroot -def			    # Clear root window
+$OW_WINDOW_MANAGER & wmpid=$!	    # Start Alt Window Manager
+dsdm &				    # OpenLook Drop Site Database
+
+if [ -x "$OSLOC/bin/openstep" ] ; then
+    if [ "$WmNotThere" -eq 0 ]
+    then
+	$OSLOC/bin/openstep >/dev/console 2>&1
+    else
+	echo "Not starting OpenStep." >/dev/console
+    fi
+else
+	echo "Cannot execute $OSLOC/bin/openstep" >/dev/console
+fi
+
+if [ -x $OSLOC/lib/openstep-init ]; then
+   . $OSLOC/lib/openstep-init              # LuBu OpenStep tools
+fi
+if [ -x $HOME/.openstep-init ]; then
+   . $HOME/.openstep-init                 # Custom OpenWindows tools
+fi
+
+wait $wmpid				# Wait for wm (key client) to exit

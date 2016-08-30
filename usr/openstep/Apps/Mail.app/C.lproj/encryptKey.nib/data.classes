@@ -1,0 +1,28 @@
+DecryptKey = {
+    ACTIONS = {
+	acceptKey:;
+    };
+    OUTLETS = {
+	decryptPanel;
+	key;
+    };
+    SUPERCLASS = Panel;
+};
+EncryptKey = {
+    ACTIONS = {
+	sendUnencrypt:;
+	acceptKey:;
+    };
+    OUTLETS = {
+	username;
+	encryptPanel;
+	keyList;
+	sendEncryptedButton;
+    };
+    SUPERCLASS = Panel;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};

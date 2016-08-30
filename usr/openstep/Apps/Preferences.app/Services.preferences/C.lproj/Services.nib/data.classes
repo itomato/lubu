@@ -1,0 +1,25 @@
+monitorOwner = {
+    ACTIONS = {
+    	"chooseService:" = "chooseService:"; 
+	"enable:" = "enable:"; 
+	"updateAllServices:" = "updateAllServices:"; 
+    }; 
+    OUTLETS = {browser = browser; enableButton = enableButton; window = window; }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+Clock = {
+    ACTIONS = {
+    	"decreaseDay:" = "decreaseDay:"; 
+	"decreaseHour:" = "decreaseHour:"; 
+	"decreaseMinute:" = "decreaseMinute:"; 
+	"decreaseSecond:" = "decreaseSecond:"; 
+	"increaseDay:" = "increaseDay:"; 
+	"increaseHour:" = "increaseHour:"; 
+	"increaseMinute:" = "increaseMinute:"; 
+	"increaseSecond:" = "increaseSecond:"; 
+	"startClock:" = "startClock:"; 
+	"stopClock:" = "stopClock:"; 
+    }; 
+    SUPERCLASS = View; 
+};

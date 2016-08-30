@@ -1,0 +1,47 @@
+WMView = {SUPERCLASS = View; };
+ShelfSizer = {OUTLETS = {delegate = delegate; }; SUPERCLASS = View; };
+WMWindow = {SUPERCLASS = Window; };
+BrowserView = {OUTLETS = {delegate = delegate; }; SUPERCLASS = WMView; };
+FileNodeViewer = {
+    ACTIONS = {
+	"changeToBrowser:" = "changeToBrowser:"; 
+	"changeToExpertView:" = "changeToExpertView:"; 
+	"changeToIconView:" = "changeToIconView:"; 
+	"destroySelectedFiles:" = "destroySelectedFiles:"; 
+	"doUpdate:" = "doUpdate:"; 
+	"doit:" = "doit:"; 
+	"duplicateFile:" = "duplicateFile:"; 
+	"makeNewDirectory:" = "makeNewDirectory:"; 
+	"openDirectoryFrom:" = "openDirectoryFrom:"; 
+	"openSelection:" = "openSelection:"; 
+	"selectAll:" = "selectAll:"; 
+	"show:" = "show:"; 
+	"sortIcons:" = "sortIcons:"; 
+	"updateX:" = "updateX:"; 
+	"windowDidResize:" = "windowDidResize:"; 
+	"windowWillResize:" = "windowWillResize:"; 
+    }; 
+    OUTLETS = {
+	animatedFile = animatedFile; 
+	bottomContextView = bottomContextView; 
+	bottomView = bottomView; 
+	browser = browser; 
+	dragger = dragger; 
+	expertScrollView = expertScrollView; 
+	expertView = expertView; 
+	fieldEditor = fieldEditor; 
+	iconPath = iconPath; 
+	iconScrollView = iconScrollView; 
+	iconView = iconView; 
+	infoLeft = infoLeft; 
+	infoRight = infoRight; 
+	shelf = shelf; 
+	shelfSizer = shelfSizer; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};
+NXSmallScrollView = {SUPERCLASS = ScrollView; };
+WMIconPath = {OUTLETS = {delegate = delegate; }; SUPERCLASS = WMView; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+WMShelfView = {OUTLETS = {delegate = delegate; }; SUPERCLASS = View; };

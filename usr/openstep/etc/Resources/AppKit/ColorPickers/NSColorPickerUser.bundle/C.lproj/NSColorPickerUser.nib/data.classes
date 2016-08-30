@@ -1,0 +1,34 @@
+NXColorPickerUserView = {
+    OUTLETS = {
+	controllingPicker;
+    };
+    SUPERCLASS = View;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+NXColorPickerUser = {
+    ACTIONS = {
+	new:;
+	remove:;
+	rename:;
+	paste:;
+	copy:;
+	open:;
+    };
+    OUTLETS = {
+	tiffView;
+	palettePopUp;
+	renameField;
+	palettePopUpButton;
+	copy;
+	optionsPopUp;
+	paste;
+	removeField;
+	open;
+	userPickerView;
+    };
+    SUPERCLASS = Object;
+};

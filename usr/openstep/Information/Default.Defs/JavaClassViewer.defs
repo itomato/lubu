@@ -1,0 +1,29 @@
+{
+        topViewName = "Browse";
+        bottomViewName = "Declaration";
+        timeIntervalBetweenDataRefreshes = 120.0;
+
+        isCaseSensitive = NO;
+
+        isDefaultField = YES;
+        isPublicField = YES;
+        isProtectedField = YES;
+        isPrivateField = YES;
+        isConstructor = YES;
+        isDefaultMethod = YES;
+        isPublicMethod = YES;
+        isProtectedMethod = YES;
+        isPrivateMethod = YES;
+
+        ClassBackgroundColor = "[1.000000] [1.000000] [1.000000]";       
+        CommentColor = "[1.000000] [0.000000] [0.000000]";
+        DeclarationColor = "[0.000000] [0.000000] [1.000000]";
+        PackageColor = "[0.396370] [0.020327] [0.772414]"; 
+        FieldModifierColor = "[0.000000] [0.000000] [0.000000]"; 
+        FieldNameColor = "[0.000000] [0.000000] [0.000000]"; 
+        FieldTypeColor = "[0.000000] [0.000000] [0.000000]"; 
+        MethodArgsColor = "[0.000000] [0.000000] [0.000000]"; 
+        MethodModifierColor = "[0.000000] [0.000000] [0.000000]"; 
+        MethodNameColor = "[0.000000] [0.000000] [0.000000]"; 
+        MethodTypeColor = "[0.000000] [0.000000] [0.000000]"; 
+}

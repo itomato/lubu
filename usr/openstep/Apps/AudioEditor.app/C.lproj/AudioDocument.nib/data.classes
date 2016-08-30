@@ -1,0 +1,37 @@
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"AudioDocument" = {
+    ACTIONS = {
+	"close:" = "close:"; 
+	"erase:" = "erase:"; 
+	"pause:" = "pause:"; 
+	"play:" = "play:"; 
+	"popUpChanged:" = "popUpChanged:"; 
+	"record:" = "record:"; 
+	"reductionFieldChanged:" = "reductionFieldChanged:"; 
+	"revertToSaved:" = "revertToSaved:"; 
+	"save:" = "save:"; 
+	"saveAs:" = "saveAs:"; 
+	"setInfo:" = "setInfo:"; 
+	"soundTypeChanged:" = "soundTypeChanged:"; 
+	"stop:" = "stop:"; 
+    }; 
+    OUTLETS = {
+	auxBox = "NSBox*"; 
+	eraseButton = "NSButton*"; 
+	filename = "NSString*"; 
+	infoField = "NSTextField*"; 
+	infoMatrix = "NSMatrix*"; 
+	pauseButton = "NSButton*"; 
+	playButton = "NSButton*"; 
+	popUpButton = "NSPopUpButton*"; 
+	recordButton = "NSButton*"; 
+	reductionField = "NSTextField*"; 
+	sound = id; 
+	soundMeter = "SoundMeter*"; 
+	soundTypePopUp = NSPopUpButton; 
+	soundTypeView = NSBox; 
+	soundView = "SoundView*"; 
+	stopButton = "NSButton*"; 
+    }; 
+    SUPERCLASS = NSObject; 
+};

@@ -1,0 +1,72 @@
+#!/bin/sh
+
+##BEGIN TEMPLATE WRAPPER SHELL SCRIPT
+
+# A variable to hold arguments after we strip OpenStep specific information
+args=
+
+# If you are debugging this script you might uncomment the following
+# two lines.
+#set -x
+#echo input=$*
+
+# Loop until argv ($#) is zero, each iteration will decrement (shift)
+# argv/argc.
+while [ $# != 0 ] ; do
+  case $1 in
+    # -NSOpen is an OpenStep standard command line flag which
+    # lets the NSApplication know what file to open.
+    -NSOpen)
+        args="$args $2"
+        shift             
+        ;;
+    # -NSOpenTemp is an OpenStep standard command line flag which
+    # lets the NSApplication know what file to open and that it is
+	# a temporary file and should be resaved somewhere else if edited.
+    -NSOpenTemp)
+        args="$args $2"
+        shift
+        ;;
+    # -_NSMachLaunch is an undocumented additional flag to NSApplication.
+    # We just ignore it here.
+    -_NSMachLaunch)
+        shift
+        ;;
+    *)
+        args="$args $1"
+        ;;
+  esac
+  shift
+done
+
+##END OF TEMPLATE WRAPPER SHELL SCRIPT
+
+## Begin Sysinfo shell wrapper for the Wrapper wrapper...
+## Sysinfo requires additional paths, parameters and variables
+
+# Find it..
+if [ -d "/opt/sysinfo" ]; then
+ SYSDIR="/opt/sysinfo/bin"
+ APP="$SYSDIR/sysinfo"
+elif [ -d "/usr/sysinfo" ]; then
+ SYSDIR="/usr/sysinfo/bin"
+ APP="$SYSDIR/sysinfo"
+elif [ -d "/usr/local/sysinfo" ]; then
+ SYSDIR="/usr/local/sysinfo/bin"
+ APP="$SYSDIR/sysinfo"
+else
+ SYSINFO=""
+ APP="BAD_DIR"
+fi
+export APP
+
+## Trap errors
+if [ "$SYSDIR" = "" ]; then
+ MSG="Sysinfo directory not found!"; export MSG
+fi
+
+## Call apps through appfind wrapper (wrap the wrapper ;0)
+WRAP=/usr/openstep/bin/appfind
+exec $WRAP $args
+
+## End Sysinfo wrapper

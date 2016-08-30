@@ -1,0 +1,23 @@
+"WMFinderSelection" = {OUTLETS = {delegate = id; }; SUPERCLASS = NSView; };
+"WMFinder" = {
+    ACTIONS = {"changeMode:" = "changeMode:"; "find:" = "find:"; "show:" = "show:"; }; 
+    OUTLETS = {
+	findButton = id; 
+	foundField = id; 
+	modeMatrix = id; 
+	modePopUpButton = id; 
+	results = id; 
+	scrollView = id; 
+	selectionBox = id; 
+	selectionIcon = id; 
+	shelf = id; 
+	shelfSizer = id; 
+	statusField = id; 
+	textField = id; 
+	window = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"WMFinderShelf" = {OUTLETS = {delegate = id; }; SUPERCLASS = NSView; };
+"WMFinderShelfSizer" = {SUPERCLASS = NSView; };

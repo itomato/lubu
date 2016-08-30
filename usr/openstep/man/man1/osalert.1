@@ -1,0 +1,77 @@
+.\" "@(#) osalert.1, Rev 1.0, 97/02/13"
+.\"
+.\"     Copyright (c) 1996-1997, Sun Microsystems, Inc.
+.\"     All rights reserved.
+.\"
+.TH osalert 1 "13 Feb 1997" "" "OpenStep Commands"
+.if n .tr \--
+.SH NAME
+osalert \- provides a standard OpenStep alert panel
+.SH SYNOPSIS
+\fBosalert\fR \fB-t\fR \fItitle\fR \fB-i\fR \fIicon\fR \fB-V\fR \fB-H\fR [\fImessage\fR] [\fIbutton1\fR] [\fIbutton2\fR] [\fIbutton3\fR]
+.br
+.ft R
+.PP
+.ft L
+.SH DESCRIPTION
+The 
+.B osalert 
+command provides access to a standard OpenStep
+alert panel as implemented by the NSRunAlertPanel()
+function using the NSPanel class in the Application Kit.
+The arguments to 
+.B osalert 
+can change all of the standard attributes of the alert panel.
+.SH OPTIONS
+The following options are supported.
+.TP
+.BI \-t " title"
+Specify the title of the alert panel window.  By default it is Alert.
+.TP
+.BI \-i  " icon"
+Specify a path to a TIFF image file to be displayed in the upper
+left corner of the alert panel.
+.TP
+.B \-V
+Output version information.
+.TP
+.B \-H
+Output verbose help to stdout.
+.TP
+.I "message"
+The main message of the panel.
+.TP
+.I "button1"
+The string for the default button.
+.TP
+.I "button2"
+The string for the alternate button.
+.TP
+.I "button3"
+The string for the other alternate button.
+
+.SH "EXIT STATUS"
+The following exit statuses are returned:
+.TP 8
+.B -1
+An error occurred, or the usage was incorrect.
+.TP
+.B 0
+The default button was pressed (button1).
+.TP
+.B 1
+The alternate button was pressed (button2).
+.TP
+.B 2
+The other alternate button was pressed (button3).
+
+.SH BUGS
+If the TIFF image is not specified, the default application
+icon should be substituted automatically but currently is not.
+
+.TE
+.SH "SEE ALSO"
+.BR ossave (1),
+.BR osopen (1)
+
+.if n .tr \-\-

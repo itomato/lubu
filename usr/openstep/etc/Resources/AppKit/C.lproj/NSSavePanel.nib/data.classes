@@ -1,0 +1,31 @@
+FirstResponder = {
+    ACTIONS = {
+    	"orderFrontNXColorPanel:" = "orderFrontNXColorPanel:"; 
+	"performResize:" = "performResize:"; 
+    }; 
+    SUPERCLASS = Object; 
+};
+NSKitPanelLoader = {OUTLETS = {panel = panel; }; SUPERCLASS = Object; };
+MyObject = {SUPERCLASS = Object; };
+SavePanel = {
+    ACTIONS = {
+    	"_ejectRemovableDevice:" = "_ejectRemovableDevice:"; 
+	"_findRemovableDevices:" = "_findRemovableDevices:"; 
+	"_formHit:" = "_formHit:"; 
+	"_itemHit:" = "_itemHit:"; 
+	"cancel:" = "cancel:"; 
+	"findHome:" = "findHome:"; 
+	"ok:" = "ok:"; 
+	"performResize:" = "performResize:"; 
+    }; 
+    OUTLETS = {
+    	browser = browser; 
+	form = form; 
+	homeButton = homeButton; 
+	iconButton = iconButton; 
+	okButton = okButton; 
+	removableDeviceButton = removableDeviceButton; 
+	separator = separator; 
+    }; 
+    SUPERCLASS = Window; 
+};

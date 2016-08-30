@@ -1,0 +1,110 @@
+    Copyright 1996 Sun Microsystems, Inc. All Rights Reserved.
+            Manufactured in the United States of America.
+2550 Garcia Avenue, Mountain View, California, 94043-1100 U.S.A.
+
+Copyright 1996 Sun Microsystems Inc. Tous droits reserve's.
+Fabriqu'e aux Etats-Unis, 2550 Garcia Avenue, Mountain View, Californie
+94043-1100 USA
+
+This product and related documentation is protected by copyright and
+distributed under licenses restricting its use, copying, distribution
+and decompilation.  No part of this product or related documentation
+may be reproduced in any form by any means without prior written
+authorization of Sun and its licensors, if any.
+
+Ce produit ainsi que la documentation associée sont protégés par un 
+copyright et distribués par des licences qui en restreignent l'utili-
+sation, la copie et la décompil'ation. Aucune partie de ce produit ou
+de sa documentation associée ne peuvent etre reproduits sous aucune
+forme, par quelque moyen que ce soit sans l'autorisation préalable
+et écrite de Sun et de ses bailleurs de licence, s'il en a.
+
+
+Portions of this product may be derived from the UNIX   and Berkeley
+4.3 BSD systems, licensed from Novell, Inc. and the University of
+California, respectively.  Third party software, including font
+technology, in this product is protected by copyright and licensed from
+Sun's suppliers.
+
+
+RESTRICTED RIGHTS:  Use, duplication, or disclosure by the U.S.Government 
+is subject to restrictions of FAR 52.227-14(g)(2)(6/87) and 
+FAR 52.227-19(6/87), or DFAR 252.227-7015(b)(6/95) and 
+DFAR 227.7202-3(a).
+
+
+
+
+Des parties de ce document pourront provenir respectivement des systèmes
+UNIX ®  et 4.3 BSD de Berkeley, et licenciés par de Novell Inc. et de l'Université de Californie. Les logiciels détenus par des tiers, dont la technologie relative aux polices de caractères, contenus dans ce produit 
+sont protégés par un copyright et licenciés par des fournisseurs de Sun.
+
+
+
+Sun, Sun Microsystems, the Sun Logo, Solaris, SunOS, SunSoft, the
+SunSoft Logo, ONC, NFS, OpenWindows, Deskset, AnswerBook, SunLink,
+SunView, SunDiag, NeWS, OpenBoot, OpenFonts, SunInstall, SunNet,
+ToolTalk, X11/NeWS and XView are trademarks or registered trademarks of
+Sun Microsystems, Inc in the U.S.  and certain other countries.  
+OpenStep is a trademark of NeXT Software, Inc.
+OPEN LOOK is a registered trademark of Novell, Inc.  UNIX is a registered
+trademark in the U.S. and other countries, exclusively licensed through
+X/Open, Ltd.  Postscript is a registered trademark of Adobe Systems,
+Inc.  All other product names mentioned herein are the trademarks of
+their respective owners.
+
+Sun, Sun Microsystems, le logo Sun, Solaris, SunOS, SunSoft, le logo
+SunSoft, ONC, NFS, OpenWindows, Deskset, Answerbook, SunLink, SunView,
+SunDiag, NeWS, OpenBoot, OpenFonts, Sun Install, SunNet, Tooltalk, X11/
+NeWS et XVIEW sont des marques de'pose'es ou enregistre'es de Sun
+Microsystems, Inc. aux Etats-Unis et dans certains autres pays.
+OpenStep est une marque de NeXT Software, Inc.
+OPEN LOOK est une marque enregistre'e de Novell, Inc. UNIX est une marque
+enregistre aux Etats-Unis et dans d'autres pays, et exclusivement
+licencie par X/Open Ltd. Postcript est une marque enregistre'e d'Adobe
+Systems Inc.  Intel est une marque enregistre'e d'Intel Corporation. Tous
+les autres noms de produits qui sont mentionns ici sont des marques
+de'pose'es de leurs propritaires respectifs.
+
+
+All SPARC trademarks, including the SCD Compliant Logo, are trademarks
+or registered trademarks of SPARC International, Inc.  SPARCstation,
+SPARC server, SPARCengine, SPARCworks and SPARCompiler are licensed
+exclusively to Sun Microsystems, Inc.  Products bearing SPARC
+trademarks are based upon an architecture developed by Sun
+Microsystems, Inc.
+
+Toutes les marques SPARC, y compris le logo SCD Compliant, sont des
+marques de'pose's ou enregistre'es de SPARC INTERNATIONAL Inc, SPARCstation,
+marques de'pose's on enregistre'es SPARC- server, SPARCengine, SPARCworks et SPARCompiler sont exclusivement li- cenci'es a Sun Microsystems Inc. Les produits portant les marques sont base's sur une architecture developpe'e par Sun Microsytems, Inc.
+
+The OPEN LOOK(R) and Sun(TM) Graphical User Interfaces were developed
+by Sun Microsystems, Inc. for its users and licensees.  Sun
+acknowledges the pioneering efforts of Xerox in researching and
+developing the concept of visual or graphical user interfaces for the
+computer industry.  Sun holds a non-exclusive license from Xerox to the
+Xerox Graphical User Interface, which license also covers Sun's
+licensees who implement OPEN LOOK GUIs and otherwise comply with Sun's
+written license agreements.
+
+The X Window System is a product of the Massachusetts Institute of
+Technology.
+
+This product incorporates technology used under license from Fulcrum
+Technologies, Inc.
+
+Les interfaces d'utilisateur graphique OPEN LOOK(R) et Sun(TM) ont 'ete'
+developpe'es par Sun Microsystems, Inc. pour ses utilisateurs et
+licencie's. Sun reconnait les efforts de pionnier de Xerox dans la
+recherche et le de'veloppement des interfaces du concept visuel ou
+graphique pour l'industrie de l'informatique. Sun de'tient une licence
+non exclusive de Xerox sur l'interface graphique utilisateur de Xerox;
+cette licence couvre aussi les licencies de Sun qui mettent en place
+les GUIs OPENLOOK et qui par ailleurs, se conforment aux termes de leur
+licence e'crite.
+
+Le syste'me X Window est un produit du Massachussets Institute of
+Technology.
+
+Ce produit inte'gre une technologie utilise'e sous licence par Fulcrum
+Technologies Inc.

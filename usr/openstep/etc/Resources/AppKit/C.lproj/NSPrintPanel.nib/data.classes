@@ -1,0 +1,42 @@
+NSKitPanelController = {
+    ACTIONS = {"hide:" = "hide:"; "terminate:" = "terminate:"; }; 
+    OUTLETS = {panel = panel; }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+PrintPanel = {
+    ACTIONS = {
+	"_pickedButton:" = "_pickedButton:"; 
+	"_pickedJobFeatureButton:" = "_pickedJobFeatureButton:"; 
+	"_pickedOptions:" = "_pickedOptions:"; 
+	"pickedAllPages:" = "pickedAllPages:"; 
+    }; 
+    OUTLETS = {
+	_appIcon = _appIcon; 
+	_cancel = _cancel; 
+	_copies = _copies; 
+	_deviceButtonsBox = _deviceButtonsBox; 
+	_feedBox = _feedBox; 
+	_firstPage = _firstPage; 
+	_lastPage = _lastPage; 
+	_optionsButton = _optionsButton; 
+	_pageMode = _pageMode; 
+	_ppdGroupView = _ppdGroupView; 
+	_ppdMessage = _ppdMessage; 
+	_ppdTextView = _ppdTextView; 
+	_preview = _preview; 
+	_save = _save; 
+	buttons = buttons; 
+	controlBox = controlBox; 
+	feed = feed; 
+	name = name; 
+	note = note; 
+	ok = ok; 
+	printerList = printerList; 
+	printerListBox = printerListBox; 
+	printerListTitle = printerListTitle; 
+	resolutionList = resolutionList; 
+	status = status; 
+    }; 
+    SUPERCLASS = Window; 
+};

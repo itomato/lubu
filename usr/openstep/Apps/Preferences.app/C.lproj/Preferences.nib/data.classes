@@ -1,0 +1,39 @@
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"Preferences" = {
+    ACTIONS = {
+	"info:" = "info:"; 
+	"loadBoot:" = "loadBoot:"; 
+	"loadExpert:" = "loadExpert:"; 
+	"loadKeyboard:" = "loadKeyboard:"; 
+	"loadMenu:" = "loadMenu:"; 
+	"loadMonitor:" = "loadMonitor:"; 
+	"loadMouse:" = "loadMouse:"; 
+	"loadPassword:" = "loadPassword:"; 
+	"loadSystem:" = "loadSystem:"; 
+	"loadTime:" = "loadTime:"; 
+    }; 
+    OUTLETS = {
+	appWindow = id; 
+	border1 = id; 
+	buttonMatrix = id; 
+	buttonScroll = id; 
+	editCopy = id; 
+	editCut = id; 
+	editMenu = id; 
+	editPaste = id; 
+	editSelect = id; 
+	fontCopyFont = id; 
+	fontFontPanel = id; 
+	fontMenu = id; 
+	fontPasteFont = id; 
+	infoBox = id; 
+	infoButton = id; 
+	infoPanel = id; 
+	preferencesStrings = id; 
+	version = id; 
+	windowClose = id; 
+	windowMenu = id; 
+	windowMiniaturize = id; 
+    }; 
+    SUPERCLASS = NSApplication; 
+};

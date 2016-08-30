@@ -1,0 +1,32 @@
+FirstResponder = {
+    ACTIONS = {
+	backwardFind:;
+	replaceFind:;
+	regExpr:;
+	replace:;
+	ignoreCase:;
+	find:;
+	all:;
+    };
+    SUPERCLASS = Object;
+};
+EditUI = {
+    ACTIONS = {
+	findReturn:;
+    };
+    OUTLETS = {
+	findButton;
+	ignoreCase;
+	ftext;
+	matrix;
+	allButton;
+	findReplaceButton;
+	replaceButton;
+	regExpr;
+	findWindow;
+	backFindButton;
+	errmsg;
+	appIcon;
+    };
+    SUPERCLASS = Object;
+};

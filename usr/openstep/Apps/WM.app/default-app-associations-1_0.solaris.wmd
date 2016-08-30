@@ -1,0 +1,996 @@
+{
+    /usr/openstep/Apps = (
+	{
+	    appName = Edit; 
+	    icon = app; 
+	    name = Edit.app; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = app; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = app; 
+	    name = Edit; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = app; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = cfile; 
+	    name = c; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = hfile; 
+	    name = h; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = mfile; 
+	    name = m; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = rtfd; 
+	    name = rtfd; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = rtf; 
+	    name = rtf; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = text; 
+	    name = text; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = cfile; 
+	    name = cc; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = cfile; 
+	    name = cxx; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Edit; 
+	    icon = cfile; 
+	    name = C; 
+	    path = /usr/openstep/Apps/Edit.app/Edit; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Mail; 
+	    icon = app; 
+	    name = Mail.app; 
+	    path = /usr/openstep/Apps/Mail.app/Mail; 
+	    type = app; 
+	}, 
+	{
+	    appName = Mail; 
+	    icon = app; 
+	    name = Mail; 
+	    path = /usr/openstep/Apps/Mail.app/Mail; 
+	    type = app; 
+	}, 
+	{
+	    appName = Mail; 
+	    icon = mbox; 
+	    name = mbox; 
+	    path = /usr/openstep/Apps/Mail.app/Mail; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Mail; 
+	    icon = vox; 
+	    name = vox; 
+	    path = /usr/openstep/Apps/Mail.app/Mail; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Mail; 
+	    icon = "external-body"; 
+	    name = "external-body"; 
+	    path = /usr/openstep/Apps/Mail.app/Mail; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Preferences; 
+	    icon = app; 
+	    name = Preferences.app; 
+	    path = /usr/openstep/Apps/Preferences.app/Preferences; 
+	    type = app; 
+	}, 
+	{
+	    appName = Preferences; 
+	    icon = app; 
+	    name = Preferences; 
+	    path = /usr/openstep/Apps/Preferences.app/Preferences; 
+	    type = app; 
+	}, 
+	{
+	    appName = Preferences; 
+	    icon = PreferencesDoc; 
+	    name = preferences; 
+	    path = /usr/openstep/Apps/Preferences.app/Preferences; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Preview; 
+	    icon = app; 
+	    name = Preview.app; 
+	    path = /usr/openstep/Apps/Preview.app/Preview; 
+	    type = app; 
+	}, 
+	{
+	    appName = Preview; 
+	    icon = app; 
+	    name = Preview; 
+	    path = /usr/openstep/Apps/Preview.app/Preview; 
+	    type = app; 
+	}, 
+	{
+	    appName = Preview; 
+	    icon = ps; 
+	    name = ps; 
+	    path = /usr/openstep/Apps/Preview.app/Preview; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Preview; 
+	    icon = tiff; 
+	    name = tiff; 
+	    path = /usr/openstep/Apps/Preview.app/Preview; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Preview; 
+	    icon = eps; 
+	    name = eps; 
+	    path = /usr/openstep/Apps/Preview.app/Preview; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Terminal; 
+	    icon = app; 
+	    name = Terminal.app; 
+	    path = /usr/openstep/Apps/Terminal.app/Terminal; 
+	    type = app; 
+	}, 
+	{
+	    appName = Terminal; 
+	    icon = app; 
+	    name = Terminal; 
+	    path = /usr/openstep/Apps/Terminal.app/Terminal; 
+	    type = app; 
+	}, 
+	{
+	    appName = Terminal; 
+	    icon = TermDoc; 
+	    name = term; 
+	    path = /usr/openstep/Apps/Terminal.app/Terminal; 
+	    type = extension; 
+	}, 
+	{
+	    appName = Terminal; 
+	    icon = Services; 
+	    name = svcs; 
+	    path = /usr/openstep/Apps/Terminal.app/Terminal; 
+	    type = extension; 
+	}, 
+	{path = /usr/openstep/Apps/WM.app/WM; type = services; }, 
+	{
+	    appName = WM; 
+	    icon = app; 
+	    name = WM.app; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = app; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = app; 
+	    name = WM; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = app; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = font; 
+	    name = font; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = objlink; 
+	    name = objlink; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = service; 
+	    name = service; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = tiff; 
+	    name = tif; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = tiff; 
+	    name = tiff; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = eps; 
+	    name = eps; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = snd; 
+	    name = snd; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = au; 
+	    name = au; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = bundle; 
+	    name = bundle; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = clr; 
+	    name = clr; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = chunk; 
+	    name = chunk; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    action = "openAsFolder:"; 
+	    class = LocalFileNodeViewer; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = NodeCommand; 
+	}, 
+	{
+	    class = FileAttributesInspector; 
+	    mode = attributes; 
+	    nodep = isLocalFile; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    priority = 1; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = DirContentsInspector; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    priority = "-1"; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = AppInspector; 
+	    extension = app; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ImageInspector; 
+	    extension = tiff; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ImageInspector; 
+	    extension = tif; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ImageInspector; 
+	    extension = eps; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = SoundInspector; 
+	    extension = snd; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = SoundInspector; 
+	    extension = au; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = CInspector; 
+	    extension = h; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = CInspector; 
+	    extension = c; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = CInspector; 
+	    extension = m; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = RTFInspector; 
+	    extension = rtf; 
+	    mode = contents; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = RTFInspector; 
+	    extension = rtfd; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ChunkInspector; 
+	    extension = chunk; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = FileToolsInspector; 
+	    mode = tools; 
+	    nodep = hasToolsInspector; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = FileAccessInspector; 
+	    mode = access; 
+	    nodep = isLocalFile; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    priority = "-1"; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    name = inspectors; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    type = bundle; 
+	}, 
+	{
+	    icon = addressBookSupportFile; 
+	    name = addresses; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    type = extension; 
+	}, 
+	{
+	    class = WMPersoAddressContentsInspector; 
+	    mode = contents; 
+	    nodep = isAddressNode; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 1; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = WMGroupAddressContentsInspector; 
+	    mode = contents; 
+	    nodep = isGroupNode; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 2; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = WMAddressBookContentsInspector; 
+	    mode = contents; 
+	    nodep = isAddressBook; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 2; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    action = "openAsFolder:"; 
+	    class = WMAddressViewer; 
+	    extension = addresses; 
+	    nodep = isFileNode; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 1; 
+	    type = NodeCommand; 
+	}, 
+	{
+	    name = addresses; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    type = bundle; 
+	}, 
+	{
+	    appName = Workspace; 
+	    icon = app; 
+	    name = Workspace.app; 
+	    path = /usr/openstep/Apps/Workspace.app/Workspace; 
+	    type = app; 
+	}, 
+	{
+	    appName = Workspace; 
+	    icon = app; 
+	    name = Workspace; 
+	    path = /usr/openstep/Apps/Workspace.app/Workspace; 
+	    type = app; 
+	}
+    ); 
+    /usr/openstep/Developer/Apps = (
+	{
+	    path = /usr/openstep/Developer/Apps/HeaderViewer.app/HeaderViewer; 
+	    type = services; 
+	}, 
+	{
+	    appName = HeaderViewer; 
+	    icon = app; 
+	    name = HeaderViewer.app; 
+	    path = /usr/openstep/Developer/Apps/HeaderViewer.app/HeaderViewer; 
+	    type = app; 
+	}, 
+	{
+	    appName = HeaderViewer; 
+	    icon = app; 
+	    name = HeaderViewer; 
+	    path = /usr/openstep/Developer/Apps/HeaderViewer.app/HeaderViewer; 
+	    type = app; 
+	}, 
+	{
+	    appName = HeaderViewer; 
+	    icon = p; 
+	    name = p; 
+	    path = /usr/openstep/Developer/Apps/HeaderViewer.app/HeaderViewer; 
+	    type = extension; 
+	}, 
+	{
+	    appName = IconBuilder; 
+	    icon = app; 
+	    name = IconBuilder.app; 
+	    path = /usr/openstep/Developer/Apps/IconBuilder.app/IconBuilder; 
+	    type = app; 
+	}, 
+	{
+	    appName = IconBuilder; 
+	    icon = app; 
+	    name = IconBuilder; 
+	    path = /usr/openstep/Developer/Apps/IconBuilder.app/IconBuilder; 
+	    type = app; 
+	}, 
+	{
+	    appName = IconBuilder; 
+	    icon = tool; 
+	    name = ptool; 
+	    path = /usr/openstep/Developer/Apps/IconBuilder.app/IconBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = IconBuilder; 
+	    icon = pfilter; 
+	    name = pfilter; 
+	    path = /usr/openstep/Developer/Apps/IconBuilder.app/IconBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = IconBuilder; 
+	    name = tiff; 
+	    path = /usr/openstep/Developer/Apps/IconBuilder.app/IconBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = IconBuilder; 
+	    name = tif; 
+	    path = /usr/openstep/Developer/Apps/IconBuilder.app/IconBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = IconBuilder; 
+	    name = eps; 
+	    path = /usr/openstep/Developer/Apps/IconBuilder.app/IconBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = InterfaceBuilder; 
+	    icon = app; 
+	    name = InterfaceBuilder.app; 
+	    path = /usr/openstep/Developer/Apps/InterfaceBuilder.app/InterfaceBuilder; 
+	    type = app; 
+	}, 
+	{
+	    appName = InterfaceBuilder; 
+	    icon = app; 
+	    name = InterfaceBuilder; 
+	    path = /usr/openstep/Developer/Apps/InterfaceBuilder.app/InterfaceBuilder; 
+	    type = app; 
+	}, 
+	{
+	    appName = InterfaceBuilder; 
+	    icon = nibfile; 
+	    name = nib; 
+	    path = /usr/openstep/Developer/Apps/InterfaceBuilder.app/InterfaceBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = InterfaceBuilder; 
+	    icon = nibbackupfile; 
+	    name = "nib~"; 
+	    path = /usr/openstep/Developer/Apps/InterfaceBuilder.app/InterfaceBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = InterfaceBuilder; 
+	    icon = nibpalette; 
+	    name = palette; 
+	    path = /usr/openstep/Developer/Apps/InterfaceBuilder.app/InterfaceBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    path = /usr/openstep/Developer/Apps/ProjectBuilder.app/ProjectBuilder; 
+	    type = services; 
+	}, 
+	{
+	    appName = ProjectBuilder; 
+	    icon = app; 
+	    name = ProjectBuilder.app; 
+	    path = /usr/openstep/Developer/Apps/ProjectBuilder.app/ProjectBuilder; 
+	    type = app; 
+	}, 
+	{
+	    appName = ProjectBuilder; 
+	    icon = app; 
+	    name = ProjectBuilder; 
+	    path = /usr/openstep/Developer/Apps/ProjectBuilder.app/ProjectBuilder; 
+	    type = app; 
+	}, 
+	{
+	    appName = ProjectBuilder; 
+	    icon = projfile; 
+	    name = project; 
+	    path = /usr/openstep/Developer/Apps/ProjectBuilder.app/ProjectBuilder; 
+	    type = extension; 
+	}, 
+	{
+	    appName = ProjectBuilder; 
+	    icon = projfile; 
+	    name = proj; 
+	    path = /usr/openstep/Developer/Apps/ProjectBuilder.app/ProjectBuilder; 
+	    type = extension; 
+	}
+    ); 
+    Dock = (); 
+    "Workspace Manager" = (
+	{
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = services; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = app; 
+	    name = WM.app; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = app; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = app; 
+	    name = WM; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = app; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = font; 
+	    name = font; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = objlink; 
+	    name = objlink; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = service; 
+	    name = service; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = tiff; 
+	    name = tif; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = tiff; 
+	    name = tiff; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = eps; 
+	    name = eps; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = snd; 
+	    name = snd; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = au; 
+	    name = au; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = bundle; 
+	    name = bundle; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = clr; 
+	    name = clr; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    appName = WM; 
+	    icon = chunk; 
+	    name = chunk; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = extension; 
+	}, 
+	{
+	    action = "openAsFolder:"; 
+	    class = LocalFileNodeViewer; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/WM; 
+	    type = NodeCommand; 
+	}, 
+	{
+	    class = FileAttributesInspector; 
+	    mode = attributes; 
+	    nodep = isLocalFile; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    priority = 1; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = DirContentsInspector; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    priority = "-1"; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = AppInspector; 
+	    extension = app; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ImageInspector; 
+	    extension = tiff; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ImageInspector; 
+	    extension = tif; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ImageInspector; 
+	    extension = eps; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = SoundInspector; 
+	    extension = snd; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = SoundInspector; 
+	    extension = au; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = CInspector; 
+	    extension = h; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = CInspector; 
+	    extension = c; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = CInspector; 
+	    extension = m; 
+	    mode = contents; 
+	    nodep = isNotUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = RTFInspector; 
+	    extension = rtf; 
+	    mode = contents; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = RTFInspector; 
+	    extension = rtfd; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ChunkInspector; 
+	    extension = chunk; 
+	    mode = contents; 
+	    nodep = isUnixDirectory; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = FileToolsInspector; 
+	    mode = tools; 
+	    nodep = hasToolsInspector; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = FileAccessInspector; 
+	    mode = access; 
+	    nodep = isLocalFile; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    priority = "-1"; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    name = inspectors; 
+	    path = /usr/openstep/Apps/WM.app/inspectors.bundle/inspectors; 
+	    type = bundle; 
+	}, 
+	{
+	    icon = compressedZ; 
+	    name = Z; 
+	    path = /usr/openstep/Apps/WM.app/compression.bundle/compression; 
+	    type = extension; 
+	}, 
+	{
+	    icon = compressedfolder; 
+	    name = compressed; 
+	    path = /usr/openstep/Apps/WM.app/compression.bundle/compression; 
+	    type = extension; 
+	}, 
+	{
+	    icon = tar; 
+	    name = tar; 
+	    path = /usr/openstep/Apps/WM.app/compression.bundle/compression; 
+	    type = extension; 
+	}, 
+	{
+	    class = CompressedInspector; 
+	    extension = Z; 
+	    mode = contents; 
+	    nodep = isLocalFile; 
+	    path = /usr/openstep/Apps/WM.app/compression.bundle/compression; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = CompressedInspector; 
+	    extension = compressed; 
+	    mode = contents; 
+	    nodep = isLocalFile; 
+	    path = /usr/openstep/Apps/WM.app/compression.bundle/compression; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = ArchiveInspector; 
+	    extension = tar; 
+	    mode = contents; 
+	    nodep = isLocalFile; 
+	    path = /usr/openstep/Apps/WM.app/compression.bundle/compression; 
+	    selp = selectionOneOrMore; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    name = compression; 
+	    path = /usr/openstep/Apps/WM.app/compression.bundle/compression; 
+	    type = bundle; 
+	}, 
+	{
+	    icon = addressBookSupportFile; 
+	    name = addresses; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    type = extension; 
+	}, 
+	{
+	    class = WMPersoAddressContentsInspector; 
+	    mode = contents; 
+	    nodep = isAddressNode; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 1; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = WMGroupAddressContentsInspector; 
+	    mode = contents; 
+	    nodep = isGroupNode; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 2; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    class = WMAddressBookContentsInspector; 
+	    mode = contents; 
+	    nodep = isAddressBook; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 2; 
+	    selp = selectionOneOnly; 
+	    type = InspectorCommand; 
+	}, 
+	{
+	    action = "openAsFolder:"; 
+	    class = WMAddressViewer; 
+	    extension = addresses; 
+	    nodep = isFileNode; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    priority = 1; 
+	    type = NodeCommand; 
+	}, 
+	{
+	    name = addresses; 
+	    path = /usr/openstep/Apps/WM.app/addresses.bundle/addresses; 
+	    type = bundle; 
+	}
+    ); 
+}

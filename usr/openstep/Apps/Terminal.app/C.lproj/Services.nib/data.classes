@@ -1,0 +1,52 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+ServiceCache = {
+    ACTIONS = {
+	saveService:;
+	serviceSet:;
+	addNewTermService:;
+	serviceSetChanged:;
+	loadServiceSet:;
+	removeServiceAt:;
+    };
+    SUPERCLASS = Object;
+};
+TabularCell = {
+    SUPERCLASS = ButtonCell;
+};
+ServiceManager = {
+    ACTIONS = {
+	save:;
+	serviceSelected:;
+	remove:;
+	change:;
+	polymorphicOptsChanged:;
+	add:;
+	makeDirty:;
+	windowWillClose:;
+	execTypeChanged:;
+    };
+    OUTLETS = {
+	selOpts;
+	shellOpts;
+	selTypes;
+	keyForm;
+	saveButton;
+	saveScrollView;
+	addButton;
+	saveMatrix;
+	svcScrollView;
+	execTypePopUp;
+	svcMatrix;
+	removeButton;
+	window;
+	changeButton;
+	commandForm;
+	polymorphicOpts;
+	saveAccessory;
+    };
+    SUPERCLASS = Object;
+};

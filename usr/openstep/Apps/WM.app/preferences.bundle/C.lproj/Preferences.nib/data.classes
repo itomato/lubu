@@ -1,0 +1,14 @@
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+Preferences = {
+    ACTIONS = {
+	"setBrowserPref:" = "setBrowserPref:"; 
+	"setDiskPref:" = "setDiskPref:"; 
+	"setDockPref:" = "setDockPref:"; 
+	"setFileOpsPref:" = "setFileOpsPref:"; 
+	"setFinderPref:" = "setFinderPref:"; 
+	"setIconPref:" = "setIconPref:"; 
+	"setShelfPref:" = "setShelfPref:"; 
+    }; 
+    OUTLETS = {box = box; window = window; }; 
+    SUPERCLASS = Object; 
+};

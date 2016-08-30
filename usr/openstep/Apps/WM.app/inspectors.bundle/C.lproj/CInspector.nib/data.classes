@@ -1,0 +1,24 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+CInspector = {
+    ACTIONS = {
+	deactivate:;
+	edit:;
+	play:;
+	activate:;
+    };
+    OUTLETS = {
+	linesField;
+	tool;
+	window;
+	scrollText;
+	fullPathField;
+    };
+    SUPERCLASS = Object;
+};
+WMPathField = {
+    SUPERCLASS = View;
+};

@@ -1,0 +1,47 @@
+.TH CREATELOCALE 1 "17/12/96" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+createLocale \- creates a locale directory
+.SH SYNOPSIS
+.LP
+.B createLocale
+[
+.B \-v
+]
+[
+.BI \-n " locale-name"
+]
+[
+.BI \-m " msg-file-dir"
+]
+[
+.BI \-w " wrapper-dir"
+]
+[
+.BI \-o " output-dir"
+]
+.SH DESCRIPTION
+.B createLocale 
+merges the .po files created by createMsgFiles and the contents of the 
+.lproj directories in a wrapper directory into a locale directory.
+.SH OPTIONS
+.TP 
+.B \-v 
+Verbose. Normally createLocale does its work silently. This option causes createLocale to echo each cp command it executes.
+.TP
+.BI \-n " locale-name"
+specifies the locale name. The default locale is C.
+.TP
+.BI \-m " msg-file-dir"
+specifies the directory in which the .po message files are located, normally
+the output of createMsgFiles. The default directory is ./msgFiles.
+.TP
+.BI \-w " wrapper-dir"
+specifies the wrapper directory that contains the .lproj directories to be
+included.  A wrapper directory must be specified for applications, bundles, and palettes.
+.TP
+.BI \-o " output-dir"
+specifies the output directory. The default directory is ./locales; thus ./locales/C is created by default.
+.TP
+.SH
+After createLocale has been run, the resulting directory can be localized
+and then installed into the .app wrapper by installLocale.

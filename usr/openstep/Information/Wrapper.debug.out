@@ -1,0 +1,44 @@
+App Not Found:
+--------------
+
+luke@teologia$ sh -x XChat 
+args=
++ [ 0 != 0 ] 
+APP=xchat
++ export APP 
+WRAP=/usr/openstep/bin/appfind
++ exec /usr/openstep/bin/appfind 
++ [ xchat =  ] 
++ f_search 
++ which xchat 
++ awk {print $1} 
++ [ no = no ] 
++ f_alert 
+ALERT=/usr/openstep/bin/osalert
+AICON=/usr/openstep/bin/Alert.tiff
+TITLE=OpenStep Alert System
++ [  =  ] 
+MSG=The app <xchat> was not found in your PATH
++ /usr/openstep/bin/osalert -i /usr/openstep/bin/Alert.tiff -t OpenStep Alert System The app <xchat> was not found in your PATH Oops! 
+luke@teologia$
+
+App Found:
+----------
+
+luke@teologia$ sh -x Ez 
+args=
++ [ 0 != 0 ] 
++ [ /usr/local/andrew =  ] 
+APP=ez
++ export APP 
+WRAP=/usr/openstep/bin/appfind
++ exec /usr/openstep/bin/appfind 
++ [ ez =  ] 
++ f_search 
++ which ez 
++ awk {print $1} 
++ [ /usr/local/andrew/bin/ez = no ] 
++ ez 
+Starting ez (Version 7.0, ATK 7.5); please wait...
+luke@teologia$ 
+

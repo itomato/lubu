@@ -1,0 +1,18 @@
+#!/bin/ksh
+#ident "@(#) LuBu OpenMagic 1.0, 06/03/10"; 
+# CDE Wrapper - CDE apps require a bit more attention for some
+# very odd reason. cde_check.sh checks for /usr/dt then runs the app
+# or prints an error message. The export APP is needed to override
+# the APP already exported.
+
+## Ask the user to suspend the system
+$OSLOC/bin/osalert -t "OpenMagic System Suspend" \
+-i $OSLOC/Wrappers/CDE/DtPower.app/__ICON/app \
+"SUSPEND the unix system?" SUSPEND Cancel
+
+## Retrieve the exit code and respond to it
+EXITVAL="$?"
+if [ "$EXITVAL" = 0 ];then
+  dtpower
+fi
+

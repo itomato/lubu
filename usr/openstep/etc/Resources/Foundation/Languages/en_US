@@ -1,0 +1,11 @@
+/* AmericanEnglish */
+{
+	NSFormalName = "en_US (US English)";
+	NSLanguageCode = "ENG.USA";
+	NSLanguageName = "en_US";
+	NSParentContext = "C";
+
+	NSCurrencySymbol = "$";
+	NSDefaultGeographicalLoc = "USA";
+	NSShortDateFormatString = "%m/%d/%y";
+}

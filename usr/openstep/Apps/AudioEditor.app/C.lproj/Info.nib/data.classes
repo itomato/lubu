@@ -1,0 +1,11 @@
+"Info" = {
+    ACTIONS = {"clickedOnIcon:" = "clickedOnIcon:"; }; 
+    OUTLETS = {
+	copyright = NSTextField; 
+	infoPanel = NSPanel; 
+	releaseField = NSTextField; 
+	versionField = NSTextField; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };

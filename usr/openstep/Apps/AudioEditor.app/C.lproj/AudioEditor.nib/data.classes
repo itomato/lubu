@@ -1,0 +1,20 @@
+"AudioEditorDriver" = {
+    ACTIONS = {
+	"info:" = "info:"; 
+	"newAudioDocument:" = "newAudioDocument:"; 
+	"openAudioDocument:" = "openAudioDocument:"; 
+	"saveAll:" = "saveAll:"; 
+    }; 
+    OUTLETS = {audioDocuments = id; }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {
+    ACTIONS = {
+	"close:" = "close:"; 
+	"revertToSaved:" = "revertToSaved:"; 
+	"save:" = "save:"; 
+	"saveAll:" = "saveAll:"; 
+	"saveAs:" = "saveAs:"; 
+    }; 
+    SUPERCLASS = NSObject; 
+};

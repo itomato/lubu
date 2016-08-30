@@ -1,0 +1,31 @@
+"InstallerObject" = {
+    ACTIONS = {
+	"readDefaults:" = "readDefaults:"; 
+	"showHPanel:" = "showHPanel:"; 
+	"showInfoPanel:" = "showInfoPanel:"; 
+	"showPrefPanel:" = "showPrefPanel:"; 
+	"showWhatsNewPanel:" = "showWhatsNewPanel:"; 
+	"updateDefaults:" = "updateDefaults:"; 
+	"writeDefaults:" = "writeDefaults:"; 
+    }; 
+    OUTLETS = {
+	helpPanel = id; 
+	helpPanelText = id; 
+	iconView = "CPUView*"; 
+	infoPanel = id; 
+	infoPanelText = id; 
+	prefPanel = id; 
+	prefPanelIdleC = id; 
+	prefPanelIntervalT = id; 
+	prefPanelKernelC = id; 
+	prefPanelLayerT = id; 
+	prefPanelPopUp = id; 
+	prefPanelSmoothingT = id; 
+	prefPanelUserC = id; 
+	prefPanelWaitC = id; 
+	whatsNewPanel = id; 
+	whatsNewPanelText = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };

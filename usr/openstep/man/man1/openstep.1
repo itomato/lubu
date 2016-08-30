@@ -1,0 +1,38 @@
+.\" "@(#) openstep.1, Rev 1.5, 97/03/17"
+.\"
+.\"	Copyright (c) 1995-1996, Sun Microsystems, Inc.
+.\"     portions (c) Copyright 1994, NeXT Computer, Inc.
+.\"     All rights reserved.
+.\"
+.TH OPENSTEP 1 "04 Feb 1997" "Sun Microsystems, Inc." "OpenStep Commands"
+.SH NAME
+openstep \- openstep environment
+.SH SYNOPSIS
+.ft L
+\fBopenstep\fR [-ShowDock YES|NO]
+.br
+\fBopenstep\fR \fB-stop\fR
+.br
+\fBopenstep\fR \fB-start\fR \fIprogram\fR [-ShowDock YES|NO]
+.br
+.ft R
+.PP
+.ft L
+.SH DESCRIPTION
+.I openstep
+is used to manually start up and shut down the OpenStep(tm) desktop once the window system is started. If no arguments are provided, the
+OpenStep environment is started. You can use the openstep command to start the basic OpenStep desktop and also run an executable OpenStep application \fIprogram\fR.
+.SH ARGUMENTS
+.TP
+.B \-ShowDock
+specifies whether or not the dock will be visible. The default value is YES. A user might choose to set ShowDock to NO when running OpenStep in a CDE environment.
+.TP
+.B \-stop
+shuts down the entire OpenStep desktop. It also shuts down the X server unless the TerminateWindowManager user default has been set to NO.
+.TP
+.B \-start
+starts up the basic OpenStep desktop.
+
+.SH "SEE ALSO"
+dwrite(1), dread(1), dremove(1)
+

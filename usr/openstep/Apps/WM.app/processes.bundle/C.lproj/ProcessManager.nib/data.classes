@@ -1,0 +1,15 @@
+PieChart = {SUPERCLASS = View; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+ProcessManager = {
+    ACTIONS = {"show:" = "show:"; }; 
+    OUTLETS = {
+	container = container; 
+	modeButton = modeButton; 
+	modeMatrix = modeMatrix; 
+	noProcessField = noProcessField; 
+	noProcessWindow = noProcessWindow; 
+	scrollView = scrollView; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};

@@ -1,0 +1,71 @@
+"AppMaster" = {
+    ACTIONS = {
+	"clearAllFilters:" = "clearAllFilters:"; 
+	"clearStats:" = "clearStats:"; 
+	"deleteFilter:" = "deleteFilter:"; 
+	"newFilter:" = "newFilter:"; 
+	"readDefaults:" = "readDefaults:"; 
+	"readPrefPanel:" = "readPrefPanel:"; 
+	"showCallTree:" = "showCallTree:"; 
+	"showInfoPanel:" = "showInfoPanel:"; 
+	"showLeakInspector:" = "showLeakInspector:"; 
+	"showMethodFilter:" = "showMethodFilter:"; 
+	"showPrefPanel:" = "showPrefPanel:"; 
+	"showTimingData:" = "showTimingData:"; 
+	"writeDefaults:" = "writeDefaults:"; 
+    }; 
+    OUTLETS = {
+	appDefaults = "NSUserDefaults*"; 
+	callTree = id; 
+	callTreeWindow = "NSWindow*"; 
+	connection = "Connection*"; 
+	infoPanel = "NSPanel*"; 
+	infoPanelText = id; 
+	leakInspector = "Leaker*"; 
+	leakInspectorWindow = "NSWindow*"; 
+	methodFilter = "Filter*"; 
+	methodFilterWindow = "NSWindow*"; 
+	pTargetHost = "NSString*"; 
+	prefPanel = "NSPanel*"; 
+	prefTargetHost = id; 
+	prefTargetPort = id; 
+	timingData = id; 
+	timingDataWindow = "NSWindow*"; 
+	whatsNewPanel = NSPanel; 
+	whatsNewPanelText = NSCStringText; 
+    }; 
+    OUTLET_TYPES = {}; 
+    SUPERCLASS = NSObject; 
+};
+"InstallerObject" = {
+    ACTIONS = {
+	"readDefaults:" = "readDefaults:"; 
+	"showHelpPanel:" = "showHelpPanel:"; 
+	"showInfoPanel:" = "showInfoPanel:"; 
+	"showPrefPanel:" = "showPrefPanel:"; 
+	"showWhatsNewPanel:" = "showWhatsNewPanel:"; 
+	"updateDefaults:" = "updateDefaults:"; 
+	"writeDefaults:" = "writeDefaults:"; 
+    }; 
+    OUTLETS = {
+	helpPanel = id; 
+	helpPanelText = id; 
+	iconView = "CPUView*"; 
+	infoPanel = id; 
+	infoPanelText = id; 
+	prefPanel = id; 
+	prefPanelIdleC = id; 
+	prefPanelIntervalT = id; 
+	prefPanelKernelC = id; 
+	prefPanelLayerT = id; 
+	prefPanelPopUp = id; 
+	prefPanelSmoothingT = id; 
+	prefPanelUserC = id; 
+	prefPanelWaitC = id; 
+	whatsNewPanel = id; 
+	whatsNewPanelText = id; 
+    }; 
+    OUTLET_TYPES = {}; 
+    SUPERCLASS = NSObject; 
+};
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };

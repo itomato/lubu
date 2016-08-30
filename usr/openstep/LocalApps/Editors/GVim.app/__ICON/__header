@@ -1,0 +1,5 @@
+F	GVim.app	GVim	app
+F	GVim	GVim	app
+S	c	GVim	cfile
+S	h	GVim	hfile
+S	sh	GVim	shfile

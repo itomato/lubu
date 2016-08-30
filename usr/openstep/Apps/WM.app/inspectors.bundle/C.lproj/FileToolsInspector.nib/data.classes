@@ -1,0 +1,35 @@
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+FileToolsInspector = {
+    ACTIONS = {
+	selectApp:;
+	launchApp:;
+    };
+    OUTLETS = {
+	stringTable;
+	appPathTitle;
+	scrollView;
+	appNameField;
+	appIconMatrix;
+	appPathField;
+    };
+    SUPERCLASS = Inspector;
+};
+Inspector = {
+    ACTIONS = {
+	deactivateInspector:;
+	ok:;
+	performClick:;
+	activateInspector:;
+	revert:;
+    };
+    OUTLETS = {
+	window;
+	okButton;
+	revertButton;
+    };
+    SUPERCLASS = Object;
+};

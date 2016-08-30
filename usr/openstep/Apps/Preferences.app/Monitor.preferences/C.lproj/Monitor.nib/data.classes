@@ -1,0 +1,42 @@
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+monitorOwner = {
+    ACTIONS = {
+    	"adtEnabled:" = "adtEnabled:"; 
+	"newAutoDimTime:" = "newAutoDimTime:"; 
+	"newBackgroundColor:" = "newBackgroundColor:"; 
+	"newBrightness:" = "newBrightness:"; 
+	"newMute:" = "newMute:"; 
+	"newVolume:" = "newVolume:"; 
+    }; 
+    OUTLETS = {
+    	adtClock = adtClock; 
+	adtForm = adtForm; 
+	adtSlider = adtSlider; 
+	adtSwitch = adtSwitch; 
+	bSlider = bSlider; 
+	backColorWell = backColorWell; 
+	backgroundColorView = backgroundColorView; 
+	disabledColorView = disabledColorView; 
+	monitorStrings = monitorStrings; 
+	muteSwitch = muteSwitch; 
+	vSlider = vSlider; 
+	window = window; 
+    }; 
+    SUPERCLASS = Object; 
+};
+ADTView = {SUPERCLASS = View; };
+Clock = {
+    ACTIONS = {
+    	"decreaseDay:" = "decreaseDay:"; 
+	"decreaseHour:" = "decreaseHour:"; 
+	"decreaseMinute:" = "decreaseMinute:"; 
+	"decreaseSecond:" = "decreaseSecond:"; 
+	"increaseDay:" = "increaseDay:"; 
+	"increaseHour:" = "increaseHour:"; 
+	"increaseMinute:" = "increaseMinute:"; 
+	"increaseSecond:" = "increaseSecond:"; 
+	"startClock:" = "startClock:"; 
+	"stopClock:" = "stopClock:"; 
+    }; 
+    SUPERCLASS = View; 
+};

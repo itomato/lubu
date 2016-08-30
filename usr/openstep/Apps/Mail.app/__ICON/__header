@@ -1,0 +1,5 @@
+F	Mail.app	Mail	app
+F	Mail	Mail	app
+S	mbox	Mail	mbox
+S	vox	Mail	vox
+S	external-body	Mail	external-body

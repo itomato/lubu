@@ -1,0 +1,71 @@
+BGProcess = {
+    ACTIONS = {
+	activateProcess:;
+	deactivateProcess:;
+    };
+    OUTLETS = {
+	window;
+    };
+    SUPERCLASS = Object;
+};
+CPMVStdProcessOwner = {
+    ACTIONS = {
+	buttonClick:;
+    };
+    OUTLETS = {
+	fromToHeader;
+	pie;
+	window;
+	fromToContents;
+	opField;
+	buttons;
+    };
+    SUPERCLASS = Object;
+};
+CPMVProcess = {
+    ACTIONS = {
+	pause:;
+	abort:;
+	alertButtonClick:;
+    };
+    OUTLETS = {
+	hidingBox;
+	alertWindow;
+	opField;
+	fromField;
+	foreverBox;
+	alertButtons;
+	stdWindow;
+	buttons;
+	header;
+	pie;
+	contents;
+	toField;
+	fromToHeader;
+    };
+    SUPERCLASS = BGProcess;
+};
+CPMVErrorProcessOwner = {
+    ACTIONS = {
+	buttonClick:;
+    };
+    OUTLETS = {
+	foreverBox;
+	header;
+	window;
+	buttons;
+	contents;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+WMPathField = {
+    SUPERCLASS = View;
+};
+PieChart = {
+    SUPERCLASS = View;
+};

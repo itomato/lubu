@@ -1,0 +1,33 @@
+SoundMeter = {
+    SUPERCLASS = View;
+};
+FirstResponder = {
+    ACTIONS = {
+	performResize:;
+    };
+    SUPERCLASS = Object;
+};
+AliasBrowser = {
+    ACTIONS = {
+	play:;
+	transfer:;
+	record:;
+	erase:;
+	pause:;
+	shutDown:;
+	edit:;
+    };
+    OUTLETS = {
+	win;
+	record;
+	edit;
+	play;
+	transfer;
+	pause;
+	erase;
+	graph;
+	stop;
+	appIcon;
+    };
+    SUPERCLASS = Object;
+};

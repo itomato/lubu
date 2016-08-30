@@ -1,0 +1,43 @@
+/*
+ * Default Language Placeholder.  This should simply define all the public keys.
+ */
+{
+	/*
+	 * Keys needed for proper operation of NSLanguages
+	 */
+	NSFormalName = "C (POSIX)";
+	NSLanguageCode = "DEF";
+	NSLanguageName = "C";
+	NSParentContext = "";
+	/*
+	 * All of the standard "user default" keys follow, using English where
+	 * necessary to illustrate.
+	 */
+	NSAMPMDesignation = (AM, PM);
+	NSCurrencySymbol = "$";
+	NSDateFormatString = "%A, %B %d, %Y";
+	NSDateTimeOrdering = DMYH;
+	NSDecimalDigits = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+	NSDecimalSeparator = ".";
+	NSEarlierTimeDesignations = (prior, last, past, ago);
+	NSHourNameDesignations = ((0, midnight), (12, noon, lunch), (10, morning), (14, afternoon), (19, dinner));
+	NSInternationalCurrencyString = USD; /* ISO 4217 */
+	NSLaterTimeDesignations = (next);
+	NSMonthNameArray = (January, February, March, April, May, June, July, August, September, October, November, December);
+	NSNextDayDesignations = (tomorrow);
+	NSNextNextDayDesignations = (nextday);
+	NSPriorDayDesignations = (yesterday);
+	NSShortMonthNameArray = (Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec);
+	NSShortTimeDateFormatString = "%d-%b-%y %I:%M %p";
+	NSShortWeekDayNameArray = (Sun, Mon, Tue, Wed, Thu, Fri, Sat);
+	NSThisDayDesignations = (today);
+	NSThousandsSeparator = ",";
+	NSTimeDateFormatString = "%a %b %d %H:%M:%S %Z %Y";
+	NSTimeFormatString = "%H:%M:%S";
+	NSWeekDayNameArray = (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday);
+	NSYearMonthWeekDesignations = (year, month, week);
+	/*
+	 * Other keys
+	 */
+	NSShortDateFormatString = "%d/%m/%y";
+}

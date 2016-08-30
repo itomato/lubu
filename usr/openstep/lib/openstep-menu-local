@@ -1,0 +1,3 @@
+# Please edit this file to reflect your systems applications
+"Local Applications" TITLE
+"Edit This File..."	exec xedit $OSLOC/lib/openstep-menu-local

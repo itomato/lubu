@@ -1,0 +1,11 @@
+/* BritishEnglish */
+{
+	NSFormalName = "en_UK (UK English)";
+	NSLanguageCode = "ENG.GBR";
+	NSLanguageName = "en_UK";
+	NSParentContext = "C";
+
+	NSCurrencySymbol = "£";
+	NSDefaultGeographicalLoc = "GBR";
+	NSShortDateFormatString = "%d-%b-%y";
+}

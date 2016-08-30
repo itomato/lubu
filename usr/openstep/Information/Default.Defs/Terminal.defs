@@ -1,0 +1,30 @@
+{
+    AutoFocus = NO; 
+    Autowrap = YES; 
+    CleanCommands = "rlogin;telnet"; 
+    Columns = 80; 
+    CustomTitle = Terminal; 
+    DockLaunchHide = NO; 
+    FastAudits = NO; 
+    Keypad = NO; 
+    Meta = "-1"; 
+    MonitorProcs = YES; 
+    Rows = 24; 
+    RunningBackgroundClean = NO; 
+    SaveLines = "1000"; 
+    Scrollback = YES; 
+    ServiceSequenceNumber = 0; 
+    Shell = ""; 
+    ShellExitAction = 0; 
+    ShellsClean = YES; 
+    SourceDotLogin = YES; 
+    StartupAction = 1; 
+    StartupFile = ""; 
+    StrictEmulation = NO; 
+    TextAttributes = 8; 
+    TextColors = "0 0 0   1 1 1   0 0 0   0.333 0.333 0.333          1 1 1   0.5 0.5 0.5   0.666 0.666 0.666   0.5 0.5 0.5"; 
+    TitleBits = 3; 
+    Translate = YES; 
+    WinLocX = 200; 
+    WinLocY = 580; 
+}

@@ -1,0 +1,30 @@
+32 1 10 4 1 1 8 2 0 0 18
+Add To Calendar
+( /usr/bin/mkdir -p /tmp/$USER; set tf = /tmp/$USER/x.apt; /usr/bin/cat >$tf;  /usr/bin/grep '[ 	]' $tf >& /dev/null; if ( $status != 0 ) /usr/bin/cp `/usr/bin/cat $tf` $tf; endif; if ( ${?OPENSTEPHOME} == 0 ) set OPENSTEPHOME = /usr/openstep; endif; $OPENSTEPHOME/bin/open $tf )
+32 1 2 4 1 1 1 4 3 0 1
+Sort
+sort
+32 1 1 4 1 1 1 4 3 0 2
+Time
+date
+32 1 2 2 1 1 8 4 3 0 3
+Evaluate Arithmetic
+echo "%s" | bc
+32 1 8 2 1 1 1 2 0 0 4
+Enscript File
+enscript -2r
+32 1 10 2 1 4 8 0 0 0 5
+New Shell Here
+set cdto = %s; if (-f $cdto) set cdto = $cdto:h; cd $cdto; clear
+32 1 2 4 1 1 1 4 3 0 6
+Count Words
+wc
+32 1 8 2 2 1 8 2 0 0 7
+Grep In
+grep %p %s | /usr/openstep/bin/open
+32 1 2 4 1 1 1 4 3 0 8
+Wrap to 60 Columns
+fmt -w 60
+32 1 2 4 1 1 8 4 3 0 9
+Wrap and Reply
+fmt -w 58 | sed "s/^/>  /"

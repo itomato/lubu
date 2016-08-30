@@ -1,0 +1,16 @@
+TitleSizer = {OUTLETS = {delegate = delegate; }; SUPERCLASS = View; };
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };
+DiskPref = {
+    ACTIONS = {"ok:" = "ok:"; "revert:" = "revert:"; }; 
+    OUTLETS = {
+	dockMatrix = dockMatrix; 
+	fixedMatrix = fixedMatrix; 
+	removableMatrix = removableMatrix; 
+    }; 
+    SUPERCLASS = Pref; 
+};
+ColumnSizer = {OUTLETS = {delegate = delegate; refView = refView; }; SUPERCLASS = View; };
+Pref = {
+    OUTLETS = {contentView = contentView; window = window; }; 
+    SUPERCLASS = Object; 
+};

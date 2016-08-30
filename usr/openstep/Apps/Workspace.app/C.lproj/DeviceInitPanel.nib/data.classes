@@ -1,0 +1,19 @@
+DeviceInitPanel = {
+    ACTIONS = {
+	cancel:;
+	erase:;
+    };
+    OUTLETS = {
+	formatPopup;
+	cancelButton;
+	window;
+	labelField;
+	messageField;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};

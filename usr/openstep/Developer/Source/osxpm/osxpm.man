@@ -1,0 +1,16 @@
+'\" t
+.\" @(#)osxpm.1		1.0 05/01/2005
+.TH OSXPM 1 "01 May 2005"
+.UC
+.SH NAME
+osxpm \- Sets the root window of the current X display to an Xpm pixmap
+.SH SYNOPSIS
+\fBosxpm\fP \fI<file.xpm>\fP
+.SH DESCRIPTION
+\fIosxpm\fP reads the Xpm file specified in the command line
+and displays it in the root window.
+.SH BUGS
+Repeated use of osxpm with different xpm pixmaps will use up slots in
+your color table pretty fast. You have been warned.
+.SH AUTHOR
+Luke Th. Bullock (derived from Rob Nation's xpmroot)

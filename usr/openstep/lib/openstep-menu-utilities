@@ -1,0 +1,6 @@
+#
+"Utilities" TITLE
+"Reread Menu"		REREAD_MENU_FILE
+"Refresh"    		REFRESH
+"Reset Input"		exec kbd_mode -u
+"Suspend System"        exec sys-suspend

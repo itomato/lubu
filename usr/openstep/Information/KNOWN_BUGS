@@ -1,0 +1,81 @@
+
+KNOWN_BUGS in Solaris OpenStep 1.1-sparc
+----------------------------------------
+
+Binary format and OS compability:
+ Sun Solaris Sparc / 32bit & 64bit (OpenStep is 32bit only)
+
+All OpenStep 1.1 files are:
+ "ELF 32-bit MSB executable SPARC Version 1, dynamically linked, stripped"
+ All binaries have been stripped. Minimum requirements are at least 128MB
+ of RAM, and any Solaris Sparc 5/6/7/8/9 release, and 10 up to, and only
+ partially including Solaris 10/305, which gives symbol reference errors
+ in Mail.app, though all other apps seem to work. Higher versions than 
+ Solaris 10/305 have not been tested.
+
+Workspace Bug:
+ Do NOT under any circumstance change the animation rate in Workspace.defs
+ to 0 (Zero)! The current value is set to "10" (AnimationRate = 10;), which 
+ gives the Workspace a feeling of speed and efficiency. There is a (serious?)
+ bug in the AnimationRate feature that will render both the Browser and the
+ Dock useless if the value is set to 0 (Zero). You will NOT be able to move
+ appicons, and there will be ghost images left on your screen which will not 
+ go away untill you log out! If you wish to play with that setting, do it on
+ a user basis and not on a global basis. Any value from 1 - 10 should work.
+
+Example using the drite utility:
+ youruser@yourhost$ dwrite Workspace AnimationRate 5
+
+Missing Library (libauth.so.1):
+ In Solaris releases higher that 2.6 the library libauth.so.1 is missing.
+ The Preferences.app application set_password requires this library. Sun
+ seems to have removed it from releases later that 2.6, probably due to a
+ buffer overflow in the library. I have included Suns 106569-01 patch in
+ the directory libauth.patch, but I refuse to include it in the default
+ install due to the nature of the bug. You are definitly on your own if
+ you choose to install a known security risk onto your system. 
+ - You have been warned -
+
+luke@teologia$ pwd
+/usr/openstep/Apps/Preferences.app
+luke@teologia$ ldd set_password
+        libbsm.so.1 =>   /lib/libbsm.so.1
+        libintl.so.1 =>  /lib/libintl.so.1
+        libdl.so.1 =>    /lib/libdl.so.1
+        libauth.so.1 =>  (file not found)
+        libnsl.so.1 =>   /lib/libnsl.so.1
+        libsocket.so.1 =>        /lib/libsocket.so.1
+        libc.so.1 =>     /lib/libc.so.1
+        libmd5.so.1 =>   /lib/libmd5.so.1
+        libsecdb.so.1 =>         /lib/libsecdb.so.1
+        libmp.so.2 =>    /lib/libmp.so.2
+        libcmd.so.1 =>   /lib/libcmd.so.1
+        libm.so.2 =>     /lib/libm.so.2
+        /platform/SUNW,Ultra-5_10/lib/libc_psr.so.1
+        /platform/SUNW,Ultra-5_10/lib/libmd5_psr.so.1
+
+Wrappers:
+ The Wrapper __header files are incredibly vulnerable to changes. Please
+ note the following format the __headers need to work correct:
+Filename:
+ AppName.app/__ICONS/__header
+Syntax:
+ F<TAB>AppName.app<TAB>AppName<TAB>app
+ F<TAB>AppName<TAB>AppName<TAB>app
+For helpers add: (S-tab-extention-app-iconfile)
+ S<TAB>xt<TAB>AppName<TAB>icon
+
+If your file looks corrects, but the icon does not show, or the apps
+ appears to "hang", take another look at the __header file with a binary
+ editor. It may LOOK right, but remember that whitespace is not always
+ considered as "empty" space. The icons MUST be named "app", and be in
+ TIFF format, at 72dpi, otherwise they will not work.
+
+CPU.app:
+ The demo CPU.app does not work on UltraSparc platforms as it dies with 
+ a bus error. It has been tested on both UltraSparc 1 (U1) and UltraSparc
+ IIi (U5_10).
+
+This file last updated:
+ Sat 25 Mar 2006 by Luke Th. Bullock
+  

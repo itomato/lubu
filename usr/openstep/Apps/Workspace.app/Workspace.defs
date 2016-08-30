@@ -1,0 +1,27 @@
+{
+    AllowUnformattedDisks = Yes; 
+    AnimationRate = 15; 
+    ApplicationPaths = "/usr/openstep/Apps:~/openstep/UserApps:/usr/openstep/LocalApps";
+    AutomountDisks = Yes; 
+    BypassPowerOffConfirm = No; 
+    CatchSignals = Yes; 
+    CheckRunningAppsFirst = Yes; 
+    ConnectToRunningApps = Yes; 
+    CoreLimit = 0; 
+    DockController = 0; 
+    DockExtent = 32; 
+    DockHideFlags = 0; 
+    DockLaunchFlags = 3; 
+    DockOnTop = 0; 
+    DockPaths = "WorkspaceManager;/usr/openstep/Apps/Preferences.app;/usr/openstep/Apps/Mail.app;/usr/openstep/Apps/Terminal.app;/usr/openstep/Apps/Edit.app;/usr/openstep/Apps/Preview.app;/usr/openstep/Apps/AudioEditor.app;/usr/openstep/Apps/ImagePortfolio.app;/usr/openstep/Apps/JavaClassViewer.app;/usr/openstep/Apps/Poweroff.app "; 
+    DragStillAtTime = 50; 
+    DragVelocityThreshold = 50; 
+    LoginProgram = Yes; 
+    ShowDock = Yes; 
+    TerminateWindowManager = Yes;
+    UnixPath = "<env>"; 
+    UnixShell = /bin/sh; 
+    WorkspaceManager = /usr/openstep/Apps/WM.app; 
+    WorkspaceManagerFileIcons = No; 
+    WorkspaceManagerFileInfo = Yes; 
+}

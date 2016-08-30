@@ -1,0 +1,13 @@
+"FirstResponder" = {ACTIONS = {}; SUPERCLASS = NSObject; };
+"ExpandImage" = {
+    OUTLETS = {
+	controlBox = id; 
+	expandWindow = id; 
+	imagePopup = id; 
+	imageScroller = id; 
+	imageView = id; 
+	useAlphaSw = id; 
+    }; 
+    SUPERCLASS = NSObject; 
+};
+"ExpandedView" = {SUPERCLASS = NSView; };

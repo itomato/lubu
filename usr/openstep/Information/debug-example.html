@@ -1,0 +1,950 @@
+<!-- HEAD_START -->
+<HTML>
+<HEAD>
+<BASE HREF="debug-example.html">
+
+<TITLE>Debugging an OpenStep Application</TITLE>
+<!-- META NAME="product" VALUE="openstep" -->
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000EE" VLINK="#551A8B">
+
+<MAP NAME="navbar2">
+<AREA SHAPE=rect COORDS="0,0, 119,43" HREF="/">
+<AREA SHAPE=rect COORDS="120,0, 506,43" HREF="/solaris/">
+<AREA SHAPE=rect COORDS="507,0, 541,43" HREF="/">
+<AREA SHAPE=rect COORDS="542,0, 580,43" HREF="/search/search.html">
+</MAP>
+
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+<TR><TD VALIGN=TOP ALIGN=LEFT COLSPAN=3>
+<A HREF="/solaris/images/navbar2.map"><IMG BORDER=0
+SRC="/solaris/images/navbar2.gif" WIDTH="580" HEIGHT="43"
+ALT="Solaris Products" USEMAP="#navbar2" ISMAP></A><BR><A 
+HREF="/solaris/desktop.html"><IMG BORDER=0 
+SRC="/solaris/images/bar-desktop-sols.gif" WIDTH="580" 
+HEIGHT="31" ALT="Desktop Solutions"></A></TD></TR>
+<!-- HEAD_END -->
+
+<TR><TD VALIGN=TOP ALIGN=LEFT WIDTH="120"><CENTER><A HREF="/sales-n-service/index.html#sales"><IMG
+BORDER=0 SRC="/software/images/button_howbuy.gif" WIDTH="120"
+HEIGHT="24" ALT="How To Buy"></A><BR><A
+HREF="/sales-n-service/index.html#support"><IMG BORDER=0
+SRC="/software/images/support.gif" WIDTH="120" HEIGHT="24"
+ALT="Support Services"></A></CENTER>
+<BR>
+<BR>
+
+<center>
+<A HREF="/solaris/sitemap.html"><IMG BORDER=0 SRC="/solaris/images/sitemapicon.gif" WIDTH="60" HEIGHT="79" ALT="Solaris Site Map"></A>
+</center>
+
+<BR>
+<BR>
+
+<STRONG>Document Contents:</STRONG><BR>
+- <A HREF="#107148">Debugger Objective C Support</A><BR>
+- <A HREF="#106125">Sample .dbxrc File</A><BR>
+- <A HREF="#108460">Tracing Objective C Objects</A><BR>
+- <A HREF="#106497">Debugging Applications Using Optimized Libraries</A>
+
+</TD>
+<!-- LEFT_COLUMN_END -->
+
+<!-- MIDDLE_COLUMN -->
+<TD WIDTH="10">&#160;&#160;</TD>
+
+
+<!-- RIGHT_COLUMN_START -->
+<TD VALIGN=TOP ALIGN=LEFT>
+
+<br>
+<br>
+
+<font size="7">Debugging an OpenStep Application</font>
+
+<br>
+<br>
+
+The SPARCworks Debugger is an interactive, window-based, source code and machine-instruction level debugging tool. It provides dynamic analysis for observing run-tme program behavior. The Debugger gives you complete control of the dynamic execution of a program, including the collection of performance data. <p>
+The Debugger provides the same functionality as <code>dbx</code>, the command-line debugging tool, and you can enter <code>dbx</code> commands in the Command Pane of the Debugger base window.<p>
+To debug an OpenStep application, click on the Debug button in the project window for the application in Project Builder. If the project has not been built yet, it is built first. If the project builds successfully, then the application is run in debug mode and the SPARCworks Debugger starts up. See the SPARCworks manual Debugging a Program for details on using the Debugger windows. <p>
+<hr>
+<b>Note:</b> If the project has already been built, you can Alt-click on the Debug button to run the application under the Debugger.
+<hr>
+
+<h2><a name="107148">Debugger Objective C Support</a></h2>
+Release 3.1 of the SPARCworks Debugger includes support for Objective C applications, such as those developed using OpenStep.<p>
+
+<h3> Dynamic Types</h3>
+In Objective C an object pointer has two types: <p>
+<ul>
+<li>its static type, which is defined in the source code
+<li>its dynamic type, which is known at run-time
+</ul>The Debugger can provide information about the dynamic type of an object when you use the <code>print</code>, <code>display</code>, <code>inspect</code>, and <code>whatis</code> commands with the <br>-d option, or when you have set the dbx customization variable output_dynamic_type  to on. If you use the +d option, the commands will use the static type.<p>
+It is recommended that you put <code>dbxenv output_dynamic_type on</code> in your <code>~/.dbxrc</code> file when debugging Objective C programs.<p>
+<a name="105764">
+<h3> Finding Methods and Using Method Names in Non-expression Commands</h3>
+</a>The following are non-expression commands:<p>
+<code>stop in</code><p>
+<code>funcs</code><p>
+<code>whatis</code><p>
+<code>list</code><p>
+<code>edit</code><p>
+Use the <code>funcs</code> command (with a regular expression) to find methods and functions that the Debugger knows about and to print them in a format the Debugger accepts.  Use the <code>dbx</code> command <code>help funcs</code>  for more information on the <code>funcs</code> command.<p>
+If the process is active, the Debugger uses the run-time system to look up a method, otherwise it uses static information (stabs).<p>
+
+<h3> Setting Breakpoints</h3>
+The Debugger accepts the following variations of the <code>stop</code> command for setting breakpoints in Objective C methods:<p>
+<pre>
+stop in -[Test ival:second:]
+
+stop in +[Test alloc]
+
+stop in [Test ival:second:]
+
+stop in [obj ival:second:]  
+	// through an object (only if active process)	
+
+stop in ``ival:second:
+	// searches all classes for ival:second: 
+
+stop in ival:second:
+	// only if dbxenv scope_look_aside is `on'
+
+stop inmethod ival:second:
+	// stops in all methods with that name
+</pre>
+
+If the process is not active, use the following syntax for category methods:<p>
+
+<pre>
+stop in -[Test(Cat1) catmethod:second:]
+</pre>
+<h3> Calling Objective C Methods</h3>
+All Objective C instance methods must be called through an object. The following are some valid variations of calling Objective C methods:<p>
+
+<pre>
+call [obj ival: 30]
+	// calling instance method with parameter
+
+call [self ival: 30]
+	/ use self if stopped inside a class
+
+call [Test alloc]
+	// calling class method
+</pre>
+
+<h3> Recovering  from a Run-time System Crash</h3>
+The Debugger  calls the Objective C run-time system to look up methods and, if output_dynamic_type is on, to find the dynamic type of an object. In some cases this can cause a crash of the run-time system. The Debugger can usually  recover if you use the <code>pop</code> command. Use the <code>where</code> command and then the <code>pop</code> command to unwind frames from the stack. You can also use the <code>kill</code> command to return to a previous Debugger level.<p>
+
+<h2><a name="106125">Sample .dbxrc File</a></h2>
+Your ~/<code>.dbxrc</code> file is read automatically if it exists when the Debugger starts up. The following is a sample <code>.dbxrc</code> file for debugging Objective C applications. This file is located in <code>/usr/openstep/etc</code>. To have the Debugger read this file when it starts up, add <code>source /usr/openstep/etc/.dbxrc</code> to your <code>.dbxrc</code> file.<p>
+<p>
+<pre>
+##################################################################
+#               Objective C settings                             #
+##################################################################
+
+language objc
+
+dbxenv scope_look_aside on  
+	// sets the dbx customization variable
+	   scope_look_aside to on (find static
+	   symbols even when not in scope)
+
+dbxenv output_dynamic_type on 
+	// sets the dbx customization variable
+	   output_dynamic_type to on (display,
+   	   inspect, print, whatis commands use
+  	   dynamic type of object)
+
+# do 
+#    call objc_enableMessageSendDebug(1)
+# to enable the tracing of messages in objc_msgSend.  This tracing is
+# very fast and flexible.  The above command will echo back all the
+# info you need to use this feature.
+
+function objchelp
+{
+  echo "Add 'source /usr/openstep/etc/.dbxrc' to your ~/.dbxrc file"
+  echo "  to define helpful Objective C functions, aliases and buttons."
+  echo "  Look at this file in an editor to see what it contains."
+  echo "For more help, enter:"
+  echo "      help        general dbx help"
+  echo "      help ObjC   more Objective C help"
+  echo "      help FAQ    dbx - gdb correspondences, and other information"
+}
+
+function memon # stop if an object is freed too many times. VERY SLOW!!
+{
+  call [NSAutoreleasePool enableDoubleReleaseCheck: 1]
+  stop in _NSAutoreleaseInconsistency
+  status
+}
+
+function memoff
+{
+  call [NSAutoreleasePool enableDoubleReleaseCheck: 0]
+}
+
+function defbrks  # breakpoints that catch errors
+{
+  language objc
+
+  stop in abort
+
+  stop in -[NSObject doesNotRecognizeSelector:]
+
+  stop in +[NSAssertionHandler currentHandler]
+
+  stop in -[NSAssertionHandler 
+handleFailureInMethod:object:file:lineNumber:description:]
+
+  stop in -[NSAssertionHandler 
+handleFailureInFunction:file:lineNumber:description:]
+
+  stop in -[NSException raise]
+
+  stop in DPSDefaultErrorProc
+
+  stop in DPSCantHappen
+
+  stop in _exit
+}
+
+function morebrks  # other helpful places to breakpoint
+{
+  stop in NSLog
+
+  stop in _XErrorHandler
+
+  stop in -[Zombie forward::]
+}
+
+function allbrks  # set breakpoints to catch errors
+{
+  defbrks
+
+  morebrks   
+}
+
+function pselfvar
+{
+  print self-&gt;${1}
+}
+
+function pdesc
+{
+  print [[$* description] cString]
+}
+
+function pnsstring
+{
+  print [$* cString]
+}
+
+function prstar
+{
+  print -r *($*)
+}
+
+function pcounts # print retain count and number of autoreleases of 
+$1
+{
+  print [$* retainCount]
+
+  print [NSAutoreleasePool _numberOfObjectsIdenticalTo: $*]
+}
+
+# print string of an NSText object
+dalias ptext print [[!1 text] cString] 
+	// sets dbx alias ptext to
+	   print string of an NSText object
+
+# print string of an NSCStringText object
+
+dalias pcs print [[!1 cStringTextInternalState]-&gt;_string cString]
+	// sets dbx alias pcs to print string of 
+	   an NSCStringText object
+
+dalias pns pnsstring
+	// sets dbx alias pns for psstring command
+
+dalias pd  pdesc
+	// sets dbx alias pd for pdesc command
+
+dalias prs prstar
+	// sets dbx alias prs for prstar command
+
+alias typeof="print -l ((NSObject *)!:*)-&gt;isa-&gt;name" 
+	// sets dbx alias typeof for printing type of
+	   current object
+
+dalias currwin "print -l [(NSView *)[NSView focusView] window]" 
+	// sets dbx alias currwin for printing 
+	   current window
+
+dalias flushcurrwin "print -l [((NSWindow *)[(NSView *)[NSView 
+focusView] window]) _forceFlushWindowToScreen]"
+	// sets dbx alias fluchcurrwin for synchronous flushing
+	   of current window's off-screen buffer to screen
+
+button expand whatis
+    	// adds whatis button command;if selected
+	   characters begin with alphanumeric
+	   character, $, or _, then expands
+	   selection and uses as target 
+
+button expand prstar
+	// adds prstar button command;if selected
+	   characters begin with alphanumeric 
+	   character, $, or _, then expands
+	   selection and uses as target
+
+button expand pselfvar
+	// adds pselfvar button command;if 
+	   selected characters begin with
+	   alphanumeric character, $, or _, then
+	   expands selection and uses as target
+
+button expand pnsstring
+	// adds pnsstring button command;if
+	   selected characters begin with
+	   alphanumeric character, $, or _, then
+	   expands selection and uses as target
+
+button expand pcounts
+	// add pcounts button command;if selected
+	   characters begin with alphanumeric
+	   character, $, or _, then expands
+	   selection and uses as target
+
+button expand pdesc
+	// add pcounts button command;if selected
+	   characters begin with alphanumeric
+	   character, $, or _, then expands
+	   selection and uses as target
+
+button ignore defbrks
+	// adds defbrks button command; ignores
+	   current mouse selection for command
+
+
+##################################################################
+#              General purpose settings                          #
+##################################################################
+
+toolenv cmdlines 20
+	// sets the number of lines in the
+           command subwindow to 20
+
+dbxenv step_events on
+	// sets the dbx customization variable
+	   step_events to on to allow breakpoints
+	   while stepping or "nexting"
+
+dbxenv suppress_startup_message 4.0 
+	// sets the dbx customization
+	   variable suppress_startup_message to 
+
+set -o ignoresuspend # uncomment to cause dbx to ignore ^Z
+
+set -o emacs         # uncomment to enable emacs-style command editing
+
+#set -o vi           # or uncomment this line for vi-style editing
+
+function attach  # attach to a running process
+{
+  typeset PIG="$(/bin/ps -ef | /bin/egrep ${1} | /bin/egrep -v 
+egrep | /bin/head -1 | /bin/awk '{ print $8 " " $2 }')"
+
+  debug $PIG
+}
+
+function collOn   # enable collector modes
+{
+  collector work_set mode on
+
+  collector profile mode stack
+}
+
+function ff 
+{
+  where -f $(frame) 1
+
+  list
+}
+
+function penviron  # dump the environment variables of the target 
+process
+{
+  [ -z "$1" ] || { echo "$0: unexpected argument" &gt;&amp;2 &amp;&amp; return; }
+ 
+  typeset -i i=0
+
+  typeset env="((char **)$[(char**)environ])"
+
+  while :
+
+    do
+        x=$[($env)[$i]]
+
+        echo "$i: " "${x#0x*\ }"
+
+        case "$x" in
+
+        *\(nil\)*)    break;;
+
+        esac
+
+        ((i += 1))
+    done
+}
+
+PS1="$SMSO(dbx !)$RMSO " # reverse-video prompt with history number
+
+function _cb_prompt
+{
+  if $mtfeatures
+
+  then # set prompt for MT debugging
+
+     PS1='${SMSO}${thread} ${lwp}:!${RMSO} '
+
+  else # set prompt for non-thread debugging
+
+     PS1='${SMSO}dbx:!${RMSO} '
+
+  fi  
+}
+
+function hex    # print arg in hex
+{
+  # print &lt;expr&gt; in hex"
+  : ${1?"usage: $0 &lt;expr&gt;}
+
+  typeset -i16 x
+
+  ((x = $[(int)$*]))
+
+  echo - $* = $x
+}
+
+typeset -q hex
+
+function hexdump # dump $2 (default: sizeof $1) bytes in hex
+{
+
+  : ${1?"usage: $0 &lt;exp&gt; [&lt;size&gt;]  # dump &lt;size&gt; bytes in hex"}
+
+  typeset -i16 p="$[(void *)&amp;$1]" # address of $1
+
+  # number of bytes
+  typeset -i s="${2:-$[sizeof ($1)]}" &gt;/dev/null 2&gt;&amp;1
+
+  builtin examine $p/$[(${s:-4}+3)/4]X
+}
+
+typeset -q hexdump
+
+function pg # print process status by name
+{
+  /bin/ps -ef | /bin/egrep ${1} | /bin/egrep -v egrep
+}
+
+regs() # print register contents
+{ 
+  case $# in
+
+  0)  x &amp;$g0/32X; x &amp;$y/X; x &amp;$psr/X; x &amp;$pc/X; x &amp;$npc/X ;;
+
+  *)  for i
+        do reg=\$$i; x &amp;$reg/X
+        done ;;
+  esac
+}
+
+dalias p print
+	// sets dbx alias p for print command
+
+dalias w where
+	// sets dbx alias w for where command
+
+dalias br where
+	// sets dbx alias br for where command
+
+dalias ww where -q  
+	// sets dbx alias ww for where -q (quick
+	   traceback) command
+
+dalias fr frame	
+	// sets dbx alias fr for frame command
+
+dalias b stop in   
+	// sets dbx alias b for stop in command
+
+dalias ba stop at  
+	// sets dbx alias ba for stop at command
+
+dalias si stop in  
+	// sets dbx alias si for stop in command
+
+dalias sa stop at  
+	// sets dbx alias sa for stop at command
+
+dalias sic stop inclass	
+	// sets dbx alias sic for stop inclass
+	   command
+
+dalias sif stop infunction   
+	// sets dbx alias sif for stop 
+	   infunction command
+
+dalias sim stop inmember 
+	// sets dbx alias sim for stop inmember 
+	   command
+
+dalias sm stop modify	
+	// sets dbx alias sm for stop modify
+	   command
+
+dalias sr stop returns	
+	// sets dbx alias sr for stop returns 
+	   command
+
+dalias cc="clear;cont"	
+	// sets Korn alias cc for clear command
+	   followed by cont command
+
+dalias cl clear	
+	// sets dbx alias cl for clear command
+
+dalias ib status  
+	// sets dbx alias ib for status command
+
+dalias st status  
+	// sets dbx alias st for status command
+
+dalias d delete   
+	// sets dbx alias d for delete command
+
+dalias r run      
+	// sets dbx alias r for run command
+
+dalias c cont	  
+	// sets dbx alias c for cont command
+
+dalias s step     
+	// sets dbx alias s for step command
+
+dalias su step up  
+	// sets dbx alias su for step up command
+
+dalias n next	   
+	// sets dbx alias n for next command
+
+dalias di handler -disable 
+	// sets dbx alias di for handler
+           -disable command
+
+dalias en handler -enable  
+	// sets dbx alias en for handler -enable 
+           command
+
+dalias N nexti	
+	// sets dbx alias N for nexti command
+
+dalias S stepi	
+	// sets dbx alias S for stepi command
+
+dalias q quit	
+	// sets dbx alias q for quit command
+
+dalias tiny toolenv srclines 16; toolenv cmdlines 8
+	// sets dbx alias
+	   tiny to 16 lines in the source
+	   subwindow and 8 lines in the command
+           subwindow
+
+dalias mid toolenv srclines 25; toolenv cmdlines 25
+	// sets dbx alias
+	   mid to 25 lines in the source
+	   subwindow and 25 lines in the command
+	   subwindow 
+
+dalias big toolenv srclines 33; toolenv cmdlines 14
+	// sets dbx alias
+	   big to 33 lines in the source
+	   subwindow and 14 lines in the command
+	   subwindow 
+
+dalias und_all undisplay 
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20  
+	// sets dbx
+	   alias und_all to undo display commands
+  	   1 through 20
+
+dalias insense dbxenv case insensitive
+	// sets dbx alias insense to
+	   make case insignificant in variable
+	   and function names
+
+dalias sense dbxenv case sensitive 
+	// sets dbx alias sense to make
+	   case significant in variable and
+	   function names
+
+button lineno cont at	
+	// adds button command cont at; uses
+	   line number associated with current
+	   selection as target of command
+
+button ignore step up	
+	// adds button command step up; ignores
+	   current mouse selection for command
+
+button ignore tiny	
+	// adds button command tiny; ignores 
+	   current mouse selection for command
+
+button ignore mid	
+	// adds button command mid; ignores
+	   current mouse selection for command
+
+button ignore big	
+	// adds button command big; ignores
+	   current mouse selection for command
+
+button ignore quit	
+	// adds button command quit; ignores
+	   current mouse selection for command
+</pre>
+
+<h3> Helpful User Default Variables to Set with dwrite</h3>
+The following user default variables, which you can set with the <code>dwrite</code> command, may be useful in debugging your application:<p>
+<pre>
+NSEnableAutoreleasePool
+NSEnableDoubleReleaseCheck
+NSHideOnDeactivateEnabled
+NSPauseAtStartup
+NSSetPoolThreshold
+NSShowAllViews
+NSShowAllWindows
+NSShowDrawTimes
+NSShowEvents
+NSShowPS
+NSShowWindowInfo
+NSShowXEvents
+NSTrapIllegalFloatingPointOps
+</pre>
+
+<h2><a name="108460">Tracing Objective C Objects</a></h2>
+You can monitor Objective C messages being sent by objects in your application by calling the function objc_<code>messageSendDebug</code>. This function allows you to filter on different message attributes, and also stop at breakpoints when a certain filter matches the current message.<p>
+This facility is particularly useful for finding memory allocation errors and performance problems.<p>
+You can enable <code>messageSendDebug</code> in three ways:<p>
+<ul>
+<li>By using the <code>NSUserDefaults</code> system and <code>dwrite</code> commands (see <a href="#108496">"Invoking messageSendDebug Using dwrite Commands</a>")<p>
+<li>From a Debugger command line or within a program, by calling the functions found in <code>/usr/openstep/include/objc/objc-debug.h </code>(see <a href="#108533">"Invoking messageSendDebug from a Program or the Debugger"</a>)<p>
+<li> From a graphical tool which supports remote <code>messageSend</code> debugging, such as the ObjectDebug tool included in OpenStep<p>
+</ul>
+<h3><a name="108496">Invoking messageSendDebug  Using dwrite Commands</a></h3>
+You can automatically invoke <code>messageSendDebug</code> at execution time by using one of the following <code>dwrite</code> commands. <p>
+This command turns on <code>messageSendDebug</code>, but no messages are sent until a filter is set:<p>
+<pre>
+dwrite AppName NSEnableMessageSendDebug YES
+</pre>
+This command suspends the display of messages, even if filters are set:<p>
+<pre>dwrite AppName NSEnableMessageSendDebug NO
+</pre>This command turns on <code>messageSendDebug</code>, and adds a generic filter to show all messages:<p>
+<pre>dwrite AppName NSEnableMessageSendDebug ALL
+</pre>This command displays an explanation of how to use this facility:<p>
+<pre>dwrite AppName NSEnableMessageSendDebug HELP
+</pre><a name="108511">
+<h4> Adding Individual Message Filters</h4>
+</a>You can add individual message filters with the following commands:<p>
+<pre>
+<code>dwrite AppName NSMessageSendDebugFilter "ClassName | *,
+[+ | -]selectorName | [+ | -]*, receiverID[hex or dec] | *, YES | NO 
+</code>
+
+dwrite AppName NSMessageSendDebugFilter "GENERIC_FILTER" 
+
+dwrite AppName NSMessageSendDebugFilter1 "(AnotherSelectorName, 
+...)"
+
+dwrite AppName NSMessageSendDebugFilterN "(SelectorNameN, ...)"
+</pre>
+
+YES or NO applies to whether or not to call <code>objc_messageMatchedFilter()</code>
+when a filter matches. Enter YES if you want your program to hit a breakpoint 
+when any filter matches (see <a href="#108571">"Setting a Breakpoint on a Filter Match"</a>).
+
+GENERIC_FILTER shows all messages.<p>
+If ClassName in the filter is *, any class counts as a match.<p>
+If selectorName in the filter is *, any selector counts as a match.<p>
+If selectorName in the filter is preceeded by a "+" or "-", only class methods, or instance methods (respectively) are considered matches.<p>
+If receiverID in the filter is *, any receiver counts as a match.<p>
+If ClassName, selectorName, and receiverID are all *, all messages are considered matches.<p>
+<a name="108525">
+<h4> Controlling Call Level Indentation</h4>
+</a>By default, the call level (nested level) of each method is shown in the matched filter output by indenting the line. At times this may be undesirable. To disable or enable this feature, use one of the following commands to control (typically turn off) call level indentation in all applications.<p>
+
+<pre>
+dwrite AppName NSEnableFilterCallLevelIndentation YES | NO
+
+dwrite NSGlobalDomain NSEnableFilterCallLevelIndentation YES | NO
+</pre>
+
+This setting effects console output only, and has no effect on external debug-monitoring applications like ObjectDebug.<p>
+
+<h3><a name="108533">Invoking messageSendDebug from a Program or  the Debugger</a></h3>
+
+For detailed information, see the file <code>/usr/openstep/include/objc/objc-debug.h</code>.  Enabling <code>messageSendDebug</code> adds to, and does not preclude, filtering options you have set using <code>dwrite</code>.<p>
+
+<h4><a name="108535">Enabling messageSendDebug</a></h4>
+To enable <code>messageSendDebug</code>, call one of the following methods:<p>
+
+<pre>
+objc_enableMessageSendDebug(EnableDebug)
+
+objc_enableMessageSendDebug(EnableDebugShowAllMessages)
+
+objc_enableMessageSendDebug(EnableDebugSilently)
+
+objc_enableMessageSendDebug(DisableDebug)
+
+objc_enableMessageSendDebug(DisableDebugSilently)
+</pre>
+
+The following methods are equivalent to the above methods:<p>
+<pre>
+objc_enableMessageSendDebug(1)
+
+objc_enableMessageSendDebug(2)
+
+objc_enableMessageSendDebug(3)
+
+objc_enableMessageSendDebug(0)
+
+objc_enableMessageSendDebug(-1)
+</pre>
+
+<hr>
+<b>Note:</b>You may want to disable this mechanism before making method calls in your debugger, as those method calls will get traced as well!
+<hr>
+
+<h4><a name="108543">Adding Filters</a></h4>
+To add filters, you can call one of the following methods:<p>
+<pre>
+<code>objc_addFilterFromString(const char *filterString)</code>
+
+<code>objc_addFilterForClass(const char *className)</code>
+
+<code>objc_addFilterForSelector(const char *selectorName)</code>
+
+<code>objc_addFilterForReceiver(id receiver)</code>
+</pre>
+
+<code>objc_addFilterFromString</code> has the same syntax as the <code>NSMessageSendDebugFilter</code> <code>dwrite</code> command, with the addition of a FilterID field as the first value. This field lets you uniquely identify the filter.<p>
+The filter string format looks like this:<p>
+<pre>
+objc_addFilterFromString("FilterID, ClassName | *,
+[+ | -]selectorName | [+ | -]*, receiverID[hex or dec] | *, YES | NO 
+</pre>
+or this:<p>
+<pre>
+objc_addFilterFromString("GENERIC_FILTER")
+</pre>
+
+YES or NO applies to whether or not to call <code>objc_messageMatchedFilter()</code> 
+when a filter matches. Enter YES if you want your program to hit a breakpoint 
+when any filter matches (see <a href="#108571">"Setting a Breakpoint on a Filter Match"</a>).
+
+GENERIC_FILTER shows all messages.<p>
+If ClassName in the filter is *, any class counts as a match.<p>
+If selectorName in the filter is *, any selector counts as a match.<p>
+If selectorName in the filter is preceeded by a "+" or "-", only class methods, or instance methods (respectively) are considered matches.<p>
+If receiverID in the filter is *, any receiver counts as a match.<p>
+If ClassName, selectorName, and receiverID are all *, all messages are considered matches.<p>
+<a name="108561">
+<h4> Controlling Call Level Indentation</h4>
+</a>By default, the call level (nested level) of each method is shown in the matched filter output by indenting the line. At times this may be undesirable. To disable or enable this feature, call the following method:<p>
+<pre>
+objc_enableFilterCallLevelIndentation(0 | 1)
+</pre>
+This setting effects console output only, and has no effect on external debug-monitoring applications. It is unnecessary if the feature has already been enabled or disabled with dwrite.<p>
+<a name="108565">
+<h4> Removing Filters</h4>
+</a>To remove all filters, call the following method:<p>
+<pre>objc_removeAllFilters()
+</pre><a name="108568">
+<h4> Disabling Filters</h4>
+</a>To temporarily disable all filters, call the following method:<p>
+<pre>objc_enableMessageSendDebug(DisableDebug[0])
+</pre><a name="108571">
+<h4> Setting a Breakpoint on a Filter Match</h4>
+</a>If you want your program to hit a breakpoint when any filter matches, call the following method:<p>
+<pre>objc_callMessageMatchedFilter(0 | 1)
+</pre>
+<hr>
+<b>Note:</b> <code>objc_callMessageMatchedFilter</code> sets this flag for all existing filters. To set the flag for individual filters, use the <code>objc_addFilterFromString</code> method to create your filter, or call <code>objc_callMessageMatchedFilter</code> after setting some filters, and then set the rest of your filters.
+<hr>
+Once you continue program execution, a string is printed indicating that the current message or receiver matched one of the set filters.<p>
+After this string is printed, the function <code>objc_messageMatchedFilter(</code>) is called by the Objective C runtime system.<p>
+You can put a breakpoint at <code>objc_messageMatchedFilter()</code> to get a backtrace.<p>
+
+<h3><a name="108581">Examples</a></h3>
+
+<h4><a name="108582">Example 1:</a></h4>
+To see all the messages sent to the NSAutoreleasePool class, either enter the following <code>dbx</code> commands in the Debugger Command Pane:<p>
+<pre>
+call objc_enableMessageSendDebug(1)
+
+call objc_addFilterForClass("NSAutoreleasePool")
+</pre>
+
+or use the following <code>dwrite</code> commands at execution time:<p>
+<pre>
+dwrite AppName NSEnableMessageSendDebug YES
+
+dwrite AppName NSMessageSendDebugFilter "NSAutoreleasePool,*,*,NO"
+</pre>
+
+<h4><a name="108589">Example 2:</a></h4>
+To see all the <code>addObject:</code> messages sent to the NSAutoreleasePool class, and have Objective C call <code>objc_messageMatchedFilter()</code> when that message is sent (so you can hit a breakpoint there),  either enter the following <code>dbx</code> commands in the Debugger Command Pane:<p>
+<pre>
+call objc_enableMessageSendDebug(1)
+
+call 
+objc_addFilterFromString("1,NSAutoreleasePool,addObject:,*,YES")
+</pre>
+
+or use the following <code>dwrite</code> commands at execution time<p>
+<pre>
+dwrite AppName NSEnableMessageSendDebug YES
+
+dwrite AppName NSMessageSendDebugFilter1 
+"NSAutoreleasePool,addObject:,*,YES"
+</pre>
+
+Notice the lack of the first parameter, the filterID, which is automatically generated in this case by the number that is appended to the <code>dwrite</code> key + 1000 (for example. "1001").<p>
+
+<h4><a name="108599">Example 3:</a></h4>
+To see all the class method calls (as opposed to instance method calls) sent to any object, and not show call level indentation, either enter the following <code>dbx</code> commands in the Debugger Command Pane:<p>
+<pre>
+call objc_enableMessageSendDebug(1)
+
+call objc_addFilterForSelector("+*")
+
+call objc_enableFilterCallLevelIndentation(0)
+</pre>
+
+or use the following <code>dwrite</code> commands at execution time:<p>
+<pre>
+dwrite AppName NSEnableMessageSendDebug YES
+
+dwrite AppName NSMessageSendDebugFilter "*,+*,*,NO"
+
+dwrite AppName NSEnableFilterCallLevelIndentation NO
+</pre>
+
+<h3><a name="108608">Implementing Your Own Filtering Mechanism</a></h3>
+If you want to implement your own filtering mechanism, you can call the following function:<p>
+<pre>
+objc_setMessageSendFilterFunction(void 
+(*customFilterFunction)(Class receiverClass,id receiver, SEL 
+selector,void *callLevel, void *threadID))
+</pre>
+This function takes a pointer to a <code>filterFunction</code>. After calling this function, every message (<code>objc_msgSend</code>) that is sent will go through your own filter function. You can then implement your own filtering system.<p>
+You can also call the following function from your filter function, in case you want to do the normal filtering stuff but tweak a few things first.:<p>
+<pre>
+objc_defaultMessageSendFilterFunction()
+</pre>
+You can get a linked list of all the currently set filters by calling the following:<p>
+<pre>
+<code>objc_filterList(void)</code>
+</pre>
+<h2><a name="106497">Debugging Applications Using Optimized Libraries</a></h2>
+If you compile an application with -g but use libraries not compiled with -g, the Debugger does not know the prototypes of methods defined in the libraries. This means it does not know the types of the returned values, nor of the parameters. It assumes the types are int. <p>
+For example, assume that set1 is an NSSet, You could use casts to tell the Debugger the return types of methods:<p>
+<pre>
+dbx:3 whatis set1
+
+@interface NSSet *set1;
+
+dbx:4 p [set1 description]
+
+[set1 description] = -283014864
+
+dbx:5 p (NSString *)[set1 description]
+
+(@interface NSString *) [set1 description] = 0xef218bd0
+
+dbx:6 p [(NSString *)[set1 description] cString]
+
+[(@interface NSString *) [set1 description] cString] = -281204711
+
+dbx:7 p (char *)[(NSString *)[set1 description] cString]
+
+(char *) [(@interface NSString *) [set1 description] cString] = 
+0xef3d2841 "NSConcreteSet(a, b)"
+</pre>
+
+In order to obviate the need for these casts, Project Builder includes a special module named <code>dbxInfo.o</code>.  This module contains debugging information for all the methods defined in the Application Kit and Foundation Kit libraries. When you do a debug build using the Project Builder Makefiles, this module is automatically  linked into your application.  In order to make this information available to the Debugger after it has started, Project Builder issues the following command to the Debugger as it is starting up:<p>
+<pre>
+<code>module dbxInfo.o</code>
+</pre>
+
+This  command causes the Debugger to read in the debugging information contained in <code>dbxInfo.o</code> so it is available when the Debugger has to determine the return types and parameter types of methods invocations.<p>
+
+</TD></TR></TABLE>
+<!-- RIGHT_COLUMN_END -->
+
+<!-- FOOT_START -->
+<PRE><HR><A HREF="/solaris/sitemap.html"><IMG BORDER=0
+SRC="/solaris/images/site-map-navbut.gif" WIDTH="120" HEIGHT="24"
+ALT="Site Map"></A><A HREF="/software/Whats-new/index.html"><IMG BORDER=0
+SRC="/software/images/foot-whatshot.gif" WIDTH="115" HEIGHT="24"
+ALT="What's Hot!"></A><A HREF="/solaris/solarisFAQ.html"><IMG
+BORDER=0 SRC="/software/images/foot-faqs.gif" WIDTH="115"
+HEIGHT="24" ALT="FAQs"></A><A
+HREF="/software/"><IMG BORDER=0
+SRC="/software/images/foot-sw.gif" WIDTH="115" HEIGHT="24"
+ALT="Software"></A><A HREF="/sales-n-service/index.html"><IMG
+BORDER=0 SRC="/software/images/foot-sales.gif" WIDTH="115"
+HEIGHT="24" ALT="Sales & Service"></A></PRE>
+<H5><FONT SIZE=2>Questions or comments regarding this service? <A HREF="/cgi-bin/comment-form.pl?/solaris/iapp/index.html"><EM>webmaster@sun.com</EM></A><P><A
+HREF="/share/text/SMICopyright.html">Copyright</A> 1996 Sun Microsystems, Inc., 2550 Garcia Ave., Mtn. View, CA 94043-1100 USA.  All rights reserved.</FONT></H5>
+</BODY>
+
+<SCRIPT language="Javascript">
+<!--
+
+// FILE ARCHIVED ON 19970212171001 AND RETRIEVED FROM THE
+// INTERNET ARCHIVE ON 20050429180226.
+// JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+// ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+// SECTION 108(a)(3)).
+
+   var sWayBackCGI = "http://web.archive.org/web/19970212171001/";
+
+   function xLateUrl(aCollection, sProp) {
+      var i = 0;
+      for(i = 0; i < aCollection.length; i++)
+         if (aCollection[i][sProp].indexOf("mailto:") == -1 &&
+             aCollection[i][sProp].indexOf("javascript:") == -1)
+            aCollection[i][sProp] = sWayBackCGI + aCollection[i][sProp];
+   }
+
+   if (document.links)  xLateUrl(document.links, "href");
+   if (document.images) xLateUrl(document.images, "src");
+   if (document.embeds) xLateUrl(document.embeds, "src");
+
+   if (document.body && document.body.background)
+      document.body.background = sWayBackCGI + document.body.background;
+
+//-->
+
+</SCRIPT>
+</HTML>
+<!-- FOOT_END -->

@@ -1,0 +1,22 @@
+{
+    WidthInChars = "80";
+    HeightInChars = "30";
+    Tags = "tags:../tags";
+    Include = "/usr/include:/usr/openstep/include";
+    Modes = "CFileText:c,h,m,cc,cxx,C\nLispFileText:cl,lisp\n";
+    NSFixedPitchFont = "Courier";
+    NSFixedPitchFontSize = "12.0";
+    IndentWidth = "4";
+    TabWidth = "8";
+    ExpandLevel = "99";
+    RTFExpandLevel = "99";
+    AutoIndent = "NO";
+    KeyBindings = "NO";
+    LevelOption = "1";
+    DeleteBackup = "YES";
+    RichText = "YES";
+    CLevelOption = "3";
+    Shell = "/bin/csh";
+    Orientation = "Portrait";
+    PagesPerSheet = "1";
+}

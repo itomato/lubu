@@ -1,0 +1,73 @@
+
+Hintsfile for LuBu OpenMagic 1.0 and Soalris OpenStep 1.1-sparc
+
+Hint #1:
+-------
+Make sure OpenMagic 1.0 / OpenStep 1.1 is installed in
+/usr/openstep or at least exists as a symlink in order 
+for everything to work correctly. If you install else-
+where, and do not symlink to /usr/openstep, do not even
+think of bothering me with bug-reports.
+
+Hint #2:
+-------
+It is possible to hide directories from the browser with a simple
+.hidden file. In the same way you can reveal files by removing their 
+entry form the .hidden file.
+
+root@teologia# cat /.hidden 
+GNUstep
+Mail
+TT_DB
+dev
+devices
+openstep
+proc
+
+Hint #3:
+-------
+There are hidden settings in the standard applications.
+Use strings <file> to read. Use /usr/openstep/bin/dwrite
+to set the values. You are on your own here, so use with
+care. Also, check out the file included in this directory
+for hidden Mail values, and for the syntax of dwrite.
+(Mail-hidden-defaults)
+
+Hint #4:
+-------
+You can assign different icons to your directories by placing
+a tiff file there as .dir.tiff - make sure all tiff files are
+set to 72dpi else they will look distorted.
+
+Hint #5:
+-------
+Make sure all files in /usr/openstep are owned by bin:bin
+else you will loose alot of functionality! There is NO NEED
+for ANY of the files to be owned by root (other than possibly
+Preferences.app/set_password which is initially broken due to
+a missing library). See the READ_ME_FIRST file for more info.
+
+Hint #6:
+-------
+Read ALL the documents under /usr/openstep/Information before
+sending bug-reports or suggesting changes. There might be a 
+good reason why feature <insert feature here> is missing.
+
+Hint #7:
+-------
+You can get most apps that belong under /usr/openstep/LocalApps/XVIEW
+as both / either source or in binary form from the following sites:
+
+XVIEW  : http://physionet.org/physiotools/xview/
+XVIEW includes the source for the OPEN LOOK enviroment and some 
+extra apps.
+
+OWacomp: http://www.freshmeat.net/projects/owacomp
+         ftp://step.polymtl.ca/pub/Xview/OWacomp
+OWacomp includes just about everything you need for running XVIEW,
+in both binary and source form. Apps, libs, source, GUI development
+and lots more. A MUST have for retro-fans.
+
+Page last updated:
+-----------------
+Sat 25 Mar 2006 by Luke Th. Bullock

@@ -1,0 +1,143 @@
+ZONE 1
+label:GMT-1000
+file:GMT-10
+label:US/Hawaii
+file:US/Hawaii
+ZONE 2
+label:GMT-0900
+file:GMT-9
+ZONE 3
+label:GMT-0800
+file:GMT-8
+label:US/Pacific
+file:US/Pacific
+label:US/Pacific-New
+file:US/Pacific-New
+label:Canada/Pacific
+file:Canada/Pacific
+ZONE 4
+label:GMT-0700
+file:GMT-7
+label:US/Mountain
+file:US/Mountain
+label:US/Arizona
+file:US/Arizona
+label:Canada/Mountain
+file:Canada/Mountain
+ZONE 5
+label:GMT-0600
+file:GMT-6
+label:US/Central
+file:US/Central
+label:Canada/Central
+file:Canada/Central
+label:Canada/East-Saskatchewan
+file:Canada/East-Saskatchewan
+ZONE 6
+label:GMT-0500
+file:GMT-5
+label:US/Eastern
+file:US/Eastern
+label:US/East-Indiana
+file:US/East-Indiana
+label:Canada/Eastern
+file:Canada/Eastern
+ZONE 7
+label:GMT-0400
+file:GMT-4
+label:Canada/Atlantic
+file:Canada/Atlantic
+ZONE 8
+label:GMT-0300
+file:GMT-3
+label:Canada/Newfoundland
+file:Canada/Newfoundland
+ZONE 9
+label:GMT-0200
+file:GMT-2
+ZONE 10
+label:GMT-0100
+file:GMT-1
+ZONE 11
+label:Greenwich
+file:Greenwich
+label:GB-Eire
+file:GB-Eire
+label:Iceland
+file:Iceland
+label:WET
+file:WET
+ZONE 12
+label:GMT+0100
+file:GMT+1
+label:Poland
+file:Poland
+label:MET
+file:MET
+label:CET
+file:CET
+ZONE 13
+label:GMT+0200
+file:GMT+2
+label:EET
+file:EET
+ZONE 14
+label:GMT+0300
+file:GMT+3
+label:Turkey
+file:Turkey
+label:W-SU
+file:W-SU
+ZONE 15
+ZONE 16
+label:GMT+0400
+file:GMT+4
+ZONE 17
+label:GMT+0500
+file:GMT+5
+ZONE 18
+ZONE 19
+label:GMT+0600
+file:GMT+6
+ZONE 20
+label:GMT+0700
+file:GMT+7
+ZONE 21
+label:GMT+0800
+file:GMT+8
+label:Singapore
+file:Singapore
+label:Australia/West
+file:Australia/West
+ZONE 22
+label:GMT+0900
+file:GMT+9
+label:Japan
+file:Japan
+ZONE 23
+label:Australia/North
+file:Australia/North
+label:Australia/South
+file:Australia/South
+ZONE 24
+label:GMT+1000
+file:GMT+10
+label:Australia/Tasmania
+file:Australia/Tasmania
+label:Australia/Queensland
+file:Australia/Queensland
+label:Australia/Victoria
+file:Australia/Victoria
+label:Australia/NSW
+file:Australia/NSW
+ZONE 25
+label:GMT+1100
+file:GMT+11
+ZONE 26
+label:GMT+1200
+file:GMT+12
+label:NZ
+file:NZ
+ZONE 27
+label:GMT+1300
+file:GMT+13

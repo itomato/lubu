@@ -1,0 +1,15 @@
+Console = {
+    OUTLETS = {
+	window;
+	view;
+    };
+    SUPERCLASS = Object;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+TerminalView = {
+    SUPERCLASS = ScrollView;
+};

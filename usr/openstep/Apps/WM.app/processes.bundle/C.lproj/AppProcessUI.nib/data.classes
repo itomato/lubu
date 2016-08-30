@@ -1,0 +1,15 @@
+WMPathField = {SUPERCLASS = View; };
+AppProcessUI = {
+    ACTIONS = {"killApp:" = "killApp:"; "unhideApp:" = "unhideApp:"; }; 
+    OUTLETS = {
+	appIcon = appIcon; 
+	appName = appName; 
+	appPath = appPath; 
+	appPid = appPid; 
+	appStatus = appStatus; 
+	appWindow = appWindow; 
+	killButton = killButton; 
+    }; 
+    SUPERCLASS = Object; 
+};
+FirstResponder = {ACTIONS = {}; SUPERCLASS = Object; };

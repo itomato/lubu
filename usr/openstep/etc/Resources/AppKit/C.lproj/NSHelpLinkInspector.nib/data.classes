@@ -1,0 +1,37 @@
+NXHelpLinkInspector = {
+    ACTIONS = {
+	set:;
+    };
+    OUTLETS = {
+	linkFilenameField;
+	linkMarkernameField;
+	setButton;
+    };
+    SUPERCLASS = NXHelpMarkerInspector;
+};
+FirstResponder = {
+    ACTIONS = {
+    };
+    SUPERCLASS = Object;
+};
+NSKitPanelController = {
+    OUTLETS = {
+	panel;
+    };
+    SUPERCLASS = Object;
+};
+NXHelpMarkerInspector = {
+    ACTIONS = {
+	cancel:;
+	ok:;
+    };
+    OUTLETS = {
+	okButton;
+	cancelButton;
+	markernameField;
+    };
+    SUPERCLASS = Panel;
+};
+LinkCell = {
+    SUPERCLASS = Cell;
+};

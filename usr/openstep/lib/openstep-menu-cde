@@ -1,0 +1,20 @@
+    "CDE Applications"	TITLE
+    "Audio Tool"		exec sdtaudio
+    "Application Builder"	exec dtbuilder
+    "Calculator"		exec dtcalc
+    "Calendar"			exec dtcm
+    "File Manager"		exec dtfile
+    "Find File"			exec sdtfind
+    "Icon Editor"		exec dticon
+    "Image Viewer"		exec sdtimage
+    "E-Mail Client"		exec dtmail
+    "Manual Viewer"		exec dthelpview -man
+    "Performance Meter"		exec sdtperfmeter
+    "Printer Info"		exec dtprintinfo
+    "Process Manager"		exec sdtprocess
+    "SmartCard Manager"		exec sdtsmartcardadmin
+    "Management Console" 	exec smc
+    "Terminal"			exec dtterm
+    "Text Editor"		exec dtpad
+    "Web Client"		exec sdtwebclient
+    "Workstation Info"          exec sdtwsinfo
